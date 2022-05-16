@@ -5,8 +5,7 @@
         <UseCasesPage/>
         <PerformancePage/>
         <PortfolioPage/>
-
-        <!-- TODO: add security page -->
+        <SecurityPage/>
 
         <!-- TODO: add trusted page -->
 
@@ -27,10 +26,12 @@ import HowPage from "@/component/pages/HowPage";
 import UseCasesPage from "@/component/pages/UseCasesPage";
 import PerformancePage from "@/component/pages/PerformancePage";
 import PortfolioPage from "@/component/pages/PortfolioPage";
+import SecurityPage from "@/component/pages/SecurityPage";
 export default {
     name: "MainView",
 
     components: {
+        SecurityPage,
         PortfolioPage,
         PerformancePage,
         UseCasesPage,
