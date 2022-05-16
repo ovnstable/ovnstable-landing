@@ -7,7 +7,7 @@
                 </div>
             </v-row>
             <v-row class="sub-title-row mb-12">
-                <p class="sub-title-text mb-0">USD+ includes 3 components:</p>
+                <p class="sub-title-text">USD+ includes 3 components:</p>
             </v-row>
             <v-row class="expansion-row">
                 <!-- TODO: add expansion panels -->

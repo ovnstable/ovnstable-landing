@@ -3,10 +3,8 @@
         <MainPage/>
         <HowPage/>
         <UseCasesPage/>
-
-        <!-- TODO: add performance page -->
-
-        <!-- TODO: add portfolio page -->
+        <PerformancePage/>
+        <PortfolioPage/>
 
         <!-- TODO: add security page -->
 
@@ -27,10 +25,14 @@
 import MainPage from "@/component/pages/MainPage";
 import HowPage from "@/component/pages/HowPage";
 import UseCasesPage from "@/component/pages/UseCasesPage";
+import PerformancePage from "@/component/pages/PerformancePage";
+import PortfolioPage from "@/component/pages/PortfolioPage";
 export default {
     name: "MainView",
 
     components: {
+        PortfolioPage,
+        PerformancePage,
         UseCasesPage,
         HowPage,
         MainPage

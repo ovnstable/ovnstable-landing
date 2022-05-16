@@ -62,6 +62,7 @@ export default {
 
 .main-page-container {
     background: #FFFFFF !important;
+    height: 100vh;
 }
 
 .bg-video {
