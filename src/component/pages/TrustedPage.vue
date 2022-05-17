@@ -10,7 +10,7 @@
                     <v-row class="trusted-title-row mb-8">
                         <label class="trusted-title">Partners</label>
                     </v-row>
-                    <v-row class="trusted-row">
+                    <v-row class="trusted-row" align="center">
                         <img
                                 class="trusted-img"
                                 height="50"
@@ -37,7 +37,7 @@
 
                         <img
                                 class="trusted-img"
-                                height="55"
+                                height="65"
                                 @click="openLink('https://www.gelato.network/')"
                                 :src="require('@/assets/img/partners/gelato.png')">
 

@@ -8,8 +8,7 @@
         <SecurityPage/>
         <TrustedPage/>
         <RoadmapPage/>
-
-        <!-- TODO: add team page -->
+        <TeamPage/>
 
         <!-- TODO: add questions page -->
 
@@ -27,10 +26,12 @@ import PortfolioPage from "@/component/pages/PortfolioPage";
 import SecurityPage from "@/component/pages/SecurityPage";
 import TrustedPage from "@/component/pages/TrustedPage";
 import RoadmapPage from "@/component/pages/RoadmapPage";
+import TeamPage from "@/component/pages/TeamPage";
 export default {
     name: "MainView",
 
     components: {
+        TeamPage,
         RoadmapPage,
         TrustedPage,
         SecurityPage,

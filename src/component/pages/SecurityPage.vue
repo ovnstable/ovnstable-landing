@@ -37,27 +37,28 @@
                     <v-row class="find-title-row mb-8">
                         <label class="find-title">Find us on</label>
                     </v-row>
-                    <v-row>
+                    <v-row align="center">
                         <img
-                                class="find-us-img" height="54"
+                                class="find-us-img"
+                                height="54"
                                 @click="openLink('https://polygon.technology/')"
                                 :src="require('@/assets/img/partners/polygon_token_logo.png')">
 
                         <v-spacer></v-spacer>
 
-                        <!-- TODO: switch to 1inch -->
                         <img
                                 class="find-us-img"
-                                height="50"
-                                :src="require('@/assets/img/partners/coinMarketCap.svg')">
+                                height="80"
+                                @click="openLink('https://app.1inch.io/#/137/swap/USDC/USD%2B')"
+                                :src="require('@/assets/img/partners/1inch.svg')">
 
                         <v-spacer></v-spacer>
 
-                        <!-- TODO: switch to debank -->
+                        <!-- TODO: add debank link -->
                         <img
                                 class="find-us-img"
-                                height="60"
-                                :src="require('@/assets/img/partners/coinGecko.svg')">
+                                height="56"
+                                :src="require('@/assets/img/partners/debank.svg')">
                     </v-row>
                 </v-col>
 
@@ -65,7 +66,7 @@
                     <v-row class="find-title-row mb-8">
                         <label class="find-title">Audit</label>
                     </v-row>
-                    <v-row>
+                    <v-row align="center">
                         <v-spacer></v-spacer>
                         <img
                                 class="find-us-img"
