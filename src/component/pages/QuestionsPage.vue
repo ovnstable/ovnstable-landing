@@ -64,12 +64,10 @@
 
 <script>
 
-import UseCard from "@/component/pages/use_cases/UseCard";
 export default {
     name: "QuestionsPage",
 
     components: {
-        UseCard
     },
 
     data: () => ({

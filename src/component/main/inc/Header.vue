@@ -4,7 +4,7 @@
             <v-col cols="12" class="header-col">
                 <v-row class="content-row" align="center">
                     <v-col cols="3">
-                        <img class="logo-img" height="40" :src="require('@/assets/img/logo_full.svg')" @click="openHook('main_page')">
+                        <img class="logo-img" height="40" :src="require('@/assets/img/logo_full.svg')" @click="openLink('https://overnight.fi/')">
                     </v-col>
 
                     <v-col cols="5" class="ml-0">

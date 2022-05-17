@@ -24,12 +24,6 @@
         <v-col class="maincards-col" cols="5">
             <!-- TODO: add maincards widget -->
         </v-col>
-
-        <!-- TODO: add video with gradient mask -->
-        <!-- <video playsinline autoplay muted loop>
-            <source :src='require("@/assets/background/video/main_video_bg.mp4")' type='video/mp4'>
-        </video>-->
-
     </v-row>
 </template>
 
