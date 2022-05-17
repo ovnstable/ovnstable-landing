@@ -54,10 +54,10 @@
 
                         <v-spacer></v-spacer>
 
-                        <!-- TODO: add debank link -->
                         <img
                                 class="find-us-img"
                                 height="56"
+                                @click="openLink('https://debank.com/')"
                                 :src="require('@/assets/img/partners/debank.svg')">
                     </v-row>
                 </v-col>
