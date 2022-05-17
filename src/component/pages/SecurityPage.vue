@@ -38,14 +38,26 @@
                         <label class="find-title">Find us on</label>
                     </v-row>
                     <v-row>
-                        <!-- TODO: make link -->
-                        <img height="54" :src="require('@/assets/img/partners/polygon_token_logo.png')">
+                        <img
+                                class="find-us-img" height="54"
+                                @click="openLink('https://polygon.technology/')"
+                                :src="require('@/assets/img/partners/polygon_token_logo.png')">
+
                         <v-spacer></v-spacer>
-                        <!-- TODO: make link -->
-                        <img height="50" :src="require('@/assets/img/partners/coinMarketCap.svg')">
+
+                        <!-- TODO: switch to 1inch -->
+                        <img
+                                class="find-us-img"
+                                height="50"
+                                :src="require('@/assets/img/partners/coinMarketCap.svg')">
+
                         <v-spacer></v-spacer>
-                        <!-- TODO: make link -->
-                        <img height="60" :src="require('@/assets/img/partners/coinGecko.svg')">
+
+                        <!-- TODO: switch to debank -->
+                        <img
+                                class="find-us-img"
+                                height="60"
+                                :src="require('@/assets/img/partners/coinGecko.svg')">
                     </v-row>
                 </v-col>
 
@@ -55,8 +67,11 @@
                     </v-row>
                     <v-row>
                         <v-spacer></v-spacer>
-                        <!-- TODO: make link -->
-                        <img height="70" :src="require('@/assets/img/partners/hacken.svg')">
+                        <img
+                                class="find-us-img"
+                                height="70"
+                                @click="openLink('https://hacken.io/audits/#overnight')"
+                                :src="require('@/assets/img/partners/hacken.svg')">
                         <v-spacer></v-spacer>
                     </v-row>
                 </v-col>
@@ -66,7 +81,7 @@
                 <v-btn
                         text
                         class="whitepaper-btn"
-                        @click="openRiskManagementWhitePaper">
+                        @click="openLink('https://docs.overnight.fi/')">
                     Risk-management whitepaper
                 </v-btn>
             </v-row>
@@ -90,9 +105,8 @@ export default {
     },
 
     methods: {
-        openRiskManagementWhitePaper() {
-            /* TODO: add whitepaper url */
-            window.open(`https://docs.overnight.fi/`, '_blank').focus();
+        openLink(url) {
+            window.open(url, '_blank').focus();
         },
     }
 }
@@ -110,7 +124,7 @@ export default {
 }
 
 .find-us-img {
-
+    cursor: pointer;
 }
 
 .title-row {

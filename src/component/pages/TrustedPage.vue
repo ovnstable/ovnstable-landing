@@ -11,20 +11,49 @@
                         <label class="trusted-title">Partners</label>
                     </v-row>
                     <v-row class="trusted-row">
-                        <img height="50" :src="require('@/assets/img/partners/berkeley.png')">
+                        <img
+                                class="trusted-img"
+                                height="50"
+                                @click="openLink('https://xcelerator.berkeley.edu/')"
+                                :src="require('@/assets/img/partners/berkeley.png')">
+
                         <v-spacer></v-spacer>
-                        <img height="40" :src="require('@/assets/img/partners/binance.svg')">
+
+                        <img
+                                class="trusted-img"
+                                height="40"
+                                @click="openLink('https://www.bnbchain.world/en/bsc-mvb-program')"
+                                :src="require('@/assets/img/partners/binance.svg')">
+
                         <v-spacer></v-spacer>
-                        <img height="54" :src="require('@/assets/img/partners/polygon_token_logo.png')">
+
+                        <img
+                                class="trusted-img"
+                                height="54"
+                                @click="openLink('https://polygon.technology/')"
+                                :src="require('@/assets/img/partners/polygon_token_logo.png')">
+
                         <v-spacer></v-spacer>
-                        <img height="55" :src="require('@/assets/img/partners/gelato.png')">
+
+                        <img
+                                class="trusted-img"
+                                height="55"
+                                @click="openLink('https://www.gelato.network/')"
+                                :src="require('@/assets/img/partners/gelato.png')">
+
                         <v-spacer></v-spacer>
-                        <img height="40" :src="require('@/assets/img/partners/arrakis.png')">
+
+                        <img
+                                class="trusted-img"
+                                height="40"
+                                @click="openLink('https://www.arrakis.finance/')"
+                                :src="require('@/assets/img/partners/arrakis.png')">
                     </v-row>
 
                     <v-row class="trusted-title-row mb-8">
                         <label class="trusted-title">Our valued investors</label>
                     </v-row>
+
                     <v-row class="cards-row">
                         <!-- TODO: add cards carousel -->
                     </v-row>
@@ -50,8 +79,8 @@ export default {
     },
 
     methods: {
-        openRiskManagementWhitePaper() {
-            window.open(``, '_blank').focus();
+        openLink(url) {
+            window.open(url, '_blank').focus();
         },
     }
 }
@@ -61,6 +90,10 @@ export default {
 
 .main-page-container {
     background: #FFFFFF;
+}
+
+.trusted-img {
+    cursor: pointer;
 }
 
 .text-col {
