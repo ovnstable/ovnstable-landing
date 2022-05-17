@@ -50,7 +50,7 @@
                                 :src="require('@/assets/img/partners/arrakis.png')">
                     </v-row>
 
-                    <v-row class="trusted-title-row mb-8">
+                    <v-row class="trusted-title-row mb-8" id="investors_part">
                         <label class="trusted-title">Our valued investors</label>
                     </v-row>
 

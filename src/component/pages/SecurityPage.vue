@@ -32,7 +32,7 @@
                 </v-col>
             </v-row>
 
-            <v-row class="find-row">
+            <v-row class="find-row" id="audit_part">
                 <v-col cols="8" class="find-col">
                     <v-row class="find-title-row mb-8">
                         <label class="find-title">Find us on</label>

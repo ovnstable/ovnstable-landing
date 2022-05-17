@@ -1,15 +1,16 @@
 <template>
     <div class="fill-height">
-        <MainPage/>
-        <HowPage/>
-        <UseCasesPage/>
-        <PerformancePage/>
-        <PortfolioPage/>
-        <SecurityPage/>
-        <TrustedPage/>
-        <RoadmapPage/>
-        <TeamPage/>
-        <QuestionsPage/>
+        <MainPage id="main_page"/>
+        <HowPage id="how_page"/>
+        <UseCasesPage id="use_cases_page"/>
+        <PerformancePage id="performance_page"/>
+        <PortfolioPage id="portfolio_page"/>
+        <SecurityPage id="security_page"/>
+        <TrustedPage id="trusted_page"/>
+        <RoadmapPage id="roadmap_page"/>
+        <TeamPage id="team_page"/>
+        <QuestionsPage id="questions_page"/>
+
         <Footer/>
     </div>
 </template>

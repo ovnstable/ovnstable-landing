@@ -47,12 +47,10 @@
                     </v-row>
 
                     <v-row class="mb-3">
-                        <!-- TODO: redirect to trusted page -->
-                        <label class="col-title-item" @click="openLink('')">Investors</label>
+                        <label class="col-title-item" @click="openHook('investors_part')">Investors</label>
                     </v-row>
                     <v-row class="mb-3">
-                        <!-- TODO: redirect to security page -->
-                        <label class="col-title-item" @click="openLink('')">Audits & Partners</label>
+                        <label class="col-title-item" @click="openHook('audit_part')">Audits & Partners</label>
                     </v-row>
                     <v-row class="mb-3">
                         <label class="col-title-item" @click="openLink('https://blog.overnight.fi/')">Blog</label>
@@ -96,6 +94,11 @@ export default {
     methods: {
         openLink(url) {
             window.open(url, '_blank').focus();
+        },
+
+        openHook(name) {
+            let el = document.getElementById(name);
+            el.scrollIntoView();
         },
     }
 }
