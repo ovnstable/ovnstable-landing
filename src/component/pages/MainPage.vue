@@ -1,5 +1,9 @@
 <template>
     <v-row class="main-page-container">
+        <video playsinline autoplay muted loop class="bg-video">
+            <source :src='require("@/assets/background/video/main_video_bg.mp4")' type='video/mp4'>
+        </video>
+
         <v-col class="text-col" cols="7">
             <v-row class="title-row mb-10">
                 <div>
@@ -55,7 +59,8 @@ export default {
 <style scoped>
 
 .main-page-container {
-    background: linear-gradient(100.74deg, rgba(2, 24, 68, 0.9) 0.89%, rgba(16, 21, 39, 0.9) 98.31%);
+    /*background: linear-gradient(100.74deg, rgba(2, 24, 68, 0.9) 0.89%, rgba(16, 21, 39, 0.9) 98.31%);*/
+    background-color: rgba(2, 24, 68, 0.9);
 }
 
 .text-col {
@@ -66,12 +71,16 @@ export default {
     margin-right: 7% !important;
 }
 
+.text-col, .maincards-col {
+    z-index: 100;
+}
+
 .title-row {
-    margin-top: 438px !important;
+    margin-top: 347px !important;
 }
 
 .btn-row {
-    margin-bottom: 253px !important;
+    margin-bottom: 250px !important;
 }
 
 .title-text {
@@ -122,6 +131,12 @@ export default {
     line-height: 20px !important;
     font-feature-settings: 'liga' off !important;
     color: #FFFFFF !important;
+}
+
+.bg-video {
+    mix-blend-mode: soft-light;
+    z-index: 0;
+    position: absolute;
 }
 
 </style>

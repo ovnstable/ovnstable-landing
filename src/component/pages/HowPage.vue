@@ -59,7 +59,7 @@ export default {
 }
 
 .title-row {
-    margin-top: 243px !important;
+    margin-top: 231px !important;
 }
 
 .title-text {
