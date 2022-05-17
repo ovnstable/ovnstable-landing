@@ -9,7 +9,7 @@
             </v-row>
 
             <v-row class="roadmap-row">
-                <!-- TODO: add roadmap -->
+                <img class="roadmap-img" :src="require('@/assets/img/roadmap.png')">
             </v-row>
         </v-col>
     </v-row>
@@ -39,6 +39,11 @@ export default {
 
 .main-page-container {
     background: linear-gradient(122.1deg, #011845 0%, #15141D 104.83%);
+}
+
+.roadmap-img {
+    width: 100% !important;
+    height: fit-content !important;
 }
 
 .text-col {
