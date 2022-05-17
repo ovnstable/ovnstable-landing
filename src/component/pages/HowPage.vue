@@ -10,7 +10,42 @@
                 <p class="sub-title-text">USD+ includes 3 components:</p>
             </v-row>
             <v-row class="expansion-row">
-                <!-- TODO: add expansion panels -->
+                <v-expansion-panels multiple v-model="openedPanels">
+                    <v-expansion-panel class="how-panel panel-bordered" @click="openPanel(0)">
+                        <v-expansion-panel-header class="panel-header-row">
+                            <label class="panel-header">1. Pegged to USDC 1 : 1</label>
+                        </v-expansion-panel-header>
+                        <v-expansion-panel-content>
+                            <ul class="mb-5">
+                                <li class="list-label">100% collaterized with assets immediately convertable into USDC</li>
+                                <li class="list-label">'Risk-first portfolio', i.e. assets are picked primarily to avoid losses on a daily basis (3-4 sigmas away from 0), no exposure to algorithmic stables</li>
+                                <li class="list-label">USD+ can replace USDC in pools and lending protocols</li>
+                            </ul>
+                        </v-expansion-panel-content>
+                    </v-expansion-panel>
+
+                    <v-expansion-panel class="how-panel panel-bordered" @click="openPanel(1)">
+                        <v-expansion-panel-header class="panel-header-row">
+                            <label class="panel-header">2. Yield generating</label>
+                        </v-expansion-panel-header>
+                        <v-expansion-panel-content>
+                            <ul class="mb-5">
+                                <li class="list-label">Collateral consists of  yield-bearing strategies, including lending and stable-to-stable pools</li>
+                                <li class="list-label">Portfolio allocation decentrally controlled (community proposals, veto power by token stakers/insurance providers)</li>
+                                <li class="list-label">Portfolio strategy executed decentrally via smart-contracts</li>
+                                <li class="list-label">Profit paid out daily in USD+ via rebase</li>
+                            </ul>
+                        </v-expansion-panel-content>
+                    </v-expansion-panel>
+
+                    <v-expansion-panel class="how-panel" disabled  @click="openPanel(2)">
+                        <v-expansion-panel-header class="panel-header-row">
+                            <label class="panel-header">3. Insurance (soon)</label>
+                        </v-expansion-panel-header>
+                        <v-expansion-panel-content>
+                        </v-expansion-panel-content>
+                    </v-expansion-panel>
+                </v-expansion-panels>
             </v-row>
         </v-col>
 
@@ -29,13 +64,18 @@ export default {
     },
 
     data: () => ({
-
+        openedPanels: [0],
     }),
 
     computed: {
     },
 
     methods: {
+        openPanel(i) {
+            if (this.openedPanels[0] !== i) {
+                this.openedPanels = [].push(i);
+            }
+        },
     }
 }
 </script>
@@ -60,6 +100,10 @@ export default {
 
 .title-row {
     margin-top: 231px !important;
+}
+
+.expansion-row {
+    width: 700px !important;
 }
 
 .title-text {
@@ -94,6 +138,44 @@ export default {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
+}
+
+.panel-header {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    color: #333333;
+}
+
+.v-expansion-panel::before {
+    box-shadow: none !important;
+}
+
+.theme--light.v-expansion-panels .v-expansion-panel:not(:first-child)::after {
+    border: none !important;
+}
+
+.panel-bordered {
+    border-bottom: 1px solid #DEE1E5 !important;
+}
+
+.panel-header-row {
+    height: 112px !important;
+}
+
+.list-label {
+    font-family: 'Roboto', sans-serif !important;
+    font-style: normal !important;
+    font-weight: 300 !important;
+    font-size: 20px !important;
+    line-height: 32px !important;
+    color: #333333 !important;
 }
 
 </style>
