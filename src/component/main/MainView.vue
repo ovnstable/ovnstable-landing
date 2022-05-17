@@ -10,8 +10,7 @@
         <RoadmapPage/>
         <TeamPage/>
         <QuestionsPage/>
-
-        <!-- TODO: add footer -->
+        <Footer/>
     </div>
 </template>
 
@@ -27,10 +26,12 @@ import TrustedPage from "@/component/pages/TrustedPage";
 import RoadmapPage from "@/component/pages/RoadmapPage";
 import TeamPage from "@/component/pages/TeamPage";
 import QuestionsPage from "@/component/pages/QuestionsPage";
+import Footer from "@/component/main/inc/Footer";
 export default {
     name: "MainView",
 
     components: {
+        Footer,
         QuestionsPage,
         TeamPage,
         RoadmapPage,
