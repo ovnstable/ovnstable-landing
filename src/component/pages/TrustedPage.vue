@@ -48,6 +48,22 @@
                                 height="40"
                                 @click="openLink('https://www.arrakis.finance/')"
                                 :src="require('@/assets/img/partners/arrakis.png')">
+
+                        <v-spacer></v-spacer>
+
+                        <img
+                                class="trusted-img"
+                                height="44"
+                                @click="openLink('https://tetu.io/')"
+                                :src="require('@/assets/img/partners/tetu.svg')">
+
+                        <v-spacer></v-spacer>
+
+                        <img
+                                class="trusted-img"
+                                height="44"
+                                @click="openLink('https://dystopialabs.com/')"
+                                :src="require('@/assets/img/partners/dystopia.svg')">
                     </v-row>
 
                     <v-row class="trusted-title-row mb-8" id="investors_part">
