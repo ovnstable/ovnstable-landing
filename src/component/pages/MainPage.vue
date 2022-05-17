@@ -76,11 +76,11 @@ export default {
 }
 
 .title-row {
-    margin-top: 347px !important;
+    margin-top: 437px !important;
 }
 
 .btn-row {
-    margin-bottom: 250px !important;
+    margin-bottom: 160px !important;
 }
 
 .title-text {

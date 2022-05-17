@@ -64,7 +64,7 @@
 
 <script>
 
-import UseCard from "@/component/use_cards/UseCard";
+import UseCard from "@/component/pages/use_cases/UseCard";
 export default {
     name: "QuestionsPage",
 

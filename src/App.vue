@@ -1,7 +1,7 @@
 <template>
     <v-app id="app">
 
-        <!-- TODO: add header -->
+        <Header/>
 
         <v-main>
             <div class="main-container">
@@ -14,10 +14,12 @@
 
 <script>
 
+import Header from "@/component/main/inc/Header";
 export default {
     name: 'App',
 
     components: {
+        Header
     },
 
     data: () => ({
