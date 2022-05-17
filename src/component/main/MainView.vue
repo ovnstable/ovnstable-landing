@@ -6,8 +6,7 @@
         <PerformancePage/>
         <PortfolioPage/>
         <SecurityPage/>
-
-        <!-- TODO: add trusted page -->
+        <TrustedPage/>
 
         <!-- TODO: add roadmap page -->
 
@@ -27,10 +26,12 @@ import UseCasesPage from "@/component/pages/UseCasesPage";
 import PerformancePage from "@/component/pages/PerformancePage";
 import PortfolioPage from "@/component/pages/PortfolioPage";
 import SecurityPage from "@/component/pages/SecurityPage";
+import TrustedPage from "@/component/pages/TrustedPage";
 export default {
     name: "MainView",
 
     components: {
+        TrustedPage,
         SecurityPage,
         PortfolioPage,
         PerformancePage,

@@ -38,11 +38,14 @@
                         <label class="find-title">Find us on</label>
                     </v-row>
                     <v-row>
-                        <img height="54" :src="require('@/assets/img/polygon_token_log.png')">
+                        <!-- TODO: make link -->
+                        <img height="54" :src="require('@/assets/img/partners/polygon_token_logo.png')">
                         <v-spacer></v-spacer>
-                        <img height="50" :src="require('@/assets/img/coinMarketCap.svg')">
+                        <!-- TODO: make link -->
+                        <img height="50" :src="require('@/assets/img/partners/coinMarketCap.svg')">
                         <v-spacer></v-spacer>
-                        <img height="60" :src="require('@/assets/img/coinGecko.svg')">
+                        <!-- TODO: make link -->
+                        <img height="60" :src="require('@/assets/img/partners/coinGecko.svg')">
                     </v-row>
                 </v-col>
 
@@ -52,7 +55,8 @@
                     </v-row>
                     <v-row>
                         <v-spacer></v-spacer>
-                        <img height="70" :src="require('@/assets/img/hacken.svg')">
+                        <!-- TODO: make link -->
+                        <img height="70" :src="require('@/assets/img/partners/hacken.svg')">
                         <v-spacer></v-spacer>
                     </v-row>
                 </v-col>
@@ -88,7 +92,7 @@ export default {
     methods: {
         openRiskManagementWhitePaper() {
             /* TODO: add whitepaper url */
-            window.open(``, '_blank').focus();
+            window.open(`https://docs.overnight.fi/`, '_blank').focus();
         },
     }
 }
