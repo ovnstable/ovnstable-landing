@@ -51,10 +51,10 @@
                     </v-row>
 
                     <v-row class="trusted-row" align="center">
-                        <!-- TODO: add link -->
                         <img
                                 class="trusted-img"
                                 height="50"
+                                @click="openLink('https://quickswap.exchange/')"
                                 :src="require('@/assets/img/partners/quickswap.png')">
 
                         <v-spacer></v-spacer>
@@ -67,18 +67,18 @@
 
                         <v-spacer></v-spacer>
 
-                        <!-- TODO: add link -->
                         <img
                                 class="trusted-img"
                                 height="50"
+                                @click="openLink('https://rubic.exchange/')"
                                 :src="require('@/assets/img/partners/rubic.svg')">
 
                         <v-spacer></v-spacer>
 
-                        <!-- TODO: add link -->
                         <img
                                 class="trusted-img"
                                 height="55"
+                                @click="openLink('https://sphere.finance/')"
                                 :src="require('@/assets/img/partners/sphere.svg')">
 
                         <v-spacer></v-spacer>
