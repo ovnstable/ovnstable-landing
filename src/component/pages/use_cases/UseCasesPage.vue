@@ -38,7 +38,7 @@
 
 <script>
 
-import UseCard from "@/component/pages/use_cases/UseCard";
+import UseCard from "@/component/pages/use_cases/component/UseCard";
 export default {
     name: "UseCasesPage",
 

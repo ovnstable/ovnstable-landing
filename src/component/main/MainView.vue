@@ -19,13 +19,13 @@
 
 import MainPage from "@/component/pages/MainPage";
 import HowPage from "@/component/pages/HowPage";
-import UseCasesPage from "@/component/pages/UseCasesPage";
+import UseCasesPage from "@/component/pages/use_cases/UseCasesPage";
 import PerformancePage from "@/component/pages/PerformancePage";
 import PortfolioPage from "@/component/pages/PortfolioPage";
 import SecurityPage from "@/component/pages/SecurityPage";
 import TrustedPage from "@/component/pages/TrustedPage";
 import RoadmapPage from "@/component/pages/RoadmapPage";
-import TeamPage from "@/component/pages/TeamPage";
+import TeamPage from "@/component/pages/team/TeamPage";
 import QuestionsPage from "@/component/pages/QuestionsPage";
 import Footer from "@/component/main/inc/Footer";
 export default {
