@@ -23,7 +23,7 @@ import UseCasesPage from "@/component/pages/use_cases/UseCasesPage";
 import PerformancePage from "@/component/pages/PerformancePage";
 import PortfolioPage from "@/component/pages/PortfolioPage";
 import SecurityPage from "@/component/pages/SecurityPage";
-import TrustedPage from "@/component/pages/TrustedPage";
+import TrustedPage from "@/component/pages/trusted/TrustedPage";
 import RoadmapPage from "@/component/pages/RoadmapPage";
 import TeamPage from "@/component/pages/team/TeamPage";
 import QuestionsPage from "@/component/pages/QuestionsPage";

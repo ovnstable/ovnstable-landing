@@ -191,7 +191,6 @@ export default {
 }
 
 .team-cards-row {
-    /*height: 1220px !important;*/
     margin-bottom: 180px !important;
 }
 

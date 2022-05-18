@@ -8,6 +8,7 @@
                 <label class="title-text mb-0">our <label class="accent-text">roadmap</label></label>
             </v-row>
 
+            <!-- TODO: change roadmap -->
             <v-row class="roadmap-row">
                 <img class="roadmap-img" :src="require('@/assets/img/roadmap.png')">
             </v-row>
