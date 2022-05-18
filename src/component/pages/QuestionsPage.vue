@@ -7,7 +7,7 @@
         <v-col class="text-col" cols="7">
             <v-row class="title-row mb-15" justify="center">
                 <div>
-                    <p class="title-text mb-0">ANY <label class="accent-text">QUESTIONS</label> ?</p>
+                    <p class="title-text mb-0">join <label class="accent-text">plus</label> community</p>
                 </div>
             </v-row>
             <v-row class="email-row" justify="center">
