@@ -10,8 +10,28 @@
                     <p class="title-text mb-0">join <label class="accent-text">plus</label> community</p>
                 </div>
             </v-row>
+            <v-row class="mb-4" justify="center">
+                <v-text-field
+                        class="text-input-field"
+                        v-model="email"
+                        background-color="white"
+                        flat
+                        placeholder="Write your Email here"
+                        outlined>
+                </v-text-field>
+            </v-row>
+            <v-row class="mb-9" justify="center">
+                <v-text-field
+                        class="text-input-field"
+                        v-model="text"
+                        background-color="white"
+                        flat
+                        placeholder="Write your question here"
+                        outlined>
+                </v-text-field>
+            </v-row>
             <v-row class="email-row" justify="center">
-                <!-- TODO: add email block -->
+                <v-btn class="send-btn" @click="sendEmailAction">Send</v-btn>
             </v-row>
         </v-col>
 
@@ -71,7 +91,8 @@ export default {
     },
 
     data: () => ({
-
+        email: null,
+        text: null,
     }),
 
     computed: {
@@ -81,6 +102,10 @@ export default {
         openLink(url) {
             window.open(url, '_blank').focus();
         },
+
+        sendEmailAction() {
+            /* TODO: add send email action */
+        },
     }
 }
 </script>
@@ -89,6 +114,7 @@ export default {
 
 .main-page-container {
     background-color: rgba(122, 122, 122, 0.22);
+    height: 100vh !important;
 }
 
 .social-img-row {
@@ -114,7 +140,6 @@ export default {
 
 .email-row {
     margin-bottom: 310px !important;
-    height: 270px !important;
 }
 
 .social-row {
@@ -157,6 +182,27 @@ export default {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
+}
+
+.text-input-field {
+    max-width: 526px !important;
+    border-radius: 0 !important;
+}
+
+.send-btn {
+    border-radius: 0 !important;
+    background: linear-gradient(91.26deg, #28A0F0 0%, rgba(6, 120, 196, 0.9917) 100%);
+    height: 50px !important;
+    width: 250px !important;
+    box-shadow: none !important;
+
+    font-family: 'Roboto', sans-serif !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 18px !important;
+    line-height: 20px !important;
+    font-feature-settings: 'liga' off !important;
+    color: #FFFFFF !important;
 }
 
 </style>

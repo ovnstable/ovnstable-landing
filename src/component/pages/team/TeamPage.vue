@@ -54,7 +54,7 @@
 
                 <TeamMemberCard
                         class="mr-4 mb-10"
-                        name="Nick S."
+                        name="Nikita S."
                         img-link="nick_s.png"
                         desc="Blockchain Engineer"
                         linked-in-link="https://www.linkedin.com/in/nikita-slezkin-859123215/" />
