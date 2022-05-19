@@ -105,6 +105,9 @@ export default {
 
         sendEmailAction() {
             /* TODO: add send email action */
+
+            this.email = null;
+            this.text = null;
         },
     }
 }
