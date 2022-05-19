@@ -14,7 +14,9 @@
                         name="Max E."
                         img-link="max_e.png"
                         desc="Founder & CEO"
-                        linked-in-link="https://www.linkedin.com/in/maxim-ermilov/" />
+                        linked-in-link="https://www.linkedin.com/in/maxim-ermilov/"
+                        twitter-link="https://twitter.com/maxim_ermilov"
+                        telegram-link="https://t.me/wmermus" />
 
                 <TeamMemberCard
                         class="mr-4 mb-10"
@@ -83,10 +85,10 @@
                         <label class="experienced-title">Team background</label>
                     </v-row>
                     <v-row class="experienced-row" align="center">
-                        <!-- TODO: add links -->
                         <img
                                 class="exp-img"
                                 height="40"
+                                @click="openLink('https://www.google.com/')"
                                 :src="require('@/assets/img/companies/google.png')">
 
                         <v-spacer></v-spacer>
@@ -94,6 +96,7 @@
                         <img
                                 class="exp-img"
                                 height="40"
+                                @click="openLink('https://www.facebook.com')"
                                 :src="require('@/assets/img/companies/facebook.png')">
 
                         <v-spacer></v-spacer>
@@ -101,6 +104,7 @@
                         <img
                                 class="exp-img"
                                 height="50"
+                                @click="openLink('https://www.kellogg.northwestern.edu')"
                                 :src="require('@/assets/img/companies/kellogg.png')">
 
                         <v-spacer></v-spacer>
@@ -108,6 +112,7 @@
                         <img
                                 class="exp-img"
                                 height="60"
+                                @click="openLink('https://www.stanford.edu')"
                                 :src="require('@/assets/img/companies/stanford.png')">
 
                         <v-spacer></v-spacer>
@@ -115,6 +120,7 @@
                         <img
                                 class="exp-img"
                                 height="70"
+                                @click="openLink('https://www.insead.edu')"
                                 :src="require('@/assets/img/companies/insead.png')">
 
                         <v-spacer></v-spacer>
@@ -122,6 +128,7 @@
                         <img
                                 class="exp-img"
                                 height="40"
+                                @click="openLink('https://www.bcg.com/')"
                                 :src="require('@/assets/img/companies/bsg.png')">
 
                         <v-spacer></v-spacer>
@@ -129,6 +136,7 @@
                         <img
                                 class="exp-img"
                                 height="46"
+                                @click="openLink('https://www.morganstanley.com/')"
                                 :src="require('@/assets/img/companies/morgan.png')">
 
                         <v-spacer></v-spacer>
@@ -136,6 +144,7 @@
                         <img
                                 class="exp-img"
                                 height="36"
+                                @click="openLink('https://www.jpmorgan.com/global/')"
                                 :src="require('@/assets/img/companies/jp.svg')">
                     </v-row>
                 </v-col>

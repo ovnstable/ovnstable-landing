@@ -8,9 +8,8 @@
                 <label class="title-text mb-0">our <label class="accent-text">roadmap</label></label>
             </v-row>
 
-            <!-- TODO: change roadmap -->
             <v-row class="roadmap-row">
-                <img class="roadmap-img" :src="require('@/assets/img/roadmap.png')">
+                <img class="roadmap-img" :src="require('@/assets/img/roadmap.svg')">
             </v-row>
         </v-col>
     </v-row>
@@ -90,7 +89,7 @@ export default {
 
 .roadmap-bg-img {
     position: absolute;
-    z-index: 0;
+    z-index: 0 !important;
     margin-top: -180px !important;
     clip: rect(0px,2000px,1200px,0px);
 }

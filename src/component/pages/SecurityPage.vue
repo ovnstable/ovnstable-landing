@@ -2,7 +2,7 @@
     <v-row class="main-page-container">
         <v-col class="text-col">
             <v-row class="title-row" justify="center">
-                <label class="title-text mb-0"><label class="accent-text">Security</label> at it’s core</label>
+                <label class="title-text mb-0"><label class="accent-text">Security</label> at its core</label>
             </v-row>
 
             <v-row class="cards-row">
@@ -19,7 +19,7 @@
                         <label class="title-label mb-8">Rigorous Risk-management and monitoring</label>
                     </v-row>
                     <v-row justify="center">
-                        <label class="desc-label">Finance risks and smart contract risk management. World class risk management team and process built in line with “Three lines of defence approach” mandated for blue-chip financial exexutions </label>
+                        <label class="desc-label">Finance risks and smart contract risk management. World class risk management team and process built in line with “Three lines of defence approach” mandated for blue-chip financial institutions</label>
                     </v-row>
                 </v-col>
                 <v-col>

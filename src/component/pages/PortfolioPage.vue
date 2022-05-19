@@ -9,8 +9,7 @@
 
             <v-row class="sub-title-row mb-16">
                 <p class="sub-title-text">
-                    The portfolio deployed by Overnight is constructed to minimize risk and maximize liquidity. 100% of
-                    the assets is collatarized by major stablecoins: USDC, USDT.
+                    The portfolio deployed by Overnight is constructed to minimize risk and maximize liquidity. 100% of the assets consist of yield-bearing strategies is exposure by major stablecoins.
                 </p>
             </v-row>
 
@@ -32,7 +31,7 @@
 
             <v-row class="mb-15">
                 <ul>
-                    <li class="list-label">Deposit solid stables to lending protocols, like AAVE</li>
+                    <li class="list-label">Deposit stablecoins to lending protocols, like AAVE</li>
                 </ul>
             </v-row>
 
@@ -40,9 +39,19 @@
                 <label class="list-title">Stable-to-stable pools</label>
             </v-row>
 
+            <v-row class="mb-15">
+                <ul>
+                    <li class="list-label">Deposit stablecoins into liquidity pools with no impermanent loss</li>
+                </ul>
+            </v-row>
+
+            <v-row class="mb-4">
+                <label class="list-title">Hedged strategies</label>
+            </v-row>
+
             <v-row class="list-row">
                 <ul>
-                    <li class="list-label">Deposit reliable stablecoins into liquidity pools with no impermanent loss</li>
+                    <li class="list-label">coming soon</li>
                 </ul>
             </v-row>
 

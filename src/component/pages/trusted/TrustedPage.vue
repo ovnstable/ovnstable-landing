@@ -116,7 +116,7 @@
                                             companyImg="hack_vc.svg"
                                             desc="Managing Partner at Hack VC"
                                             tweet="Overnight team are building a financial primitive that should have very broad applications from treasury management to liquidity mining. We welcome Overnight’s conservative approach to risk, the design that is built to be both decentralized and compliant with future regulation and are excited to support their efforts."
-                                            tweetLink="https://hack.vc/" />
+                                            tweetLink="https://twitter.com/hack_vc" />
                                 </v-slide-item>
 
                                 <v-slide-item>
@@ -127,7 +127,7 @@
                                             companyImg="fj_labs.png"
                                             desc="FJ Labs"
                                             tweet="Overnight have struck us with the depth of understanding DeFi’s unique opportunities and problems as well as the ability to articulate its vision in a very compelling story. Stablecoin economics can be very strong provided network effects can be realized and we look to support Overnight with our expertise in these matters."
-                                            tweetLink="https://fjlabs.com/" />
+                                            tweetLink="https://twitter.com/fjlabs" />
                                 </v-slide-item>
 
                                 <v-slide-item>
@@ -147,6 +147,7 @@
                                             img-link="brian.png"
                                             companyImg="coinlist.svg"
                                             desc="Co-founder of Coinlist"
+                                            tweet="USD+ is a product that is intuitively understood by a wide audience, including advanced DeFi investors and people new to crypto. Its focus on low risk and high liquidity subsegment of DeFi should help bring mainstream conservative investors into DeFi"
                                             tweetLink="https://twitter.com/tubergen?s=20" />
                                 </v-slide-item>
 

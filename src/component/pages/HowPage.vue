@@ -17,8 +17,8 @@
                         </v-expansion-panel-header>
                         <v-expansion-panel-content>
                             <ul class="mb-5">
-                                <li class="list-label">100% collaterized with assets immediately convertable into USDC</li>
-                                <li class="list-label">'Risk-first portfolio', i.e. assets are picked primarily to avoid losses on a daily basis (3-4 sigmas away from 0), no exposure to algorithmic stables</li>
+                                <li class="list-label mb-8">100% collateralized with assets immediately convertable into USDC</li>
+                                <li class="list-label mb-8">'Risk-first portfolio', i.e. assets are picked primarily to avoid losses on a daily basis (3-4 sigmas away from 0), no exposure to algorithmic stables</li>
                                 <li class="list-label">USD+ can replace USDC in pools and lending protocols</li>
                             </ul>
                         </v-expansion-panel-content>
@@ -30,9 +30,9 @@
                         </v-expansion-panel-header>
                         <v-expansion-panel-content>
                             <ul class="mb-5">
-                                <li class="list-label">Collateral consists of  yield-bearing strategies, including lending and stable-to-stable pools</li>
-                                <li class="list-label">Portfolio allocation decentrally controlled (community proposals, veto power by token stakers/insurance providers)</li>
-                                <li class="list-label">Portfolio strategy executed decentrally via smart-contracts</li>
+                                <li class="list-label mb-8">Collateral consists of  yield-bearing strategies, including lending and stable-to-stable pools</li>
+                                <li class="list-label mb-8">Portfolio allocation decentrally controlled (community proposals, veto power by token stakers/insurance providers)</li>
+                                <li class="list-label mb-8">Portfolio strategy executed decentrally via smart-contracts</li>
                                 <li class="list-label">Profit paid out daily in USD+ via rebase</li>
                             </ul>
                         </v-expansion-panel-content>
@@ -50,7 +50,7 @@
         </v-col>
 
         <v-col class="img-col">
-            <img class="how-img" height="650" :src="require('@/assets/img/how_to_use.png')">
+            <img class="how-img" height="650" :src="require('@/assets/img/how_to_use.svg')">
         </v-col>
     </v-row>
 </template>

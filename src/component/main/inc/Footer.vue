@@ -41,22 +41,6 @@
                     </v-row>
                 </v-col>
 
-                <v-col class="about-col">
-                    <v-row class="mb-5">
-                        <label class="col-title">About</label>
-                    </v-row>
-
-                    <v-row class="mb-3">
-                        <label class="col-title-item" @click="openHook('investors_part')">Investors</label>
-                    </v-row>
-                    <v-row class="mb-3">
-                        <label class="col-title-item" @click="openHook('audit_part')">Audits & Partners</label>
-                    </v-row>
-                    <v-row class="mb-3">
-                        <label class="col-title-item" @click="openLink('https://blog.overnight.fi/')">Blog</label>
-                    </v-row>
-                </v-col>
-
                 <v-col class="dev-col">
                     <v-row class="mb-5">
                         <label class="col-title">Developers</label>
@@ -119,8 +103,8 @@ export default {
     margin-right: 158px !important;
 }
 
-.community-col, .about-col {
-    margin-right: 100px !important;
+.community-col {
+    margin-right: 88px !important;
 }
 
 .content-row {
