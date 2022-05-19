@@ -96,6 +96,9 @@ export default {
     }),
 
     computed: {
+        isMobile() {
+            return window.innerWidth < 800;
+        },
     },
 
     methods: {
@@ -114,6 +117,13 @@ export default {
 </script>
 
 <style scoped>
+
+/* mobile */
+@media only screen and (max-width: 1400px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
 
 .main-page-container {
     background-color: rgba(122, 122, 122, 0.22);

@@ -1,12 +1,12 @@
 <template>
     <v-row class="main-page-container">
-        <v-col class="text-col">
+        <v-col class="text-col" cols="6">
             <v-row class="title-row mb-15">
                 <div>
                     <p class="title-text mb-0">How does <label class="accent-text">USD+</label> work?</p>
                 </div>
             </v-row>
-            <v-row class="sub-title-row mb-12">
+            <v-row class="sub-title-row mb-2">
                 <p class="sub-title-text">USD+ includes 3 components:</p>
             </v-row>
             <v-row class="expansion-row">
@@ -49,8 +49,10 @@
             </v-row>
         </v-col>
 
-        <v-col class="img-col">
-            <img class="how-img" height="650" :src="require('@/assets/img/how_to_use.svg')">
+        <v-col class="img-col" cols="5">
+            <v-row justify="center">
+                <img class="how-img" :src="require('@/assets/img/how_to_use.svg')">
+            </v-row>
         </v-col>
     </v-row>
 </template>
@@ -68,6 +70,9 @@ export default {
     }),
 
     computed: {
+        isMobile() {
+            return window.innerWidth < 800;
+        },
     },
 
     methods: {
@@ -82,8 +87,93 @@ export default {
 
 <style scoped>
 
+/* mobile */
+@media only screen and (max-width: 1400px) {
+    .title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .accent-text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 38px;
+    }
+
+    .sub-title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .panel-header {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.02em;
+    }
+
+    .list-label {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 60px;
+        line-height: 80px;
+    }
+
+    .accent-text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 70px;
+        line-height: 80px;
+    }
+
+    .sub-title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .panel-header {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0.04em;
+    }
+
+    .list-label {
+        font-style: normal !important;
+        font-weight: 300 !important;
+        font-size: 20px !important;
+        line-height: 32px !important;
+    }
+}
+
 .main-page-container {
     background: #FFFFFF !important;
+}
+
+.expansion-row {
+    margin-bottom: 20% !important;
+}
+
+.how-panel {
+    margin-left: -36px !important;
 }
 
 .text-col {
@@ -94,45 +184,28 @@ export default {
 }
 
 .how-img {
-    margin-top: 306px !important;
-    margin-bottom: 275px !important;
+    margin-top: 40% !important;
+    width: 35vw !important;
 }
 
 .title-row {
     margin-top: 231px !important;
 }
 
-.expansion-row {
-    width: 700px !important;
-}
-
 .title-text {
     font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 60px;
-    line-height: 80px;
     text-transform: uppercase;
     color: #333333;
 }
 
 .sub-title-text {
     font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 32px;
     color: #333333;
 }
 
 .accent-text {
     font-family: 'Cormorant', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 70px;
-    line-height: 80px;
     text-transform: uppercase;
-
     background: linear-gradient(91.26deg, #28A0F0 0%, rgba(6, 120, 196, 0.9917) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -142,14 +215,8 @@ export default {
 
 .panel-header {
     font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: 0.04em;
     text-transform: uppercase;
     font-feature-settings: 'pnum' on, 'lnum' on;
-
     color: #333333;
 }
 
@@ -171,10 +238,6 @@ export default {
 
 .list-label {
     font-family: 'Roboto', sans-serif !important;
-    font-style: normal !important;
-    font-weight: 300 !important;
-    font-size: 20px !important;
-    line-height: 32px !important;
     color: #333333 !important;
 }
 

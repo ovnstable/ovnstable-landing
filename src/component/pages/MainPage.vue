@@ -4,7 +4,7 @@
             <source :src='require("@/assets/background/video/main_video_bg.mp4")' type='video/mp4'>
         </video>
 
-        <v-col class="text-col" cols="7">
+        <v-col class="text-col" :cols="isMobile ? 11 : 7">
             <v-row class="title-row mb-10">
                 <div>
                     <p class="title-text mb-0"><label class="accent-text">USD+</label> Is</p>
@@ -17,7 +17,7 @@
                 <p class="sub-title-text mb-0">Simply replace USDC with USD+ stablecoin and start getting passive yield where it didn’t exist before.</p>
             </v-row>
             <v-row class="btn-row">
-                <v-btn class="launch-dapp-btn" @click="launchDapp">Launch DAPP</v-btn>
+                <v-btn v-if="!isMobile" class="launch-dapp-btn" @click="launchDapp">Launch DAPP</v-btn>
             </v-row>
         </v-col>
 
@@ -40,6 +40,9 @@ export default {
     }),
 
     computed: {
+        isMobile() {
+            return window.innerWidth < 800;
+        },
     },
 
     methods: {
@@ -51,6 +54,53 @@ export default {
 </script>
 
 <style scoped>
+
+/* mobile */
+@media only screen and (max-width: 1400px) {
+    .title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .accent-text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 38px;
+    }
+
+    .sub-title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 60px;
+        line-height: 80px;
+    }
+
+    .accent-text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 70px;
+        line-height: 80px;
+    }
+
+    .sub-title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 32px;
+    }
+}
 
 .main-page-container {
     /*background: linear-gradient(100.74deg, rgba(2, 24, 68, 0.9) 0.89%, rgba(16, 21, 39, 0.9) 98.31%);*/
@@ -70,7 +120,7 @@ export default {
 }
 
 .title-row {
-    margin-top: 437px !important;
+    margin-top: 40% !important;
 }
 
 .btn-row {
@@ -79,22 +129,13 @@ export default {
 
 .title-text {
     font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 60px;
-    line-height: 80px;
     text-transform: uppercase;
     color: #FFFFFF;
 }
 
 .accent-text {
     font-family: 'Cormorant', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 70px;
-    line-height: 80px;
     text-transform: uppercase;
-
     background: linear-gradient(91.26deg, #28A0F0 0%, rgba(6, 120, 196, 0.9917) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -104,10 +145,6 @@ export default {
 
 .sub-title-text {
     font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 32px;
     color: #FFFFFF;
 }
 

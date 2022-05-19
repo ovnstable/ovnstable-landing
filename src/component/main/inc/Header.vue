@@ -3,23 +3,27 @@
         <v-row class="header-row">
             <v-col cols="12" class="header-col">
                 <v-row class="content-row" align="center">
-                    <v-col cols="3">
+                    <v-col cols="2">
                         <img class="logo-img" height="40" :src="require('@/assets/img/logo_full.svg')" @click="openLink('https://overnight.fi/')">
                     </v-col>
 
                     <v-col cols="5" class="ml-0">
-                        <label class="header-label mr-8 ml-10" @click="openHook('main_page')">about</label>
-                        <label class="header-label mr-8" @click="openHook('performance_page')">performance</label>
-                        <label class="header-label mr-8" @click="openHook('portfolio_page')">portfolio</label>
-                        <label class="header-label" @click="openHook('team_page')">team</label>
+                        <v-row justify="end">
+                            <label class="header-label mr-8 ml-10" @click="openHook('main_page')">about</label>
+                            <label class="header-label mr-8" @click="openHook('performance_page')">performance</label>
+                            <label class="header-label mr-8" @click="openHook('portfolio_page')">portfolio</label>
+                            <label class="header-label" @click="openHook('team_page')">team</label>
+                        </v-row>
                     </v-col>
 
-                    <v-col cols="3">
-                        <img class="logo-img mr-4" height="48" :src="require('@/assets/img/social/twitter_btn.svg')" @click="openLink('https://twitter.com/overnight_fi')">
-                        <img class="logo-img mr-4" height="48" :src="require('@/assets/img/social/discord_btn.svg')" @click="openLink('https://discord.com/invite/7dEceNJqPq')">
-                        <img class="logo-img mr-10" height="48" :src="require('@/assets/img/social/tg_btn.svg')" @click="openLink('https://t.me/overnight_fi')">
+                    <v-col cols="4">
+                        <v-row justify="center">
+                            <img class="logo-img mr-4" height="48" :src="require('@/assets/img/social/twitter_btn.svg')" @click="openLink('https://twitter.com/overnight_fi')">
+                            <img class="logo-img mr-4" height="48" :src="require('@/assets/img/social/discord_btn.svg')" @click="openLink('https://discord.com/invite/7dEceNJqPq')">
+                            <img class="logo-img mr-10" height="48" :src="require('@/assets/img/social/tg_btn.svg')" @click="openLink('https://t.me/overnight_fi')">
 
-                        <v-btn class="dapp-btn" @click="launchDapp">DAPP</v-btn>
+                            <v-btn class="dapp-btn" @click="launchDapp">DAPP</v-btn>
+                        </v-row>
                     </v-col>
                 </v-row>
             </v-col>
@@ -40,6 +44,9 @@ export default {
     }),
 
     computed: {
+        isMobile() {
+            return window.innerWidth < 800;
+        },
     },
 
     methods: {
@@ -121,8 +128,6 @@ export default {
     line-height: 20px !important;
     font-feature-settings: 'liga' off !important;
     color: #FFFFFF !important;
-
-    margin-top: -40px !important;
 }
 
 </style>

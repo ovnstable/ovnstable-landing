@@ -99,10 +99,12 @@ export default {
     },
 
     data: () => ({
-
     }),
 
     computed: {
+        isMobile() {
+            return window.innerWidth < 800;
+        },
     },
 
     methods: {
@@ -114,6 +116,13 @@ export default {
 </script>
 
 <style scoped>
+
+/* mobile */
+@media only screen and (max-width: 1400px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
 
 .main-page-container {
     background: #F5F5F5;

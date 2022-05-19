@@ -73,6 +73,9 @@ export default {
     }),
 
     computed: {
+        isMobile() {
+            return window.innerWidth < 800;
+        },
     },
 
     methods: {
@@ -89,6 +92,13 @@ export default {
 </script>
 
 <style scoped>
+
+/* mobile */
+@media only screen and (max-width: 1400px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
 
 .main-footer-container {
     background: linear-gradient(122.1deg, #011845 0%, #15141D 104.83%);

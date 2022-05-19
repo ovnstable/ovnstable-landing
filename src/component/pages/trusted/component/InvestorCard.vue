@@ -73,7 +73,9 @@ export default {
     },
 
     computed: {
-        ...mapGetters([]),
+        isMobile() {
+            return window.innerWidth < 800;
+        },
     },
 
     data: () => ({
@@ -90,6 +92,13 @@ export default {
 </script>
 
 <style scoped>
+
+/* mobile */
+@media only screen and (max-width: 1400px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
 
 .card-container {
     background: #F5F5F5 !important;

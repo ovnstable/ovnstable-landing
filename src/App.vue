@@ -1,7 +1,8 @@
 <template>
     <v-app id="app">
 
-        <Header/>
+        <!-- TODO: add mobile header -->
+<!--        <Header/>-->
 
         <v-main>
             <div class="main-container">
@@ -34,7 +35,14 @@ export default {
 
 <style>
 
-#app {
+/* mobile */
+@media only screen and (max-width: 1400px) {
+    #app {
+        overflow-x:hidden;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
 }
 
 </style>
