@@ -66,7 +66,9 @@
         </v-col>
 
         <v-col class="widget-col">
-            <!-- TODO: add portfolio cards widget -->
+            <v-row justify="center">
+                <ovn-portfoliocards></ovn-portfoliocards>
+            </v-row>
         </v-col>
     </v-row>
 </template>
@@ -94,6 +96,10 @@ export default {
 
 .main-page-container {
     background: #FFFFFF !important;
+}
+
+.widget-col {
+    margin-top: 180px !important;
 }
 
 .text-col {
