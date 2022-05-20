@@ -6,7 +6,7 @@
 
         <v-col class="text-col">
             <v-row class="title-row mb-10">
-                <p class="title-text mb-0"><label class="accent-text">USD+</label> use cases</p>
+                <p class="title-text mb-0"><label class="accent-text">USD</label><label class="title-text-plus">+</label> use cases</p>
             </v-row>
 
             <v-row class="use-cards-row">

@@ -7,7 +7,7 @@
         <v-col class="text-col" cols="6">
             <v-row class="title-row mb-10">
                 <div>
-                    <p class="title-text mb-0"><label class="accent-text">USD+</label> Is</p>
+                    <p class="title-text mb-0"><label class="accent-text">USD</label><label class="title-text-plus">+</label> Is</p>
                     <p class="title-text mb-0">USDC that pays you yield</p>
                     <p class="title-text mb-0">daily via rebase</p>
                 </div>

@@ -3,7 +3,7 @@
         <v-col class="text-col">
             <v-row class="title-row mb-15">
                 <div>
-                    <p class="title-text mb-0">How does <label class="accent-text">USD+</label> work?</p>
+                    <p class="title-text mb-0">How does <label class="accent-text">USD</label><label class="title-text-plus">+</label> work?</p>
                 </div>
             </v-row>
             <v-row class="sub-title-row mb-12">
