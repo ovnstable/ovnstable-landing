@@ -100,17 +100,6 @@
                                 <v-slide-item>
                                     <InvestorCard
                                             class="mr-4"
-                                            name="Sandeep Naiwal"
-                                            img-link="sandeep.png"
-                                            companyImg="polygon_pos.png"
-                                            desc="Co-founder Polygon POS chain"
-                                            tweet="Overnight and its stablecoin USD+ showcase how Polygon’s technology enables truly innovative products that take DeFI to the new level. USD+ is a stablecoin focused on minimizing risk while producing solid yield, it is ideal to onboard fiat investors into DeFI, as a treasury asset for crypto projects and a means to improve capital efficiency of sophisticated liquidity mining strategies get around by train, bus, car, ferry, cruise ship, bicycle, skis, or sleigh. Relax and enjoy yourself!"
-                                            tweetLink="https://twitter.com/sandeepnailwal?s=20" />
-                                </v-slide-item>
-
-                                <v-slide-item>
-                                    <InvestorCard
-                                            class="mr-4"
                                             name="Alex Pack"
                                             img-link="alex_pack.png"
                                             companyImg="hack_vc.svg"
@@ -133,22 +122,33 @@
                                 <v-slide-item>
                                     <InvestorCard
                                             class="mr-4"
-                                            name="Paul Holland"
-                                            img-link="paul_holland.png"
-                                            companyImg="paulrholland.svg"
-                                            tweet="Overnight are working on an opportunity that already exceeds 100 Bln USD and can soon exceed 1 Trl USD. USD+ is a unique product both from fin and tech perspectives, with a team that had proven itself many times over in the past."
-                                            tweetLink="https://twitter.com/paulrholland" />
-                                </v-slide-item>
-
-                                <v-slide-item>
-                                    <InvestorCard
-                                            class="mr-4"
                                             name="Brian Tubergen"
                                             img-link="brian.png"
                                             companyImg="coinlist.svg"
                                             desc="Co-founder of Coinlist"
                                             tweet="USD+ is a product that is intuitively understood by a wide audience, including advanced DeFi investors and people new to crypto. Its focus on low risk and high liquidity subsegment of DeFi should help bring mainstream conservative investors into DeFi"
                                             tweetLink="https://twitter.com/tubergen?s=20" />
+                                </v-slide-item>
+
+                                <v-slide-item>
+                                    <InvestorCard
+                                            class="mr-4"
+                                            name="Sandeep Naiwal"
+                                            img-link="sandeep.png"
+                                            companyImg="polygon_pos.png"
+                                            desc="Co-founder Polygon POS chain"
+                                            tweet="Overnight and its stablecoin USD+ showcase how Polygon’s technology enables truly innovative products that take DeFI to the new level. USD+ is a stablecoin focused on minimizing risk while producing solid yield, it is ideal to onboard fiat investors into DeFI, as a treasury asset for crypto projects and a means to improve capital efficiency of sophisticated liquidity mining strategies get around by train, bus, car, ferry, cruise ship, bicycle, skis, or sleigh. Relax and enjoy yourself!"
+                                            tweetLink="https://twitter.com/sandeepnailwal?s=20" />
+                                </v-slide-item>
+
+                                <v-slide-item>
+                                    <InvestorCard
+                                            class="mr-4"
+                                            name="Paul Holland"
+                                            img-link="paul_holland.png"
+                                            companyImg="paulrholland.svg"
+                                            tweet="Overnight are working on an opportunity that already exceeds 100 Bln USD and can soon exceed 1 Trl USD. USD+ is a unique product both from fin and tech perspectives, with a team that had proven itself many times over in the past."
+                                            tweetLink="https://twitter.com/paulrholland" />
                                 </v-slide-item>
 
                                 <v-slide-item>

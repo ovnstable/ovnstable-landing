@@ -25,7 +25,11 @@ export default {
     data: () => ({
     }),
 
-    methods: {},
+    mounted() {
+    },
+
+    methods: {
+    },
 
     computed: {
     },
