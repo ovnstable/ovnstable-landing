@@ -8,7 +8,7 @@ dockerComposePath="/root/common/docker-compose.yaml"
 tag=1
 
 rm -rf dist/
-npm run build
+npm run build-production
 
 docker build . -t cr.yandex/crpg11k469bhc8lch9gm/overnight/landing:$tag
 

@@ -186,7 +186,7 @@ export default {
 
 .text-col {
     margin-left: 7% !important;
-    margin-right: 6% !important;
+    margin-right: 5% !important;
 }
 
 .title-row {
