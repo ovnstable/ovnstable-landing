@@ -78,6 +78,12 @@ export default {
         },
     },
 
+    created() {
+    },
+
+    mounted() {
+    },
+
     methods: {
         openLink(url) {
             window.open(url, '_blank').focus();

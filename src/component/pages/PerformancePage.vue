@@ -10,7 +10,16 @@
             </v-row>
 
             <v-row class="widgets-row">
-                <!-- TODO: add apy and dist widgets -->
+                <v-col>
+                    <v-row justify="end">
+                        <ovn-apyrate></ovn-apyrate>
+                    </v-row>
+                </v-col>
+                <v-col>
+                    <v-row>
+                        <ovn-distrate></ovn-distrate>
+                    </v-row>
+                </v-col>
             </v-row>
         </v-col>
     </v-row>
@@ -54,8 +63,6 @@ export default {
 }
 
 .text-col {
-    margin-left: 7% !important;
-    margin-right: 7% !important;
 }
 
 .title-row {

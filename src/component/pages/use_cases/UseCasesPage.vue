@@ -6,7 +6,7 @@
 
         <v-col class="text-col">
             <v-row class="title-row mb-10">
-                <p class="title-text mb-0"><label class="accent-text">USD+</label> use cases</p>
+                <p class="title-text mb-0"><label class="accent-text">USD</label><label class="title-text-plus">+</label> use cases</p>
             </v-row>
 
             <v-row class="use-cards-row">
@@ -21,8 +21,8 @@
                 <UseCard
                         title="Liquidity Pools"
                         desc="Provide liquidity into USD+ pools, and get USD+ yield on top of LP fees and rewards"
-                        btnLabel="Deposit"
-                        link="https://app.overnight.fi/farm"/>
+                        btnLabel="Coming Soon"
+                        link=""/>
 
                 <v-spacer></v-spacer>
 

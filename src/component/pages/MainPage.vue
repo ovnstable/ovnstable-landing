@@ -4,10 +4,10 @@
             <source :src='require("@/assets/background/video/main_video_bg.mp4")' type='video/mp4'>
         </video>
 
-        <v-col class="text-col" :cols="isMobile ? 11 : 7">
+        <v-col class="text-col" cols="6">
             <v-row class="title-row mb-10">
                 <div>
-                    <p class="title-text mb-0"><label class="accent-text">USD+</label> Is</p>
+                    <p class="title-text mb-0"><label class="accent-text">USD</label><label class="title-text-plus">+</label> Is</p>
                     <p class="title-text mb-0">USDC that pays you yield</p>
                     <p class="title-text mb-0">daily via rebase</p>
                 </div>
@@ -21,8 +21,10 @@
             </v-row>
         </v-col>
 
-        <v-col class="maincards-col" cols="5">
-            <!-- TODO: add maincards widget -->
+        <v-col class="maincards-col">
+            <v-row justify="center">
+                <ovn-maincards></ovn-maincards>
+            </v-row>
         </v-col>
     </v-row>
 </template>
@@ -112,7 +114,7 @@ export default {
 }
 
 .maincards-col {
-    margin-right: 7% !important;
+    margin-top: 345px !important;
 }
 
 .text-col, .maincards-col {
