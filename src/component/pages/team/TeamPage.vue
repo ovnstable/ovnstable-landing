@@ -92,12 +92,12 @@
                             :src="require('@/assets/img/companies/facebook.png')">
                     <img
                             class="exp-img ma-2"
-                            @click="openLink('https://www.kellogg.northwestern.edu')"
-                            :src="require('@/assets/img/companies/kellogg.png')">
-                    <img
-                            class="exp-img ma-2"
                             @click="openLink('https://www.stanford.edu')"
                             :src="require('@/assets/img/companies/stanford.png')">
+                    <img
+                            class="exp-img ma-2"
+                            @click="openLink('https://www.kellogg.northwestern.edu')"
+                            :src="require('@/assets/img/companies/kellogg.png')">
                     <img
                             class="exp-img ma-2"
                             @click="openLink('https://www.insead.edu')"
