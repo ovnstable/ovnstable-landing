@@ -5,7 +5,7 @@
                 <img height="28" class="avatar-img ml-10" :src="require('@/assets/img/investors/company/' + companyImg)">
             </v-row>
 
-            <v-row class="mb-4" :class="tweet ? '' : 'no-tweet'">
+            <v-row class="mb-4">
                 <v-col cols="4">
                     <img height="68" class="avatar-img ml-7 mr-4" :src="require('@/assets/img/investors/avatar/' + (imgLink ? imgLink : 'anonym.svg'))">
                 </v-col>
@@ -185,10 +185,6 @@ export default {
 .icon-row {
     position: absolute !important;
     bottom: 0;
-}
-
-.no-tweet {
-    margin-top: 50%;
 }
 
 </style>
