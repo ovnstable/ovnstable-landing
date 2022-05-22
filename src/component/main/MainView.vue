@@ -11,7 +11,7 @@
         <TeamPage id="team_page"/>
         <QuestionsPage id="questions_page"/>
 
-<!--        <Footer/>-->
+        <Footer/>
     </div>
 </template>
 
