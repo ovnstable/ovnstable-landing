@@ -7,19 +7,21 @@
 
         <v-row class="container-row">
             <v-col cols="12">
-                <v-row class="title-row mb-15" justify="center">
+                <v-row class="mb-15" justify="center">
                     <label class="title-text mb-0"><label class="accent-text">USD</label><label class="title-text-plus">+</label> Performance</label>
                 </v-row>
 
                 <v-row class="d-flex " :class="isMobile ? 'flex-column' : 'flex-row'">
-                    <v-col class="text-col overflow-hidden" :cols="isMobile ? 12 : 6">
+                    <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'end'">
+                            <!-- TODO: make apyrate widget mobile -->
                             <ovn-apyrate></ovn-apyrate>
                         </v-row>
                     </v-col>
 
-                    <v-col class="maincards-col overflow-hidden" :cols="isMobile ? 12 : 6">
+                    <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'start'">
+                            <!-- TODO: make distrate widget mobile -->
                             <ovn-distrate></ovn-distrate>
                         </v-row>
                     </v-col>
@@ -111,7 +113,7 @@ export default {
 
 .container-row {
     margin-left: 5% !important;
-    margin-top: 5% !important;
+    margin-top: 10% !important;
     margin-bottom: 10% !important;
 }
 
