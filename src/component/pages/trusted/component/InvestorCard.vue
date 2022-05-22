@@ -95,18 +95,65 @@ export default {
 
 /* mobile */
 @media only screen and (max-width: 1400px) {
+    .name-label {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .desc-label {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .tweet-label {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .card-container {
+        width: 350px !important;
+        height: 560px !important;
+    }
 }
 
 @media only screen and (min-width: 1400px) {
+    .name-label {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 38px;
+    }
+
+    .desc-label {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .tweet-label {
+        font-style: normal !important;
+        font-weight: 300 !important;
+        font-size: 16px !important;
+        line-height: 24px !important;
+    }
+
+    .card-container {
+        width: 390px !important;
+        height: 610px !important;
+    }
 }
 
 .card-container {
     background: #F5F5F5 !important;
     border-radius: 0 !important;
     box-shadow: none !important;
-
-    width: 390px !important;
-    height: 613px !important;
 }
 
 .avatar-img {
@@ -119,30 +166,18 @@ export default {
 
 .name-label {
     font-family: 'Cormorant', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 34px;
-    line-height: 38px;
     font-feature-settings: 'pnum' on, 'lnum' on;
     color: #000000;
 }
 
 .desc-label {
     font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 24px;
     font-feature-settings: 'pnum' on, 'lnum' on;
     color: #9DA4B0;
 }
 
 .tweet-label {
     font-family: 'Roboto', sans-serif !important;
-    font-style: normal !important;
-    font-weight: 300 !important;
-    font-size: 16px !important;
-    line-height: 24px !important;
     font-feature-settings: 'pnum' on, 'lnum' on !important;
     color: #333333;
 }

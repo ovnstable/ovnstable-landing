@@ -1,172 +1,142 @@
 <template>
-    <v-row class="main-page-container">
-        <v-col class="text-col">
-            <v-row class="title-row" justify="start">
-                <label class="title-text mb-0">we are <label class="accent-text">trusted</label></label>
-            </v-row>
+    <div class="page-container overflow-hidden">
+        <v-row class="container-row d-flex overflow-hidden">
+            <v-col class="text-col" cols="12">
+                <v-row class="mb-10" justify="start">
+                    <label class="title-text mb-0">we are <label class="accent-text">trusted</label></label>
+                </v-row>
 
-            <v-row class="content-row">
-                <v-col cols="12">
-                    <v-row class="trusted-title-row mb-8">
-                        <label class="trusted-title">Partners</label>
-                    </v-row>
-                    <v-row class="trusted-row-first" align="center">
-                        <img
-                                class="trusted-img"
-                                height="40"
-                                @click="openLink('https://www.bnbchain.world/en/bsc-mvb-program')"
-                                :src="require('@/assets/img/partners/bnbchain.svg')">
+                <v-row class="d-flex justify-space-between mt-10 mb-12" :class="isMobile ? 'flex-column-reverse' : 'flex-row'">
+                    <v-col class="mt-12">
+                        <v-row class="trusted-title-row mb-8">
+                            <label class="trusted-title">Partners</label>
+                        </v-row>
+                        <v-row align="center" class="d-flex justify-space-around">
+                            <img
+                                    class="trusted-img ma-2"
+                                    @click="openLink('https://www.bnbchain.world/en/bsc-mvb-program')"
+                                    :src="require('@/assets/img/partners/bnbchain.svg')">
+                            <img
+                                    class="trusted-img ma-2"
+                                    @click="openLink('https://polygon.technology/')"
+                                    :src="require('@/assets/img/partners/polygon_token_logo.png')">
+                            <img
+                                    class="trusted-img ma-2"
+                                    @click="openLink('https://xcelerator.berkeley.edu/')"
+                                    :src="require('@/assets/img/partners/xelerator.svg')">
+                            <img
+                                    class="trusted-img ma-2"
+                                    @click="openLink('https://www.arrakis.finance/')"
+                                    :src="require('@/assets/img/partners/arrakis.png')">
+                            <img
+                                    class="trusted-img ma-2"
+                                    @click="openLink('https://dystopialabs.com/')"
+                                    :src="require('@/assets/img/partners/dystopia.svg')">
+                        </v-row>
+                        <v-row align="center" class="d-flex justify-space-around mb-12">
+                            <img
+                                    class="trusted-img ma-2"
+                                    @click="openLink('https://quickswap.exchange/')"
+                                    :src="require('@/assets/img/partners/quickswap.png')">
+                            <img
+                                    class="trusted-img ma-2"
+                                    @click="openLink('https://tetu.io/')"
+                                    :src="require('@/assets/img/partners/tetu.svg')">
+                            <img
+                                    class="trusted-img ma-2"
+                                    @click="openLink('https://rubic.exchange/')"
+                                    :src="require('@/assets/img/partners/rubic.svg')">
+                            <img
+                                    class="trusted-img ma-2"
+                                    @click="openLink('https://sphere.finance/')"
+                                    :src="require('@/assets/img/partners/sphere.svg')">
+                            <img
+                                    class="trusted-img ma-2"
+                                    @click="openLink('https://www.gelato.network/')"
+                                    :src="require('@/assets/img/partners/gelato.png')">
+                        </v-row>
 
-                        <v-spacer></v-spacer>
+                        <v-row style="height: 100px">
+                        </v-row>
 
-                        <img
-                                class="trusted-img"
-                                height="50"
-                                @click="openLink('https://polygon.technology/')"
-                                :src="require('@/assets/img/partners/polygon_token_logo.png')">
+                        <v-row class="trusted-title-row mt-12 mb-8" id="investors_part">
+                            <label class="trusted-title">Our valued investors</label>
+                        </v-row>
 
-                        <v-spacer></v-spacer>
+                        <v-row>
+                            <v-sheet max-width="100%">
+                                <v-slide-group>
+                                    <v-slide-item>
+                                        <InvestorCard
+                                                class="mr-4"
+                                                name="Alex Pack"
+                                                img-link="alex_pack.png"
+                                                companyImg="hack_vc.svg"
+                                                desc="Managing Partner at Hack VC"
+                                                tweet="Overnight team are building a financial primitive that should have very broad applications from treasury management to liquidity mining. We welcome Overnight’s conservative approach to risk, the design that is built to be both decentralized and compliant with future regulation and are excited to support their efforts."
+                                                tweetLink="https://twitter.com/hack_vc" />
+                                    </v-slide-item>
 
-                        <img
-                                class="trusted-img"
-                                height="70"
-                                @click="openLink('https://xcelerator.berkeley.edu/')"
-                                :src="require('@/assets/img/partners/xelerator.svg')">
+                                    <v-slide-item>
+                                        <InvestorCard
+                                                class="mr-4"
+                                                name="Fabrice Grinda"
+                                                img-link="fabrice.png"
+                                                companyImg="fj_labs.png"
+                                                desc="FJ Labs"
+                                                tweet="Overnight have struck us with the depth of understanding DeFi’s unique opportunities and problems as well as the ability to articulate its vision in a very compelling story. Stablecoin economics can be very strong provided network effects can be realized and we look to support Overnight with our expertise in these matters."
+                                                tweetLink="https://twitter.com/fjlabs" />
+                                    </v-slide-item>
 
-                        <v-spacer></v-spacer>
+                                    <v-slide-item>
+                                        <InvestorCard
+                                                class="mr-4"
+                                                name="Brian Tubergen"
+                                                img-link="brian.png"
+                                                companyImg="coinlist.svg"
+                                                desc="Co-founder of Coinlist"
+                                                tweet="USD+ is a product that is intuitively understood by a wide audience, including advanced DeFi investors and people new to crypto. Its focus on low risk and high liquidity subsegment of DeFi should help bring mainstream conservative investors into DeFi"
+                                                tweetLink="https://twitter.com/tubergen?s=20" />
+                                    </v-slide-item>
 
-                        <img
-                                class="trusted-img"
-                                height="36"
-                                @click="openLink('https://www.arrakis.finance/')"
-                                :src="require('@/assets/img/partners/arrakis.png')">
+                                    <v-slide-item>
+                                        <InvestorCard
+                                                class="mr-4"
+                                                name="Sandeep Naiwal"
+                                                img-link="sandeep.png"
+                                                companyImg="polygon_pos.png"
+                                                desc="Co-founder Polygon POS chain"
+                                                tweet="Overnight and its stablecoin USD+ showcase how Polygon’s technology enables truly innovative products that take DeFI to the new level. USD+ is a stablecoin focused on minimizing risk while producing solid yield, it is ideal to onboard fiat investors into DeFI, as a treasury asset for crypto projects and a means to improve capital efficiency of sophisticated liquidity mining strategies get around by train, bus, car, ferry, cruise ship, bicycle, skis, or sleigh. Relax and enjoy yourself!"
+                                                tweetLink="https://twitter.com/sandeepnailwal?s=20" />
+                                    </v-slide-item>
 
-                        <v-spacer></v-spacer>
+                                    <v-slide-item>
+                                        <InvestorCard
+                                                class="mr-4"
+                                                name="Paul Holland"
+                                                img-link="paul_holland.png"
+                                                companyImg="paulrholland.svg"
+                                                tweet="Overnight are working on an opportunity that already exceeds 100 Bln USD and can soon exceed 1 Trl USD. USD+ is a unique product both from fin and tech perspectives, with a team that had proven itself many times over in the past."
+                                                tweetLink="https://twitter.com/paulrholland" />
+                                    </v-slide-item>
 
-                        <img
-                                class="trusted-img"
-                                height="44"
-                                @click="openLink('https://dystopialabs.com/')"
-                                :src="require('@/assets/img/partners/dystopia.svg')">
-                    </v-row>
-
-                    <v-row class="trusted-row" align="center">
-                        <img
-                                class="trusted-img"
-                                height="50"
-                                @click="openLink('https://quickswap.exchange/')"
-                                :src="require('@/assets/img/partners/quickswap.png')">
-
-                        <v-spacer></v-spacer>
-
-                        <img
-                                class="trusted-img"
-                                height="44"
-                                @click="openLink('https://tetu.io/')"
-                                :src="require('@/assets/img/partners/tetu.svg')">
-
-                        <v-spacer></v-spacer>
-
-                        <img
-                                class="trusted-img"
-                                height="50"
-                                @click="openLink('https://rubic.exchange/')"
-                                :src="require('@/assets/img/partners/rubic.svg')">
-
-                        <v-spacer></v-spacer>
-
-                        <img
-                                class="trusted-img"
-                                height="55"
-                                @click="openLink('https://sphere.finance/')"
-                                :src="require('@/assets/img/partners/sphere.svg')">
-
-                        <v-spacer></v-spacer>
-
-                        <img
-                                class="trusted-img"
-                                height="56"
-                                @click="openLink('https://www.gelato.network/')"
-                                :src="require('@/assets/img/partners/gelato.png')">
-                    </v-row>
-
-                    <v-row class="trusted-title-row mb-4" id="investors_part">
-                        <label class="trusted-title">Our valued investors</label>
-                    </v-row>
-
-                    <v-row class="cards-row">
-                        <v-sheet class="cards-sheet mx-auto" max-width="87vw">
-                            <v-slide-group show-arrows>
-                                <v-slide-item>
-                                    <InvestorCard
-                                            class="mr-4"
-                                            name="Alex Pack"
-                                            img-link="alex_pack.png"
-                                            companyImg="hack_vc.svg"
-                                            desc="Managing Partner at Hack VC"
-                                            tweet="Overnight team are building a financial primitive that should have very broad applications from treasury management to liquidity mining. We welcome Overnight’s conservative approach to risk, the design that is built to be both decentralized and compliant with future regulation and are excited to support their efforts."
-                                            tweetLink="https://twitter.com/hack_vc" />
-                                </v-slide-item>
-
-                                <v-slide-item>
-                                    <InvestorCard
-                                            class="mr-4"
-                                            name="Fabrice Grinda"
-                                            img-link="fabrice.png"
-                                            companyImg="fj_labs.png"
-                                            desc="FJ Labs"
-                                            tweet="Overnight have struck us with the depth of understanding DeFi’s unique opportunities and problems as well as the ability to articulate its vision in a very compelling story. Stablecoin economics can be very strong provided network effects can be realized and we look to support Overnight with our expertise in these matters."
-                                            tweetLink="https://twitter.com/fjlabs" />
-                                </v-slide-item>
-
-                                <v-slide-item>
-                                    <InvestorCard
-                                            class="mr-4"
-                                            name="Brian Tubergen"
-                                            img-link="brian.png"
-                                            companyImg="coinlist.svg"
-                                            desc="Co-founder of Coinlist"
-                                            tweet="USD+ is a product that is intuitively understood by a wide audience, including advanced DeFi investors and people new to crypto. Its focus on low risk and high liquidity subsegment of DeFi should help bring mainstream conservative investors into DeFi"
-                                            tweetLink="https://twitter.com/tubergen?s=20" />
-                                </v-slide-item>
-
-                                <v-slide-item>
-                                    <InvestorCard
-                                            class="mr-4"
-                                            name="Sandeep Naiwal"
-                                            img-link="sandeep.png"
-                                            companyImg="polygon_pos.png"
-                                            desc="Co-founder Polygon POS chain"
-                                            tweet="Overnight and its stablecoin USD+ showcase how Polygon’s technology enables truly innovative products that take DeFI to the new level. USD+ is a stablecoin focused on minimizing risk while producing solid yield, it is ideal to onboard fiat investors into DeFI, as a treasury asset for crypto projects and a means to improve capital efficiency of sophisticated liquidity mining strategies get around by train, bus, car, ferry, cruise ship, bicycle, skis, or sleigh. Relax and enjoy yourself!"
-                                            tweetLink="https://twitter.com/sandeepnailwal?s=20" />
-                                </v-slide-item>
-
-                                <v-slide-item>
-                                    <InvestorCard
-                                            class="mr-4"
-                                            name="Paul Holland"
-                                            img-link="paul_holland.png"
-                                            companyImg="paulrholland.svg"
-                                            tweet="Overnight are working on an opportunity that already exceeds 100 Bln USD and can soon exceed 1 Trl USD. USD+ is a unique product both from fin and tech perspectives, with a team that had proven itself many times over in the past."
-                                            tweetLink="https://twitter.com/paulrholland" />
-                                </v-slide-item>
-
-                                <v-slide-item>
-                                    <InvestorCard
-                                            class="mr-4"
-                                            name="Ryan Selkis"
-                                            img-link="ryan_selkis.png"
-                                            companyImg="ryanselkis.svg"
-                                            desc="Co-founder & CEO of Messari"
-                                            tweetLink="https://twitter.com/twobitidiot?s=20" />
-                                </v-slide-item>
-                            </v-slide-group>
-                        </v-sheet>
-                    </v-row>
-                </v-col>
-            </v-row>
-        </v-col>
-    </v-row>
+                                    <v-slide-item>
+                                        <InvestorCard
+                                                class="mr-4"
+                                                name="Ryan Selkis"
+                                                img-link="ryan_selkis.png"
+                                                companyImg="ryanselkis.svg"
+                                                desc="Co-founder & CEO of Messari"
+                                                tweetLink="https://twitter.com/twobitidiot?s=20" />
+                                    </v-slide-item>
+                                </v-slide-group>
+                            </v-sheet>
+                        </v-row>
+                    </v-col>
+                </v-row>
+            </v-col>
+        </v-row>
+    </div>
 </template>
 
 <script>
@@ -201,43 +171,77 @@ export default {
 
 /* mobile */
 @media only screen and (max-width: 1400px) {
+    .title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .accent-text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 38px;
+    }
+
+    .trusted-title {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .trusted-img {
+        width: 20vw;
+    }
+}
+
+@media only screen and (min-width: 961px) {
+    .trusted-img {
+        width: 10vw;
+    }
 }
 
 @media only screen and (min-width: 1400px) {
+    .title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 60px;
+        line-height: 80px;
+    }
+
+    .accent-text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 70px;
+        line-height: 80px;
+    }
+
+    .trusted-title {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 36px;
+    }
 }
 
-.main-page-container {
-    background: #FFFFFF;
+.page-container {
+    background: #FFFFFF !important;
+}
+
+.container-row {
+    width: 90% !important;
+}
+
+.container-row {
+    margin-left: 5% !important;
+    margin-top: 10% !important;
+    margin-bottom: 10% !important;
 }
 
 .trusted-img {
     cursor: pointer;
-}
-
-.text-col {
-    margin-left: 7% !important;
-    margin-right: 7% !important;
-}
-
-.title-row {
-    margin-top: 160px !important;
-    margin-bottom: 100px !important;
-}
-
-.content-row {
-    margin-bottom: 279px !important;
-}
-
-.trusted-row-first {
-    margin-bottom: 50px !important;
-}
-
-.trusted-row {
-    margin-bottom: 206px !important;
-}
-
-.cards-sheet {
-
 }
 
 .trusted-title-row {
@@ -247,37 +251,23 @@ export default {
 
 .trusted-title {
     font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 36px;
     font-feature-settings: 'pnum' on, 'lnum' on;
     color: #333333;
 }
 
 .title-text {
     font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 60px;
-    line-height: 80px;
     text-transform: uppercase;
     color: #333333;
 }
 
 .accent-text {
     font-family: 'Cormorant', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 70px;
-    line-height: 80px;
     text-transform: uppercase;
-
     background: linear-gradient(91.26deg, #28A0F0 0%, rgba(6, 120, 196, 0.9917) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
 }
-
 </style>
