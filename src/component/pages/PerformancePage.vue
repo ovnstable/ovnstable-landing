@@ -13,14 +13,12 @@
                 <v-row class="d-flex " :class="isMobile ? 'flex-column' : 'flex-row'">
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'end'">
-                            <!-- TODO: make apyrate widget mobile -->
                             <ovn-apyrate></ovn-apyrate>
                         </v-row>
                     </v-col>
 
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'start'">
-                            <!-- TODO: make distrate widget mobile -->
                             <ovn-distrate></ovn-distrate>
                         </v-row>
                     </v-col>

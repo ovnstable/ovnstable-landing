@@ -25,7 +25,6 @@
 
             <v-col :cols="isMobile ? 12 : 6">
                 <v-row :justify="isMobile ? 'center' : 'end'" class="overflow-hidden">
-                    <!-- TODO: make maincards widget mobile -->
                     <ovn-maincards class="maincards-widget"></ovn-maincards>
                 </v-row>
             </v-col>

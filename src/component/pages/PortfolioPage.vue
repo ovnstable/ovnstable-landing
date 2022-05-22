@@ -67,8 +67,7 @@
             </v-col>
 
             <v-col :cols="isMobile ? 12 : 5">
-                <v-row :justify="isMobile ? 'center' : 'end'" class="overflow-hidden">
-                    <!-- TODO: make portfoliocards widget mobile -->
+                <v-row justify="center" class="overflow-hidden">
                     <ovn-portfoliocards></ovn-portfoliocards>
                 </v-row>
             </v-col>
