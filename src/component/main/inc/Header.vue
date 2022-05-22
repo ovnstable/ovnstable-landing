@@ -1,31 +1,65 @@
 <template>
-    <div class="main-header-container">
-        <v-row class="header-row">
-            <v-col cols="12" class="header-col">
-                <v-row class="content-row" align="center">
-                    <v-col cols="2">
-                        <img class="logo-img" height="40" :src="require('@/assets/img/logo_full.svg')" @click="openLink('https://overnight.fi/')">
-                    </v-col>
+    <div class="main-header-container overflow-hidden flex-row">
+        <v-row class="header-row fill-height">
+            <v-col cols="12" class="d-flex overflow-hidden justify-space-between align-center">
+                <div class="mr-auto" :class="isMobile ? 'mr-4' : ''">
+                    <img class="logo-img" :src="require('@/assets/img/logo_full.svg')" @click="openLink('https://overnight.fi/')">
+                </div>
 
-                    <v-col cols="5" class="ml-0">
-                        <v-row justify="end">
-                            <label class="header-label mr-8 ml-10" @click="openHook('main_page')">about</label>
-                            <label class="header-label mr-8" @click="openHook('performance_page')">performance</label>
-                            <label class="header-label mr-8" @click="openHook('portfolio_page')">portfolio</label>
-                            <label class="header-label" @click="openHook('team_page')">team</label>
-                        </v-row>
-                    </v-col>
+                <div :class="isMobile ? '' : 'mr-8'">
+                    <v-btn class="dapp-btn" @click="launchDapp">DAPP</v-btn>
+                </div>
 
-                    <v-col cols="4">
-                        <v-row justify="center">
-                            <img class="logo-img mr-4" height="48" :src="require('@/assets/img/social/twitter_btn.svg')" @click="openLink('https://twitter.com/overnight_fi')">
-                            <img class="logo-img mr-4" height="48" :src="require('@/assets/img/social/discord_btn.svg')" @click="openLink('https://discord.com/invite/7dEceNJqPq')">
-                            <img class="logo-img mr-10" height="48" :src="require('@/assets/img/social/tg_btn.svg')" @click="openLink('https://t.me/overnight_fi')">
+                <div>
+                    <v-menu bottom left transition="scale-transition" class="menu-container">
+                        <template v-slot:activator="{ on, attrs }">
+                            <v-btn
+                                    outlined
+                                    class="menu-btn"
+                                    v-bind="attrs"
+                                    v-on="on"
+                            >
+                                <img :src="require('@/assets/img/icon/menu.svg')">
+                            </v-btn>
+                        </template>
 
-                            <v-btn class="dapp-btn" @click="launchDapp">DAPP</v-btn>
-                        </v-row>
-                    </v-col>
-                </v-row>
+                        <v-list>
+                            <v-list-item class="menu-list-item">
+                                <v-list-item-title class="list-item-label" @click="openHook('main_page')">About</v-list-item-title>
+                            </v-list-item>
+                            <v-list-item class="menu-list-item">
+                                <v-list-item-title class="list-item-label" @click="openHook('performance_page')">Performance</v-list-item-title>
+                            </v-list-item>
+                            <v-list-item class="menu-list-item">
+                                <v-list-item-title class="list-item-label" @click="openHook('portfolio_page')">Portfolio</v-list-item-title>
+                            </v-list-item>
+                            <v-list-item class="menu-list-item">
+                                <v-list-item-title class="list-item-label" @click="openHook('team_page')">Team</v-list-item-title>
+                            </v-list-item>
+
+                            <v-divider></v-divider>
+                            <v-list-item disabled>
+                                <label class="menu-community-label">Our community</label>
+                            </v-list-item>
+
+                            <v-list-item class="menu-list-item">
+                                <v-list-item-title class="list-item-label" @click="openLink('https://twitter.com/overnight_fi')">Twitter</v-list-item-title>
+                            </v-list-item>
+                            <v-list-item class="menu-list-item">
+                                <v-list-item-title class="list-item-label" @click="openLink('https://discord.com/invite/7dEceNJqPq')">Discord</v-list-item-title>
+                            </v-list-item>
+                            <v-list-item class="menu-list-item">
+                                <v-list-item-title class="list-item-label" @click="openLink('https://t.me/overnight_fi')">Telegram discussion </v-list-item-title>
+                            </v-list-item>
+                            <v-list-item class="menu-list-item">
+                                <v-list-item-title class="list-item-label" @click="openLink('https://www.linkedin.com/company/overnightfi/')">LinkedIn</v-list-item-title>
+                            </v-list-item>
+                            <v-list-item class="menu-list-item">
+                                <v-list-item-title class="list-item-label" @click="openLink('https://github.com/ovnstable')">GitHub</v-list-item-title>
+                            </v-list-item>
+                        </v-list>
+                    </v-menu>
+                </div>
             </v-col>
         </v-row>
     </div>
@@ -68,66 +102,119 @@ export default {
 
 <style scoped>
 
+/* mobile */
+@media only screen and (max-width: 1400px) {
+    .logo-img {
+        height: 28px !important ;
+    }
+
+    .dapp-btn {
+        height: 40px !important;
+        font-style: normal !important;
+        font-weight: 400 !important;
+        font-size: 16px !important;
+        line-height: 18px !important;
+    }
+
+    .list-item-label {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .menu-community-label {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.02em;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .logo-img {
+        height: 40px !important ;
+    }
+
+    .dapp-btn {
+        width: 200px !important;
+        height: 48px !important;
+        font-style: normal !important;
+        font-weight: 400 !important;
+        font-size: 18px !important;
+        line-height: 20px !important;
+    }
+
+    .list-item-label {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    .menu-community-label {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 20px;
+        letter-spacing: 0.04em;
+    }
+}
+
 .main-header-container {
     z-index: 1000;
     top: 0;
     position:fixed;
-    overflow-y:hidden;
-    overflow-x:hidden;
-    width: 100vw;
-}
-
-.header-row {
+    width: 100%;
     background: linear-gradient(100.74deg, rgba(2, 24, 68, 0.8) 0.89%, rgba(16, 21, 39, 0.8) 98.31%) !important;
 }
 
-.header-col {
-    margin-left: 7% !important;
-    margin-right: 7% !important;
+.header-row {
+    width: 90% !important;
 }
 
-.content-row {
-    width: 100vw;
-    margin-top: 0;
-    margin-bottom: -6px;
+.header-row {
+    margin-left: 5% !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }
 
-.logo-img {
+.logo-img, .menu-list-item {
     cursor: pointer;
-}
-
-.header-label {
-    cursor: pointer;
-    
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    font-feature-settings: 'pnum' on, 'lnum' on;
-    color: #FFFFFF;
-}
-
-.header-label:hover {
-    text-decoration: underline;
 }
 
 .dapp-btn {
-    border-radius: 0 !important;
+    border-radius: 2px !important;
     background: linear-gradient(91.26deg, #28A0F0 0%, rgba(6, 120, 196, 0.9917) 100%);
-    height: 48px !important;
-    width: 160px !important;
     box-shadow: none !important;
-
     font-family: 'Roboto', sans-serif !important;
-    font-style: normal !important;
-    font-weight: 400 !important;
-    font-size: 18px !important;
-    line-height: 20px !important;
     font-feature-settings: 'liga' off !important;
     color: #FFFFFF !important;
 }
 
+.list-item-label {
+    font-family: 'Roboto', sans-serif;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #333333;
+}
+
+.menu-btn {
+    border: none !important;
+}
+
+.v-menu__content {
+    background: #F5F5F5 !important;
+    box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12), 0px 5px 5px -3px rgba(0, 0, 0, 0.2) !important;
+    border-radius: 2px !important;
+    width: 240px !important;
+}
+
+.menu-community-label {
+    /*border-top: 1px solid #DEE1E5;*/
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #707A8B;
+}
 </style>

@@ -1,15 +1,12 @@
 <template>
     <v-app id="app">
-
-        <!-- TODO: add mobile header -->
-<!--        <Header/>-->
+        <Header/>
 
         <v-main>
             <div class="main-container">
                 <router-view></router-view>
             </div>
         </v-main>
-
     </v-app>
 </template>
 
