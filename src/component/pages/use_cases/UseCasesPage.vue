@@ -1,11 +1,6 @@
 <template>
     <div class="page-container overflow-hidden">
 
-        <!-- TODO: fix video -->
-        <!--        <video playsinline autoplay muted loop class="bg-video">
-                    <source :src='require("@/assets/background/video/use_video_bg.mp4")' type='video/mp4'>
-                </video>-->
-
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" cols="12">
                 <v-row class="title-row mb-10">
@@ -130,12 +125,6 @@ export default {
     margin-bottom: 15% !important;
 }
 
-/*.bg-video {
-    margin-left: 50%;
-    z-index: 0;
-    position: absolute;
-}*/
-
 .title-row {
     z-index: 100;
     position: relative;
@@ -169,5 +158,4 @@ export default {
     background-clip: text;
     text-fill-color: transparent;
 }
-
 </style>

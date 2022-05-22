@@ -1,8 +1,8 @@
 <template>
     <div class="page-container overflow-hidden">
 
-        <img class="performance-bg-img-left" :src="require('@/assets/img/performance_bg_lines.svg')">
-        <img class="performance-bg-img-right" :src="require('@/assets/img/performance_bg_lines.svg')">
+        <img class="performance-bg-img-left" :src="require('@/assets/background/img/performance_bg_lines.svg')">
+        <img class="performance-bg-img-right" :src="require('@/assets/background/img/performance_bg_lines.svg')">
 
         <v-row class="container-row">
             <v-col cols="12">

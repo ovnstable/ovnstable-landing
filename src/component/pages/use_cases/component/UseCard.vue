@@ -125,7 +125,7 @@ export default {
 }
 
 .card-container {
-    z-index: 100;
+    z-index: 100 !important;
     background: #F5F5F5;
     border-radius: 0;
     height: 100% !important;

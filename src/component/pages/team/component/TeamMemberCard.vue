@@ -140,8 +140,8 @@ export default {
     }
 
     .card-container {
-        width: 390px !important;
-        height: 390px !important;
+        width: 360px !important;
+        height: 360px !important;
     }
 }
 

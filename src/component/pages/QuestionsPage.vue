@@ -1,11 +1,5 @@
 <template>
     <div class="page-container overflow-hidden" :class="isMobile ? 'flex-column' : 'flex-row'">
-
-        <!-- TODO: fix video -->
-<!--        <video playsinline autoplay muted loop class="bg-video">
-            <source :src='require("@/assets/background/video/questions_video_bg.mp4")' type='video/mp4'>
-        </video>-->
-
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" :cols="isMobile ? 12 : 7">
                 <v-row class="title-row mb-10" justify="center" align="center">
@@ -206,13 +200,6 @@ export default {
 .text-col, .social-col {
     z-index: 100 !important;
 }
-
-/*.bg-video {
-    mix-blend-mode: lighten;
-    z-index: 0;
-    position: absolute;
-    clip: rect(0px,2000px,100vh,0px);
-}*/
 
 .title-text {
     font-family: 'Roboto', sans-serif;

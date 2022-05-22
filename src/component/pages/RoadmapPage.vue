@@ -1,7 +1,7 @@
 <template>
     <div class="page-container overflow-hidden">
 
-        <img class="roadmap-bg-img" :src="require('@/assets/img/roadmap_bg_lines.svg')">
+        <img class="roadmap-bg-img" :src="require('@/assets/background/img/roadmap_bg_lines.svg')">
 
         <v-row class="container-row">
             <v-col cols="12">

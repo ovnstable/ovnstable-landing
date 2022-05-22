@@ -1,8 +1,8 @@
 <template>
     <div class="page-container overflow-hidden">
 
-        <img class="team-bg-img-left" :src="require('@/assets/img/team_bg_lines.svg')">
-        <img class="team-bg-img-right" :src="require('@/assets/img/team_bg_lines.svg')">
+        <img class="team-bg-img-left" :src="require('@/assets/background/img/team_bg_lines.svg')">
+        <img class="team-bg-img-right" :src="require('@/assets/background/img/team_bg_lines.svg')">
 
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" cols="12">

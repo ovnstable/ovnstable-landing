@@ -1,10 +1,9 @@
 <template>
     <div class="page-container overflow-hidden" :class="isMobile ? 'flex-column' : 'flex-row'">
 
-        <!-- TODO: fix video -->
-<!--        <video playsinline autoplay muted loop class="bg-video">
+        <video autoplay playsinline muted loop class="bg-video">
             <source :src='require("@/assets/background/video/main_video_bg.mp4")' type='video/mp4'>
-        </video>-->
+        </video>
 
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" :cols="isMobile ? 12 : 6">
@@ -27,7 +26,7 @@
             <v-col :cols="isMobile ? 12 : 6">
                 <v-row :justify="isMobile ? 'center' : 'end'" class="overflow-hidden">
                     <!-- TODO: make maincards widget mobile -->
-                    <ovn-maincards></ovn-maincards>
+                    <ovn-maincards class="maincards-widget"></ovn-maincards>
                 </v-row>
             </v-col>
         </v-row>
@@ -157,11 +156,15 @@ export default {
     margin-bottom: 5% !important;
 }
 
-/*.bg-video {
+.bg-video {
     mix-blend-mode: soft-light;
     z-index: 0 !important;
     position: absolute;
-}*/
+}
+
+.maincards-widget {
+    z-index: 100 !important;
+}
 
 .title-text {
     font-family: 'Roboto', sans-serif;
