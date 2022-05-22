@@ -118,6 +118,10 @@ export default {
         font-size: 18px !important;
         line-height: 20px !important;
     }
+
+    .card-container {
+        width: 90% !important;
+    }
 }
 
 .card-container {
@@ -125,7 +129,6 @@ export default {
     background: #F5F5F5;
     border-radius: 0;
     height: 100% !important;
-    width: 90% !important;
 }
 
 .action-btn {

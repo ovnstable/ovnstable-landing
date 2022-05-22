@@ -1,28 +1,32 @@
 <template>
-    <v-row class="main-page-container">
+    <div class="page-container overflow-hidden">
 
-        <img class="performance-bg-img-left" :src="require('@/assets/img/performance_bg_lines.svg')">
-        <img class="performance-bg-img-right" :src="require('@/assets/img/performance_bg_lines.svg')">
+        <!-- TODO: fix bg images -->
+<!--        <img class="performance-bg-img-left" :src="require('@/assets/img/performance_bg_lines.svg')">
+        <img class="performance-bg-img-right" :src="require('@/assets/img/performance_bg_lines.svg')">-->
 
-        <v-col class="text-col">
-            <v-row class="title-row mb-15" justify="center">
-                <label class="title-text mb-0">USD+ Performance</label>
-            </v-row>
+        <v-row class="container-row">
+            <v-col cols="12">
+                <v-row class="title-row mb-15" justify="center">
+                    <label class="title-text mb-0"><label class="accent-text">USD</label><label class="title-text-plus">+</label> Performance</label>
+                </v-row>
 
-            <v-row class="widgets-row">
-                <v-col>
-                    <v-row justify="end">
-                        <ovn-apyrate></ovn-apyrate>
-                    </v-row>
-                </v-col>
-                <v-col>
-                    <v-row>
-                        <ovn-distrate></ovn-distrate>
-                    </v-row>
-                </v-col>
-            </v-row>
-        </v-col>
-    </v-row>
+                <v-row class="d-flex " :class="isMobile ? 'flex-column' : 'flex-row'">
+                    <v-col class="text-col overflow-hidden" :cols="isMobile ? 12 : 6">
+                        <v-row :justify="isMobile ? 'center' : 'end'">
+                            <ovn-apyrate></ovn-apyrate>
+                        </v-row>
+                    </v-col>
+
+                    <v-col class="maincards-col overflow-hidden" :cols="isMobile ? 12 : 6">
+                        <v-row :justify="isMobile ? 'center' : 'start'">
+                            <ovn-distrate></ovn-distrate>
+                        </v-row>
+                    </v-col>
+                </v-row>
+            </v-col>
+        </v-row>
+    </div>
 </template>
 
 <script>
@@ -52,41 +56,93 @@ export default {
 
 /* mobile */
 @media only screen and (max-width: 1400px) {
+    .title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .accent-text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 38px;
+    }
+
+    .title-text-plus {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 36px;
+    }
 }
 
 @media only screen and (min-width: 1400px) {
+    .title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 60px;
+        line-height: 80px;
+    }
+
+    .accent-text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 70px;
+        line-height: 80px;
+    }
+
+    .title-text-plus {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 60px;
+        line-height: 80px;
+    }
 }
 
-.main-page-container {
+.page-container {
     background: linear-gradient(122.1deg, #011845 0%, #15141D 104.83%);
-    height: 100vh !important;
 }
 
-.text-col {
+.container-row {
+    width: 90% !important;
 }
 
-.title-row {
-    margin-top: 197px !important;
-    margin-bottom: 100px !important;
-}
-
-.widgets-row {
-    margin-bottom: 252px !important;
+.container-row {
+    margin-left: 5% !important;
+    margin-top: 5% !important;
+    margin-bottom: 10% !important;
 }
 
 .title-text {
     font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 60px;
-    line-height: 80px;
     text-transform: uppercase;
     color: #FFFFFF;
-    text-align: center;
+}
+
+.accent-text {
+    font-family: 'Cormorant', sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(91.26deg, #28A0F0 0%, rgba(6, 120, 196, 0.9917) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.title-text-plus {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+
+    background: linear-gradient(91.26deg, #28A0F0 0%, rgba(6, 120, 196, 0.9917) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
 }
 
 .performance-bg-img-left {
-    height: 100vh !important;
     position: absolute;
     mix-blend-mode: overlay;
     z-index: 0;
@@ -94,7 +150,6 @@ export default {
 }
 
 .performance-bg-img-right {
-    height: 100vh !important;
     position: absolute;
     mix-blend-mode: overlay;
     transform: matrix(-1, 0, 0, 1, 0, 0);

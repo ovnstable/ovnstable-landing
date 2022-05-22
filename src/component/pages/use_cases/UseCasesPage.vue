@@ -126,7 +126,7 @@ export default {
 
 .container-row {
     margin-left: 5% !important;
-    margin-top: 15% !important;
+    margin-top: 10% !important;
     margin-bottom: 15% !important;
 }
 

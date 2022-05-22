@@ -3,7 +3,7 @@
         <MainPage id="main_page"/>
         <HowPage id="how_page"/>
         <UseCasesPage id="use_cases_page"/>
-<!--        <PerformancePage id="performance_page"/>-->
+        <PerformancePage id="performance_page"/>
 <!--        <PortfolioPage id="portfolio_page"/>-->
 <!--        <SecurityPage id="security_page"/>-->
 <!--        <TrustedPage id="trusted_page"/>-->
