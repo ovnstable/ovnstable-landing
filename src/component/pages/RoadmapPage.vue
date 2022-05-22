@@ -1,18 +1,22 @@
 <template>
-    <v-row class="main-page-container">
+    <div class="page-container overflow-hidden">
 
-        <img class="roadmap-bg-img" :src="require('@/assets/img/roadmap_bg_lines.svg')">
+        <!-- TODO: fix background image -->
+<!--        <img class="roadmap-bg-img" :src="require('@/assets/img/roadmap_bg_lines.svg')">-->
 
-        <v-col class="text-col">
-            <v-row class="title-row mb-15" justify="center">
-                <label class="title-text mb-0">our <label class="accent-text">roadmap</label></label>
-            </v-row>
+        <v-row class="container-row">
+            <v-col cols="12">
+                <v-row class="mb-15" justify="center">
+                    <label class="title-text mb-0">our <label class="accent-text">roadmap</label></label>
+                </v-row>
 
-            <v-row class="roadmap-row">
-                <img class="roadmap-img" :src="require('@/assets/img/roadmap.svg')">
-            </v-row>
-        </v-col>
-    </v-row>
+                <v-row justify="center">
+                    <img class="roadmap-img mt-12" :src="require('@/assets/img/roadmap.svg')">
+                    <img class="roadmap-img-mobile mt-12" :src="require('@/assets/img/roadmap_mobile.svg')">
+                </v-row>
+            </v-col>
+        </v-row>
+    </div>
 </template>
 
 <script>
@@ -42,54 +46,80 @@ export default {
 
 /* mobile */
 @media only screen and (max-width: 1400px) {
+    .title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .accent-text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 38px;
+    }
+
+    .roadmap-img-mobile {
+        width: 80% !important;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .roadmap-img {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    .roadmap-img-mobile {
+        display: none !important;
+    }
+
+    .roadmap-img {
+        width: 100% !important;
+    }
 }
 
 @media only screen and (min-width: 1400px) {
+    .title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 60px;
+        line-height: 80px;
+    }
+
+    .accent-text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 70px;
+        line-height: 80px;
+    }
 }
 
-.main-page-container {
-    background: linear-gradient(122.1deg, #011845 0%, #15141D 104.83%);
+.page-container {
+    background: linear-gradient(122.1deg, #011845 0%, #15141D 104.83%) !important;
 }
 
-.roadmap-img {
-    width: 100% !important;
-    height: fit-content !important;
+.container-row {
+    width: 90% !important;
 }
 
-.text-col {
-    margin-left: 7% !important;
-    margin-right: 7% !important;
-}
-
-.title-row {
-    margin-top: 192px !important;
-    margin-bottom: 124px !important;
-}
-
-.roadmap-row {
-    margin-bottom: 186px !important;
-    height: 675px !important;
+.container-row {
+    margin-left: 5% !important;
+    margin-top: 10% !important;
+    margin-bottom: 10% !important;
 }
 
 .title-text {
     font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 60px;
-    line-height: 80px;
     text-transform: uppercase;
     color: #FFFFFF;
-    text-align: center;
 }
 
 .accent-text {
     font-family: 'Cormorant', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 70px;
-    line-height: 80px;
     text-transform: uppercase;
-
     background: linear-gradient(91.26deg, #28A0F0 0%, rgba(6, 120, 196, 0.9917) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -97,11 +127,11 @@ export default {
     text-fill-color: transparent;
 }
 
-.roadmap-bg-img {
+/*.roadmap-bg-img {
     position: absolute;
     z-index: 0 !important;
     margin-top: -180px !important;
     clip: rect(0px,2000px,1200px,0px);
-}
+}*/
 
 </style>
