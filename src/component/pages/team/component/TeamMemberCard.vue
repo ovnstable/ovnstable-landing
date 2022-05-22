@@ -2,7 +2,7 @@
     <v-card class="card-container">
         <v-col>
             <v-row class="mb-4">
-                <v-col cols="9">
+                <v-col>
                     <img class="avatar-img ml-7 mt-7" :src="require('@/assets/img/team/' + (imgLink ? imgLink : 'anonym.svg'))">
                 </v-col>
 
@@ -100,18 +100,55 @@ export default {
 
 /* mobile */
 @media only screen and (max-width: 1400px) {
+    .name-label {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .desc-label {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .card-container {
+        width: 260px !important;
+        height: 260px !important;
+    }
+
+    .avatar-img {
+        height: 100px !important;
+    }
 }
 
 @media only screen and (min-width: 1400px) {
+    .name-label {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    .desc-label {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .card-container {
+        width: 390px !important;
+        height: 390px !important;
+    }
 }
 
 .card-container {
     background: #F5F5F5 !important;
     border-radius: 0 !important;
     box-shadow: none !important;
-
-    width: 390px !important;
-    height: 380px !important;
 }
 
 .avatar-img {
@@ -124,20 +161,12 @@ export default {
 
 .name-label {
     font-family: 'Cormorant', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 40px;
     font-feature-settings: 'pnum' on, 'lnum' on;
     color: #333333;
 }
 
 .desc-label {
     font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 32px;
     color: #9DA4B0;
 }
 
