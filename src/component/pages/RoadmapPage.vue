@@ -1,8 +1,7 @@
 <template>
     <div class="page-container overflow-hidden">
 
-        <!-- TODO: fix background image -->
-<!--        <img class="roadmap-bg-img" :src="require('@/assets/img/roadmap_bg_lines.svg')">-->
+        <img class="roadmap-bg-img" :src="require('@/assets/img/roadmap_bg_lines.svg')">
 
         <v-row class="container-row">
             <v-col cols="12">
@@ -63,6 +62,10 @@ export default {
     .roadmap-img-mobile {
         width: 80% !important;
     }
+
+    .roadmap-bg-img {
+        margin-top: -35%;
+    }
 }
 
 @media only screen and (max-width: 960px) {
@@ -94,6 +97,10 @@ export default {
         font-weight: 500;
         font-size: 70px;
         line-height: 80px;
+    }
+
+    .roadmap-bg-img {
+        margin-top: -10%;
     }
 }
 
@@ -127,11 +134,10 @@ export default {
     text-fill-color: transparent;
 }
 
-/*.roadmap-bg-img {
+.roadmap-bg-img {
     position: absolute;
     z-index: 0 !important;
-    margin-top: -180px !important;
-    clip: rect(0px,2000px,1200px,0px);
-}*/
+    max-height: 100% !important;
+}
 
 </style>
