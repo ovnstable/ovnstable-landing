@@ -143,7 +143,7 @@ export default {
 }
 
 .page-container {
-    background-color: rgba(2, 24, 68, 0.9);
+    background-color: rgba(2, 24, 68, 0.9) !important;
 }
 
 .container-row {
