@@ -7,7 +7,7 @@
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" cols="12">
                 <v-row class="title-row mb-15" justify="center">
-                    <label class="title-text mb-0">our <label class="accent-text">best</label> team</label>
+                    <label class="title-text mb-0">our <label class="accent-text">plus</label> team</label>
                 </v-row>
 
                 <v-row class="d-flex justify-space-between mb-15">

@@ -6,7 +6,7 @@
                     <img class="logo-img" height="40" :src="require('@/assets/img/logo_full.svg')">
                 </v-row>
                 <v-row :justify="isMobile ? 'center' : 'start'">
-                    <p class="footer-logo-sub-text mb-0">Your money should never sleep</p>
+                    <p class="footer-logo-sub-text mb-0">Your money should not sleep</p>
                 </v-row>
                 <v-row class="mb-6" :justify="isMobile ? 'center' : 'start'">
                     <p class="footer-logo-sub-text">2022 © All Rights Reserved</p>
