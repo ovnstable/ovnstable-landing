@@ -148,6 +148,12 @@ export default {
     }
 }
 
+@media only screen and (min-width: 961px) {
+    .sub-title-row {
+        width: 85%;
+    }
+}
+
 @media only screen and (min-width: 1400px) {
     .title-text {
         font-style: normal;
