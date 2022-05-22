@@ -9,7 +9,7 @@
         <TrustedPage id="trusted_page"/>
         <RoadmapPage id="roadmap_page"/>
         <TeamPage id="team_page"/>
-<!--        <QuestionsPage id="questions_page"/>-->
+        <QuestionsPage id="questions_page"/>
 
 <!--        <Footer/>-->
     </div>
