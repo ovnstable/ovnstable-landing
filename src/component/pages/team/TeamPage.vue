@@ -168,7 +168,7 @@ export default {
 
     computed: {
         isMobile() {
-            return window.innerWidth < 800;
+            return window.innerWidth <= 960;
         },
     },
 
