@@ -20,8 +20,8 @@
                         <UseCard
                                 title="Liquidity Pools"
                                 desc="Provide liquidity into USD+ pools, and get USD+ yield on top of LP fees and rewards"
-                                btnLabel="Coming Soon"
-                                link=""/>
+                                btnLabel="Deposit"
+                                link="https://app.overnight.fi/farm"/>
                     </v-col>
 
                     <v-col :cols="isMobile ? 12 : 4">
