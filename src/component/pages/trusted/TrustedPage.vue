@@ -30,7 +30,7 @@
                                     :src="require('@/assets/img/partners/arrakis.png')">
                             <img
                                     class="trusted-img ma-2"
-                                    @click="openLink('https://dystopialabs.com/')"
+                                    @click="openLink('https://dystopia.exchange/')"
                                     :src="require('@/assets/img/partners/dystopia.svg')">
                         </v-row>
                         <v-row align="center" class="d-flex justify-space-around mb-12">
