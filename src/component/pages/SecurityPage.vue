@@ -8,7 +8,7 @@
 
                 <v-row class="d-flex justify-space-between" :class="isMobile ? 'flex-column' : 'flex-row'">
                     <v-col :cols="isMobile ? 12 : 3" class="mt-12">
-                        <v-row justify="center" class="mb-10">
+                        <v-row justify="center" class="mb-10 card-title-row">
                             <label class="title-label">full collateralization</label>
                         </v-row>
                         <v-row justify="center" class="mb-10">
@@ -17,7 +17,7 @@
                     </v-col>
 
                     <v-col :cols="isMobile ? 12 : 4" class="mt-12">
-                        <v-row justify="center" class="mb-10">
+                        <v-row justify="center" class="mb-10 card-title-row">
                             <label class="title-label">Rigorous Risk-management and monitoring</label>
                         </v-row>
                         <v-row justify="center" class="mb-10">
@@ -26,7 +26,7 @@
                     </v-col>
 
                     <v-col :cols="isMobile ? 12 : 3" class="mt-12">
-                        <v-row justify="center" class="mb-10">
+                        <v-row justify="center" class="mb-10 card-title-row">
                             <label class="title-label">Audit</label>
                         </v-row>
                         <v-row justify="center" class="mb-10">
@@ -295,5 +295,9 @@ export default {
     font-feature-settings: 'liga' off !important;
     color: #28A0F0 !important;
     text-transform: none !important;
+}
+
+.card-title-row {
+    height: 15% !important;
 }
 </style>

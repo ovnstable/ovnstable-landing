@@ -4,11 +4,11 @@
             <label class="title-label">{{ title }}</label>
         </v-row>
 
-        <v-row class="mb-12" justify="center">
+        <v-row class="mb-12 desc-row" justify="center">
             <label class="desc-label mx-15">{{ desc }}</label>
         </v-row>
 
-        <v-row class="mb-8" justify="center">
+        <v-row class="mb-12" justify="center">
             <v-btn
                     :disabled="!link"
                     class="action-btn"
@@ -129,6 +129,10 @@ export default {
     background: #F5F5F5;
     border-radius: 0;
     height: 100% !important;
+}
+
+.desc-row {
+    height: 30% !important;
 }
 
 .action-btn {

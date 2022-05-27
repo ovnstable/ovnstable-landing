@@ -10,6 +10,7 @@
                     <v-text-field
                             class="text-input-field"
                             v-model="email"
+                            :rules="[(val) => validateEmail(val)]"
                             background-color="white"
                             flat
                             placeholder="Write your Email here"
@@ -29,19 +30,21 @@
                 </v-row>
 
                 <v-row class="email-row mb-12" justify="center">
-                    <v-btn class="send-btn" @click="sendEmailAction">Send</v-btn>
+                    <v-btn @click="sendEmailAction" :class="isDisabledBtn ? 'disabled-btn' : 'send-btn'" :disabled="isDisabledBtn">
+                        Send
+                    </v-btn>
                 </v-row>
             </v-col>
 
             <v-col class="social-col" :cols="isMobile ? 12 : 5">
                 <v-row justify="center">
                     <div>
-                        <v-row class="card-container ma-5" align="center" justify="center" @click="openLink('https://twitter.com/overnight_fi')">
+                        <v-row class="card-container ma-2" align="center" justify="center" @click="openLink('https://twitter.com/overnight_fi')">
                             <img class="social-img" :src="require('@/assets/img/social/twitter.svg')">
                         </v-row>
                     </div>
                     <div>
-                        <v-row class="card-container ma-5" align="center" justify="center" @click="openLink('https://t.me/overnight_fi')">
+                        <v-row class="card-container ma-2" align="center" justify="center" @click="openLink('https://t.me/overnight_fi')">
                             <img class="social-img" :src="require('@/assets/img/social/tg.svg')">
                         </v-row>
                     </div>
@@ -49,12 +52,12 @@
 
                 <v-row justify="center">
                     <div>
-                        <v-row class="card-container ma-5" align="center" justify="center" @click="openLink('https://discord.com/invite/7dEceNJqPq')">
+                        <v-row class="card-container ma-2" align="center" justify="center" @click="openLink('https://discord.com/invite/7dEceNJqPq')">
                             <img class="social-img" :src="require('@/assets/img/social/discord.svg')">
                         </v-row>
                     </div>
                     <div>
-                        <v-row class="card-container ma-5" align="center" justify="center" @click="openLink('https://github.com/ovnstable')">
+                        <v-row class="card-container ma-2" align="center" justify="center" @click="openLink('https://github.com/ovnstable')">
                             <img class="social-img" :src="require('@/assets/img/social/github.svg')">
                         </v-row>
                     </div>
@@ -75,15 +78,26 @@ export default {
     data: () => ({
         email: null,
         text: null,
+
+        regEmail: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/,
     }),
 
     computed: {
         isMobile() {
             return window.innerWidth <= 960;
         },
+
+        isDisabledBtn() {
+            return !this.validateEmail(this.email) || !this.text;
+        },
     },
 
     methods: {
+
+        validateEmail(val) {
+            return (val === "") ? false : (this.regEmail.test(val));
+        },
+
         openLink(url) {
             window.open(url, '_blank').focus();
         },
@@ -120,7 +134,7 @@ export default {
         max-width: 90% !important;
     }
 
-    .send-btn {
+    .send-btn, .disabled-btn {
         height: 40px !important;
         width: 200px !important;
         font-style: normal !important;
@@ -132,13 +146,13 @@ export default {
 
 @media only screen and (max-width: 960px) {
     .card-container {
-        width: 20vw !important;
-        height: 20vw !important;
+        width: 18vw !important;
+        height: 18vw !important;
         background: #FFFFFF !important;
     }
 
     .social-img {
-        width: 10vw !important;
+        width: 6vw !important;
     }
 }
 
@@ -150,7 +164,7 @@ export default {
     }
 
     .social-img {
-        width: 6vw !important;
+        width: 4vw !important;
     }
 }
 
@@ -173,7 +187,7 @@ export default {
         max-width: 60% !important;
     }
 
-    .send-btn {
+    .send-btn, .disabled-btn {
         height: 50px !important;
         width: 250px !important;
         font-style: normal !important;
@@ -194,7 +208,7 @@ export default {
 .container-row {
     margin-left: 5% !important;
     margin-top: 10% !important;
-    margin-bottom: 5% !important;
+    margin-bottom: 10% !important;
 }
 
 .text-col, .social-col {
@@ -225,6 +239,14 @@ export default {
 .send-btn {
     border-radius: 0 !important;
     background: linear-gradient(91.26deg, #28A0F0 0%, rgba(6, 120, 196, 0.9917) 100%);
+    box-shadow: none !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-feature-settings: 'liga' off !important;
+    color: #FFFFFF !important;
+}
+
+.disabled-btn {
+    border-radius: 0 !important;
     box-shadow: none !important;
     font-family: 'Roboto', sans-serif !important;
     font-feature-settings: 'liga' off !important;

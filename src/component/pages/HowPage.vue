@@ -8,13 +8,13 @@
                     </div>
                 </v-row>
 
-                <v-row class="mb-2">
+                <v-row class="">
                     <p class="sub-title-text">USD+ includes 3 components:</p>
                 </v-row>
 
                 <v-row>
                     <v-expansion-panels multiple v-model="openedPanels">
-                        <v-expansion-panel class="ml-n9 panel-bordered" @click="openPanel(0)">
+                        <v-expansion-panel class="ml-n9 mt-n4 panel-bordered" @click="openPanel(0)">
                             <v-expansion-panel-header class="panel-header-row">
                                 <label class="panel-header">1. Pegged to USDC 1 : 1</label>
                             </v-expansion-panel-header>
@@ -28,7 +28,7 @@
                         </v-expansion-panel>
 
                         <v-expansion-panel class="ml-n9 panel-bordered" @click="openPanel(1)">
-                            <v-expansion-panel-header class="panel-header-row">
+                            <v-expansion-panel-header class="panel-header-row mt-n4">
                                 <label class="panel-header">2. Yield generating</label>
                             </v-expansion-panel-header>
                             <v-expansion-panel-content>
