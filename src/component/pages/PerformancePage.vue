@@ -7,19 +7,20 @@
         <v-row class="container-row">
             <v-col cols="12">
                 <v-row class="mb-15" justify="center">
-                    <label class="title-text mb-0"><label class="accent-text">USD</label><label class="title-text-plus">+</label> Performance</label>
+                    <label class="accent-text mb-0">USD</label><label class="title-text-plus">+</label>
+                    <label class="title-text" v-observe-visibility="titleVisibleChange" :class="titleAnimated ? 'text-focus-in' : ''">&nbsp;Performance</label>
                 </v-row>
 
                 <v-row class="d-flex " :class="isMobile ? 'flex-column' : 'flex-row'">
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'end'">
-                            <ovn-apyrate></ovn-apyrate>
+                            <ovn-apyrate v-observe-visibility="apyRateVisibleChange" :class="apyRateAnimated ? 'slide-in-left' : ''"></ovn-apyrate>
                         </v-row>
                     </v-col>
 
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'start'">
-                            <ovn-distrate></ovn-distrate>
+                            <ovn-distrate v-observe-visibility="distRateVisibleChange" :class="distRateAnimated ? 'slide-in-right' : ''"></ovn-distrate>
                         </v-row>
                     </v-col>
                 </v-row>
@@ -37,7 +38,9 @@ export default {
     },
 
     data: () => ({
-
+        titleAnimated: true,
+        apyRateAnimated: true,
+        distRateAnimated: true,
     }),
 
     computed: {
@@ -47,6 +50,17 @@ export default {
     },
 
     methods: {
+        titleVisibleChange() {
+            this.titleAnimated = !this.titleAnimated;
+        },
+
+        apyRateVisibleChange() {
+            this.apyRateAnimated = !this.apyRateAnimated;
+        },
+
+        distRateVisibleChange() {
+            this.distRateAnimated = !this.distRateAnimated;
+        }
     }
 }
 </script>

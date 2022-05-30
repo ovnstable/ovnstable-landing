@@ -8,8 +8,10 @@ import router from './router/index'
 import {axios} from './plugins/http-axios';
 import moment from 'moment';
 import '@mdi/font/css/materialdesignicons.css'
+import VueObserveVisibility from 'vue-observe-visibility'
 
 Vue.use(Vuex)
+Vue.use(VueObserveVisibility)
 
 Vue.prototype.$moment = moment;
 Vue.prototype.$utils = utils;
