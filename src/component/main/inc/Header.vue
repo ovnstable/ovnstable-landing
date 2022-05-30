@@ -1,13 +1,13 @@
 <template>
-    <div class="main-header-container overflow-hidden flex-row">
+    <div class="main-header-container header-background overflow-hidden flex-row" :style="'--opacity: ' + headerOpacity">
         <v-row class="header-row fill-height">
             <v-col cols="12" class="d-flex overflow-hidden justify-space-between align-center">
-                <div class="mr-auto" :class="isMobile ? 'mr-4' : ''">
+                <div class="mr-auto sub-text-focus-in-1s" :class="isMobile ? 'mr-4' : ''">
                     <img class="logo-img" :src="require('@/assets/img/logo_full.svg')" @click="openLink('https://overnight.fi/')">
                 </div>
 
                 <div :class="isMobile ? '' : 'mr-8'">
-                    <v-btn class="dapp-btn" @click="launchDapp">DAPP</v-btn>
+                    <v-btn class="dapp-btn sub-text-focus-in-1s" @click="launchDapp">DAPP</v-btn>
                 </div>
 
                 <div>
@@ -19,7 +19,7 @@
                                     v-bind="attrs"
                                     v-on="on"
                             >
-                                <img :src="require('@/assets/img/icon/menu.svg')">
+                                <img class="sub-text-focus-in-1s" :src="require('@/assets/img/icon/menu.svg')">
                             </v-btn>
                         </template>
 
@@ -74,16 +74,31 @@ export default {
     },
 
     data: () => ({
-
+        scrollPosition: null,
+        scrollFadePosition: null,
     }),
 
     computed: {
         isMobile() {
             return window.innerWidth <= 960;
         },
+
+        headerOpacity() {
+            let opacity = this.scrollPosition / this.scrollFadePosition;
+            return opacity > 0.8 ? 0.8 : opacity;
+        }
+    },
+
+    mounted() {
+        window.addEventListener('scroll', this.updateScroll);
+        this.scrollFadePosition = window.innerWidth;
     },
 
     methods: {
+        updateScroll() {
+            this.scrollPosition = window.scrollY;
+        },
+
         launchDapp() {
             window.open(`https://app.overnight.fi/`, '_blank').focus();
         },
@@ -162,12 +177,15 @@ export default {
     }
 }
 
+.header-background {
+    background: linear-gradient(100.74deg, rgba(2, 24, 68, var(--opacity)) 0.89%, rgba(16, 21, 39, var(--opacity)) 98.31%) !important;
+}
+
 .main-header-container {
     z-index: 1000;
     top: 0;
     position:fixed;
     width: 100%;
-    background: linear-gradient(100.74deg, rgba(2, 24, 68, 0.8) 0.89%, rgba(16, 21, 39, 0.8) 98.31%) !important;
 }
 
 .header-row {

@@ -1,9 +1,5 @@
 <template>
     <div class="page-container overflow-hidden">
-
-        <img class="team-bg-img-left" :src="require('@/assets/background/img/team_bg_lines.svg')">
-        <img class="team-bg-img-right" :src="require('@/assets/background/img/team_bg_lines.svg')">
-
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" cols="12">
                 <v-row class="title-row mb-15" justify="center">
@@ -249,23 +245,7 @@ export default {
     color: #333333;
 }
 
-.team-bg-img-left {
-    position: absolute;
-    mix-blend-mode: normal;
-    z-index: 0;
-    left: 0 !important;
-}
-
-.team-bg-img-right {
-    position: absolute;
-    mix-blend-mode: normal;
-    transform: matrix(-1, 0, 0, 1, 0, 0);
-    z-index: 0;
-    right: 0 !important;
-}
-
 .exp-img {
     cursor: pointer;
 }
-
 </style>
