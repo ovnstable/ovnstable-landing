@@ -142,6 +142,12 @@ export default {
     }
 }
 
+@media only screen and (min-width: 1800px) {
+    .bg-video {
+        width: 100%;
+    }
+}
+
 .page-container {
     background-color: rgba(2, 24, 68, 0.9) !important;
 }
