@@ -79,35 +79,35 @@
                 </v-row>
                 <v-row align="center" class="d-flex justify-space-around">
                     <img
-                            class="exp-img ma-2"
+                            class="exp-img my-2"
                             @click="openLink('https://www.google.com/')"
-                            :src="require('@/assets/img/companies/google.png')">
+                            :src="require('@/assets/img/companies/google.svg')">
                     <img
-                            class="exp-img ma-2"
+                            class="exp-img my-2"
                             @click="openLink('https://www.facebook.com')"
-                            :src="require('@/assets/img/companies/facebook.png')">
+                            :src="require('@/assets/img/companies/facebook.svg')">
                     <img
-                            class="exp-img ma-2"
+                            class="exp-img my-2"
                             @click="openLink('https://www.stanford.edu')"
-                            :src="require('@/assets/img/companies/stanford.png')">
+                            :src="require('@/assets/img/companies/stanford.svg')">
                     <img
-                            class="exp-img ma-2"
+                            class="exp-img my-2"
                             @click="openLink('https://www.kellogg.northwestern.edu')"
-                            :src="require('@/assets/img/companies/kellogg.png')">
+                            :src="require('@/assets/img/companies/kellogg.svg')">
                     <img
-                            class="exp-img ma-2"
+                            class="exp-img my-2"
                             @click="openLink('https://www.insead.edu')"
-                            :src="require('@/assets/img/companies/insead.png')">
+                            :src="require('@/assets/img/companies/insead.svg')">
                     <img
-                            class="exp-img ma-2"
+                            class="exp-img my-2"
                             @click="openLink('https://www.bcg.com/')"
-                            :src="require('@/assets/img/companies/bsg.png')">
+                            :src="require('@/assets/img/companies/bcg.svg')">
                     <img
-                            class="exp-img ma-2"
+                            class="exp-img my-2"
                             @click="openLink('https://www.morganstanley.com/')"
-                            :src="require('@/assets/img/companies/morgan.png')">
+                            :src="require('@/assets/img/companies/morgan.svg')">
                     <img
-                            class="exp-img ma-2"
+                            class="exp-img my-2"
                             @click="openLink('https://www.jpmorgan.com/global/')"
                             :src="require('@/assets/img/companies/jp.svg')">
                 </v-row>
@@ -169,15 +169,15 @@ export default {
     }
 }
 
-@media only screen and (max-width: 961px) {
+@media only screen and (max-width: 960px) {
     .exp-img {
-        width: 15vw !important;
+        width: 22vw !important;
     }
 }
 
 @media only screen and (min-width: 961px) {
     .exp-img {
-        width: 7vw !important;
+        width: 11vw !important;
     }
 }
 

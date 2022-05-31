@@ -36,22 +36,29 @@
                 </v-row>
 
                 <v-row class="d-flex justify-space-between mt-10 mb-12" :class="isMobile ? 'flex-column-reverse' : 'flex-row'">
-                    <v-col :cols="isMobile ? 12 : 7" class="mt-12">
+                    <v-col :cols="isMobile ? 12 : 8" class="mt-12">
                         <v-row class="find-title-row mb-8">
                             <label class="find-title">Find us on</label>
                         </v-row>
                         <v-row align="center">
                             <img
                                     class="find-us-img"
-                                    @click="openLink('https://polygon.technology/')"
-                                    :src="require('@/assets/img/partners/polygon_token_logo.png')">
+                                    @click="openLink('https://coinmarketcap.com/currencies/usd/')"
+                                    :src="require('@/assets/img/partners/coinMarketCap.svg')">
 
                             <v-spacer></v-spacer>
 
                             <img
                                     class="find-us-img"
                                     @click="openLink('https://app.1inch.io/#/137/swap/USDC/USD%2B')"
-                                    :src="require('@/assets/img/partners/1inch.svg')">
+                                    :src="require('@/assets/img/partners/1Inch.svg')">
+
+                            <v-spacer></v-spacer>
+
+                            <img
+                                    class="find-us-img"
+                                    @click="openLink('https://www.coingecko.com/en/coins/usdplus')"
+                                    :src="require('@/assets/img/partners/coinGecko.svg')">
 
                             <v-spacer></v-spacer>
 
@@ -62,7 +69,7 @@
                         </v-row>
                     </v-col>
 
-                    <v-col :cols="isMobile ? 12 : 4" class="mt-12">
+                    <v-col :cols="isMobile ? 12 : 3" class="mt-12">
                         <v-row class="find-title-row mb-8">
                             <label class="find-title">Audit</label>
                         </v-row>
@@ -162,7 +169,9 @@ export default {
         font-size: 20px;
         line-height: 28px;
     }
+}
 
+@media only screen and (max-width: 960px) {
     .find-us-img {
         width: 20vw;
     }
@@ -174,7 +183,7 @@ export default {
 
 @media only screen and (min-width: 961px) {
     .find-us-img {
-        width: 10vw;
+        width: 15vw;
     }
 
     .find-us-img-audit {

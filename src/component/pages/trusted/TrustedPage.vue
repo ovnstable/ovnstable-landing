@@ -13,47 +13,47 @@
                         </v-row>
                         <v-row align="center" class="d-flex justify-space-around">
                             <img
-                                    class="trusted-img ma-2"
+                                    class="trusted-img my-2"
                                     @click="openLink('https://www.bnbchain.world/en/bsc-mvb-program')"
                                     :src="require('@/assets/img/partners/bnbchain.svg')">
                             <img
-                                    class="trusted-img ma-2"
+                                    class="trusted-img my-2"
                                     @click="openLink('https://polygon.technology/')"
-                                    :src="require('@/assets/img/partners/polygon_token_logo.png')">
+                                    :src="require('@/assets/img/partners/polygon.svg')">
                             <img
-                                    class="trusted-img ma-2"
+                                    class="trusted-img my-2"
                                     @click="openLink('https://xcelerator.berkeley.edu/')"
                                     :src="require('@/assets/img/partners/xelerator.svg')">
                             <img
-                                    class="trusted-img ma-2"
+                                    class="trusted-img my-2"
                                     @click="openLink('https://www.arrakis.finance/')"
                                     :src="require('@/assets/img/partners/arrakis.png')">
                             <img
-                                    class="trusted-img ma-2"
+                                    class="trusted-img my-2"
                                     @click="openLink('https://dystopia.exchange/')"
                                     :src="require('@/assets/img/partners/dystopia.svg')">
                         </v-row>
                         <v-row align="center" class="d-flex justify-space-around mb-12">
                             <img
-                                    class="trusted-img ma-2"
+                                    class="trusted-img my-2"
                                     @click="openLink('https://quickswap.exchange/')"
-                                    :src="require('@/assets/img/partners/quickswap.png')">
+                                    :src="require('@/assets/img/partners/quickswap.svg')">
                             <img
-                                    class="trusted-img ma-2"
+                                    class="trusted-img my-2"
                                     @click="openLink('https://tetu.io/')"
                                     :src="require('@/assets/img/partners/tetu.svg')">
                             <img
-                                    class="trusted-img ma-2"
+                                    class="trusted-img my-2"
                                     @click="openLink('https://rubic.exchange/')"
                                     :src="require('@/assets/img/partners/rubic.svg')">
                             <img
-                                    class="trusted-img ma-2"
+                                    class="trusted-img my-2"
                                     @click="openLink('https://sphere.finance/')"
                                     :src="require('@/assets/img/partners/sphere.svg')">
                             <img
-                                    class="trusted-img ma-2"
+                                    class="trusted-img my-2"
                                     @click="openLink('https://www.gelato.network/')"
-                                    :src="require('@/assets/img/partners/gelato.png')">
+                                    :src="require('@/assets/img/partners/gelato.svg')">
                         </v-row>
 
                         <v-row style="height: 100px">
@@ -191,15 +191,17 @@ export default {
         font-size: 20px;
         line-height: 28px;
     }
+}
 
+@media only screen and (max-width: 960px) {
     .trusted-img {
-        width: 20vw;
+        width: 30vw;
     }
 }
 
 @media only screen and (min-width: 961px) {
     .trusted-img {
-        width: 10vw;
+        width: 15vw;
     }
 }
 
