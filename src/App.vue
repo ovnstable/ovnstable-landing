@@ -65,7 +65,7 @@ export default {
 }
 
 .slide-top {
-    animation: slide-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
 }
 
 @keyframes slide-top {
@@ -110,7 +110,7 @@ export default {
 }
 
 .slide-in-left {
-    animation: slide-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
 }
 
 @keyframes slide-left {
@@ -123,7 +123,7 @@ export default {
 }
 
 .slide-in-right {
-    animation: slide-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
 }
 
 @keyframes slide-right {

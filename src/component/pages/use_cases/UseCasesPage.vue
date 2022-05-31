@@ -4,12 +4,15 @@
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" cols="12">
                 <v-row class="title-row mb-10">
-                    <p class="title-text mb-0"><label class="accent-text">USD</label><label class="title-text-plus">+</label> use cases</p>
+                    <label class="accent-text">USD</label><label class="title-text-plus">+</label>
+                    <label class="title-text mb-0" v-observe-visibility="titleVC" :class="titleAnm ? 'text-focus-in' : ''">&nbsp;use cases</label>
                 </v-row>
 
                 <v-row class="d-flex justify-space-between" :class="isMobile ? 'flex-column' : 'flex-row'">
                     <v-col :cols="isMobile ? 12 : 4">
                         <UseCard
+                                v-observe-visibility="cashCardVC"
+                                :class="cashCardAnm ? 'slide-in-left' : ''"
                                 title="Cash management"
                                 desc="Park your stables in USD+, and watch your balance grow in your wallet overnight. No staking required"
                                 btnLabel="Mint"
@@ -18,6 +21,8 @@
 
                     <v-col :cols="isMobile ? 12 : 4">
                         <UseCard
+                                v-observe-visibility="liquidCardVC"
+                                :class="liquidCardAnm ? 'slide-top' : ''"
                                 title="Liquidity Pools"
                                 desc="Provide liquidity into USD+ pools, and get USD+ yield on top of LP fees and rewards"
                                 btnLabel="Deposit"
@@ -26,6 +31,8 @@
 
                     <v-col :cols="isMobile ? 12 : 4">
                         <UseCard
+                                v-observe-visibility="leverageCardVC"
+                                :class="leverageCardAnm ? 'slide-in-right' : ''"
                                 title="Leveraged Yield"
                                 desc="Get 6x-9x USD+ yield by pledgeing USD+ as collateral with minimum risk of liquidation"
                                 btnLabel="Coming Soon"
@@ -48,7 +55,10 @@ export default {
     },
 
     data: () => ({
-
+        titleAnm: true,
+        cashCardAnm: true,
+        liquidCardAnm: true,
+        leverageCardAnm: true,
     }),
 
     computed: {
@@ -58,6 +68,21 @@ export default {
     },
 
     methods: {
+        titleVC() {
+            this.titleAnm = !this.titleAnm;
+        },
+
+        cashCardVC() {
+            this.cashCardAnm = !this.cashCardAnm;
+        },
+
+        liquidCardVC() {
+            this.liquidCardAnm = !this.liquidCardAnm;
+        },
+
+        leverageCardVC() {
+            this.leverageCardAnm = !this.leverageCardAnm;
+        },
     }
 }
 </script>
