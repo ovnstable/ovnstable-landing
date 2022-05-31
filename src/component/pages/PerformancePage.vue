@@ -8,19 +8,19 @@
             <v-col cols="12">
                 <v-row class="mb-15" justify="center">
                     <label class="accent-text mb-0">USD</label><label class="title-text-plus">+</label>
-                    <label class="title-text" v-observe-visibility="titleVisibleChange" :class="titleAnimated ? 'text-focus-in' : ''">&nbsp;Performance</label>
+                    <label class="title-text" v-observe-visibility="titleVC" :class="titleAnm ? 'text-focus-in' : ''">&nbsp;Performance</label>
                 </v-row>
 
                 <v-row class="d-flex " :class="isMobile ? 'flex-column' : 'flex-row'">
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'end'">
-                            <ovn-apyrate v-observe-visibility="apyRateVisibleChange" :class="apyRateAnimated ? 'slide-in-left' : ''"></ovn-apyrate>
+                            <ovn-apyrate v-observe-visibility="apyRateVC" :class="apyRateAnm ? 'slide-in-left' : ''"></ovn-apyrate>
                         </v-row>
                     </v-col>
 
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'start'">
-                            <ovn-distrate v-observe-visibility="distRateVisibleChange" :class="distRateAnimated ? 'slide-in-right' : ''"></ovn-distrate>
+                            <ovn-distrate v-observe-visibility="distRateVC" :class="distRateAnm ? 'slide-in-right' : ''"></ovn-distrate>
                         </v-row>
                     </v-col>
                 </v-row>
@@ -38,9 +38,9 @@ export default {
     },
 
     data: () => ({
-        titleAnimated: true,
-        apyRateAnimated: true,
-        distRateAnimated: true,
+        titleAnm: true,
+        apyRateAnm: true,
+        distRateAnm: true,
     }),
 
     computed: {
@@ -50,16 +50,16 @@ export default {
     },
 
     methods: {
-        titleVisibleChange() {
-            this.titleAnimated = !this.titleAnimated;
+        titleVC() {
+            this.titleAnm = !this.titleAnm;
         },
 
-        apyRateVisibleChange() {
-            this.apyRateAnimated = !this.apyRateAnimated;
+        apyRateVC() {
+            this.apyRateAnm = !this.apyRateAnm;
         },
 
-        distRateVisibleChange() {
-            this.distRateAnimated = !this.distRateAnimated;
+        distRateVC() {
+            this.distRateAnm = !this.distRateAnm;
         }
     }
 }
