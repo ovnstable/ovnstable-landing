@@ -198,7 +198,7 @@ export default {
 }
 
 .page-container {
-    background-color: rgba(122, 122, 122, 0.22) !important;
+    background-color: #F5F5F5 !important;
 }
 
 .container-row {
