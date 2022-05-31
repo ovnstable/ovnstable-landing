@@ -4,60 +4,66 @@
             <v-col class="text-col" :cols="isMobile ? 12 : 7">
                 <v-row class="mb-15">
                     <div>
-                        <p class="title-text mb-0">USD+ <label class="accent-text">Portfolio</label> strategy</p>
+                        <label class="title-text mb-0" v-observe-visibility="titleVC" :class="titleAnm ? 'text-focus-in' : 'display-none'">USD+ </label>
+                        <label class="accent-text">Portfolio</label>
+                        <label class="title-text mb-0" :class="titleAnm ? 'text-focus-in' : 'display-none'"> strategy</label>
                     </div>
                 </v-row>
 
-                <v-row class="sub-title-row mb-16">
-                    <p class="sub-title-text">
-                        The portfolio deployed by Overnight is constructed to minimize risk and maximize liquidity. 100% of the assets consist of yield-bearing strategies is exposure by major stablecoins.
-                    </p>
-                </v-row>
+                <div v-observe-visibility="subTitleVC" :class="subTitleAnm ? 'text-focus-in' : 'display-none'">
+                    <v-row class="sub-title-row mb-16">
+                        <p class="sub-title-text">
+                            The portfolio deployed by Overnight is constructed to minimize risk and maximize liquidity. 100% of the assets consist of yield-bearing strategies is exposure by major stablecoins.
+                        </p>
+                    </v-row>
 
-                <v-row class="mb-4">
-                    <label class="list-title">Asset selection criteria</label>
-                </v-row>
+                    <v-row class="mb-4">
+                        <label class="list-title">Asset selection criteria</label>
+                    </v-row>
 
-                <v-row class="mb-15">
-                    <ul>
-                        <li class="list-label">We consider only high quality stablecoins: USDC, USDT, DAI</li>
-                        <li class="list-label">Other stables can be considered as well on exceptional basis, <br/>subject to rigorous due-diligence</li>
-                        <li class="list-label">No exposure to algorithmic stablecoins</li>
-                    </ul>
-                </v-row>
+                    <v-row class="mb-15">
+                        <ul>
+                            <li class="list-label">We consider only high quality stablecoins: USDC, USDT, DAI</li>
+                            <li class="list-label">Other stables can be considered as well on exceptional basis, <br/>subject to rigorous due-diligence</li>
+                            <li class="list-label">No exposure to algorithmic stablecoins</li>
+                        </ul>
+                    </v-row>
 
-                <v-row class="mb-4">
-                    <label class="list-title">Stablecoin lending</label>
-                </v-row>
+                    <v-row class="mb-4">
+                        <label class="list-title">Stablecoin lending</label>
+                    </v-row>
 
-                <v-row class="mb-15">
-                    <ul>
-                        <li class="list-label">Deposit stablecoins to lending protocols, like AAVE</li>
-                    </ul>
-                </v-row>
+                    <v-row class="mb-15">
+                        <ul>
+                            <li class="list-label">Deposit stablecoins to lending protocols, like AAVE</li>
+                        </ul>
+                    </v-row>
 
-                <v-row class="mb-4">
-                    <label class="list-title">Stable-to-stable pools</label>
-                </v-row>
+                    <v-row class="mb-4">
+                        <label class="list-title">Stable-to-stable pools</label>
+                    </v-row>
 
-                <v-row class="mb-15">
-                    <ul>
-                        <li class="list-label">Deposit stablecoins into liquidity pools with no impermanent loss</li>
-                    </ul>
-                </v-row>
+                    <v-row class="mb-15">
+                        <ul>
+                            <li class="list-label">Deposit stablecoins into liquidity pools with no impermanent loss</li>
+                        </ul>
+                    </v-row>
 
-                <v-row class="mb-4">
-                    <label class="list-title">Hedged strategies</label>
-                </v-row>
+                    <v-row class="mb-4">
+                        <label class="list-title">Hedged strategies</label>
+                    </v-row>
 
-                <v-row class="mb-15">
-                    <ul>
-                        <li class="list-label">coming soon</li>
-                    </ul>
-                </v-row>
+                    <v-row class="mb-15">
+                        <ul>
+                            <li class="list-label">coming soon</li>
+                        </ul>
+                    </v-row>
+                </div>
 
                 <v-row class="mb-8">
                     <v-btn
+                            v-observe-visibility="contractsBtnVC"
+                            :class="contractsBtnAnm ? 'fade-animation' : 'display-none'"
                             text
                             class="see-docs-btn"
                             @click="openDocsLink">
@@ -68,7 +74,7 @@
 
             <v-col :cols="isMobile ? 12 : 5">
                 <v-row justify="center" class="overflow-hidden">
-                    <ovn-portfoliocards></ovn-portfoliocards>
+                    <ovn-portfoliocards v-observe-visibility="portfolioCardsVC" :class="portfolioCardsAnm ? 'slide-in-right' : 'display-none'"></ovn-portfoliocards>
                 </v-row>
             </v-col>
         </v-row>
@@ -82,7 +88,12 @@ export default {
 
     components: {},
 
-    data: () => ({}),
+    data: () => ({
+        titleAnm: true,
+        subTitleAnm: true,
+        portfolioCardsAnm: true,
+        contractsBtnAnm: true,
+    }),
 
     computed: {
         isMobile() {
@@ -93,7 +104,23 @@ export default {
     methods: {
         openDocsLink() {
             window.open(`https://docs.overnight.fi/advanced/contract-addresses`, '_blank').focus();
-        }
+        },
+
+        titleVC() {
+            this.titleAnm = !this.titleAnm;
+        },
+
+        subTitleVC() {
+            this.subTitleAnm = !this.subTitleAnm;
+        },
+
+        portfolioCardsVC() {
+            this.portfolioCardsAnm = !this.portfolioCardsAnm;
+        },
+
+        contractsBtnVC() {
+            this.contractsBtnAnm = !this.contractsBtnAnm;
+        },
     }
 }
 </script>

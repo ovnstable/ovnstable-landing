@@ -64,19 +64,6 @@ export default {
     }
 }
 
-.slide-top {
-    animation: slide-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
-}
-
-@keyframes slide-top {
-    0% {
-        transform: translateY(200px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
 .fade-animation {
     animation: fade-animation 4s forwards;
 }
@@ -109,6 +96,23 @@ export default {
     }
 }
 
+.slide-top {
+    animation: slide-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
+}
+
+@keyframes slide-top {
+    0% {
+        transform: translateY(200px);
+        filter: blur(4px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
 .slide-in-left {
     animation: slide-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
 }
@@ -116,9 +120,13 @@ export default {
 @keyframes slide-left {
     0% {
         transform: translateX(-200px);
+        filter: blur(4px);
+        opacity: 0;
     }
     100% {
         transform: translateX(0);
+        filter: blur(0px);
+        opacity: 1;
     }
 }
 
@@ -129,9 +137,35 @@ export default {
 @keyframes slide-right {
     0% {
         transform: translateX(200px);
+        filter: blur(4px);
+        opacity: 0;
     }
     100% {
         transform: translateX(0);
+        filter: blur(0px);
+        opacity: 1;
     }
 }
+
+.puff-in-center {
+    animation: puff-in-center 0.8s cubic-bezier(0.470, 0.000, 0.745, 0.715) forwards;
+}
+
+@keyframes puff-in-center {
+    0% {
+        transform: scale(0.5);
+        filter: blur(4px);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+.display-none {
+    opacity: 0 !important;
+}
+
 </style>
