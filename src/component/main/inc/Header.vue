@@ -3,7 +3,8 @@
         <v-row class="header-row fill-height">
             <v-col cols="12" class="d-flex overflow-hidden justify-space-between align-center">
                 <div class="mr-auto sub-text-focus-in-1s" :class="isMobile ? 'mr-4' : ''">
-                    <img class="logo-img" :src="require('@/assets/img/logo_full.svg')" @click="openLink('https://overnight.fi/')">
+                    <img class="logo-img" :src="require('@/assets/img/logo.svg')" @click="openLink('https://overnight.fi/')">
+                    <img class="logo-img-text ml-3" :style="'--opacity: ' + headerOpacity" :src="require('@/assets/img/logo-text.svg')" @click="openLink('https://overnight.fi/')">
                 </div>
 
                 <div :class="isMobile ? '' : 'mr-8'">
@@ -15,6 +16,7 @@
                         <template v-slot:activator="{ on, attrs }">
                             <v-btn
                                     outlined
+                                    :style="'--opacity: ' + headerOpacity"
                                     class="menu-btn"
                                     v-bind="attrs"
                                     v-on="on"
@@ -85,7 +87,7 @@ export default {
 
         headerOpacity() {
             let opacity = this.scrollPosition / this.scrollFadePosition;
-            return opacity > 0.8 ? 0.8 : opacity;
+            return opacity > 1 ? 1 : opacity;
         }
     },
 
@@ -123,6 +125,10 @@ export default {
         height: 28px !important ;
     }
 
+    .logo-img-text {
+        height: 22px !important ;
+    }
+
     .dapp-btn {
         height: 40px !important;
         font-style: normal !important;
@@ -152,6 +158,10 @@ export default {
         height: 40px !important ;
     }
 
+    .logo-img-text {
+        height: 34px !important ;
+    }
+
     .dapp-btn {
         width: 200px !important;
         height: 48px !important;
@@ -178,7 +188,12 @@ export default {
 }
 
 .header-background {
-    background: linear-gradient(100.74deg, rgba(2, 24, 68, var(--opacity)) 0.89%, rgba(16, 21, 39, var(--opacity)) 98.31%) !important;
+    background: rgba(255, 255, 255, var(--opacity));
+    filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.06));
+}
+
+.logo-img-text {
+    filter: brightness(calc(1 - var(--opacity)));
 }
 
 .main-header-container {
@@ -198,8 +213,16 @@ export default {
     margin-bottom: 0 !important;
 }
 
-.logo-img, .menu-list-item {
+.logo-img, .logo-img-text, .menu-list-item {
     cursor: pointer;
+}
+
+.logo-img-text {
+    vertical-align: sub !important;
+}
+
+.logo-img {
+    vertical-align: sub !important;
 }
 
 .dapp-btn {
@@ -219,6 +242,7 @@ export default {
 
 .menu-btn {
     border: none !important;
+    filter: brightness(calc(1 - var(--opacity)));
 }
 
 .v-menu__content {
