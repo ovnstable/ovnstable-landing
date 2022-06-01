@@ -26,17 +26,17 @@
                         </template>
 
                         <v-list>
-                            <v-list-item class="menu-list-item">
-                                <v-list-item-title class="list-item-label" @click="openHook('main_page')">About</v-list-item-title>
+                            <v-list-item class="menu-list-item" @click="openHook('main_page')">
+                                <v-list-item-title class="list-item-label">About</v-list-item-title>
                             </v-list-item>
-                            <v-list-item class="menu-list-item">
-                                <v-list-item-title class="list-item-label" @click="openHook('performance_page')">Performance</v-list-item-title>
+                            <v-list-item class="menu-list-item" @click="openHook('performance_page')">
+                                <v-list-item-title class="list-item-label">Performance</v-list-item-title>
                             </v-list-item>
-                            <v-list-item class="menu-list-item">
-                                <v-list-item-title class="list-item-label" @click="openHook('portfolio_page')">Portfolio</v-list-item-title>
+                            <v-list-item class="menu-list-item" @click="openHook('portfolio_page')">
+                                <v-list-item-title class="list-item-label">Portfolio</v-list-item-title>
                             </v-list-item>
-                            <v-list-item class="menu-list-item">
-                                <v-list-item-title class="list-item-label" @click="openHook('team_page')">Team</v-list-item-title>
+                            <v-list-item class="menu-list-item" @click="openHook('team_page')">
+                                <v-list-item-title class="list-item-label">Team</v-list-item-title>
                             </v-list-item>
 
                             <v-divider></v-divider>
@@ -44,20 +44,20 @@
                                 <label class="menu-community-label">Our community</label>
                             </v-list-item>
 
-                            <v-list-item class="menu-list-item">
-                                <v-list-item-title class="list-item-label" @click="openLink('https://twitter.com/overnight_fi')">Twitter</v-list-item-title>
+                            <v-list-item class="menu-list-item" @click="openLink('https://twitter.com/overnight_fi')">
+                                <v-list-item-title class="list-item-label">Twitter</v-list-item-title>
                             </v-list-item>
-                            <v-list-item class="menu-list-item">
-                                <v-list-item-title class="list-item-label" @click="openLink('https://discord.com/invite/overnight-fi')">Discord</v-list-item-title>
+                            <v-list-item class="menu-list-item" @click="openLink('https://discord.com/invite/overnight-fi')">
+                                <v-list-item-title class="list-item-label">Discord</v-list-item-title>
                             </v-list-item>
-                            <v-list-item class="menu-list-item">
-                                <v-list-item-title class="list-item-label" @click="openLink('https://t.me/overnight_fi')">Telegram discussion </v-list-item-title>
+                            <v-list-item class="menu-list-item" @click="openLink('https://t.me/overnight_fi')">
+                                <v-list-item-title class="list-item-label">Telegram discussion </v-list-item-title>
                             </v-list-item>
-                            <v-list-item class="menu-list-item">
-                                <v-list-item-title class="list-item-label" @click="openLink('https://www.linkedin.com/company/overnightfi/')">LinkedIn</v-list-item-title>
+                            <v-list-item class="menu-list-item" @click="openLink('https://www.linkedin.com/company/overnightfi/')">
+                                <v-list-item-title class="list-item-label">LinkedIn</v-list-item-title>
                             </v-list-item>
-                            <v-list-item class="menu-list-item">
-                                <v-list-item-title class="list-item-label" @click="openLink('https://github.com/ovnstable')">GitHub</v-list-item-title>
+                            <v-list-item class="menu-list-item" @click="openLink('https://github.com/ovnstable')">
+                                <v-list-item-title class="list-item-label">GitHub</v-list-item-title>
                             </v-list-item>
                         </v-list>
                     </v-menu>
@@ -215,6 +215,10 @@ export default {
 
 .logo-img, .logo-img-text, .menu-list-item {
     cursor: pointer;
+}
+
+.menu-list-item:hover {
+    background-color: rgba(6, 120, 196, 0.1);
 }
 
 .logo-img-text {
