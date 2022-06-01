@@ -4,20 +4,20 @@
             <v-col class="" :cols="isMobile ? 12 : 6">
                 <v-row class="title-row mb-15">
                     <div>
-                        <label class="title-text mb-0" v-observe-visibility="titleVC" :class="titleAnm ? 'text-focus-in' : ''">How does </label>
+                        <label class="title-text mb-0">How does </label>
                         <label class="accent-text">USD</label><label class="title-text-plus">+</label>
-                        <label class="title-text" :class="titleAnm ? 'text-focus-in' : ''"> work?</label>
+                        <label class="title-text"> work?</label>
                     </div>
                 </v-row>
 
                 <v-row class="">
-                    <p class="sub-title-text" v-observe-visibility="subTitleVC" :class="subTitleAnm ? 'text-focus-in' : ''">
+                    <p class="sub-title-text">
                         USD+ includes 3 components:
                     </p>
                 </v-row>
 
                 <v-row>
-                    <v-expansion-panels multiple v-model="openedPanels" v-observe-visibility="panelsVC" :class="panelsAnm ? 'text-focus-in' : ''">
+                    <v-expansion-panels multiple v-model="openedPanels">
                         <v-expansion-panel class="ml-n9 mt-n4 panel-bordered" @click="openPanel(0)">
                             <v-expansion-panel-header class="panel-header-row">
                                 <label class="panel-header">1. Pegged to USDC 1 : 1</label>
@@ -57,7 +57,7 @@
             </v-col>
 
             <v-col class="" :cols="isMobile ? 12 : 6">
-                <v-row :justify="isMobile ? 'center' : 'end'" class="overflow-hidden" v-observe-visibility="imgVC" :class="imgAnm ? 'slide-in-right' : ''">
+                <v-row :justify="isMobile ? 'center' : 'end'" class="overflow-hidden">
                     <img class="how-img" :src="require('@/assets/img/how_to_use.svg')">
                 </v-row>
             </v-col>
@@ -75,11 +75,6 @@ export default {
 
     data: () => ({
         openedPanels: [0],
-
-        titleAnm: true,
-        subTitleAnm: true,
-        panelsAnm: true,
-        imgAnm: true,
     }),
 
     computed: {
@@ -93,22 +88,6 @@ export default {
             if (this.openedPanels[0] !== i) {
                 this.openedPanels = [].push(i);
             }
-        },
-
-        titleVC() {
-            this.titleAnm = !this.titleAnm;
-        },
-
-        subTitleVC() {
-            this.subTitleAnm = !this.subTitleAnm;
-        },
-
-        panelsVC() {
-            this.panelsAnm = !this.panelsAnm;
-        },
-
-        imgVC() {
-            this.imgAnm = !this.imgAnm;
         },
     }
 }

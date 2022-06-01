@@ -49,30 +49,6 @@ export default {
 
 /* animations */
 
-.slide-in-bck-center {
-    animation: slide-in-bck-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-@keyframes slide-in-bck-center {
-    0% {
-        transform: translateZ(600px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateZ(0);
-        opacity: 1;
-    }
-}
-
-.fade-animation {
-    animation: fade-animation 4s forwards;
-}
-
-@keyframes fade-animation{
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-}
-
 .text-focus-in {
     animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
@@ -91,74 +67,6 @@ export default {
         opacity: 0;
     }
     100% {
-        filter: blur(0px);
-        opacity: 1;
-    }
-}
-
-.slide-top {
-    animation: slide-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
-}
-
-@keyframes slide-top {
-    0% {
-        transform: translateY(200px);
-        filter: blur(4px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        filter: blur(0px);
-        opacity: 1;
-    }
-}
-
-.slide-in-left {
-    animation: slide-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
-}
-
-@keyframes slide-left {
-    0% {
-        transform: translateX(-200px);
-        filter: blur(4px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        filter: blur(0px);
-        opacity: 1;
-    }
-}
-
-.slide-in-right {
-    animation: slide-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
-}
-
-@keyframes slide-right {
-    0% {
-        transform: translateX(200px);
-        filter: blur(4px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        filter: blur(0px);
-        opacity: 1;
-    }
-}
-
-.puff-in-center {
-    animation: puff-in-center 0.8s cubic-bezier(0.470, 0.000, 0.745, 0.715) forwards;
-}
-
-@keyframes puff-in-center {
-    0% {
-        transform: scale(0.5);
-        filter: blur(4px);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
         filter: blur(0px);
         opacity: 1;
     }

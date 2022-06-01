@@ -10,23 +10,23 @@
                 <v-row class="title-row mb-10">
                     <div>
                         <label class="accent-text">USD</label><label class="title-text-plus">+</label>
-                        <label class="title-text text-focus-in mb-0"> Is</label>
-                        <p class="title-text text-focus-in mb-0">USDC that pays you yield</p>
-                        <p class="title-text text-focus-in mb-0">daily via rebase</p>
+                        <label class="title-text mb-0"> Is</label>
+                        <p class="title-text mb-0">USDC that pays you yield</p>
+                        <p class="title-text mb-0">daily via rebase</p>
                     </div>
                 </v-row>
                 <v-row class="mb-10">
-                    <p class="sub-title-text sub-text-focus-in-hs mb-0">USD+ stablecoin can be instantly minted and redeemed to USDC 1:1.</p>
-                    <p class="sub-title-text sub-text-focus-in-hs mb-0">Simply replace USDC with USD+ stablecoin and start getting passive yield where it didn’t exist before.</p>
+                    <p class="sub-title-text mb-0">USD+ stablecoin can be instantly minted and redeemed to USDC 1:1.</p>
+                    <p class="sub-title-text mb-0">Simply replace USDC with USD+ stablecoin and start getting passive yield where it didn’t exist before.</p>
                 </v-row>
                 <v-row class="btn-row">
-                    <v-btn class="d-none d-md-flex launch-dapp-btn fade-animation" @click="launchDapp">Launch DAPP</v-btn>
+                    <v-btn class="d-none d-md-flex launch-dapp-btn" @click="launchDapp">Launch DAPP</v-btn>
                 </v-row>
             </v-col>
 
             <v-col :cols="isMobile ? 12 : 6">
                 <v-row :justify="isMobile ? 'center' : 'end'" class="overflow-hidden">
-                    <ovn-maincards class="maincards-widget slide-top"></ovn-maincards>
+                    <ovn-maincards class="maincards-widget"></ovn-maincards>
                 </v-row>
             </v-col>
         </v-row>

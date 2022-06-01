@@ -24,7 +24,7 @@
                     <label class="col-title-item" @click="openLink('https://twitter.com/overnight_fi')">Twitter</label>
                 </v-row>
                 <v-row class="mb-3">
-                    <label class="col-title-item" @click="openLink('https://discord.com/invite/7dEceNJqPq')">Discord</label>
+                    <label class="col-title-item" @click="openLink('https://discord.com/invite/overnight-fi')">Discord</label>
                 </v-row>
                 <v-row class="mb-3">
                     <label class="col-title-item" @click="openLink('https://t.me/overnight_fi')">Telegram Discussion</label>

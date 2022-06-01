@@ -4,13 +4,13 @@
             <v-col class="text-col" :cols="isMobile ? 12 : 7">
                 <v-row class="mb-15">
                     <div>
-                        <label class="title-text mb-0" v-observe-visibility="titleVC" :class="titleAnm ? 'text-focus-in' : 'display-none'">USD+ </label>
+                        <label class="title-text mb-0">USD+ </label>
                         <label class="accent-text">Portfolio</label>
-                        <label class="title-text mb-0" :class="titleAnm ? 'text-focus-in' : 'display-none'"> strategy</label>
+                        <label class="title-text mb-0"> strategy</label>
                     </div>
                 </v-row>
 
-                <div v-observe-visibility="subTitleVC" :class="subTitleAnm ? 'text-focus-in' : 'display-none'">
+                <div>
                     <v-row class="sub-title-row mb-16">
                         <p class="sub-title-text">
                             The portfolio deployed by Overnight is constructed to minimize risk and maximize liquidity. 100% of the assets consist of yield-bearing strategies is exposure by major stablecoins.
@@ -62,8 +62,6 @@
 
                 <v-row class="mb-8">
                     <v-btn
-                            v-observe-visibility="contractsBtnVC"
-                            :class="contractsBtnAnm ? 'fade-animation' : 'display-none'"
                             text
                             class="see-docs-btn"
                             @click="openDocsLink">
@@ -74,7 +72,7 @@
 
             <v-col :cols="isMobile ? 12 : 5">
                 <v-row justify="center" class="overflow-hidden">
-                    <ovn-portfoliocards v-observe-visibility="portfolioCardsVC" :class="portfolioCardsAnm ? 'slide-in-right' : 'display-none'"></ovn-portfoliocards>
+                    <ovn-portfoliocards></ovn-portfoliocards>
                 </v-row>
             </v-col>
         </v-row>
@@ -89,10 +87,6 @@ export default {
     components: {},
 
     data: () => ({
-        titleAnm: true,
-        subTitleAnm: true,
-        portfolioCardsAnm: true,
-        contractsBtnAnm: true,
     }),
 
     computed: {
@@ -104,22 +98,6 @@ export default {
     methods: {
         openDocsLink() {
             window.open(`https://docs.overnight.fi/advanced/contract-addresses`, '_blank').focus();
-        },
-
-        titleVC() {
-            this.titleAnm = !this.titleAnm;
-        },
-
-        subTitleVC() {
-            this.subTitleAnm = !this.subTitleAnm;
-        },
-
-        portfolioCardsVC() {
-            this.portfolioCardsAnm = !this.portfolioCardsAnm;
-        },
-
-        contractsBtnVC() {
-            this.contractsBtnAnm = !this.contractsBtnAnm;
         },
     }
 }

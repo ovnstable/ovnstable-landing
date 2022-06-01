@@ -8,19 +8,19 @@
             <v-col cols="12">
                 <v-row class="mb-15" justify="center">
                     <label class="accent-text mb-0">USD</label><label class="title-text-plus">+</label>
-                    <label class="title-text" v-observe-visibility="titleVC" :class="titleAnm ? 'text-focus-in' : 'display-none'">&nbsp;Performance</label>
+                    <label class="title-text">&nbsp;Performance</label>
                 </v-row>
 
                 <v-row class="d-flex " :class="isMobile ? 'flex-column' : 'flex-row'">
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'end'">
-                            <ovn-apyrate v-observe-visibility="apyRateVC" :class="apyRateAnm ? 'slide-in-left' : 'display-none'"></ovn-apyrate>
+                            <ovn-apyrate></ovn-apyrate>
                         </v-row>
                     </v-col>
 
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'start'">
-                            <ovn-distrate v-observe-visibility="distRateVC" :class="distRateAnm ? 'slide-in-right' : 'display-none'"></ovn-distrate>
+                            <ovn-distrate></ovn-distrate>
                         </v-row>
                     </v-col>
                 </v-row>
@@ -38,9 +38,6 @@ export default {
     },
 
     data: () => ({
-        titleAnm: true,
-        apyRateAnm: true,
-        distRateAnm: true,
     }),
 
     computed: {
@@ -50,17 +47,6 @@ export default {
     },
 
     methods: {
-        titleVC() {
-            this.titleAnm = !this.titleAnm;
-        },
-
-        apyRateVC() {
-            this.apyRateAnm = !this.apyRateAnm;
-        },
-
-        distRateVC() {
-            this.distRateAnm = !this.distRateAnm;
-        }
     }
 }
 </script>

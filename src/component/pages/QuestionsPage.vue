@@ -52,7 +52,7 @@
 
                 <v-row justify="center">
                     <div>
-                        <v-row class="card-container ma-2" align="center" justify="center" @click="openLink('https://discord.com/invite/7dEceNJqPq')">
+                        <v-row class="card-container ma-2" align="center" justify="center" @click="openLink('https://discord.com/invite/overnight-fi')">
                             <img class="social-img" :src="require('@/assets/img/social/discord.svg')">
                         </v-row>
                     </div>
@@ -251,5 +251,9 @@ export default {
     font-family: 'Roboto', sans-serif !important;
     font-feature-settings: 'liga' off !important;
     color: #FFFFFF !important;
+}
+
+.card-container {
+    cursor: pointer !important;
 }
 </style>

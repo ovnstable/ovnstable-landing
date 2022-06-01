@@ -48,7 +48,7 @@
                                 <v-list-item-title class="list-item-label" @click="openLink('https://twitter.com/overnight_fi')">Twitter</v-list-item-title>
                             </v-list-item>
                             <v-list-item class="menu-list-item">
-                                <v-list-item-title class="list-item-label" @click="openLink('https://discord.com/invite/7dEceNJqPq')">Discord</v-list-item-title>
+                                <v-list-item-title class="list-item-label" @click="openLink('https://discord.com/invite/overnight-fi')">Discord</v-list-item-title>
                             </v-list-item>
                             <v-list-item class="menu-list-item">
                                 <v-list-item-title class="list-item-label" @click="openLink('https://t.me/overnight_fi')">Telegram discussion </v-list-item-title>
