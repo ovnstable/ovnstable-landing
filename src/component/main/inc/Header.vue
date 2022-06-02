@@ -8,15 +8,24 @@
                 </div>
 
                 <div class="mr-2 sub-text-focus-in-1s" v-if="!isMobile">
-                    <img class="social-btn " :src="require('@/assets/img/social/twitter_btn.svg')" :style="'--opacity: ' + headerOpacity">
+                    <img class="social-btn"
+                         @click="openLink('https://twitter.com/overnight_fi')"
+                         :src="require('@/assets/img/social/twitter_btn.svg')"
+                         :style="'--opacity: ' + headerOpacity">
                 </div>
 
                 <div class="mr-2 sub-text-focus-in-1s" v-if="!isMobile">
-                    <img class="social-btn " :src="require('@/assets/img/social/discord_btn.svg')" :style="'--opacity: ' + headerOpacity">
+                    <img class="social-btn"
+                         @click="openLink('https://discord.com/invite/overnight-fi')"
+                         :src="require('@/assets/img/social/discord_btn.svg')"
+                         :style="'--opacity: ' + headerOpacity">
                 </div>
 
                 <div class="mr-8 sub-text-focus-in-1s" v-if="!isMobile">
-                    <img class="social-btn " :src="require('@/assets/img/social/tg_btn.svg')" :style="'--opacity: ' + headerOpacity">
+                    <img class="social-btn"
+                         @click="openLink('https://t.me/overnight_fi')"
+                         :src="require('@/assets/img/social/tg_btn.svg')"
+                         :style="'--opacity: ' + headerOpacity">
                 </div>
 
                 <div :class="isMobile ? '' : 'mr-8'">
