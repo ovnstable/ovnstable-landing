@@ -1,5 +1,10 @@
 <template>
     <div class="page-container overflow-hidden" :class="isMobile ? 'flex-column' : 'flex-row'">
+
+        <video autoplay playsinline muted loop class="bg-video">
+            <source :src='require("@/assets/background/video/questions-bg.mp4")' type='video/mp4'>
+        </video>
+
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" :cols="isMobile ? 12 : 7">
                 <v-row class="title-row mb-10" justify="center" align="center">
@@ -197,6 +202,12 @@ export default {
     }
 }
 
+@media only screen and (min-width: 1800px) {
+    .bg-video {
+        width: 100%;
+    }
+}
+
 .page-container {
     background-color: #F5F5F5 !important;
 }
@@ -207,8 +218,14 @@ export default {
 
 .container-row {
     margin-left: 5% !important;
-    margin-top: 10% !important;
-    margin-bottom: 10% !important;
+    margin-top: 12% !important;
+    margin-bottom: 12% !important;
+}
+
+.bg-video {
+    mix-blend-mode: darken;
+    z-index: 0 !important;
+    position: absolute;
 }
 
 .text-col, .social-col {
