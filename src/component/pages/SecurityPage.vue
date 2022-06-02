@@ -176,7 +176,7 @@ export default {
 
 @media only screen and (min-width: 961px) {
     .find-us-img {
-        width: 20vw;
+        width: 18vw;
     }
 
     .find-us-img-audit {
