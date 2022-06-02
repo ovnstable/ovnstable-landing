@@ -180,7 +180,7 @@ export default {
 .roadmap-bg-img  > path {
     stroke-dasharray: 10;
     stroke-dashoffset: 1000;
-    animation: dash 15s linear both infinite;
+    animation: dash 30s linear both infinite;
 }
 
 @keyframes dash {

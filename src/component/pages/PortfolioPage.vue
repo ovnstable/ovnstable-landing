@@ -23,8 +23,8 @@
 
                     <v-row class="mb-15">
                         <ul>
-                            <li class="list-label">We consider only high quality stablecoins: USDC, USDT, DAI</li>
-                            <li class="list-label">Other stables can be considered as well on exceptional basis, <br/>subject to rigorous due-diligence</li>
+                            <li class="list-label">We consider only high-quality stablecoins: USDC, USDT, DAI</li>
+                            <li class="list-label">Other stables can be considered as well on an exceptional basis, <br/>subject to rigorous due diligence</li>
                             <li class="list-label">No exposure to algorithmic stablecoins</li>
                         </ul>
                     </v-row>
@@ -55,7 +55,7 @@
 
                     <v-row class="mb-15">
                         <ul>
-                            <li class="list-label">coming soon</li>
+                            <li class="list-label">Coming soon</li>
                         </ul>
                     </v-row>
                 </div>

@@ -15,7 +15,7 @@
                     <v-text-field
                             class="text-input-field"
                             v-model="email"
-                            :rules="[(val) => validateEmail(val)]"
+                            :rules="[(val) => (val ? validateEmail(val) : true)]"
                             background-color="white"
                             flat
                             placeholder="Write your Email here"
@@ -84,6 +84,7 @@ export default {
         email: null,
         text: null,
 
+        // eslint-disable-next-line
         regEmail: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/,
     }),
 

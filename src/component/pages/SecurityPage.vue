@@ -21,7 +21,7 @@
                             <label class="title-label">Rigorous Risk-management and monitoring</label>
                         </v-row>
                         <v-row justify="center" class="mb-10">
-                            <label class="desc-label">Finance risks and smart contract risk management. World class risk management team and process built in line with “Three lines of defence approach” mandated for blue-chip financial institutions</label>
+                            <label class="desc-label">Finance risks and smart contract risk management. The world-class risk management team and built-in process line with the “Three lines of defense approach” mandated for blue-chip financial institutions</label>
                         </v-row>
                     </v-col>
 
@@ -30,7 +30,7 @@
                             <label class="title-label">Audit</label>
                         </v-row>
                         <v-row justify="center" class="mb-10">
-                            <label class="desc-label">Audited by Hacken.io. Other world’s leading security firms’ audit’s are in plans. Security of the USD+ Protocol is our highest priority</label>
+                            <label class="desc-label">We are audited by <a @click="openLink('https://hacken.io/audits/#overnight')">Hacken.io</a>. Other world’s leading security firms’ audits are in plan. Security of the USD+ Protocol is our highest priority</label>
                         </v-row>
                     </v-col>
                 </v-row>
@@ -59,13 +59,6 @@
                                     class="find-us-img"
                                     @click="openLink('https://www.coingecko.com/en/coins/usdplus')"
                                     :src="require('@/assets/img/partners/coinGecko.svg')">
-
-                            <v-spacer></v-spacer>
-
-                            <img
-                                    class="find-us-img"
-                                    @click="openLink('https://debank.com/')"
-                                    :src="require('@/assets/img/partners/debank.svg')">
                         </v-row>
                     </v-col>
 
@@ -173,7 +166,7 @@ export default {
 
 @media only screen and (max-width: 960px) {
     .find-us-img {
-        width: 20vw;
+        width: 30vw;
     }
 
     .find-us-img-audit {
@@ -183,7 +176,7 @@ export default {
 
 @media only screen and (min-width: 961px) {
     .find-us-img {
-        width: 15vw;
+        width: 20vw;
     }
 
     .find-us-img-audit {

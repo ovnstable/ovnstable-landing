@@ -154,6 +154,10 @@ export default {
     width: 90% !important;
 }
 
+.logo-col, .community-col, .dev-col {
+    z-index: 100 !important;
+}
+
 .container-row {
     margin-left: 5% !important;
     margin-top: 4% !important;
