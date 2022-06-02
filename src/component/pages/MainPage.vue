@@ -7,7 +7,7 @@
 
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" :cols="isMobile ? 12 : 6">
-                <v-row class="title-row mb-10">
+                <v-row class="title-row mb-10" :class="isMobile ? '' : 'mt-0'">
                     <div>
                         <label class="accent-text">USD</label><label class="title-text-plus">+</label>
                         <label class="title-text mb-0"> Is</label>

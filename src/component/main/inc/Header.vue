@@ -7,6 +7,18 @@
                     <img class="logo-img-text ml-3" :style="'--opacity: ' + headerOpacity" :src="require('@/assets/img/logo-text.svg')" @click="openLink('https://overnight.fi/')">
                 </div>
 
+                <div class="mr-2 sub-text-focus-in-1s" v-if="!isMobile">
+                    <img class="social-btn " :src="require('@/assets/img/social/twitter_btn.svg')" :style="'--opacity: ' + headerOpacity">
+                </div>
+
+                <div class="mr-2 sub-text-focus-in-1s" v-if="!isMobile">
+                    <img class="social-btn " :src="require('@/assets/img/social/discord_btn.svg')" :style="'--opacity: ' + headerOpacity">
+                </div>
+
+                <div class="mr-8 sub-text-focus-in-1s" v-if="!isMobile">
+                    <img class="social-btn " :src="require('@/assets/img/social/tg_btn.svg')" :style="'--opacity: ' + headerOpacity">
+                </div>
+
                 <div :class="isMobile ? '' : 'mr-8'">
                     <v-btn class="dapp-btn sub-text-focus-in-1s" @click="launchDapp">DAPP</v-btn>
                 </div>
@@ -44,13 +56,13 @@
                                 <label class="menu-community-label">Our community</label>
                             </v-list-item>
 
-                            <v-list-item class="menu-list-item" @click="openLink('https://twitter.com/overnight_fi')">
+                            <v-list-item class="menu-list-item" @click="openLink('https://twitter.com/overnight_fi')" v-if="isMobile">
                                 <v-list-item-title class="list-item-label">Twitter</v-list-item-title>
                             </v-list-item>
-                            <v-list-item class="menu-list-item" @click="openLink('https://discord.com/invite/overnight-fi')">
+                            <v-list-item class="menu-list-item" @click="openLink('https://discord.com/invite/overnight-fi')" v-if="isMobile">
                                 <v-list-item-title class="list-item-label">Discord</v-list-item-title>
                             </v-list-item>
-                            <v-list-item class="menu-list-item" @click="openLink('https://t.me/overnight_fi')">
+                            <v-list-item class="menu-list-item" @click="openLink('https://t.me/overnight_fi')" v-if="isMobile">
                                 <v-list-item-title class="list-item-label">Telegram discussion </v-list-item-title>
                             </v-list-item>
                             <v-list-item class="menu-list-item" @click="openLink('https://www.linkedin.com/company/overnightfi/')">
@@ -137,6 +149,10 @@ export default {
         line-height: 18px !important;
     }
 
+    .social-btn {
+        height: 40px !important;
+    }
+
     .list-item-label {
         font-style: normal;
         font-weight: 400;
@@ -171,6 +187,10 @@ export default {
         line-height: 20px !important;
     }
 
+    .social-btn {
+        height: 48px !important;
+    }
+
     .list-item-label {
         font-style: normal;
         font-weight: 400;
@@ -193,7 +213,7 @@ export default {
 }
 
 .logo-img-text {
-    filter: brightness(calc(1 - var(--opacity)));
+    filter: brightness(max(calc(1 - var(--opacity)), 0.2));
 }
 
 .main-header-container {
@@ -246,7 +266,7 @@ export default {
 
 .menu-btn {
     border: none !important;
-    filter: brightness(calc(1 - var(--opacity)));
+    filter: brightness(max(calc(1 - var(--opacity)), 0.2));
 }
 
 .v-menu__content {
@@ -262,5 +282,14 @@ export default {
     text-transform: uppercase;
     font-feature-settings: 'pnum' on, 'lnum' on;
     color: #707A8B;
+}
+
+.social-btn {
+    filter: brightness(max(calc(1 - var(--opacity)), 0.2));
+    vertical-align: sub !important;
+}
+
+.social-btn:hover {
+    cursor: pointer;
 }
 </style>
