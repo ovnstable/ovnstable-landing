@@ -4,7 +4,7 @@
             <v-col cols="12" class="d-flex overflow-hidden justify-space-between align-center">
                 <div class="mr-auto sub-text-focus-in-1s" :class="isMobile ? 'mr-4' : ''">
                     <img class="logo-img" :src="require('@/assets/img/logo.svg')" @click="openLink('https://overnight.fi/')">
-                    <img class="logo-img-text ml-3" :style="'--opacity: ' + headerOpacity" :src="require('@/assets/img/logo-text.svg')" @click="openLink('https://overnight.fi/')">
+                    <img class="logo-img-text ml-2" :style="'--opacity: ' + headerOpacity" :src="require('@/assets/img/logo-text.svg')" @click="openLink('https://overnight.fi/')">
                 </div>
 
                 <div class="mr-2 sub-text-focus-in-1s" v-if="!isMobile">
@@ -248,10 +248,6 @@ export default {
 
 .menu-list-item:hover {
     background-color: rgba(6, 120, 196, 0.1);
-}
-
-.logo-img-text {
-    vertical-align: sub !important;
 }
 
 .logo-img {
