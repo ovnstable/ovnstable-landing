@@ -74,21 +74,11 @@
                         </v-col>
                         <v-col :cols="isTablet ? 12 : 3">
                             <FamePartner
-                                    coin0-link="blank.svg"
-                                    coin1-link="usdPlus.svg"
-                                    logo-link="eugene.png"
-                            />
-                        </v-col>
-                        <v-col :cols="isTablet ? 12 : 3">
-                            <FamePartner
                                     coin0-link="tetu.svg"
                                     coin1-link="usdPlus.svg"
                                     logo-link="tetu.svg"
                             />
                         </v-col>
-                    </v-row>
-
-                    <v-row class="mb-10">
                         <v-col :cols="isTablet ? 12 : 3">
                             <FamePartner
                                     coin0-link="sphere.svg"
@@ -96,6 +86,9 @@
                                     logo-link="sphere.svg"
                             />
                         </v-col>
+                    </v-row>
+
+                    <v-row class="mb-10">
                         <v-col :cols="isTablet ? 12 : 3">
                             <FamePartner
                                     coin0-link="clam.svg"
