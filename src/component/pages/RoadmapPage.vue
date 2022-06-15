@@ -42,9 +42,18 @@
                     <label class="title-text mb-0">our <label class="accent-text">roadmap</label></label>
                 </v-row>
 
-                <v-row justify="center">
+                <v-row justify="center" class="mb-15">
                     <img class="roadmap-img mt-12" :src="require('@/assets/img/roadmap.svg')">
                     <img class="roadmap-img-mobile mt-12" :src="require('@/assets/img/roadmap_mobile.svg')">
+                </v-row>
+
+                <v-row justify="center" class="btn-row">
+                    <v-btn
+                            text
+                            class="feature-btn"
+                            @click="openLink('https://overnight.canny.io/')">
+                        Vote for new features
+                    </v-btn>
                 </v-row>
             </v-col>
         </v-row>
@@ -70,6 +79,9 @@ export default {
     },
 
     methods: {
+        openLink(url) {
+            window.open(url, '_blank').focus();
+        },
     }
 }
 </script>
@@ -98,6 +110,14 @@ export default {
 
     .roadmap-bg-img {
         margin-top: -35%;
+    }
+
+    .feature-btn {
+        height: 40px !important;
+        font-style: normal !important;
+        font-weight: 400 !important;
+        font-size: 16px !important;
+        line-height: 18px !important;
     }
 }
 
@@ -139,6 +159,14 @@ export default {
     .roadmap-bg-img {
         margin-top: -10%;
     }
+
+    .feature-btn {
+        height: 50px !important;
+        font-style: normal !important;
+        font-weight: 400 !important;
+        font-size: 18px !important;
+        line-height: 20px !important;
+    }
 }
 
 .page-container {
@@ -155,6 +183,10 @@ export default {
     margin-bottom: 10% !important;
 }
 
+.btn-row {
+    margin-top: 10% !important;
+}
+
 .title-text {
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
@@ -169,6 +201,15 @@ export default {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
+}
+
+.feature-btn {
+    border: 1px solid #28A0F0;
+    border-radius: 0;
+    font-family: 'Roboto', sans-serif !important;
+    font-feature-settings: 'liga' off !important;
+    color: #28A0F0 !important;
+    text-transform: none !important;
 }
 
 .roadmap-bg-img {
