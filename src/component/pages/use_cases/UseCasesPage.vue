@@ -62,24 +62,28 @@
                             <FamePartner
                                     :data="pools[0][0]"
                                     logo-link="sphere.svg"
+                                    partner-link="https://www.sphere.finance/"
                             />
                         </v-col>
                         <v-col :cols="isTablet ? 12 : 3">
                             <FamePartner
                                     :data="pools[1][0]"
                                     logo-link="parrotly.svg"
+                                    partner-link="https://parrotly.finance/"
                             />
                         </v-col>
                         <v-col :cols="isTablet ? 12 : 3">
                             <FamePartner
                                     :data="pools[2][0]"
                                     logo-link="tetu.svg"
+                                    partner-link="https://tetu.io/"
                             />
                         </v-col>
                         <v-col :cols="isTablet ? 12 : 3">
                             <FamePartner
                                     :data="pools[3][0]"
                                     logo-link="otterclam.svg"
+                                    partner-link="https://www.otterclam.finance/"
                             />
                         </v-col>
 

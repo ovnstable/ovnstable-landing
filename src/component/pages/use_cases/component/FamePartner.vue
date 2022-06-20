@@ -9,7 +9,7 @@
             <img height="40" class="ml-n2" :src="data.token1Icon">
         </v-row>
 
-        <v-row justify="center" class="mb-8">
+        <v-row justify="center" class="mb-8" @click.prevent="openLink(partnerLink)">
             <img height="46" :src="require('@/assets/img/partners/' + logoLink)">
         </v-row>
     </v-container>
@@ -30,6 +30,11 @@ export default {
             type: String,
             default: null,
         },
+
+        partnerLink: {
+            type: String,
+            default: null,
+        },
     },
 
     computed: {
@@ -40,6 +45,12 @@ export default {
     }),
     
     methods: {
+        openLink(url) {
+            if (url) {
+                window.open(url, '_blank').focus();
+            }
+        },
+
         openPoolLink(item) {
 
             let url;
