@@ -1,12 +1,12 @@
 <template>
     <v-container class="card-container-fame">
-        <v-row justify="center" class="mt-8">
+        <v-row justify="center" class="mt-12">
             <v-col>
                 <p class="learn-label mb-0">Learn more</p>
                 <p class="learn-label">how it works</p>
             </v-col>
         </v-row>
-        <v-row justify="center" class="mb-8">
+        <v-row justify="center">
             <img height="60" class="social-btn mr-4" :src="require('@/assets/img/social/medium.svg')" @click="openLink('https://blog.overnight.fi/the-in-liquidity-pools-why-liquidity-pairs-with-usd-are-more-capital-efficient-f4e45298d7ff')">
             <img height="60" class="social-btn" :src="require('@/assets/img/social/youtube.svg')" @click="openLink('https://www.youtube.com/watch?v=ocH7iUvUdos')">
         </v-row>
@@ -77,7 +77,7 @@ export default {
     z-index: 100 !important;
     border: 1px solid #E5E7EA !important;
     height: 100% !important;
-    min-height: 250px !important;
+    min-height: 300px !important;
 }
 
 .learn-label {

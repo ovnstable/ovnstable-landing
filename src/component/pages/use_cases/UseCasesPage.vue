@@ -60,42 +60,29 @@
                     <v-row>
                         <v-col :cols="isTablet ? 12 : 3">
                             <FamePartner
-                                    coin0-link="parrot.svg"
-                                    coin1-link="usdPlus.svg"
+                                    :data="pools[0][0]"
+                                    logo-link="sphere.svg"
+                            />
+                        </v-col>
+                        <v-col :cols="isTablet ? 12 : 3">
+                            <FamePartner
+                                    :data="pools[1][0]"
                                     logo-link="parrotly.svg"
                             />
                         </v-col>
                         <v-col :cols="isTablet ? 12 : 3">
                             <FamePartner
-                                    coin0-link="looper.svg"
-                                    coin1-link="usdPlus.svg"
-                                    logo-link="looper.png"
-                            />
-                        </v-col>
-                        <v-col :cols="isTablet ? 12 : 3">
-                            <FamePartner
-                                    coin0-link="tetu.svg"
-                                    coin1-link="usdPlus.svg"
+                                    :data="pools[2][0]"
                                     logo-link="tetu.svg"
                             />
                         </v-col>
                         <v-col :cols="isTablet ? 12 : 3">
                             <FamePartner
-                                    coin0-link="sphere.svg"
-                                    coin1-link="usdPlus.svg"
-                                    logo-link="sphere.svg"
-                            />
-                        </v-col>
-                    </v-row>
-
-                    <v-row class="mb-10">
-                        <v-col :cols="isTablet ? 12 : 3">
-                            <FamePartner
-                                    coin0-link="clam.svg"
-                                    coin1-link="usdPlus.svg"
+                                    :data="pools[3][0]"
                                     logo-link="otterclam.svg"
                             />
                         </v-col>
+
                         <v-col :cols="isTablet ? 12 : 3">
                             <FameSocialCard/>
                         </v-col>
@@ -133,6 +120,15 @@ export default {
 
     data: () => ({
         showHall: false,
+
+        poolsAddresses: [
+            '0xb8e91631f348dd1f47cb46f162df458a556c6f1e',
+            '0x143b882e58fd8c543da98c7d84063a5ae34925da',
+            '0x5a272ad79cbd3c874879e3fec5753c2127f77583',
+            '0x291e289c39cbaf5ee158028d086d76ffa141cfda'
+        ],
+
+        pools: [],
     }),
 
     computed: {
@@ -145,6 +141,10 @@ export default {
         },
     },
 
+    created() {
+        this.getPoolsData();
+    },
+
     methods: {
         openModal() {
             this.showHall = true;
@@ -155,6 +155,64 @@ export default {
                 window.open(url, '_blank').focus();
             }
         },
+
+        async getPoolsData() {
+
+            for (const item of this.poolsAddresses) {
+
+                let poolInfo = await this.getPoolInfo(item);
+                this.pools.push(poolInfo);
+            }
+        },
+
+        async getPoolInfo(address) {
+            let fetchOptions = {
+                headers: {
+                    "Access-Control-Allow-Origin": process.env.VUE_APP_API_URL
+                }
+            };
+
+            let result = [];
+
+            await fetch(process.env.VUE_APP_API_URL + '/pools/' + address, fetchOptions)
+                .then(value => value.json())
+                .then(value => {
+                    let token0Icon;
+                    let token1Icon;
+
+                    let tokenNames = value.id.name.split('/');
+
+                    try {
+                        token0Icon = require('@/assets/img/currency/pools/' + tokenNames[0] + '.svg');
+                    } catch (e) {
+                        console.error("Error while getting coin icon")
+                        token0Icon = require('@/assets/img/currency/pools/undefined.svg');
+                    }
+
+                    try {
+                        token1Icon = require('@/assets/img/currency/pools/' + tokenNames[1] + '.svg');
+                    } catch (e) {
+                        console.error("Error while getting coin icon")
+                        token1Icon = require('@/assets/img/currency/pools/undefined.svg');
+                    }
+
+                    result.push(
+                        {
+                            platform: value.platform,
+                            name: value.id.name,
+                            link: value.id.address,
+                            tvl: value.tvl,
+                            token0Icon: token0Icon,
+                            token1Icon: token1Icon,
+                        }
+                    )
+                }).catch(reason => {
+                    console.log('Error get data: ' + reason);
+                    this.loading = false;
+                })
+
+            return result;
+        }
     }
 }
 </script>
