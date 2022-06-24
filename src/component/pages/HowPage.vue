@@ -68,7 +68,7 @@
                     </div>
                 </v-row>
                 <v-row :justify="isMobile ? 'center' : 'end'" class="overflow-hidden" :class="isMobile ? 'mb-10' : ''">
-                    <svg class="how-img" width="728" height="650" viewBox="0 0 728 650" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    <svg class="how-img" viewBox="0 0 728 650" fill="none" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink">
                         <circle cx="212.105" cy="212.105" r="211.605" :stroke="openedPanels[0] === 0 ? '#28A0F0' : '#C5C9D1'"/>
                         <circle cx="515.724" cy="212.105" r="211.605" :stroke="openedPanels[0] === 1 ? '#28A0F0' : '#C5C9D1'"/>

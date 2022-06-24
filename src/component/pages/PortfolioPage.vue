@@ -219,7 +219,6 @@ export default {
 }
 
 .sub-title-row {
-    height: 96px !important;
     border-bottom: 1px solid #DEE1E5;
 }
 

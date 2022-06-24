@@ -2,9 +2,9 @@
     <div class="main-header-container header-background overflow-hidden flex-row" :style="'--opacity: ' + headerOpacity">
         <v-row class="header-row fill-height">
             <v-col cols="12" class="d-flex overflow-hidden justify-space-between align-center">
-                <div class="mr-auto sub-text-focus-in-1s" :class="isMobile ? 'mr-4' : ''">
-                    <img class="logo-img" :src="require('@/assets/img/logo.svg')" @click="openLink('https://overnight.fi/')">
-                    <img class="logo-img-text ml-2" :style="'--opacity: ' + headerOpacity" :src="require('@/assets/img/logo-text.svg')" @click="openLink('https://overnight.fi/')">
+                <div class="mr-auto sub-text-focus-in-1s" :class="isMobile ? 'mr-4' : ''" @click="openHook('main_page')">
+                    <img class="logo-img" :src="require('@/assets/img/logo.svg')">
+                    <img class="logo-img-text ml-2" :style="'--opacity: ' + headerOpacity" :src="require('@/assets/img/logo-text.svg')">
                 </div>
 
                 <div class="mr-2 sub-text-focus-in-1s" v-if="!isMobile">

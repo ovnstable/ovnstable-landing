@@ -56,7 +56,7 @@
                                     :src="require('@/assets/img/partners/gelato.svg')">
                         </v-row>
 
-                        <v-row style="height: 100px">
+                        <v-row :style="{'height': isMobile ? '20px' : '100px'}">
                         </v-row>
 
                         <v-row class="trusted-title-row mt-12 mb-8" id="investors_part">
