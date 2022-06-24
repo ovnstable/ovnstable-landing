@@ -25,11 +25,13 @@
             </v-row>
 
             <v-row class="icon-row ml-7 mb-10">
-                <img
+                <HoverImg
                         v-if="tweetLink"
                         class="social-link"
-                        @click="openLink(tweetLink)"
-                        :src="require('@/assets/img/social/twittericon.svg')">
+                        :link="tweetLink"
+                        :img="require('@/assets/img/social/twittericon.svg')"
+                        :hover-img="require('@/assets/img/social/twittericonColored.svg')"
+                />
             </v-row>
         </v-col>
     </v-card>
@@ -37,9 +39,11 @@
 
 <script>
 import {mapGetters} from "vuex";
+import HoverImg from "@/component/common/HoverImg";
 
 export default {
     name: "InvestorCard",
+    components: {HoverImg},
     props: {
         name: {
             type: String,

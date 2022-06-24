@@ -41,24 +41,30 @@
                             <label class="find-title">Find us on</label>
                         </v-row>
                         <v-row align="center">
-                            <img
+                            <HoverImg
                                     class="find-us-img"
-                                    @click="openLink('https://coinmarketcap.com/currencies/usd/')"
-                                    :src="require('@/assets/img/partners/coinMarketCap.svg')">
+                                    link="https://coinmarketcap.com/currencies/usd/"
+                                    :img="require('@/assets/img/partners/coinMarketCap.svg')"
+                                    :hover-img="require('@/assets/img/partners/coinMarketCapColored.svg')"
+                            />
 
                             <v-spacer></v-spacer>
 
-                            <img
+                            <HoverImg
                                     class="find-us-img"
-                                    @click="openLink('https://app.1inch.io/#/137/swap/USDC/USD%2B')"
-                                    :src="require('@/assets/img/partners/1Inch.svg')">
+                                    link="https://app.1inch.io/#/137/swap/USDC/USD%2B"
+                                    :img="require('@/assets/img/partners/1Inch.svg')"
+                                    :hover-img="require('@/assets/img/partners/1InchColored.svg')"
+                            />
 
                             <v-spacer></v-spacer>
 
-                            <img
+                            <HoverImg
                                     class="find-us-img"
-                                    @click="openLink('https://www.coingecko.com/en/coins/usdplus')"
-                                    :src="require('@/assets/img/partners/coinGecko.svg')">
+                                    link="https://www.coingecko.com/en/coins/usdplus"
+                                    :img="require('@/assets/img/partners/coinGecko.svg')"
+                                    :hover-img="require('@/assets/img/partners/coinGeckoColored.svg')"
+                            />
                         </v-row>
                     </v-col>
 
@@ -68,10 +74,12 @@
                         </v-row>
                         <v-row align="center">
                             <v-spacer></v-spacer>
-                            <img
+                            <HoverImg
                                     class="find-us-img-audit"
-                                    @click="openLink('https://hacken.io/audits/#overnight')"
-                                    :src="require('@/assets/img/partners/hacken.svg')">
+                                    link="https://hacken.io/audits/#overnight"
+                                    :img="require('@/assets/img/partners/hacken.svg')"
+                                    :hover-img="require('@/assets/img/partners/hackenColored.svg')"
+                            />
                             <v-spacer></v-spacer>
                         </v-row>
                     </v-col>
@@ -92,10 +100,12 @@
 
 <script>
 
+import HoverImg from "@/component/common/HoverImg";
 export default {
     name: "SecurityPage",
 
     components: {
+        HoverImg
     },
 
     data: () => ({

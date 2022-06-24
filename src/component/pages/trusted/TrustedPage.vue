@@ -12,48 +12,68 @@
                             <label class="trusted-title">Partners</label>
                         </v-row>
                         <v-row align="center" class="d-flex justify-space-around">
-                            <img
+                            <HoverImg
                                     class="trusted-img my-2"
-                                    @click="openLink('https://www.bnbchain.world/en/bsc-mvb-program')"
-                                    :src="require('@/assets/img/partners/bnbchain.svg')">
-                            <img
+                                    link="https://www.bnbchain.world/en/bsc-mvb-program"
+                                    :img="require('@/assets/img/partners/bnbchain.svg')"
+                                    :hover-img="require('@/assets/img/partners/bnbchainColored.svg')"
+                            />
+                            <HoverImg
                                     class="trusted-img my-2"
-                                    @click="openLink('https://polygon.technology/')"
-                                    :src="require('@/assets/img/partners/polygon.svg')">
-                            <img
+                                    link="https://polygon.technology"
+                                    :img="require('@/assets/img/partners/polygon.svg')"
+                                    :hover-img="require('@/assets/img/partners/polygonColored.svg')"
+                            />
+                            <HoverImg
                                     class="trusted-img my-2"
-                                    @click="openLink('https://xcelerator.berkeley.edu/')"
-                                    :src="require('@/assets/img/partners/xelerator.svg')">
-                            <img
+                                    link="https://xcelerator.berkeley.edu/"
+                                    :img="require('@/assets/img/partners/xelerator.svg')"
+                                    :hover-img="require('@/assets/img/partners/xeleratorColored.svg')"
+                            />
+                            <HoverImg
                                     class="trusted-img my-2"
-                                    @click="openLink('https://www.arrakis.finance/')"
-                                    :src="require('@/assets/img/partners/arrakis.png')">
-                            <img
+                                    link="https://www.arrakis.finance/"
+                                    :img="require('@/assets/img/partners/arrakis.svg')"
+                                    :hover-img="require('@/assets/img/partners/arrakisColored.svg')"
+                            />
+                            <HoverImg
                                     class="trusted-img my-2"
-                                    @click="openLink('https://dystopia.exchange/')"
-                                    :src="require('@/assets/img/partners/dystopia.svg')">
+                                    link="https://dystopia.exchange/"
+                                    :img="require('@/assets/img/partners/dystopia.svg')"
+                                    :hover-img="require('@/assets/img/partners/dystopiaColored.svg')"
+                            />
                         </v-row>
                         <v-row align="center" class="d-flex justify-space-around mb-12">
-                            <img
+                            <HoverImg
                                     class="trusted-img my-2"
-                                    @click="openLink('https://quickswap.exchange/')"
-                                    :src="require('@/assets/img/partners/quickswap.svg')">
-                            <img
+                                    link="https://quickswap.exchange/"
+                                    :img="require('@/assets/img/partners/quickswap.svg')"
+                                    :hover-img="require('@/assets/img/partners/quickswapColored.svg')"
+                            />
+                            <HoverImg
                                     class="trusted-img my-2"
-                                    @click="openLink('https://tetu.io/')"
-                                    :src="require('@/assets/img/partners/tetu.svg')">
-                            <img
+                                    link="https://tetu.io/"
+                                    :img="require('@/assets/img/partners/tetu.svg')"
+                                    :hover-img="require('@/assets/img/partners/tetuColored.svg')"
+                            />
+                            <HoverImg
                                     class="trusted-img my-2"
-                                    @click="openLink('https://rubic.exchange/')"
-                                    :src="require('@/assets/img/partners/rubic.svg')">
-                            <img
+                                    link="https://rubic.exchange/"
+                                    :img="require('@/assets/img/partners/rubic.svg')"
+                                    :hover-img="require('@/assets/img/partners/rubicColored.svg')"
+                            />
+                            <HoverImg
                                     class="trusted-img my-2"
-                                    @click="openLink('https://sphere.finance/')"
-                                    :src="require('@/assets/img/partners/sphere.svg')">
-                            <img
+                                    link="https://sphere.finance/"
+                                    :img="require('@/assets/img/partners/sphere.svg')"
+                                    :hover-img="require('@/assets/img/partners/sphereColored.svg')"
+                            />
+                            <HoverImg
                                     class="trusted-img my-2"
-                                    @click="openLink('https://www.gelato.network/')"
-                                    :src="require('@/assets/img/partners/gelato.svg')">
+                                    link="https://www.gelato.network/"
+                                    :img="require('@/assets/img/partners/gelato.svg')"
+                                    :hover-img="require('@/assets/img/partners/gelatoColored.svg')"
+                            />
                         </v-row>
 
                         <v-row :style="{'height': isMobile ? '20px' : '100px'}">
@@ -142,10 +162,12 @@
 <script>
 
 import InvestorCard from "@/component/pages/trusted/component/InvestorCard";
+import HoverImg from "@/component/common/HoverImg";
 export default {
     name: "TrustedPage",
 
     components: {
+        HoverImg,
         InvestorCard
     },
 

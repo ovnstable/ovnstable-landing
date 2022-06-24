@@ -8,25 +8,31 @@
 
                 <v-col class="mt-10">
                     <v-row justify="end">
-                        <img
+                        <HoverImg
                                 v-if="linkedInLink"
                                 class="social-link mr-10 mb-3"
-                                @click="openLink(linkedInLink)"
-                                :src="require('@/assets/img/social/linkedinicon.svg')">
+                                :link="linkedInLink"
+                                :img="require('@/assets/img/social/linkedinicon.svg')"
+                                :hover-img="require('@/assets/img/social/linkediniconColored.svg')"
+                        />
                     </v-row>
                     <v-row justify="end">
-                        <img
+                        <HoverImg
                                 v-if="twitterLink"
                                 class="social-link mr-10 mb-3"
-                                @click="openLink(twitterLink)"
-                                :src="require('@/assets/img/social/twittericon.svg')">
+                                :link="twitterLink"
+                                :img="require('@/assets/img/social/twittericon.svg')"
+                                :hover-img="require('@/assets/img/social/twittericonColored.svg')"
+                        />
                     </v-row>
                     <v-row justify="end">
-                        <img
+                        <HoverImg
                                 v-if="telegramLink"
                                 class="social-link mr-10"
-                                @click="openLink(telegramLink)"
-                                :src="require('@/assets/img/social/telegramicon.svg')">
+                                :link="telegramLink"
+                                :img="require('@/assets/img/social/telegramicon.svg')"
+                                :hover-img="require('@/assets/img/social/telegramiconColored.svg')"
+                        />
                     </v-row>
                 </v-col>
             </v-row>
@@ -42,9 +48,11 @@
 
 <script>
 import {mapGetters} from "vuex";
+import HoverImg from "@/component/common/HoverImg";
 
 export default {
     name: "TeamMemberCard",
+    components: {HoverImg},
     props: {
         name: {
             type: String,
