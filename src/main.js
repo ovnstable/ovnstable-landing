@@ -9,9 +9,17 @@ import {axios} from './plugins/http-axios';
 import moment from 'moment';
 import '@mdi/font/css/materialdesignicons.css'
 import VueObserveVisibility from 'vue-observe-visibility'
+import VueGtm from '@gtm-support/vue2-gtm';
 
 Vue.use(Vuex)
 Vue.use(VueObserveVisibility)
+
+Vue.use(VueGtm, {
+    id: 'GTM-TBCD9KR',
+    enabled: true,
+    vueRouter: router,
+    debug: false,
+});
 
 Vue.prototype.$moment = moment;
 Vue.prototype.$utils = utils;
