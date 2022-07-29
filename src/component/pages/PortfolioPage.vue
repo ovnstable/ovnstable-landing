@@ -2,7 +2,7 @@
     <div class="page-container overflow-hidden" :class="isMobile ? 'flex-column' : 'flex-row'">
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" :cols="isMobile ? 12 : 7">
-                <v-row class="mb-15">
+                <v-row class="mb-8">
                     <div>
                         <label class="title-text mb-0">USD+ </label>
                         <label class="accent-text">Portfolio</label>
@@ -11,6 +11,10 @@
                 </v-row>
 
                 <div>
+                    <v-row class="mb-5">
+                        <ChainSelector v-if="!isMobile" mode="light" :callbackFunc="selectChain"/>
+                    </v-row>
+
                     <v-row class="sub-title-row mb-16">
                         <p class="sub-title-text">
                             The portfolio deployed by Overnight is constructed to minimize risk and maximize liquidity. 100% of the assets consist of yield-bearing strategies is exposure by major stablecoins.
@@ -71,8 +75,22 @@
             </v-col>
 
             <v-col :cols="isMobile ? 12 : 5">
+                <v-row class="mb-3" justify="center">
+                    <ChainSelector v-if="isMobile" mode="light" :callbackFunc="selectChain"/>
+                </v-row>
+
                 <v-row justify="center" class="overflow-hidden">
-                    <ovn-portfoliocards></ovn-portfoliocards>
+                    <template v-if="chain === 'polygon'">
+                        <ovn-portfoliocards network="polygon"></ovn-portfoliocards>
+                    </template>
+
+                    <template v-if="chain === 'avax'">
+                        <ovn-portfoliocards network="avax"></ovn-portfoliocards>
+                    </template>
+
+                    <template v-if="chain === 'bsc'">
+                        <ovn-portfoliocards network="bsc"></ovn-portfoliocards>
+                    </template>
                 </v-row>
             </v-col>
         </v-row>
@@ -81,12 +99,14 @@
 
 <script>
 
+import ChainSelector from "@/component/common/ChainSelector";
 export default {
     name: "PortfolioPage",
 
-    components: {},
+    components: {ChainSelector},
 
     data: () => ({
+        chain: 'polygon',
     }),
 
     computed: {
@@ -99,6 +119,10 @@ export default {
         openDocsLink() {
             window.open(`https://docs.overnight.fi/advanced/contract-addresses`, '_blank').focus();
         },
+
+        selectChain(chain) {
+            this.chain = chain;
+        }
     }
 }
 </script>
@@ -263,5 +287,4 @@ export default {
     color: #28A0F0 !important;
     text-transform: none !important;
 }
-
 </style>

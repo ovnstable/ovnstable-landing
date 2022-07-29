@@ -25,8 +25,21 @@
             </v-col>
 
             <v-col :cols="isMobile ? 12 : 6">
+                <v-row class="mb-0 mr-0" :justify="isMobile ? 'center' : 'end'">
+                    <ChainSelector class="maincards-network-selector" mode="dark" :callbackFunc="selectChain"/>
+                </v-row>
                 <v-row :justify="isMobile ? 'center' : 'end'" class="overflow-hidden">
-                    <ovn-maincards class="maincards-widget"></ovn-maincards>
+                    <template v-if="chain === 'polygon'">
+                        <ovn-maincards class="maincards-widget" network="polygon"></ovn-maincards>
+                    </template>
+
+                    <template v-if="chain === 'avax'">
+                        <ovn-maincards class="maincards-widget" network="avax"></ovn-maincards>
+                    </template>
+
+                    <template v-if="chain === 'bsc'">
+                        <ovn-maincards class="maincards-widget" network="bsc"></ovn-maincards>
+                    </template>
                 </v-row>
             </v-col>
         </v-row>
@@ -35,14 +48,16 @@
 
 <script>
 
+import ChainSelector from "@/component/common/ChainSelector";
 export default {
     name: "MainPage",
 
     components: {
+        ChainSelector
     },
 
     data: () => ({
-
+        chain: 'polygon',
     }),
 
     computed: {
@@ -55,6 +70,10 @@ export default {
         launchDapp() {
             window.open(`https://app.overnight.fi/`, '_blank').focus();
         },
+
+        selectChain(chain) {
+            this.chain = chain;
+        }
     }
 }
 </script>
@@ -172,7 +191,7 @@ export default {
     position: absolute;
 }
 
-.maincards-widget {
+.maincards-widget, .maincards-network-selector {
     z-index: 100 !important;
 }
 

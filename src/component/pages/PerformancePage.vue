@@ -6,21 +6,59 @@
 
         <v-row class="container-row">
             <v-col cols="12">
-                <v-row class="mb-15" justify="center">
-                    <label class="accent-text mb-0">USD</label><label class="title-text-plus">+</label>
-                    <label class="title-text">&nbsp;Performance</label>
+                <v-row class="mb-15" align="center" v-if="!isMobile">
+                    <v-col class="overflow-hidden" cols="6">
+                        <v-row class="ml-0" justify="start">
+                            <label class="accent-text mb-0">USD</label><label class="title-text-plus">+</label>
+                            <label class="title-text">&nbsp;Performance</label>
+                        </v-row>
+                    </v-col>
+
+                    <v-col class="overflow-hidden" cols="6">
+                        <v-row class="mr-0" justify="end">
+                            <ChainSelector mode="dark" :callbackFunc="selectChain"/>
+                        </v-row>
+                    </v-col>
                 </v-row>
+
+                <template v-else>
+                    <v-row class="mb-10" align="center" justify="center">
+                        <label class="accent-text mb-0">USD</label><label class="title-text-plus">+</label>
+                        <label class="title-text">&nbsp;Performance</label>
+                    </v-row>
+                    <v-row class="mb-5" align="center" justify="center">
+                        <ChainSelector mode="dark" :callbackFunc="selectChain"/>
+                    </v-row>
+                </template>
 
                 <v-row class="d-flex " :class="isMobile ? 'flex-column' : 'flex-row'">
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'end'">
-                            <ovn-apyrate></ovn-apyrate>
+                            <template v-if="chain === 'polygon'">
+                                <ovn-apyrate network="polygon"></ovn-apyrate>
+                            </template>
+
+                            <template v-if="chain === 'avax'">
+                                <ovn-apyrate network="avax"></ovn-apyrate>
+                            </template>
+
+                            <template v-if="chain === 'bsc'">
+                                <ovn-apyrate network="bsc"></ovn-apyrate>
+                            </template>
                         </v-row>
                     </v-col>
 
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'start'">
-                            <ovn-distrate></ovn-distrate>
+                            <template v-if="chain === 'polygon'">
+                                <ovn-distrate network="polygon"></ovn-distrate>
+                            </template>
+
+                            <template v-if="chain === 'avax'">
+                            </template>
+
+                            <template v-if="chain === 'bsc'">
+                            </template>
                         </v-row>
                     </v-col>
                 </v-row>
@@ -31,13 +69,16 @@
 
 <script>
 
+import ChainSelector from "@/component/common/ChainSelector";
 export default {
     name: "PerformancePage",
 
     components: {
+        ChainSelector
     },
 
     data: () => ({
+        chain: 'polygon',
     }),
 
     computed: {
@@ -47,6 +88,9 @@ export default {
     },
 
     methods: {
+        selectChain(chain) {
+            this.chain = chain;
+        }
     }
 }
 </script>
@@ -74,6 +118,26 @@ export default {
         font-weight: 300;
         font-size: 30px;
         line-height: 36px;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .container-row {
+        width: 90% !important;
+    }
+
+    .container-row {
+        margin-left: 5% !important;
+    }
+}
+
+@media only screen and (min-width: 961px) {
+    .container-row {
+        width: 86vw !important;
+    }
+
+    .container-row {
+        margin-left: 7vw !important;
     }
 }
 
@@ -105,11 +169,6 @@ export default {
 }
 
 .container-row {
-    width: 90% !important;
-}
-
-.container-row {
-    margin-left: 5% !important;
     margin-top: 10% !important;
     margin-bottom: 10% !important;
 }
@@ -154,6 +213,12 @@ export default {
     transform: matrix(-1, 0, 0, 1, 0, 0);
     z-index: 0;
     right: 0 !important;
+}
+
+.title-row-col {
+    min-width: 86vw !important;
+    width: 86vw !important;
+    max-width: 86vw !important;
 }
 
 </style>

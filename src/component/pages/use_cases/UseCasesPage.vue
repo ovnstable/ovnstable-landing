@@ -7,8 +7,8 @@
                     <label class="title-text mb-0">&nbsp;use cases</label>
                 </v-row>
 
-                <v-row class="d-flex justify-space-between" :class="isMobile ? 'flex-column' : 'flex-row'">
-                    <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 3)">
+                <v-row class="d-flex " :class="isMobile ? 'flex-column' : 'flex-row'">
+                    <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
                         <UseCard
                                 title="Cash management"
                                 desc="Park your stables in USD+, and watch your balance grow in your wallet overnight. No staking required"
@@ -16,7 +16,7 @@
                                 link="https://app.overnight.fi/"/>
                     </v-col>
 
-                    <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 3)">
+                    <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
                         <UseCard
                                 title="Liquidity Pools"
                                 desc="Provide liquidity into USD+ pools, and get USD+ yield on top of LP fees and rewards"
@@ -24,7 +24,16 @@
                                 link="https://app.overnight.fi/farm"/>
                     </v-col>
 
-                    <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 3)">
+                    <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
+                        <UseCard
+                                title="exchange-traded strategy (ETS)"
+                                desc="ERC-20 structured product built on Polygon that allows earning high APY and hedging against volatility"
+                                btnLabel="Mint ETS"
+                                :isNew="true"
+                                link="https://market.overnight.fi/ets"/>
+                    </v-col>
+
+                    <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
                         <UseCard
                                 title="Passive token appreciation"
                                 desc="Pair your token with USD+ and passively grow your token’s price thanks to USD+ yield bearing nature"
@@ -33,7 +42,7 @@
                                 :callbackFunc="openModal"/>
                     </v-col>
 
-                    <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 3)">
+                    <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
                         <UseCard
                                 title="Leveraged Yield"
                                 desc="Get 6x-9x USD+ yield by pledging USD+ as collateral with minimum risk of liquidation"
