@@ -27,7 +27,7 @@
                     <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
                         <UseCard
                                 title="exchange-traded strategy (ETS)"
-                                desc="ERC-20 structured product built on Polygon that allows earning high APY and hedging against volatility"
+                                desc="High APYs and moderate risk product, featuring automated hedging against market volatility"
                                 btnLabel="Mint ETS"
                                 :isNew="true"
                                 link="https://market.overnight.fi/ets"/>
