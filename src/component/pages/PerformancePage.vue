@@ -4,7 +4,7 @@
         <img class="performance-bg-img-left" :src="require('@/assets/background/img/performance_bg_lines.svg')">
         <img class="performance-bg-img-right" :src="require('@/assets/background/img/performance_bg_lines.svg')">
 
-        <v-row class="container-row">
+        <v-row class="container-row container-row-usd-plus">
             <v-col cols="12">
                 <v-row class="mb-15" align="center" v-if="!isMobile">
                     <v-col class="overflow-hidden" cols="6">
@@ -35,15 +35,15 @@
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'end'">
                             <template v-if="chain === 'polygon'">
-                                <ovn-apyrate network="polygon"></ovn-apyrate>
+                                <ovn-apyrate network="polygon" product="usd+"></ovn-apyrate>
                             </template>
 
                             <template v-if="chain === 'avax'">
-                                <ovn-apyrate network="avax"></ovn-apyrate>
+                                <ovn-apyrate network="avax" product="usd+"></ovn-apyrate>
                             </template>
 
                             <template v-if="chain === 'bsc'">
-                                <ovn-apyrate network="bsc"></ovn-apyrate>
+                                <ovn-apyrate network="bsc" product="usd+"></ovn-apyrate>
                             </template>
                         </v-row>
                     </v-col>
@@ -51,13 +51,62 @@
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'start'">
                             <template v-if="chain === 'polygon'">
-                                <ovn-distrate network="polygon"></ovn-distrate>
+                                <ovn-tvlrate network="polygon" product="usd+"></ovn-tvlrate>
                             </template>
 
                             <template v-if="chain === 'avax'">
+                                <ovn-tvlrate network="avax" product="usd+"></ovn-tvlrate>
                             </template>
 
                             <template v-if="chain === 'bsc'">
+                                <ovn-tvlrate network="bsc" product="usd+"></ovn-tvlrate>
+                            </template>
+                        </v-row>
+                    </v-col>
+                </v-row>
+            </v-col>
+        </v-row>
+
+        <v-row class="container-row container-row-ets">
+            <v-col cols="12">
+                <v-row class="mb-15" align="center" v-if="!isMobile">
+                    <v-col class="overflow-hidden" cols="6">
+                        <v-row class="ml-0" justify="start">
+                            <label class="accent-text mb-0">ETS</label>
+                            <label class="title-text">&nbsp;Performance</label>
+                        </v-row>
+                    </v-col>
+
+                    <v-col class="overflow-hidden" cols="6">
+                        <v-row class="mr-0" justify="end">
+                            <ChainSelector mode="dark" :callbackFunc="selectChainEts" :chains="['polygon', 'bsc']" :disabled-chains="['bsc']"/>
+                        </v-row>
+                    </v-col>
+                </v-row>
+
+                <template v-else>
+                    <v-row class="mb-10" align="center" justify="center">
+                        <label class="accent-text mb-0">ETS</label>
+                        <label class="title-text">&nbsp;Performance</label>
+                    </v-row>
+                    <v-row class="mb-5" align="center" justify="center">
+                        <ChainSelector mode="dark" :callbackFunc="selectChainEts" :chains="['polygon', 'bsc']" :disabled-chains="['bsc']"/>
+                    </v-row>
+                </template>
+
+                <v-row class="d-flex " :class="isMobile ? 'flex-column' : 'flex-row'">
+                    <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
+                        <v-row :justify="isMobile ? 'center' : 'end'">
+                            <template v-if="chainEts === 'polygon'">
+                                <ovn-apyrate network="polygon" product="ets"></ovn-apyrate>
+                            </template>
+                        </v-row>
+                    </v-col>
+
+                    <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
+                        <v-row :justify="isMobile ? 'center' : 'start'">
+                            <template v-if="chainEts === 'polygon'">
+                                <ovn-tvlrate network="polygon" product="ets"></ovn-tvlrate>
                             </template>
                         </v-row>
                     </v-col>
@@ -79,6 +128,7 @@ export default {
 
     data: () => ({
         chain: 'polygon',
+        chainEts: 'polygon',
     }),
 
     computed: {
@@ -90,6 +140,10 @@ export default {
     methods: {
         selectChain(chain) {
             this.chain = chain;
+        },
+
+        selectChainEts(chain) {
+            this.chainEts = chain;
         }
     }
 }
@@ -118,6 +172,11 @@ export default {
         font-weight: 300;
         font-size: 30px;
         line-height: 36px;
+    }
+
+    .container-row-usd-plus, .container-row-ets {
+        margin-top: 10% !important;
+        margin-bottom: 10% !important;
     }
 }
 
@@ -162,15 +221,20 @@ export default {
         font-size: 60px;
         line-height: 80px;
     }
+
+    .container-row-usd-plus {
+        margin-top: 10% !important;
+        margin-bottom: 5% !important;
+    }
+
+    .container-row-ets {
+        margin-top: 5% !important;
+        margin-bottom: 10% !important;
+    }
 }
 
 .page-container {
     background: linear-gradient(122.1deg, #011845 0%, #15141D 104.83%);
-}
-
-.container-row {
-    margin-top: 10% !important;
-    margin-bottom: 10% !important;
 }
 
 .title-text {

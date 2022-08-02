@@ -11,10 +11,6 @@
                 </v-row>
 
                 <div>
-                    <v-row class="mb-5">
-                        <ChainSelector v-if="!isMobile" mode="light" :callbackFunc="selectChain"/>
-                    </v-row>
-
                     <v-row class="sub-title-row mb-16">
                         <p class="sub-title-text">
                             The portfolio deployed by Overnight is constructed to minimize risk and maximize liquidity. 100% of the assets consist of yield-bearing strategies is exposure by major stablecoins.
@@ -75,11 +71,11 @@
             </v-col>
 
             <v-col :cols="isMobile ? 12 : 5">
-                <v-row class="mb-3" justify="center">
-                    <ChainSelector v-if="isMobile" mode="light" :callbackFunc="selectChain"/>
+                <v-row class="my-3" :class="isMobile ? '' : 'mr-0'" :justify="isMobile ? 'center' : 'end'">
+                    <ChainSelector mode="light" :callbackFunc="selectChain"/>
                 </v-row>
 
-                <v-row justify="center" class="overflow-hidden">
+                <v-row :justify="isMobile ? 'center' : 'end'" class="overflow-hidden">
                     <template v-if="chain === 'polygon'">
                         <ovn-portfoliocards network="polygon"></ovn-portfoliocards>
                     </template>

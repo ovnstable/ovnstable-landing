@@ -1,24 +1,30 @@
 <template>
     <div class="chain-selector-container" :class="mode === 'light' ? 'container-light' : 'container-dark'">
         <v-btn
+                v-if="chains.includes('polygon')"
+                :disabled="disabledChains.includes('polygon')"
                 outlined
                 class="chain-btn ma-2"
                 @click="clickTab('polygon')" v-bind:class="activeTabPolygon">
-            <img class="chain-img" :src="require('@/assets/img/network/polygon.svg')">
+            <img class="chain-img" :src="require('@/assets/img/network/polygon' + (disabledChains.includes('polygon') ? 'Disabled' : '') + '.svg')">
         </v-btn>
 
         <v-btn
+                v-if="chains.includes('bsc')"
+                :disabled="disabledChains.includes('bsc')"
                 outlined
                 class="chain-btn ma-2"
                 @click="clickTab('bsc')" v-bind:class="activeTabBsc">
-            <img class="chain-img" :src="require('@/assets/img/network/bsc.svg')">
+            <img class="chain-img" :src="require('@/assets/img/network/bsc' + (disabledChains.includes('bsc') ? 'Disabled' : '') + '.svg')">
         </v-btn>
 
         <v-btn
+                v-if="chains.includes('avax')"
+                :disabled="disabledChains.includes('avax')"
                 outlined
                 class="chain-btn ma-2"
                 @click="clickTab('avax')" v-bind:class="activeTabAvax">
-            <img class="chain-img" :src="require('@/assets/img/network/avax.svg')">
+            <img class="chain-img" :src="require('@/assets/img/network/avax' + (disabledChains.includes('avax') ? 'Disabled' : '') + '.svg')">
         </v-btn>
     </div>
 </template>
@@ -39,7 +45,17 @@ export default {
             type: Function,
             default: function () {
             }
-        }
+        },
+
+        chains: {
+            type: Array,
+            default: () => ['polygon', 'avax', 'bsc']
+        },
+
+        disabledChains: {
+            type: Array,
+            default: () => []
+        },
     },
 
     computed: {
