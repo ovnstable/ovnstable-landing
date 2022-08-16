@@ -5,7 +5,6 @@
                 <v-col>
                     <img class="avatar-img ml-7 mt-7" :src="require('@/assets/img/team/' + (imgLink ? imgLink : 'anonym.svg'))">
                 </v-col>
-                
 
                 <v-col class="mt-10">
                     <v-row justify="end">
@@ -39,7 +38,6 @@
             </v-row>
             <v-row>
                 <label class="name-label ml-10 mb-2">{{ name }}</label>
-                <label class="new-member-label ml-10 mb-2" v-if="isNew">{{ newl }}</label>
             </v-row>
             <v-row>
                 <label class="desc-label ml-10 mb-2">{{ desc }}</label>
@@ -51,7 +49,6 @@
 <script>
 import {mapGetters} from "vuex";
 import HoverImg from "@/component/common/HoverImg";
-import { type } from "os";
 
 export default {
     name: "TeamMemberCard",
@@ -60,16 +57,6 @@ export default {
         name: {
             type: String,
             default: '',
-        },
-
-        newl: {
-            type: String,
-            default: '',
-        },
-
-        isNew: {
-            type: Boolean,
-            default: false,
         },
 
         desc: {
@@ -189,13 +176,6 @@ export default {
 .desc-label {
     font-family: 'Roboto', sans-serif;
     color: #9DA4B0;
-}
-
-.new-member-label {
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-    font-feature-settings: 'pnum' on, 'lnum' on;
-    color: #1C95E7;
 }
 
 </style>
