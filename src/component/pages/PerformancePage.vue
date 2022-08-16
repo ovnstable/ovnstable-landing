@@ -45,6 +45,10 @@
                             <template v-if="chain === 'bsc'">
                                 <ovn-apyrate network="bsc" product="usd+"></ovn-apyrate>
                             </template>
+
+                            <template v-if="chain === 'op'">
+                                <ovn-apyrate network="op" product="usd+"></ovn-apyrate>
+                            </template>
                         </v-row>
                     </v-col>
 
@@ -60,6 +64,10 @@
 
                             <template v-if="chain === 'bsc'">
                                 <ovn-tvlrate network="bsc" product="usd+"></ovn-tvlrate>
+                            </template>
+
+                            <template v-if="chain === 'op'">
+                                <ovn-tvlrate network="op" product="usd+"></ovn-tvlrate>
                             </template>
                         </v-row>
                     </v-col>

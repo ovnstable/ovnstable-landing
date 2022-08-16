@@ -87,6 +87,10 @@
                     <template v-if="chain === 'bsc'">
                         <ovn-portfoliocards network="bsc"></ovn-portfoliocards>
                     </template>
+
+                    <template v-if="chain === 'op'">
+                        <ovn-portfoliocards network="op"></ovn-portfoliocards>
+                    </template>
                 </v-row>
             </v-col>
         </v-row>

@@ -26,6 +26,15 @@
                 @click="clickTab('avax')" v-bind:class="activeTabAvax">
             <img class="chain-img" :src="require('@/assets/img/network/avax' + (disabledChains.includes('avax') ? 'Disabled' : '') + '.svg')">
         </v-btn>
+
+        <v-btn
+                v-if="chains.includes('op')"
+                :disabled="disabledChains.includes('op')"
+                outlined
+                class="chain-btn ma-2"
+                @click="clickTab('op')" v-bind:class="activeTabOp">
+            <img class="chain-img" :src="require('@/assets/img/network/op' + (disabledChains.includes('op') ? 'Disabled' : '') + '.svg')">
+        </v-btn>
     </div>
 </template>
 
@@ -49,7 +58,7 @@ export default {
 
         chains: {
             type: Array,
-            default: () => ['polygon', 'avax', 'bsc']
+            default: () => ['polygon', 'avax', 'bsc', 'op']
         },
 
         disabledChains: {
@@ -86,6 +95,14 @@ export default {
                 'tab-button': (this.chain === 'avax' && this.mode === 'light'),
                 'tab-button-dark': (this.chain === 'avax' && this.mode === 'dark'),
                 'tab-button-in-active': this.chain !== 'avax',
+            }
+        },
+
+        activeTabOp: function () {
+            return {
+                'tab-button': (this.chain === 'op' && this.mode === 'light'),
+                'tab-button-dark': (this.chain === 'op' && this.mode === 'dark'),
+                'tab-button-in-active': this.chain !== 'op',
             }
         },
     },
