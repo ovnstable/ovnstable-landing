@@ -67,6 +67,15 @@
                     </v-col>
                     <v-col>
                         <TeamMemberCard
+                                name="Roman G."
+                                newl="NEW"
+                                :isNew="true"
+                                img-link="roman_g.png"
+                                desc="Frontend Developer Trainee"
+                                linked-in-link="https://www.linkedin.com/in/roman-golovlyov-2753611b3/" />
+                    </v-col>
+                    <v-col>
+                        <TeamMemberCard
                                 name="Uliana T."
                                 img-link="uliana_t.png"
                                 desc="Designer"
