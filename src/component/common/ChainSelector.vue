@@ -138,24 +138,24 @@ export default {
 
 .container-light {
     background: transparent;
-    border: 1px solid #DEE1E5;
 }
 
 .container-dark {
     background: transparent;
-    border: 1px solid #4C586D;
 }
 
 .chain-btn {
     color: #FFFFFF !important;
+    background-color: transparent;
     border: none;
 }
 
 .tab-button {
-    background-color: #FFFFFF !important;
+    background-color: #E5E7EA !important;
 }
 
 .tab-button-dark {
-    background-color: transparent !important;
+    background-color: #29323E !important;
+    border: none;
 }
 </style>
