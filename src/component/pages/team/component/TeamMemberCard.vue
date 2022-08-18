@@ -51,7 +51,6 @@
 <script>
 import {mapGetters} from "vuex";
 import HoverImg from "@/component/common/HoverImg";
-import { type } from "os";
 
 export default {
     name: "TeamMemberCard",

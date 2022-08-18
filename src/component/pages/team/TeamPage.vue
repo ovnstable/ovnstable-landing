@@ -25,13 +25,6 @@
                     </v-col>
                     <v-col>
                         <TeamMemberCard
-                                name="Nick M."
-                                img-link="nick_m.png"
-                                desc="Co-founder & Blockchain Engineer"
-                                linked-in-link="https://www.linkedin.com/in/mosinnik/" />
-                    </v-col>
-                    <v-col>
-                        <TeamMemberCard
                                 name="Maxime L."
                                 img-link="maxsime_l.png"
                                 desc="Product Lead"
