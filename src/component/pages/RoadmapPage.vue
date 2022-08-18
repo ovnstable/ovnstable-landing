@@ -216,6 +216,7 @@ export default {
     position: absolute;
     z-index: 0 !important;
     max-height: 100% !important;
+    width: 100%;
 }
 
 .roadmap-bg-img  > path {
