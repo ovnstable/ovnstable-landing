@@ -154,17 +154,17 @@ export default {
 }
 
 .container-light {
-    background: #FFFFFF;
-    border: 1px solid #DEE1E5;
+    background: transparent;
 }
 
 .container-dark {
-    background: #0E1529;
-    border: 1px solid #4C586D;
+    background: transparent;
 }
 
 .chain-btn {
-    color: transparent !important;
+    color: #FFFFFF !important;
+    background-color: transparent;
+    border: none;
 }
 
 .tab-button {
@@ -173,5 +173,6 @@ export default {
 
 .tab-button-dark {
     background-color: #29323E !important;
+    border: none;
 }
 </style>

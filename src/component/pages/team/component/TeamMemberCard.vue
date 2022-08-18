@@ -177,5 +177,4 @@ export default {
     font-family: 'Roboto', sans-serif;
     color: #9DA4B0;
 }
-
 </style>

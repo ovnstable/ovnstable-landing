@@ -26,11 +26,10 @@
 
                     <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
                         <UseCard
-                                title="exchange-traded strategy (ETS)"
-                                desc="High APYs and moderate risk product, featuring automated hedging against market volatility"
-                                btnLabel="Mint ETS"
-                                :isNew="true"
-                                link="https://market.overnight.fi/ets"/>
+                                title="Leveraged Yield"
+                                desc="Get 6x-9x USD+ yield by pledging USD+ as collateral with minimum risk of liquidation"
+                                btnLabel="Coming Soon"
+                                :disabled="true"/>
                     </v-col>
 
                     <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
@@ -44,10 +43,11 @@
 
                     <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
                         <UseCard
-                                title="Leveraged Yield"
-                                desc="Get 6x-9x USD+ yield by pledging USD+ as collateral with minimum risk of liquidation"
-                                btnLabel="Coming Soon"
-                                :disabled="true"/>
+                                title="exchange-traded strategy (ETS)"
+                                desc="High APYs and moderate risk product, featuring automated hedging against market volatility"
+                                btnLabel="Mint ETS"
+                                :isNew="true"
+                                link="https://market.overnight.fi/ets"/>
                     </v-col>
                 </v-row>
             </v-col>
