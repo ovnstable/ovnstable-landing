@@ -39,7 +39,6 @@
             </v-row>
             <v-row>
                 <label class="name-label ml-10 mb-2">{{ name }}</label>
-                <label class="new-member-label ml-10 mb-2" v-if="isNew">{{ newl }}</label>
             </v-row>
             <v-row>
                 <label class="desc-label ml-10 mb-2">{{ desc }}</label>
@@ -59,16 +58,6 @@ export default {
         name: {
             type: String,
             default: '',
-        },
-
-        newl: {
-            type: String,
-            default: '',
-        },
-
-        isNew: {
-            type: Boolean,
-            default: false,
         },
 
         desc: {
@@ -189,12 +178,4 @@ export default {
     font-family: 'Roboto', sans-serif;
     color: #9DA4B0;
 }
-
-.new-member-label {
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-    font-feature-settings: 'pnum' on, 'lnum' on;
-    color: #1C95E7;
-}
-
 </style>
