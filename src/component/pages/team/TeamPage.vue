@@ -80,38 +80,54 @@
                     <label class="experienced-title">Team background</label>
                 </v-row>
                 <v-row align="center" class="d-flex justify-space-around">
-                    <img
-                            class="exp-img my-2"
-                            @click="openLink('https://www.google.com/')"
-                            :src="require('@/assets/img/companies/google.svg')">
-                    <img
-                            class="exp-img my-2"
-                            @click="openLink('https://www.facebook.com')"
-                            :src="require('@/assets/img/companies/facebook.svg')">
-                    <img
-                            class="exp-img my-2"
-                            @click="openLink('https://www.stanford.edu')"
-                            :src="require('@/assets/img/companies/stanford.svg')">
-                    <img
-                            class="exp-img my-2"
-                            @click="openLink('https://www.kellogg.northwestern.edu')"
-                            :src="require('@/assets/img/companies/kellogg.svg')">
-                    <img
-                            class="exp-img my-2"
-                            @click="openLink('https://www.insead.edu')"
-                            :src="require('@/assets/img/companies/insead.svg')">
-                    <img
-                            class="exp-img my-2"
-                            @click="openLink('https://www.bcg.com/')"
-                            :src="require('@/assets/img/companies/bcg.svg')">
-                    <img
-                            class="exp-img my-2"
-                            @click="openLink('https://www.morganstanley.com/')"
-                            :src="require('@/assets/img/companies/morgan.svg')">
-                    <img
-                            class="exp-img my-2"
-                            @click="openLink('https://www.jpmorgan.com/global/')"
-                            :src="require('@/assets/img/companies/jp.svg')">
+                    <HoverImg
+                                    class="exp-img my-2"
+                                    link="https://www.google.com/"
+                                    :img="require('@/assets/img/companies/google.svg')"
+                                    :hover-img="require('@/assets/img/companies/google_colored.svg')"
+                            />
+                    <HoverImg
+                                    class="exp-img my-2"
+                                    link="https://www.facebook.com"
+                                    :img="require('@/assets/img/companies/facebook.svg')"
+                                    :hover-img="require('@/assets/img/companies/facebook_colored.svg')"
+                            />
+                    <HoverImg
+                                    class="exp-img my-2"
+                                    link="https://www.stanford.edu"
+                                    :img="require('@/assets/img/companies/stanford.svg')"
+                                    :hover-img="require('@/assets/img/companies/stanford_colored.svg')"
+                            />
+                    <HoverImg
+                                    class="exp-img my-2"
+                                    link="https://www.kellogg.northwestern.edu"
+                                    :img="require('@/assets/img/companies/kellogg.svg')"
+                                    :hover-img="require('@/assets/img/companies/kellogg_colored.svg')"
+                            />
+                    <HoverImg
+                                    class="exp-img my-2"
+                                    link="https://www.insead.edu"
+                                    :img="require('@/assets/img/companies/insead.svg')"
+                                    :hover-img="require('@/assets/img/companies/insead_colored.svg')"
+                            />
+                    <HoverImg
+                                    class="exp-img my-2"
+                                    link="https://www.bcg.com/"
+                                    :img="require('@/assets/img/companies/bcg.svg')"
+                                    :hover-img="require('@/assets/img/companies/bcg_colored.svg')"
+                            />
+                    <HoverImg
+                                    class="exp-img my-2"
+                                    link="https://www.morganstanley.com/"
+                                    :img="require('@/assets/img/companies/morgan.svg')"
+                                    :hover-img="require('@/assets/img/companies/morgan_stanley_colored.svg')"
+                            />
+                    <HoverImg
+                                    class="exp-img my-2"
+                                    link="https://www.jpmorgan.com/global/"
+                                    :img="require('@/assets/img/companies/jp.svg')"
+                                    :hover-img="require('@/assets/img/companies/jp_morgan_colored.svg')"
+                            />
                 </v-row>
             </v-col>
         </v-row>
@@ -121,10 +137,12 @@
 <script>
 
 import TeamMemberCard from "@/component/pages/team/component/TeamMemberCard";
+import HoverImg from "@/component/common/HoverImg";
 export default {
     name: "TeamPage",
 
     components: {
+        HoverImg,
         TeamMemberCard
     },
 
