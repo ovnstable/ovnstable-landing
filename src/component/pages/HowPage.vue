@@ -24,7 +24,7 @@
                             </v-expansion-panel-header>
                             <v-expansion-panel-content>
                                 <ul class="mb-5">
-                                    <li class="list-label mb-8">100% collateralized with assets immediately convertable into USDC</li>
+                                    <li class="list-label mb-8">100% collateralized with assets immediately converitble into USDC</li>
                                     <li class="list-label mb-8">'Risk-first portfolio', i.e. assets are picked primarily to avoid losses on a daily basis (3-4 sigmas away from 0), no exposure to algorithmic stables</li>
                                     <li class="list-label">USD+ can replace USDC in pools and lending protocols</li>
                                 </ul>
