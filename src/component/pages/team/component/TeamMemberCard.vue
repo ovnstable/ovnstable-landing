@@ -1,5 +1,5 @@
 <template>
-    <v-card class="card-container">
+    <v-card class="card-container ma-3">
         <v-col>
             <v-row class="mb-4">
                 <v-col>
@@ -32,6 +32,15 @@
                                 :link="telegramLink"
                                 :img="require('@/assets/img/social/telegramicon.svg')"
                                 :hover-img="require('@/assets/img/social/telegramiconColored.svg')"
+                        />
+                    </v-row>
+                    <v-row justify="end">
+                        <HoverImg
+                                v-if="discordLink"
+                                class="social-link mr-10"
+                                :link="discordLink"
+                                :img="require('@/assets/img/social/discordicon.svg')"
+                                :hover-img="require('@/assets/img/social/discordiconColored.svg')"
                         />
                     </v-row>
                 </v-col>
@@ -80,6 +89,11 @@ export default {
         },
 
         telegramLink: {
+            type: String,
+            default: null,
+        },
+
+        discordLink: {
             type: String,
             default: null,
         },
@@ -164,6 +178,8 @@ export default {
 }
 
 .social-link {
+    width: 32px !important;
+    height: 32px !important;
     cursor: pointer;
 }
 

@@ -16,7 +16,7 @@
                     </div>
                 </v-row>
                 <v-row class="mb-10">
-                    <p class="sub-title-text mb-0">USD+ stablecoin can be instantly minted and redeemed to USDC 1:1.</p>
+                    <p class="sub-title-text mb-0">USD+ stablecoin can be instantly minted and redeemed to <abbr title="BUSD on Binance Smart Chain">USDC</abbr> 1:1.</p>
                     <p class="sub-title-text mb-0">Simply replace USDC with USD+ stablecoin and start getting passive yield where it didn’t exist before.</p>
                 </v-row>
                 <v-row class="btn-row">

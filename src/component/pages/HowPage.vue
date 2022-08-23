@@ -20,7 +20,7 @@
                     <v-expansion-panels multiple v-model="openedPanels">
                         <v-expansion-panel class="ml-n9 mt-n4 panel-bordered" @click="openPanel(0)">
                             <v-expansion-panel-header class="panel-header-row">
-                                <label class="panel-header">1. Pegged to USDC 1 : 1</label>
+                                <label class="panel-header">1. Pegged to <abbr title="BUSD on Binance Smart Chain">USDC</abbr> 1 : 1</label>
                             </v-expansion-panel-header>
                             <v-expansion-panel-content>
                                 <ul class="mb-5">
