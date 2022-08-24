@@ -13,7 +13,7 @@
                                 title="Cash management"
                                 desc="Park your stables in USD+, and watch your balance grow in your wallet overnight. No staking required"
                                 btnLabel="Mint"
-                                link="https://app.overnight.fi/"/>
+                                link="https://market.overnight.fi/"/>
                     </v-col>
 
                     <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">

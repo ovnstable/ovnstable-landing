@@ -52,7 +52,7 @@ export default {
 
     methods: {
         launchDapp() {
-            window.open(`https://app.overnight.fi/`, '_blank').focus();
+            window.open(`https://market.overnight.fi/stats`, '_blank').focus();
         },
     }
 }
