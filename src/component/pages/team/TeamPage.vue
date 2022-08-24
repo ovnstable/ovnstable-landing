@@ -56,7 +56,7 @@
                             linked-in-link="https://www.linkedin.com/in/roman-golovlyov-2753611b3/" />
                     <TeamMemberCard
                             name="Abdul"
-                            desc="Community Manager"
+                            desc="Community & Content Lead"
                             discord-link="https://www.discord.com/users/763476471233773659" />
                 </v-row>
 
