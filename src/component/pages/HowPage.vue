@@ -70,9 +70,9 @@
                 <v-row :justify="isMobile ? 'center' : 'end'" class="overflow-hidden" :class="isMobile ? 'mb-10' : ''">
                     <svg class="how-img" viewBox="0 0 728 650" fill="none" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <circle cx="212.105" cy="212.105" r="211.605" :stroke="openedPanels[0] === 0 ? '#28A0F0' : '#C5C9D1'"/>
-                        <circle cx="515.724" cy="212.105" r="211.605" :stroke="openedPanels[0] === 1 ? '#28A0F0' : '#C5C9D1'"/>
-                        <circle cx="363.487" cy="437.895" r="211.605" :stroke="openedPanels[0] === 2 ? '#28A0F0' : '#C5C9D1'"/>
+                        <circle cx="212.105" cy="212.105" r="211.605" :stroke="openedPanels[0] === 0 ? '#28A0F0' : '#C5C9D1'" @click="openPanelImg(0)" :fill="openedPanels[0] === 0 ? '#FFFFFF' : '#FFFFFF'"/>
+                        <circle cx="515.724" cy="212.105" r="211.605" :stroke="openedPanels[0] === 1 ? '#28A0F0' : '#C5C9D1'" @click="openPanelImg(1)" :fill="openedPanels[0] === 1 ? '#FFFFFF' : '#FFFFFF'"/>
+                        <circle cx="363.487" cy="437.895" r="211.605" :stroke="openedPanels[0] === 2 ? '#28A0F0' : '#C5C9D1'" @click="openPanelImg(2)" :fill="openedPanels[0] === 2 ? '#FFFFFF' : '#FFFFFF'"/>
                         <rect x="277.96" y="206.25" width="171.053" height="171.053" fill="url(#pattern0)"/>
                         <circle cx="539.862" cy="177.585" r="31.1581" @click="openPanelImg(1)" :fill="openedPanels[0] === 1 ? '#FE7F2D' : '#C5C9D1'"/>
                         <circle cx="539.862" cy="177.585" r="31.1581" @click="openPanelImg(1)" :stroke="openedPanels[0] === 1 ? '#FE7F2D' : '#C5C9D1'"/>
