@@ -87,7 +87,7 @@
 
                     <v-col class="overflow-hidden" cols="6">
                         <v-row class="mr-0" justify="end">
-                            <ChainSelector mode="dark" :callbackFunc="selectChainEts" :chains="['polygon', 'bsc']" :disabled-chains="['bsc']"/>
+                            <ChainSelector mode="dark" :callbackFunc="selectChainEts" :chains="['polygon', 'bsc']"/>
                         </v-row>
                     </v-col>
                 </v-row>
@@ -98,7 +98,7 @@
                         <label class="title-text">&nbsp;Performance</label>
                     </v-row>
                     <v-row class="mb-5" align="center" justify="center">
-                        <ChainSelector mode="dark" :callbackFunc="selectChainEts" :chains="['polygon', 'bsc']" :disabled-chains="['bsc']"/>
+                        <ChainSelector mode="dark" :callbackFunc="selectChainEts" :chains="['polygon', 'bsc']"/>
                     </v-row>
                 </template>
 
@@ -108,6 +108,9 @@
                             <template v-if="chainEts === 'polygon'">
                                 <ovn-apyrate network="polygon" product="ets"></ovn-apyrate>
                             </template>
+                            <template v-if="chainEts === 'bsc'">
+                                <ovn-apyrate network="bsc" product="ets"></ovn-apyrate>
+                            </template>
                         </v-row>
                     </v-col>
 
@@ -115,6 +118,9 @@
                         <v-row :justify="isMobile ? 'center' : 'start'">
                             <template v-if="chainEts === 'polygon'">
                                 <ovn-tvlrate network="polygon" product="ets"></ovn-tvlrate>
+                            </template>
+                            <template v-if="chainEts === 'bsc'">
+                                <ovn-tvlrate network="bsc" product="ets"></ovn-tvlrate>
                             </template>
                         </v-row>
                     </v-col>
