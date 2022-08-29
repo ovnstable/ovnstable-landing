@@ -12,7 +12,7 @@
                             <label class="title-label">full collateralization</label>
                         </v-row>
                         <v-row justify="center" class="mb-10">
-                            <label class="desc-label">100% + Collateralized with secure DeFi assets: USDC, USDT, DAI. No algorithmic stablecoins or other volatile assets</label>
+                            <label class="desc-label">100%+ Collateralized with secure DeFi assets: USDC, USDT, DAI. No algorithmic stablecoins or other volatile assets</label>
                         </v-row>
                     </v-col>
 
