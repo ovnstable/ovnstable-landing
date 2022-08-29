@@ -50,12 +50,12 @@
                     </v-row>
 
                     <v-row class="mb-4">
-                        <label class="list-title">Hedged strategies</label>
+                        <label class="list-title">Exchange-traded strategy (ETS)</label>
                     </v-row>
 
                     <v-row class="mb-15">
                         <ul>
-                            <li class="list-label">Coming soon</li>
+                            <li class="list-label">High APYs and moderate risk product, featuring automated hedging against market volatility.</li>
                         </ul>
                     </v-row>
                 </div>
