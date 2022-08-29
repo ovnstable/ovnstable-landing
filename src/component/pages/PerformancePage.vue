@@ -55,19 +55,19 @@
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'start'">
                             <template v-if="chain === 'polygon'">
-                                <ovn-tvlrate network="polygon" product="usd+"></ovn-tvlrate>
+                                <ovn-distrate network="polygon" product="usd+"></ovn-distrate>
                             </template>
 
                             <template v-if="chain === 'avax'">
-                                <ovn-tvlrate network="avax" product="usd+"></ovn-tvlrate>
+                                <ovn-distrate network="avax" product="usd+"></ovn-distrate>
                             </template>
 
                             <template v-if="chain === 'bsc'">
-                                <ovn-tvlrate network="bsc" product="usd+"></ovn-tvlrate>
+                                <ovn-distrate network="bsc" product="usd+"></ovn-distrate>
                             </template>
 
                             <template v-if="chain === 'op'">
-                                <ovn-tvlrate network="op" product="usd+"></ovn-tvlrate>
+                                <ovn-distrate network="op" product="usd+"></ovn-distrate>
                             </template>
                         </v-row>
                     </v-col>
