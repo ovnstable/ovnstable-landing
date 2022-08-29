@@ -77,7 +77,7 @@
                                 name="Abdul R."
                                 img-link="abdul_r.png"
                                 desc="Community & Content Lead"
-                                linked-in-link="https://www.linkedin.com/"/>
+                                discord-link="https://discord.com/users/763476471233773659"/>
                     </v-col>
                 </v-row>
 

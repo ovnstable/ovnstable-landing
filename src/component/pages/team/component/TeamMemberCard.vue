@@ -39,8 +39,8 @@
                                 v-if="discordLink"
                                 class="social-link mr-10"
                                 :link="discordLink"
-                                :img="require('@/assets/img/social/discord.svg')"
-                                :hover-img="require('@/assets/img/social/discord.svg')"
+                                :img="require('@/assets/img/social/discord_gray.svg')"
+                                :hover-img="require('@/assets/img/social/discord_colorful.svg')"
                         />
                     </v-row>
                 </v-col>
