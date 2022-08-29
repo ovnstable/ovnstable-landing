@@ -34,6 +34,15 @@
                                 :hover-img="require('@/assets/img/social/telegramiconColored.svg')"
                         />
                     </v-row>
+                    <v-row justify="end">
+                        <HoverImg
+                                v-if="discordLink"
+                                class="social-link mr-10"
+                                :link="discordLink"
+                                :img="require('@/assets/img/social/discord.svg')"
+                                :hover-img="require('@/assets/img/social/discord.svg')"
+                        />
+                    </v-row>
                 </v-col>
             </v-row>
             <v-row>
@@ -83,6 +92,11 @@ export default {
             type: String,
             default: null,
         },
+
+        discordLink: {
+            type: String,
+            default: null,
+        }
     },
 
     computed: {

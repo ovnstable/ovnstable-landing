@@ -60,6 +60,13 @@
                     </v-col>
                     <v-col>
                         <TeamMemberCard
+                                name="Uliana T."
+                                img-link="uliana_t.png"
+                                desc="Designer"
+                                linked-in-link="https://www.linkedin.com/in/ulyana-tuzhilina/" />
+                    </v-col>
+                    <v-col>
+                        <TeamMemberCard
                                 name="Roman G."
                                 img-link="roman_g.png"
                                 desc="Frontend Developer"
@@ -67,10 +74,10 @@
                     </v-col>
                     <v-col>
                         <TeamMemberCard
-                                name="Uliana T."
-                                img-link="uliana_t.png"
-                                desc="Designer"
-                                linked-in-link="https://www.linkedin.com/in/ulyana-tuzhilina/" />
+                                name="Abdul R."
+                                img-link="abdul_r.png"
+                                desc="Community & Content Lead"
+                                linked-in-link="https://www.linkedin.com/"/>
                     </v-col>
                 </v-row>
 
