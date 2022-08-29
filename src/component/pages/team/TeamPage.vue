@@ -6,7 +6,7 @@
                     <label class="title-text mb-0">our <label class="accent-text">plus</label> team</label>
                 </v-row>
 
-                <v-row class="d-flex justify-space-between mb-15">
+                <v-row justify="center" class="d-flex mb-15">
                     <v-col>
                         <TeamMemberCard
                                 name="Max E."

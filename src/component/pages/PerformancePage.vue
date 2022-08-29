@@ -11,6 +11,7 @@
                         <v-row class="ml-0" justify="start">
                             <label class="accent-text mb-0">USD</label><label class="title-text-plus">+</label>
                             <label class="title-text">&nbsp;Performance</label>
+                            <label class="accent-chain-text" v-show="!$vuetify.breakpoint.lgAndDown">|</label><label class="subtitle-text" >{{ chain }}</label>
                         </v-row>
                     </v-col>
 
@@ -82,6 +83,7 @@
                         <v-row class="ml-0" justify="start">
                             <label class="accent-text mb-0">ETS</label>
                             <label class="title-text">&nbsp;Performance</label>
+                            <label class="accent-chain-text" v-show="!$vuetify.breakpoint.lgAndDown">|</label><label class="subtitle-text">{{ chainEts }}</label>
                         </v-row>
                     </v-col>
 
@@ -152,7 +154,7 @@ export default {
 
         selectChainEts(chain) {
             this.chainEts = chain;
-        }
+        },
     }
 }
 </script>
@@ -166,6 +168,13 @@ export default {
         font-weight: 300;
         font-size: 30px;
         line-height: 36px;
+    }
+
+    .subtitle-text {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 36px;
     }
 
     .accent-text {
@@ -216,6 +225,22 @@ export default {
         line-height: 80px;
     }
 
+    .accent-chain-text {
+      font-style: normal;
+      font-weight: 100;
+      font-size: 80px;
+      line-height: 36px;
+      margin: 18px 10px 20px 30px;
+    }
+
+    .subtitle-text {
+      font-style: normal;
+      font-weight: 300;
+      font-size: 32px;
+      line-height: 40px;
+      margin: 20px 10px 20px 10px;
+    }
+
     .accent-text {
         font-style: normal;
         font-weight: 500;
@@ -249,6 +274,18 @@ export default {
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     color: #FFFFFF;
+}
+
+.subtitle-text {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    color: #ADB3BD;
+}
+
+.accent-chain-text {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    color: #ADB3BD;
 }
 
 .accent-text {
