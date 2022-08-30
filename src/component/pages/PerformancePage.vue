@@ -7,15 +7,15 @@
         <v-row class="container-row container-row-usd-plus">
             <v-col cols="12">
                 <v-row class="mb-15" align="center" v-if="!isMobile">
-                    <v-col class="overflow-hidden" cols="6">
+                    <v-col class="overflow-hidden" cols="8">
                         <v-row class="ml-0" justify="start">
                             <label class="accent-text mb-0">USD</label><label class="title-text-plus">+</label>
                             <label class="title-text">&nbsp;Performance</label>
-                            <label class="accent-chain-text" v-show="!$vuetify.breakpoint.lgAndDown">|</label><label class="subtitle-text" >{{ chain }}</label>
+                            <label class="accent-chain-text" v-show="!$vuetify.breakpoint.smAndDown">|</label><label class="subtitle-text" >{{ getChainName(chain) }} </label>
                         </v-row>
                     </v-col>
 
-                    <v-col class="overflow-hidden" cols="6">
+                    <v-col class="overflow-hidden" cols="4">
                         <v-row class="mr-0" justify="end">
                             <ChainSelector mode="dark" :callbackFunc="selectChain"/>
                         </v-row>
@@ -79,15 +79,15 @@
         <v-row class="container-row container-row-ets">
             <v-col cols="12">
                 <v-row class="mb-15" align="center" v-if="!isMobile">
-                    <v-col class="overflow-hidden" cols="6">
+                    <v-col class="overflow-hidden" cols="8">
                         <v-row class="ml-0" justify="start">
                             <label class="accent-text mb-0">ETS</label>
                             <label class="title-text">&nbsp;Performance</label>
-                            <label class="accent-chain-text" v-show="!$vuetify.breakpoint.lgAndDown">|</label><label class="subtitle-text">{{ chainEts }}</label>
+                            <label class="accent-chain-text" v-show="!$vuetify.breakpoint.smAndDown">|</label><label class="subtitle-text">{{ chainEts }}</label>
                         </v-row>
                     </v-col>
 
-                    <v-col class="overflow-hidden" cols="6">
+                    <v-col class="overflow-hidden" cols="4">
                         <v-row class="mr-0" justify="end">
                             <ChainSelector mode="dark" :callbackFunc="selectChainEts" :chains="['polygon', 'bsc']" :disabled-chains="['bsc']"/>
                         </v-row>
@@ -155,6 +155,17 @@ export default {
         selectChainEts(chain) {
             this.chainEts = chain;
         },
+
+        getChainName(s) {
+          switch (s) {
+            case 'avax':
+              return 'avalanche (alpha)'
+            case 'op':
+              return 'optimism (alpha)'
+            default:
+              return s
+          }
+        },
     }
 }
 </script>
@@ -170,11 +181,21 @@ export default {
         line-height: 36px;
     }
 
+
     .subtitle-text {
       font-style: normal;
       font-weight: 400;
       font-size: 30px;
       line-height: 36px;
+      margin-left: 20px;
+    }
+
+    .accent-chain-text {
+      font-style: normal;
+      font-weight: 100;
+      font-size: 80px;
+      line-height: 36px;
+      margin-left: 20px;
     }
 
     .accent-text {
@@ -205,6 +226,13 @@ export default {
     .container-row {
         margin-left: 5% !important;
     }
+    .accent-chain-text {
+      font-style: normal;
+      font-weight: 100;
+      font-size: 80px;
+      line-height: 36px;
+      margin-left: 20px;
+    }
 }
 
 @media only screen and (min-width: 961px) {
@@ -213,7 +241,7 @@ export default {
     }
 
     .container-row {
-        margin-left: 7vw !important;
+      margin-left: 7vw !important;
     }
 }
 
