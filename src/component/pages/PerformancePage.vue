@@ -7,25 +7,28 @@
         <v-row class="container-row container-row-usd-plus">
             <v-col cols="12">
                 <v-row class="mb-15" align="center" v-if="!isMobile">
-                    <v-col class="overflow-hidden" cols="8">
-                        <v-row class="ml-0" justify="start">
+                    <v-col class="overflow-hidden" :cols="isMobile ? 12 : 9">
+                        <v-row class="ml-0" justify="start" align="center">
                             <label class="accent-text mb-0">USD</label><label class="title-text-plus">+</label>
                             <label class="title-text">&nbsp;Performance</label>
-                            <label class="accent-chain-text" v-show="!$vuetify.breakpoint.smAndDown">|</label><label class="subtitle-text" >{{ getChainName(chain) }} </label>
+                            <label class="accent-chain-text mx-3" v-if="!isMobile">|</label><label class="accent-chain-text" >{{ getChainName(chain) }} </label>
                         </v-row>
                     </v-col>
 
-                    <v-col class="overflow-hidden" cols="4">
-                        <v-row class="mr-0" justify="end">
+                    <v-col class="overflow-hidden">
+                        <v-row class="mr-0" justify="end" align="center">
                             <ChainSelector mode="dark" :callbackFunc="selectChain"/>
                         </v-row>
                     </v-col>
                 </v-row>
 
                 <template v-else>
-                    <v-row class="mb-10" align="center" justify="center">
+                    <v-row align="center" justify="center">
                         <label class="accent-text mb-0">USD</label><label class="title-text-plus">+</label>
                         <label class="title-text">&nbsp;Performance</label>
+                    </v-row>
+                    <v-row class="mb-10" align="center" justify="center">
+                        <label class="accent-chain-text mx-3" v-if="!isMobile">|</label><label class="accent-chain-text" >{{ getChainName(chain) }} </label>
                     </v-row>
                     <v-row class="mb-5" align="center" justify="center">
                         <ChainSelector mode="dark" :callbackFunc="selectChain"/>
@@ -56,19 +59,19 @@
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'start'">
                             <template v-if="chain === 'polygon'">
-                                <ovn-distrate network="polygon" product="usd+"></ovn-distrate>
+                                <ovn-tvlrate network="polygon" product="usd+"></ovn-tvlrate>
                             </template>
 
                             <template v-if="chain === 'avax'">
-                                <ovn-distrate network="avax" product="usd+"></ovn-distrate>
+                                <ovn-tvlrate network="avax" product="usd+"></ovn-tvlrate>
                             </template>
 
                             <template v-if="chain === 'bsc'">
-                                <ovn-distrate network="bsc" product="usd+"></ovn-distrate>
+                                <ovn-tvlrate network="bsc" product="usd+"></ovn-tvlrate>
                             </template>
 
                             <template v-if="chain === 'op'">
-                                <ovn-distrate network="op" product="usd+"></ovn-distrate>
+                                <ovn-tvlrate network="op" product="usd+"></ovn-tvlrate>
                             </template>
                         </v-row>
                     </v-col>
@@ -79,25 +82,28 @@
         <v-row class="container-row container-row-ets">
             <v-col cols="12">
                 <v-row class="mb-15" align="center" v-if="!isMobile">
-                    <v-col class="overflow-hidden" cols="8">
-                        <v-row class="ml-0" justify="start">
+                    <v-col class="overflow-hidden" :cols="isMobile ? 12 : 9">
+                        <v-row class="ml-0" justify="start" align="center">
                             <label class="accent-text mb-0">ETS</label>
                             <label class="title-text">&nbsp;Performance</label>
-                            <label class="accent-chain-text" v-show="!$vuetify.breakpoint.smAndDown">|</label><label class="subtitle-text">{{ chainEts }}</label>
+                            <label class="accent-chain-text mx-3" v-if="!isMobile">|</label><label class="accent-chain-text">{{ chainEts }}</label>
                         </v-row>
                     </v-col>
 
-                    <v-col class="overflow-hidden" cols="4">
-                        <v-row class="mr-0" justify="end">
+                    <v-col class="overflow-hidden">
+                        <v-row class="mr-0" justify="end" align="center">
                             <ChainSelector mode="dark" :callbackFunc="selectChainEts" :chains="['polygon', 'bsc']"/>
                         </v-row>
                     </v-col>
                 </v-row>
 
                 <template v-else>
-                    <v-row class="mb-10" align="center" justify="center">
+                    <v-row align="center" justify="center">
                         <label class="accent-text mb-0">ETS</label>
                         <label class="title-text">&nbsp;Performance</label>
+                    </v-row>
+                    <v-row class="mb-10" align="center" justify="center">
+                        <label class="accent-chain-text mx-3" v-if="!isMobile">|</label><label class="accent-chain-text">{{ chainEts }}</label>
                     </v-row>
                     <v-row class="mb-5" align="center" justify="center">
                         <ChainSelector mode="dark" :callbackFunc="selectChainEts" :chains="['polygon', 'bsc']"/>
@@ -187,21 +193,12 @@ export default {
         line-height: 36px;
     }
 
-
-    .subtitle-text {
-      font-style: normal;
-      font-weight: 400;
-      font-size: 30px;
-      line-height: 36px;
-      margin-left: 20px;
-    }
-
     .accent-chain-text {
-      font-style: normal;
-      font-weight: 100;
-      font-size: 80px;
-      line-height: 36px;
-      margin-left: 20px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.04em;
     }
 
     .accent-text {
@@ -232,12 +229,13 @@ export default {
     .container-row {
         margin-left: 5% !important;
     }
+
     .accent-chain-text {
-      font-style: normal;
-      font-weight: 100;
-      font-size: 80px;
-      line-height: 36px;
-      margin-left: 20px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.04em;
     }
 }
 
@@ -260,19 +258,11 @@ export default {
     }
 
     .accent-chain-text {
-      font-style: normal;
-      font-weight: 100;
-      font-size: 80px;
-      line-height: 36px;
-      margin: 18px 10px 20px 30px;
-    }
-
-    .subtitle-text {
-      font-style: normal;
-      font-weight: 300;
-      font-size: 32px;
-      line-height: 40px;
-      margin: 20px 10px 20px 10px;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 32px;
+        line-height: 40px;
+        letter-spacing: 0.02em;
     }
 
     .accent-text {
@@ -310,15 +300,10 @@ export default {
     color: #FFFFFF;
 }
 
-.subtitle-text {
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-    color: #ADB3BD;
-}
-
 .accent-chain-text {
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
     color: #ADB3BD;
 }
 
