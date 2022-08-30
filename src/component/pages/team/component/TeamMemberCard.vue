@@ -1,5 +1,5 @@
 <template>
-    <v-card class="card-container ma-3">
+    <v-card class="card-container">
         <v-col>
             <v-row class="mb-4">
                 <v-col>
@@ -39,8 +39,8 @@
                                 v-if="discordLink"
                                 class="social-link mr-10"
                                 :link="discordLink"
-                                :img="require('@/assets/img/social/discordicon.svg')"
-                                :hover-img="require('@/assets/img/social/discordiconColored.svg')"
+                                :img="require('@/assets/img/social/discord_gray.svg')"
+                                :hover-img="require('@/assets/img/social/discord_colorful.svg')"
                         />
                     </v-row>
                 </v-col>
@@ -96,7 +96,7 @@ export default {
         discordLink: {
             type: String,
             default: null,
-        },
+        }
     },
 
     computed: {
@@ -178,8 +178,6 @@ export default {
 }
 
 .social-link {
-    width: 32px !important;
-    height: 32px !important;
     cursor: pointer;
 }
 
