@@ -13,7 +13,7 @@
                                 title="Cash management"
                                 desc="Park your stables in USD+, and watch your balance grow in your wallet overnight. No staking required"
                                 btnLabel="Mint"
-                                link="https://market.overnight.fi/"/>
+                                link="https://app.overnight.fi/"/>
                     </v-col>
 
                     <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
@@ -21,7 +21,7 @@
                                 title="Liquidity Pools"
                                 desc="Provide liquidity into USD+ pools, and get USD+ yield on top of LP fees and rewards"
                                 btnLabel="Deposit"
-                                link="https://app.overnight.fi/farm"/>
+                                link="https://app.overnight.fi/market"/>
                     </v-col>
 
                     <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
@@ -47,7 +47,7 @@
                                 desc="High APYs and moderate risk product, featuring automated hedging against market volatility"
                                 btnLabel="Mint ETS"
                                 :isNew="true"
-                                link="https://market.overnight.fi/ets"/>
+                                link="https://app.overnight.fi/market"/>
                     </v-col>
                 </v-row>
             </v-col>
