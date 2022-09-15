@@ -2,20 +2,20 @@
     <div class="page-container overflow-hidden">
         <v-row class="container-row">
             <v-col class="logo-col" :cols="isMobile ? 12 : ''">
-                <v-row class="mb-4" :justify="isMobile ? 'center' : 'start'">
+                <v-row class="mb-4" :justify="isMobile ? 'center' : 'start'" v-if="isVisible">
                     <img class="logo-img" height="40" :src="require('@/assets/img/logo_full.svg')">
                 </v-row>
-                <v-row :justify="isMobile ? 'center' : 'start'">
+                <v-row :justify="isMobile ? 'center' : 'start'" v-observe-visibility="visibilityChanged">
                     <p class="footer-logo-sub-text mb-0">Your money should not sleep</p>
                 </v-row>
-                <v-row class="mb-6" :justify="isMobile ? 'center' : 'start'">
+                <v-row class="mb-6" :justify="isMobile ? 'center' : 'start'" v-if="isVisible">
                     <p class="footer-logo-sub-text">2022 © All Rights Reserved</p>
                 </v-row>
             </v-col>
 
             <v-spacer></v-spacer>
 
-            <v-col class="community-col" :cols="isMobile ? 6 : ''">
+            <v-col class="community-col" :cols="isMobile ? 6 : ''" v-if="isVisible">
                 <v-row class="mb-5">
                     <label class="col-title">Community</label>
                 </v-row>
@@ -43,7 +43,7 @@
                 </v-row>
             </v-col>
 
-            <v-col class="dev-col" :cols="isMobile ? 6 : ''">
+            <v-col class="dev-col" :cols="isMobile ? 6 : ''" v-if="isVisible">
                 <v-row class="mb-5">
                     <label class="col-title">Developers</label>
                 </v-row>
@@ -68,7 +68,7 @@ export default {
     },
 
     data: () => ({
-
+        isVisible: false,
     }),
 
     computed: {
@@ -92,6 +92,12 @@ export default {
             let el = document.getElementById(name);
             el.scrollIntoView();
         },
+
+        visibilityChanged (isVisible, entry) {
+            if (isVisible) {
+                this.isVisible = true;
+            }
+        }
     }
 }
 </script>

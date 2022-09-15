@@ -2,7 +2,7 @@
     <div class="page-container overflow-hidden" :class="isMobile ? 'flex-column' : 'flex-row'">
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" :cols="isMobile ? 12 : 7">
-                <v-row class="mb-8">
+                <v-row class="mb-8" v-observe-visibility="visibilityChanged">
                     <div>
                         <label class="title-text mb-0">USD+ </label>
                         <label class="accent-text">Portfolio</label>
@@ -10,7 +10,7 @@
                     </div>
                 </v-row>
 
-                <div>
+                <div v-if="isVisible">
                     <v-row class="sub-title-row mb-16">
                         <p class="sub-title-text">
                             The portfolio deployed by Overnight is constructed to minimize risk and maximize liquidity. 100% of the assets consist of yield-bearing strategies is exposure by major stablecoins.
@@ -70,7 +70,7 @@
                 </v-row>
             </v-col>
 
-            <v-col :cols="isMobile ? 12 : 5">
+            <v-col :cols="isMobile ? 12 : 5" v-if="isVisible">
                 <v-row class="my-3" :class="isMobile ? '' : 'mr-0'" :justify="isMobile ? 'center' : 'end'">
                     <ChainSelector mode="light" :callbackFunc="selectChain"/>
                 </v-row>
@@ -107,6 +107,8 @@ export default {
 
     data: () => ({
         chain: 'polygon',
+
+        isVisible: false,
     }),
 
     computed: {
@@ -122,6 +124,12 @@ export default {
 
         selectChain(chain) {
             this.chain = chain;
+        },
+
+        visibilityChanged (isVisible, entry) {
+            if (isVisible) {
+                this.isVisible = true;
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 <template>
     <div class="page-container overflow-hidden">
-        <svg class="roadmap-bg-img" width="1920" height="1651" viewBox="0 0 1920 1651" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="roadmap-bg-img" width="1920" height="1651" viewBox="0 0 1920 1651" fill="none" xmlns="http://www.w3.org/2000/svg" v-if="isVisible">
             <path d="M-99.3913 644.312C-12.5031 639.345 73.6199 623.16 160.02 611.98C211.9 603.564 264.436 604.985 316.198 596.181C388.833 581.655 456.228 544.116 530.983 539.694C581.404 535.109 629.373 548.929 675.26 564.508C752.77 587.098 826.343 619.071 904.081 640.886C994.848 667.682 1102.61 679.464 1187.86 623.122C1266.57 578.219 1333.43 507.769 1425.06 487.946C1576.48 469.621 1701.26 583.835 1850.41 584.002" stroke="#1C95E7" stroke-opacity="0.2" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" />
             <path d="M-103.855 663.181C-16.9425 657.782 68.5887 638.101 154.647 624.763C206.418 614.966 259.103 615.353 310.959 607.368C388.94 592.222 460.887 550.91 541.019 546.988C585.928 543.498 629.329 553.888 670.537 567.201C754.623 588.659 832.717 624.924 915.736 648.964C1004.35 676.267 1109.69 687.65 1193.5 633.154C1270.32 589.666 1334.98 523.131 1422.27 499.102C1572.46 470.55 1709.75 586.506 1859.38 584.692" stroke="#1C95E7" stroke-opacity="0.2" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" />
             <path d="M-108.212 683.432C26.3585 672.443 156.459 626.196 291.462 620.731C373.589 609.141 447.511 564.69 529.941 555.13C656.914 540.352 802.121 619.298 919.978 654.895C1008.33 684.396 1114.01 697.937 1198.92 643.533C1275.83 600.304 1340.22 534.414 1426.87 508.744C1577.7 476.744 1717.83 587.323 1868.2 583.874" stroke="#1C95E7" stroke-opacity="0.2" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" />
@@ -38,16 +38,16 @@
 
         <v-row class="container-row">
             <v-col cols="12">
-                <v-row class="mb-15" justify="center">
+                <v-row class="mb-15" justify="center" v-observe-visibility="visibilityChanged">
                     <label class="title-text mb-0">our <label class="accent-text">roadmap</label></label>
                 </v-row>
 
-                <v-row justify="center" class="mb-15">
+                <v-row justify="center" class="mb-15" v-if="isVisible">
                     <img class="roadmap-img mt-12" :src="require('@/assets/img/roadmap.svg')">
                     <img class="roadmap-img-mobile mt-12" :src="require('@/assets/img/roadmap_mobile.svg')">
                 </v-row>
 
-                <v-row justify="center" class="btn-row">
+                <v-row justify="center" class="btn-row" v-if="isVisible">
                     <v-btn
                             text
                             class="feature-btn"
@@ -69,7 +69,7 @@ export default {
     },
 
     data: () => ({
-
+        isVisible: false,
     }),
 
     computed: {
@@ -82,6 +82,12 @@ export default {
         openLink(url) {
             window.open(url, '_blank').focus();
         },
+
+        visibilityChanged (isVisible, entry) {
+            if (isVisible) {
+                this.isVisible = true;
+            }
+        }
     }
 }
 </script>

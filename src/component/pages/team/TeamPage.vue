@@ -2,11 +2,11 @@
     <div class="page-container overflow-hidden">
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" cols="12">
-                <v-row class="title-row mb-15" justify="center">
+                <v-row class="title-row mb-15" justify="center" v-observe-visibility="visibilityChanged">
                     <label class="title-text mb-0">our <label class="accent-text">plus</label> team</label>
                 </v-row>
 
-                <v-row justify="center" class="d-flex mb-15">
+                <v-row justify="center" class="d-flex mb-15" v-if="isVisible">
                     <TeamMemberCard
                             name="Max E."
                             img-link="max_e.png"
@@ -132,6 +132,7 @@ export default {
     },
 
     data: () => ({
+        isVisible: false,
     }),
 
     computed: {
@@ -144,6 +145,12 @@ export default {
         openLink(url) {
             window.open(url, '_blank').focus();
         },
+
+        visibilityChanged (isVisible, entry) {
+            if (isVisible) {
+                this.isVisible = true;
+            }
+        }
     }
 }
 </script>

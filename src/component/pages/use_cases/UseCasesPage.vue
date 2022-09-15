@@ -2,12 +2,12 @@
     <div class="page-container overflow-hidden">
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" cols="12">
-                <v-row class="title-row mb-10">
+                <v-row class="title-row mb-10" v-observe-visibility="visibilityChanged">
                     <label class="accent-text">USD</label><label class="title-text-plus">+</label>
                     <label class="title-text mb-0">&nbsp;use cases</label>
                 </v-row>
 
-                <v-row class="d-flex " :class="isMobile ? 'flex-column' : 'flex-row'">
+                <v-row class="d-flex " :class="isMobile ? 'flex-column' : 'flex-row'" v-if="isVisible">
                     <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
                         <UseCard
                                 title="Cash management"
@@ -142,6 +142,8 @@ export default {
         ],
 
         pools: [],
+
+        isVisible: false,
     }),
 
     computed: {
@@ -225,6 +227,12 @@ export default {
                 })
 
             return result;
+        },
+
+        visibilityChanged (isVisible, entry) {
+            if (isVisible) {
+                this.isVisible = true;
+            }
         }
     }
 }

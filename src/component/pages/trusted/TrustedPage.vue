@@ -2,11 +2,11 @@
     <div class="page-container overflow-hidden">
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" cols="12">
-                <v-row class="mb-10" justify="start">
+                <v-row class="mb-10" justify="start" v-observe-visibility="visibilityChanged">
                     <label class="title-text mb-0">we are <label class="accent-text">trusted</label></label>
                 </v-row>
 
-                <v-row class="d-flex justify-space-between mt-10 mb-12" :class="isMobile ? 'flex-column-reverse' : 'flex-row'">
+                <v-row class="d-flex justify-space-between mt-10 mb-12" :class="isMobile ? 'flex-column-reverse' : 'flex-row'" v-if="isVisible">
                     <v-col class="mt-12">
                         <v-row class="trusted-title-row mb-8">
                             <label class="trusted-title">Partners</label>
@@ -172,7 +172,7 @@ export default {
     },
 
     data: () => ({
-
+        isVisible: false,
     }),
 
     computed: {
@@ -185,6 +185,12 @@ export default {
         openLink(url) {
             window.open(url, '_blank').focus();
         },
+
+        visibilityChanged (isVisible, entry) {
+            if (isVisible) {
+                this.isVisible = true;
+            }
+        }
     }
 }
 </script>

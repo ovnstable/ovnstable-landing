@@ -2,11 +2,11 @@
     <div class="page-container overflow-hidden">
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" cols="12">
-                <v-row class="mb-10" justify="center">
+                <v-row class="mb-10" justify="center" v-observe-visibility="visibilityChanged">
                     <label class="title-text mb-0"><label class="accent-text">Security</label> at its core</label>
                 </v-row>
 
-                <v-row class="d-flex justify-space-between" :class="isMobile ? 'flex-column' : 'flex-row'">
+                <v-row class="d-flex justify-space-between" :class="isMobile ? 'flex-column' : 'flex-row'" v-if="isVisible">
                     <v-col :cols="isMobile ? 12 : 3" class="mt-12">
                         <v-row justify="center" class="mb-10 card-title-row">
                             <label class="title-label">full collateralization</label>
@@ -35,7 +35,7 @@
                     </v-col>
                 </v-row>
 
-                <v-row class="d-flex justify-space-between mt-10 mb-12" :class="isMobile ? 'flex-column-reverse' : 'flex-row'">
+                <v-row class="d-flex justify-space-between mt-10 mb-12" :class="isMobile ? 'flex-column-reverse' : 'flex-row'" v-if="isVisible">
                     <v-col :cols="isMobile ? 12 : 8" class="mt-12">
                         <v-row class="find-title-row mb-8">
                             <label class="find-title">Find us on</label>
@@ -85,7 +85,7 @@
                     </v-col>
                 </v-row>
 
-                <v-row justify="center">
+                <v-row justify="center" v-if="isVisible">
                     <v-btn
                             text
                             class="whitepaper-btn mt-12"
@@ -109,6 +109,7 @@ export default {
     },
 
     data: () => ({
+        isVisible: false,
     }),
 
     computed: {
@@ -121,6 +122,12 @@ export default {
         openLink(url) {
             window.open(url, '_blank').focus();
         },
+
+        visibilityChanged (isVisible, entry) {
+            if (isVisible) {
+                this.isVisible = true;
+            }
+        }
     }
 }
 </script>

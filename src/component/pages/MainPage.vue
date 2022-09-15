@@ -7,7 +7,7 @@
 
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" :cols="isMobile ? 12 : 6">
-                <v-row class="title-row mb-10" :class="isMobile ? '' : 'mt-0'">
+                <v-row class="title-row mb-10" :class="isMobile ? '' : 'mt-0'" v-observe-visibility="visibilityChanged">
                     <div>
                         <label class="accent-text">USD</label><label class="title-text-plus">+</label>
                         <label class="title-text mb-0"> Is</label>
@@ -15,12 +15,12 @@
                         <p class="title-text mb-0">daily via rebase</p>
                     </div>
                 </v-row>
-                <v-row class="mb-10">
+                <v-row class="mb-10" v-if="isVisible">
                     <p class="sub-title-text mb-0">USD+ stablecoin can be instantly minted and redeemed to <abbr title="BUSD on Binance Smart Chain">USDC</abbr> 1:1.</p>
                     <p class="sub-title-text mb-0">Simply replace USDC with USD+ stablecoin and start getting passive yield where it didn’t exist before.</p>
                     <p class="sub-title-text mb-0">Available on Polygon and BNB Chain. Avalanche and Optimism are in alpha.</p>
                 </v-row>
-                <v-row class="btn-row">
+                <v-row class="btn-row" v-if="isVisible">
                     <v-btn class="d-none d-md-flex launch-dapp-btn" @click="launchDapp">Launch DAPP</v-btn>
                 </v-row>
             </v-col>
@@ -43,6 +43,7 @@ export default {
     },
 
     data: () => ({
+        isVisible: false,
     }),
 
     computed: {
@@ -55,6 +56,12 @@ export default {
         launchDapp() {
             window.open(`https://app.overnight.fi/stats`, '_blank').focus();
         },
+
+        visibilityChanged (isVisible, entry) {
+            if (isVisible) {
+                this.isVisible = true;
+            }
+        }
     }
 }
 </script>

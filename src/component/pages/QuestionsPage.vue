@@ -1,17 +1,17 @@
 <template>
     <div class="page-container overflow-hidden" :class="isMobile ? 'flex-column' : 'flex-row'">
 
-        <video autoplay playsinline muted loop class="bg-video">
+        <video autoplay playsinline muted loop class="bg-video" v-if="isVisible">
             <source :src='require("@/assets/background/video/questions-bg.mp4")' type='video/mp4'>
         </video>
 
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" :cols="isMobile ? 12 : 7">
-                <v-row class="title-row mb-10" justify="center" align="center">
+                <v-row class="title-row mb-10" justify="center" align="center" v-observe-visibility="visibilityChanged">
                     <p class="title-text mb-0">join <label class="accent-text">plus</label> community</p>
                 </v-row>
 
-                <v-row class="mb-4" justify="center">
+                <v-row class="mb-4" justify="center" v-if="isVisible">
                     <v-text-field
                             class="text-input-field"
                             v-model="email"
@@ -23,7 +23,7 @@
                     </v-text-field>
                 </v-row>
 
-                <v-row class="mb-4" justify="center">
+                <v-row class="mb-4" justify="center" v-if="isVisible">
                     <v-text-field
                             class="text-input-field"
                             v-model="text"
@@ -34,14 +34,14 @@
                     </v-text-field>
                 </v-row>
 
-                <v-row class="email-row mb-12" justify="center">
+                <v-row class="email-row mb-12" justify="center" v-if="isVisible">
                     <v-btn @click="sendEmailAction" :class="isDisabledBtn ? 'disabled-btn' : 'send-btn'" :disabled="isDisabledBtn">
                         Send
                     </v-btn>
                 </v-row>
             </v-col>
 
-            <v-col class="social-col" :cols="isMobile ? 12 : 5">
+            <v-col class="social-col" :cols="isMobile ? 12 : 5" v-if="isVisible">
                 <v-row justify="center">
                     <div>
                         <v-row class="card-container ma-2" align="center" justify="center" @click="openLink('https://twitter.com/overnight_fi')">
@@ -86,6 +86,8 @@ export default {
 
         // eslint-disable-next-line
         regEmail: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/,
+
+        isVisible: false,
     }),
 
     computed: {
@@ -114,6 +116,12 @@ export default {
             this.email = null;
             this.text = null;
         },
+
+        visibilityChanged (isVisible, entry) {
+            if (isVisible) {
+                this.isVisible = true;
+            }
+        }
     }
 }
 </script>

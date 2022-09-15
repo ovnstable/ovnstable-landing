@@ -1,6 +1,6 @@
 <template>
     <div class="page-container overflow-hidden">
-        <v-row class="container-row d-flex overflow-hidden" :class="isMobile ? 'flex-column-reverse' : 'flex-row'" align="center">
+        <v-row class="container-row d-flex overflow-hidden" :class="isMobile ? 'flex-column-reverse' : 'flex-row'" align="center" v-observe-visibility="visibilityChanged">
             <v-col class="main-col" :cols="isMobile ? 12 : 6">
                 <v-row class="title-row mb-15" v-if="!isMobile">
                     <div>
@@ -10,13 +10,13 @@
                     </div>
                 </v-row>
 
-                <v-row class="">
+                <v-row class="" v-if="isVisible">
                     <p class="sub-title-text">
                         USD+ includes 3 components:
                     </p>
                 </v-row>
 
-                <v-row>
+                <v-row v-if="isVisible">
                     <v-expansion-panels multiple v-model="openedPanels">
                         <v-expansion-panel class="ml-n9 mt-n4 panel-bordered" @click="openPanel(0)">
                             <v-expansion-panel-header class="panel-header-row">
@@ -59,7 +59,7 @@
                 </v-row>
             </v-col>
 
-            <v-col class="" :cols="isMobile ? 12 : 6">
+            <v-col class="" :cols="isMobile ? 12 : 6" v-if="isVisible">
                 <v-row class="title-row mb-10" v-if="isMobile">
                     <div>
                         <label class="title-text mb-0">How does </label>
@@ -138,6 +138,8 @@ export default {
 
     data: () => ({
         openedPanels: [0],
+
+        isVisible: false,
     }),
 
     computed: {
@@ -155,6 +157,12 @@ export default {
         openPanel(i) {
             if (this.openedPanels[0] !== i) {
                 this.openedPanels = [].push(i);
+            }
+        },
+
+        visibilityChanged (isVisible, entry) {
+            if (isVisible) {
+                this.isVisible = true;
             }
         }
     }

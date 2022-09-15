@@ -1,21 +1,22 @@
 <template>
     <div class="page-container overflow-hidden">
 
-        <img class="performance-bg-img-left" :src="require('@/assets/background/img/performance_bg_lines.svg')">
-        <img class="performance-bg-img-right" :src="require('@/assets/background/img/performance_bg_lines.svg')">
+        <img class="performance-bg-img-left" :src="require('@/assets/background/img/performance_bg_lines.svg')" v-if="isVisible">
+        <img class="performance-bg-img-right" :src="require('@/assets/background/img/performance_bg_lines.svg')" v-if="isVisible">
 
         <v-row class="container-row container-row-usd-plus">
             <v-col cols="12">
                 <v-row class="mb-15" align="center" v-if="!isMobile">
-                    <v-col class="overflow-hidden" :cols="isMobile ? 12 : 9">
+                    <v-col class="overflow-hidden" :cols="isMobile ? 12 : 9" v-observe-visibility="visibilityChanged">
                         <v-row class="ml-0" justify="start" align="center">
                             <label class="accent-text mb-0">USD</label><label class="title-text-plus">+</label>
                             <label class="title-text">&nbsp;Performance</label>
-                            <label class="accent-chain-text mx-3" v-if="!isMobile">|</label><label class="accent-chain-text" >{{ getChainName(chain) }} </label>
+                            <label class="accent-chain-text mx-3" v-if="!isMobile">|</label><label
+                            class="accent-chain-text">{{ getChainName(chain) }} </label>
                         </v-row>
                     </v-col>
 
-                    <v-col class="overflow-hidden">
+                    <v-col class="overflow-hidden" v-if="isVisible">
                         <v-row class="mr-0" justify="end" align="center">
                             <ChainSelector mode="dark" :callbackFunc="selectChain"/>
                         </v-row>
@@ -23,19 +24,20 @@
                 </v-row>
 
                 <template v-else>
-                    <v-row align="center" justify="center">
+                    <v-row align="center" justify="center" v-observe-visibility="visibilityChanged">
                         <label class="accent-text mb-0">USD</label><label class="title-text-plus">+</label>
                         <label class="title-text">&nbsp;Performance</label>
                     </v-row>
-                    <v-row class="mb-10" align="center" justify="center">
-                        <label class="accent-chain-text mx-3" v-if="!isMobile">|</label><label class="accent-chain-text" >{{ getChainName(chain) }} </label>
+                    <v-row class="mb-10" align="center" justify="center" v-if="isVisible">
+                        <label class="accent-chain-text mx-3" v-if="!isMobile">|</label><label
+                        class="accent-chain-text">{{ getChainName(chain) }} </label>
                     </v-row>
-                    <v-row class="mb-5" align="center" justify="center">
+                    <v-row class="mb-5" align="center" justify="center" v-if="isVisible">
                         <ChainSelector mode="dark" :callbackFunc="selectChain"/>
                     </v-row>
                 </template>
 
-                <v-row class="d-flex " :class="isMobile ? 'flex-column' : 'flex-row'">
+                <v-row class="d-flex " :class="isMobile ? 'flex-column' : 'flex-row'" v-if="isVisible">
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'end'">
                             <template v-if="chain === 'polygon'">
@@ -56,7 +58,7 @@
                         </v-row>
                     </v-col>
 
-                    <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
+                    <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6" v-if="isVisible">
                         <v-row :justify="isMobile ? 'center' : 'start'">
                             <template v-if="chain === 'polygon'">
                                 <ovn-tvlrate network="polygon" product="usd+"></ovn-tvlrate>
@@ -79,14 +81,15 @@
             </v-col>
         </v-row>
 
-        <v-row class="container-row container-row-ets">
+        <v-row class="container-row container-row-ets" v-if="isVisible">
             <v-col cols="12">
                 <v-row class="mb-15" align="center" v-if="!isMobile">
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 9">
                         <v-row class="ml-0" justify="start" align="center">
                             <label class="accent-text mb-0">ETS</label>
                             <label class="title-text">&nbsp;Performance</label>
-                            <label class="accent-chain-text mx-3" v-if="!isMobile">|</label><label class="accent-chain-text">{{ chainEts }}</label>
+                            <label class="accent-chain-text mx-3" v-if="!isMobile">|</label><label
+                            class="accent-chain-text">{{ chainEts }}</label>
                         </v-row>
                     </v-col>
 
@@ -103,7 +106,8 @@
                         <label class="title-text">&nbsp;Performance</label>
                     </v-row>
                     <v-row class="mb-10" align="center" justify="center">
-                        <label class="accent-chain-text mx-3" v-if="!isMobile">|</label><label class="accent-chain-text">{{ chainEts }}</label>
+                        <label class="accent-chain-text mx-3" v-if="!isMobile">|</label><label
+                        class="accent-chain-text">{{ chainEts }}</label>
                     </v-row>
                     <v-row class="mb-5" align="center" justify="center">
                         <ChainSelector mode="dark" :callbackFunc="selectChainEts" :chains="['polygon', 'bsc']"/>
@@ -141,6 +145,7 @@
 <script>
 
 import ChainSelector from "@/component/common/ChainSelector";
+
 export default {
     name: "PerformancePage",
 
@@ -151,6 +156,8 @@ export default {
     data: () => ({
         chain: 'polygon',
         chainEts: 'polygon',
+
+        isVisible: false,
     }),
 
     computed: {
@@ -169,15 +176,21 @@ export default {
         },
 
         getChainName(s) {
-          switch (s) {
-            case 'avax':
-              return 'avalanche (alpha)'
-            case 'op':
-              return 'optimism (alpha)'
-            default:
-              return s
-          }
+            switch (s) {
+                case 'avax':
+                    return 'avalanche (alpha)'
+                case 'op':
+                    return 'optimism (alpha)'
+                default:
+                    return s
+            }
         },
+
+        visibilityChanged(isVisible, entry) {
+            if (isVisible) {
+                this.isVisible = true;
+            }
+        }
     }
 }
 </script>
@@ -245,7 +258,7 @@ export default {
     }
 
     .container-row {
-      margin-left: 7vw !important;
+        margin-left: 7vw !important;
     }
 }
 
