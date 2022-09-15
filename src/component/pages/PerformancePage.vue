@@ -109,19 +109,51 @@
                         <label class="accent-chain-text mx-3" v-if="!isMobile">|</label><label
                         class="accent-chain-text">{{ chainEts }}</label>
                     </v-row>
-                    <v-row class="mb-5" align="center" justify="center">
+                    <v-row class="mb-4" align="center" justify="center">
                         <ChainSelector mode="dark" :callbackFunc="selectChainEts" :chains="['polygon', 'bsc']"/>
                     </v-row>
                 </template>
+
+                <v-row align="center" justify="start" class="ma-0 toggle-row mb-4" :class="isMobile ? '' : 'mt-n4'">
+                    <label
+                        v-if="chainEts === 'polygon'"
+                        @click="setEtsAddress('0x4b5e0af6AE8Ef52c304CD55f546342ca0d3050bf')"
+                        class="tab-btn mr-4"
+                        v-bind:class="activeTabUsdPlusWmatic">
+                        USD+/wMatic
+                    </label>
+                    <label
+                        v-if="chainEts === 'polygon'"
+                        @click="setEtsAddress('0xd52caB8AfC8ECd08b7CFa6D07e224a56F943e4c4')"
+                        class="tab-btn mx-4"
+                        v-bind:class="activeTabWmaticUsdc">
+                        wMatic/USDC
+                    </label>
+
+                    <label
+                        v-if="chainEts === 'bsc'"
+                        @click="setEtsAddress('0xbAAc6ED05b2fEb47ef04b63018A27d80cbeA10d1')"
+                        class="tab-btn mr-4"
+                        v-bind:class="activeTabUsdPlusBnb">
+                        USD+/BNB
+                    </label>
+                    <label
+                        v-if="chainEts === 'bsc'"
+                        @click="setEtsAddress('0xc6eca7a3b863d720393DFc62494B6eaB22567D37')"
+                        class="tab-btn mx-4"
+                        v-bind:class="activeTabBusdBnb">
+                        BUSD/BNB
+                    </label>
+                </v-row>
 
                 <v-row class="d-flex " :class="isMobile ? 'flex-column' : 'flex-row'">
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'end'">
                             <template v-if="chainEts === 'polygon'">
-                                <ovn-apyrate network="polygon" product="ets"></ovn-apyrate>
+                                <ovn-apyrate network="polygon" product="ets" :address="etsAddress"></ovn-apyrate>
                             </template>
                             <template v-if="chainEts === 'bsc'">
-                                <ovn-apyrate network="bsc" product="ets"></ovn-apyrate>
+                                <ovn-apyrate network="bsc" product="ets" :address="etsAddress"></ovn-apyrate>
                             </template>
                         </v-row>
                     </v-col>
@@ -129,10 +161,10 @@
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'start'">
                             <template v-if="chainEts === 'polygon'">
-                                <ovn-tvlrate network="polygon" product="ets"></ovn-tvlrate>
+                                <ovn-tvlrate network="polygon" product="ets" :address="etsAddress"></ovn-tvlrate>
                             </template>
                             <template v-if="chainEts === 'bsc'">
-                                <ovn-tvlrate network="bsc" product="ets"></ovn-tvlrate>
+                                <ovn-tvlrate network="bsc" product="ets" :address="etsAddress"></ovn-tvlrate>
                             </template>
                         </v-row>
                     </v-col>
@@ -156,6 +188,7 @@ export default {
     data: () => ({
         chain: 'polygon',
         chainEts: 'polygon',
+        etsAddress: '0x4b5e0af6AE8Ef52c304CD55f546342ca0d3050bf',
 
         isVisible: false,
     }),
@@ -163,6 +196,34 @@ export default {
     computed: {
         isMobile() {
             return window.innerWidth <= 960;
+        },
+
+        activeTabUsdPlusWmatic: function () {
+            return {
+                'tab-button': this.etsAddress === '0x4b5e0af6AE8Ef52c304CD55f546342ca0d3050bf',
+                'tab-button-in-active': this.etsAddress !== '0x4b5e0af6AE8Ef52c304CD55f546342ca0d3050bf',
+            }
+        },
+
+        activeTabWmaticUsdc: function () {
+            return {
+                'tab-button': this.etsAddress === '0xd52caB8AfC8ECd08b7CFa6D07e224a56F943e4c4',
+                'tab-button-in-active': this.etsAddress !== '0xd52caB8AfC8ECd08b7CFa6D07e224a56F943e4c4',
+            }
+        },
+
+        activeTabUsdPlusBnb: function () {
+            return {
+                'tab-button': this.etsAddress === '0xbAAc6ED05b2fEb47ef04b63018A27d80cbeA10d1',
+                'tab-button-in-active': this.etsAddress !== '0xbAAc6ED05b2fEb47ef04b63018A27d80cbeA10d1',
+            }
+        },
+
+        activeTabBusdBnb: function () {
+            return {
+                'tab-button': this.etsAddress === '0xc6eca7a3b863d720393DFc62494B6eaB22567D37',
+                'tab-button-in-active': this.etsAddress !== '0xc6eca7a3b863d720393DFc62494B6eaB22567D37',
+            }
         },
     },
 
@@ -173,6 +234,18 @@ export default {
 
         selectChainEts(chain) {
             this.chainEts = chain;
+
+            if (chain === 'polygon') {
+                this.setEtsAddress('0x4b5e0af6AE8Ef52c304CD55f546342ca0d3050bf');
+            }
+
+            if (chain === 'bsc') {
+                this.setEtsAddress('0xbAAc6ED05b2fEb47ef04b63018A27d80cbeA10d1');
+            }
+        },
+
+        setEtsAddress(address) {
+            this.etsAddress = address;
         },
 
         getChainName(s) {
@@ -231,6 +304,13 @@ export default {
     .container-row-usd-plus, .container-row-ets {
         margin-top: 10% !important;
         margin-bottom: 10% !important;
+    }
+
+    .tab-btn {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
     }
 }
 
@@ -301,6 +381,13 @@ export default {
         margin-top: 5% !important;
         margin-bottom: 10% !important;
     }
+
+    .tab-btn {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 32px;
+    }
 }
 
 .page-container {
@@ -360,6 +447,34 @@ export default {
     min-width: 86vw !important;
     width: 86vw !important;
     max-width: 86vw !important;
+}
+
+.toggle-row {
+    border-bottom: 2px solid #4C586D;
+}
+
+.tab-btn {
+    font-family: 'Roboto', sans-serif;
+    font-feature-settings: 'liga' off;
+    color: #FFFFFF;
+    margin-bottom: -2px;
+    cursor: pointer;
+    z-index: 10 !important;
+}
+
+.tab-btn-disabled {
+    cursor: default;
+}
+
+.tab-button {
+    border-bottom: 2px solid #1C95E7 !important;
+    color: #1C95E7 !important;
+    cursor: pointer !important;
+}
+
+.tab-button-in-active {
+    color: #FFFFFF !important;
+    cursor: pointer !important;
 }
 
 </style>
