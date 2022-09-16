@@ -10,6 +10,7 @@ import moment from 'moment';
 import '@mdi/font/css/materialdesignicons.css'
 import VueObserveVisibility from 'vue-observe-visibility'
 import VueGtm from '@gtm-support/vue2-gtm';
+import VueYandexMetrika from 'vue-yandex-metrika'
 
 Vue.use(Vuex)
 Vue.use(VueObserveVisibility)
@@ -20,6 +21,13 @@ Vue.use(VueGtm, {
     vueRouter: router,
     debug: false,
 });
+
+Vue.use(VueYandexMetrika, {
+    id: 86928892,
+    router: router,
+    env: process.env.NODE_ENV,
+    options: {clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true}
+})
 
 Vue.prototype.$moment = moment;
 Vue.prototype.$utils = utils;

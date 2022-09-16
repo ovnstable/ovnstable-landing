@@ -250,10 +250,10 @@ export default {
 
         getChainName(s) {
             switch (s) {
+                case 'op':
+                    return 'optimism (beta)'
                 case 'avax':
                     return 'avalanche (alpha)'
-                case 'op':
-                    return 'optimism (alpha)'
                 default:
                     return s
             }
