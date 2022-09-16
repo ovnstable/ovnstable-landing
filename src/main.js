@@ -23,7 +23,7 @@ Vue.use(VueGtm, {
 });
 
 Vue.use(VueYandexMetrika, {
-    id: 86928892,
+    id: 86928835,
     router: router,
     env: process.env.NODE_ENV,
     options: {clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true}
