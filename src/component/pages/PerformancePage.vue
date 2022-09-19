@@ -122,6 +122,7 @@
                         v-bind:class="activeTabUsdPlusWmatic">
                         USD+/wMatic
                     </label>
+
                     <label
                         v-if="chainEts === 'polygon'"
                         @click="setEtsAddress('0xd52caB8AfC8ECd08b7CFa6D07e224a56F943e4c4')"
@@ -131,12 +132,21 @@
                     </label>
 
                     <label
+                        v-if="chainEts === 'polygon'"
+                        @click="setEtsAddress('0x719ee857Ae6cf85Cbe7284Bc45ad1f99dd5ff0dB')"
+                        class="tab-btn mx-4"
+                        v-bind:class="activeTabEtsMoonstone">
+                        Moonstone
+                    </label>
+
+                    <label
                         v-if="chainEts === 'bsc'"
                         @click="setEtsAddress('0xbAAc6ED05b2fEb47ef04b63018A27d80cbeA10d1')"
                         class="tab-btn mr-4"
                         v-bind:class="activeTabUsdPlusBnb">
                         USD+/BNB
                     </label>
+
                     <label
                         v-if="chainEts === 'bsc'"
                         @click="setEtsAddress('0xc6eca7a3b863d720393DFc62494B6eaB22567D37')"
@@ -212,6 +222,13 @@ export default {
             }
         },
 
+        activeTabEtsMoonstone: function () {
+            return {
+                'tab-button': this.etsAddress === '0x719ee857Ae6cf85Cbe7284Bc45ad1f99dd5ff0dB',
+                'tab-button-in-active': this.etsAddress !== '0x719ee857Ae6cf85Cbe7284Bc45ad1f99dd5ff0dB',
+            }
+        },
+
         activeTabUsdPlusBnb: function () {
             return {
                 'tab-button': this.etsAddress === '0xbAAc6ED05b2fEb47ef04b63018A27d80cbeA10d1',
@@ -251,7 +268,7 @@ export default {
         getChainName(s) {
             switch (s) {
                 case 'op':
-                    return 'optimism (beta)'
+                    return 'optimism'
                 case 'avax':
                     return 'avalanche (alpha)'
                 default:
