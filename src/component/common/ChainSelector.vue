@@ -10,6 +10,15 @@
         </v-btn>
 
         <v-btn
+            v-if="chains.includes('op')"
+            :disabled="disabledChains.includes('op')"
+            outlined
+            class="chain-btn ma-2"
+            @click="clickTab('op')" v-bind:class="activeTabOp">
+            <img class="chain-img" :src="require('@/assets/img/network/op' + (disabledChains.includes('op') ? 'Disabled' : '') + '.svg')">
+        </v-btn>
+
+        <v-btn
                 v-if="chains.includes('bsc')"
                 :disabled="disabledChains.includes('bsc')"
                 outlined
@@ -17,21 +26,7 @@
                 @click="clickTab('bsc')" v-bind:class="activeTabBsc">
             <img class="chain-img" :src="require('@/assets/img/network/bsc' + (disabledChains.includes('bsc') ? 'Disabled' : '') + '.svg')">
         </v-btn>
-        <v-btn
-            v-if="chains.includes('op')"
-            :disabled="disabledChains.includes('op')"
-            outlined
-            class="chain-btn ma-2"
-            @click="clickTab('op')" v-bind:class="activeTabOp">
-            <v-badge icon="mdi-beta"
-                     bordered
-                     :dark="mode === 'dark'"
-                     color='#333333'
-                     offset-x="10"
-                     offset-y="10">
-                <img class="chain-img" :src="require('@/assets/img/network/op' + (disabledChains.includes('op') ? 'Disabled' : '') + '.svg')">
-            </v-badge>
-        </v-btn>
+
         <v-btn
                 v-if="chains.includes('avax')"
                 :disabled="disabledChains.includes('avax')"
