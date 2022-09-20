@@ -95,7 +95,7 @@
 
                     <v-col class="overflow-hidden">
                         <v-row class="mr-0" justify="end" align="center">
-                            <ChainSelector mode="dark" :callbackFunc="selectChainEts" :chains="['polygon', 'bsc']"/>
+                            <ChainSelector mode="dark" :callbackFunc="selectChainEts" :chains="['polygon', 'bsc', 'op']"/>
                         </v-row>
                     </v-col>
                 </v-row>
@@ -110,7 +110,7 @@
                         class="accent-chain-text">{{ chainEts }}</label>
                     </v-row>
                     <v-row class="mb-4" align="center" justify="center">
-                        <ChainSelector mode="dark" :callbackFunc="selectChainEts" :chains="['polygon', 'bsc']"/>
+                        <ChainSelector mode="dark" :callbackFunc="selectChainEts" :chains="['polygon', 'bsc', 'op']"/>
                     </v-row>
                 </template>
 
@@ -154,28 +154,26 @@
                         v-bind:class="activeTabBusdBnb">
                         BUSD/BNB
                     </label>
+
+                    <label
+                        v-if="chainEts === 'op'"
+                        @click="setEtsAddress('0xA88F8c02eBdE678de623C6BCFC886De82e18ad00')"
+                        class="tab-btn mx-4"
+                        v-bind:class="activeTabRuby">
+                        Ruby
+                    </label>
                 </v-row>
 
                 <v-row class="d-flex " :class="isMobile ? 'flex-column' : 'flex-row'">
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'end'">
-                            <template v-if="chainEts === 'polygon'">
-                                <ovn-apyrate network="polygon" product="ets" :address="etsAddress"></ovn-apyrate>
-                            </template>
-                            <template v-if="chainEts === 'bsc'">
-                                <ovn-apyrate network="bsc" product="ets" :address="etsAddress"></ovn-apyrate>
-                            </template>
+                            <ovn-apyrate :network="chainEts" product="ets" :address="etsAddress"></ovn-apyrate>
                         </v-row>
                     </v-col>
 
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'start'">
-                            <template v-if="chainEts === 'polygon'">
-                                <ovn-tvlrate network="polygon" product="ets" :address="etsAddress"></ovn-tvlrate>
-                            </template>
-                            <template v-if="chainEts === 'bsc'">
-                                <ovn-tvlrate network="bsc" product="ets" :address="etsAddress"></ovn-tvlrate>
-                            </template>
+                            <ovn-tvlrate :network="chainEts" product="ets" :address="etsAddress"></ovn-tvlrate>
                         </v-row>
                     </v-col>
                 </v-row>
@@ -242,6 +240,13 @@ export default {
                 'tab-button-in-active': this.etsAddress !== '0xc6eca7a3b863d720393DFc62494B6eaB22567D37',
             }
         },
+
+        activeTabRuby: function () {
+            return {
+                'tab-button': this.etsAddress === '0xA88F8c02eBdE678de623C6BCFC886De82e18ad00',
+                'tab-button-in-active': this.etsAddress !== '0xA88F8c02eBdE678de623C6BCFC886De82e18ad00',
+            }
+        },
     },
 
     methods: {
@@ -258,6 +263,10 @@ export default {
 
             if (chain === 'bsc') {
                 this.setEtsAddress('0xbAAc6ED05b2fEb47ef04b63018A27d80cbeA10d1');
+            }
+
+            if (chain === 'op') {
+                this.setEtsAddress('0xA88F8c02eBdE678de623C6BCFC886De82e18ad00');
             }
         },
 
