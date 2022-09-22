@@ -2,52 +2,75 @@
     <div class="page-container overflow-hidden">
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" cols="12">
-                <v-row class="title-row mb-10" v-observe-visibility="visibilityChanged">
+                <v-row class="title-row mb-10" justify="center" v-observe-visibility="visibilityChanged">
                     <label class="accent-text">USD</label><label class="title-text-plus">+</label>
                     <label class="title-text mb-0">&nbsp;use cases</label>
                 </v-row>
 
-                <v-row class="d-flex " :class="isMobile ? 'flex-column' : 'flex-row'" v-if="isVisible">
+                <v-row class="d-flex wrap" :class="isMobile ? 'flex-column' : 'flex-row'" v-if="isVisible">
                     <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
-                        <UseCard
-                                title="Cash management"
-                                desc="Park your stables in USD+, and watch your balance grow in your wallet overnight. No staking required"
-                                btnLabel="Mint"
-                                link="https://app.overnight.fi/"/>
+                        <v-container class="card-container mt-10">
+                            <v-row class="mt-12 mb-8 title-row ml-5" justify="start">
+                                <label class="title-label">Cash management</label>
+                            </v-row>
+
+                            <v-row class="mb-12 desc-row" justify="start">
+                                <label class="desc-label mx-8">Do nothing and earn yield in stables on your stables right in the wallet via daily rebase</label>
+                            </v-row>
+                        </v-container>
                     </v-col>
 
                     <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
-                        <UseCard
-                                title="Liquidity Pools"
-                                desc="Provide liquidity into USD+ pools, and get USD+ yield on top of LP fees and rewards"
-                                btnLabel="Deposit"
-                                link="https://app.overnight.fi/market"/>
+                        <v-container class="card-container mt-10">
+                            <v-row class="mt-12 mb-8 title-row ml-5" justify="left">
+                                <label class="title-label">Liquidity Pools in dexes</label>
+                            </v-row>
+
+                            <v-row class="mb-12 desc-row" justify="start">
+                                <label class="desc-label mx-8">Get fees, rewards and yield on the USD+ pairs in pools compatibe with Uni V2, Curve and Balancer</label>
+                            </v-row>
+                        </v-container>
                     </v-col>
 
                     <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
-                        <UseCard
-                                title="Leveraged Yield"
-                                desc="Get 6x-9x USD+ yield by pledging USD+ as collateral with minimum risk of liquidation"
-                                btnLabel="Coming Soon"
-                                :disabled="true"/>
+                        <v-container class="card-container mt-10">
+                            <v-row class="mt-12 mb-8 title-row ml-5" justify="left">
+                                <label class="title-label">Treasury liquidity in pools</label>
+                            </v-row>
+
+                            <v-row class="mb-12 desc-row" justify="start">
+                                <ul class="desc-label mx-8">
+                                    <li class="list-desc">Earn yield on projects’ own stablecoin liquidity kept in liquidity pools;</li>
+                                    <li class="list-desc">Сreate appreciation pressure on the project's token;</li>
+                                </ul>
+                                <label class="link mx-8 mt-6" @click="openModal(showHall)">How it works</label>
+                            </v-row>
+                        </v-container>
                     </v-col>
 
-                    <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
-                        <UseCard
-                                title="Passive token appreciation"
-                                desc="Pair your token with USD+ and passively grow your token’s price thanks to USD+ yield bearing nature"
-                                btnLabel="Join hall of fame"
-                                :isNew="true"
-                                :callbackFunc="openModal"/>
-                    </v-col>
+                    <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 6)">
+                        <v-container class="second-card-container">
+                            <v-row class="mt-12 mb-8 title-row ml-5" justify="space-between">
+                                <label class="title-label">Yield on collateral</label>
+                                <label class="in-development mr-10 mb-5" >In development</label>
+                            </v-row>
 
-                    <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
-                        <UseCard
-                                title="exchange-traded strategy (ETS)"
-                                desc="High APYs and moderate risk product, featuring automated hedging against market volatility"
-                                btnLabel="Mint ETS"
-                                :isNew="true"
-                                link="https://app.overnight.fi/market"/>
+                            <v-row class="mb-12 desc-row" justify="start">
+                                <label class="desc-label mx-8">Pledge USD+ as collateral and earn yield, potentially, exceeding the borrowing rate</label>
+                            </v-row>
+                        </v-container>
+                    </v-col>
+                    <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 6)">
+                        <v-container class="second-card-container">
+                            <v-row class="mt-12 mb-8 title-row ml-5" justify="space-between">
+                                <label class="title-label">Yield on CEX liquidity</label>
+                                <label class="in-development mr-10 mb-5">In development</label>
+                            </v-row>
+
+                            <v-row class="mb-12 desc-row" justify="start">
+                                <label class="desc-label mx-8">Earn DeFi yield on stablecoin liquidity kept in USD+</label>
+                            </v-row>
+                        </v-container>
                     </v-col>
                 </v-row>
             </v-col>
@@ -119,16 +142,22 @@
 
 <script>
 
-import UseCard from "@/component/pages/use_cases/component/UseCard";
 import FamePartner from "@/component/pages/use_cases/component/FamePartner";
 import FameSocialCard from "@/component/pages/use_cases/component/FameSocialCard";
+import {mapGetters} from "vuex";
 export default {
     name: "UseCasesPage",
 
     components: {
         FameSocialCard,
         FamePartner,
-        UseCard
+    },
+
+    props: {
+        inDevelopment: {
+            type: Boolean,
+            default: false,
+        },
     },
 
     data: () => ({
@@ -147,6 +176,8 @@ export default {
     }),
 
     computed: {
+        ...mapGetters([]),
+
         isMobile() {
             return window.innerWidth <= 960;
         },
@@ -279,6 +310,21 @@ export default {
         font-size: 16px !important;
         line-height: 18px !important;
     }
+
+    .title-label {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.02em;
+    }
+
+    .desc-label {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 24px;
+    }
 }
 
 @media only screen and (min-width: 1400px) {
@@ -319,10 +365,40 @@ export default {
         font-size: 18px !important;
         line-height: 20px !important;
     }
+    .title-label {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0.04em;
+    }
+
+    .desc-label {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .card-container {
+        width: 100% !important;
+    }
+
+    .link {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .in-development {
+        font-size: 20px;
+        line-height: 32px;
+    }
 }
 
 .page-container {
-    background: #FFFFFF !important;
+    background-image: url("../../../assets/background/img/cases_bg_lines.svg"), radial-gradient(at 50% 100%, rgba(28, 149, 231, 0.12) 0%, rgba(28, 149, 231, 0) 74.72%);
+    background-position: center;
+    background-size: cover;
 }
 
 .container-row {
@@ -338,8 +414,6 @@ export default {
 .title-row {
     z-index: 100;
     position: relative;
-
-    border-bottom: 1px solid #DEE1E5;
 }
 
 .title-row-unbordered {
@@ -394,4 +468,61 @@ export default {
     font-feature-settings: 'liga' off !important;
     color: #FFFFFF !important;
 }
+
+.card-container {
+    z-index: 100 !important;
+    background: #FFFFFF;
+    border-radius: 20px;
+    height: 85%;
+    text-align: left;
+
+    box-shadow: 0 4px 5px 1px rgba(32, 81, 155, 0.12);
+}
+
+.desc-row {
+    height: 30% !important;
+}
+
+.title-row {
+    height: 8% !important;
+}
+
+.title-label {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #000000;
+}
+
+.desc-label {
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+}
+
+.link {
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    color: #1C95E7;
+    cursor: pointer;
+}
+
+.second-card-container {
+    z-index: 100 !important;
+    background: #FFFFFF;
+    border-radius: 20px;
+    height: 85%;
+    text-align: left;
+
+    box-shadow: 0 4px 5px 1px rgba(32, 81, 155, 0.12);
+}
+
+.in-development {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #ADB3BD;
+}
+
 </style>
