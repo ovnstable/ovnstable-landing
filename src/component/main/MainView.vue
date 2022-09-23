@@ -3,6 +3,7 @@
         <MainPage id="main_page"/>
         <HowPage id="how_page"/>
         <UseCasesPage id="use_cases_page"/>
+        <ProductsPage id="products_page" />
         <PerformancePage id="performance_page"/>
         <PortfolioPage id="portfolio_page"/>
         <SecurityPage id="security_page"/>
@@ -20,6 +21,7 @@
 import MainPage from "@/component/pages/MainPage";
 import HowPage from "@/component/pages/HowPage";
 import UseCasesPage from "@/component/pages/use_cases/UseCasesPage";
+import ProductsPage from "@/component/pages/ProductsPage";
 import PerformancePage from "@/component/pages/PerformancePage";
 import PortfolioPage from "@/component/pages/PortfolioPage";
 import SecurityPage from "@/component/pages/SecurityPage";
@@ -32,6 +34,7 @@ export default {
     name: "MainView",
 
     components: {
+        ProductsPage,
         Footer,
         QuestionsPage,
         TeamPage,

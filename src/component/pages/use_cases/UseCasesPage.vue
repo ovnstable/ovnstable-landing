@@ -1,13 +1,13 @@
 <template>
     <div class="page-container overflow-hidden">
-        <v-row class="container-row d-flex overflow-hidden">
+        <v-row class="container-row-cases d-flex overflow-hidden">
             <v-col class="text-col" cols="12">
                 <v-row class="title-row mb-10" justify="center" v-observe-visibility="visibilityChanged">
                     <label class="accent-text">USD</label><label class="title-text-plus">+</label>
                     <label class="title-text mb-0">&nbsp;use cases</label>
                 </v-row>
 
-                <v-row class="d-flex wrap" :class="isMobile ? 'flex-column' : 'flex-row'" v-if="isVisible">
+                <v-row class="d-flex flex-row" justify="center" :class="isMobile ? 'flex-column' : 'flex-row'">
                     <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
                         <v-container class="card-container mt-10">
                             <v-row class="mt-12 mb-8 title-row ml-5" justify="start">
@@ -48,7 +48,7 @@
                         </v-container>
                     </v-col>
 
-                    <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 6)">
+                    <v-col :cols="isMobile ? 6 : (isTablet ? 6 : 6)">
                         <v-container class="second-card-container">
                             <v-row class="mt-12 mb-8 title-row ml-5" justify="space-between">
                                 <label class="title-label">Yield on collateral</label>
@@ -60,7 +60,7 @@
                             </v-row>
                         </v-container>
                     </v-col>
-                    <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 6)">
+                    <v-col :cols="isMobile ? 6 : (isTablet ? 6 : 6)">
                         <v-container class="second-card-container">
                             <v-row class="mt-12 mb-8 title-row ml-5" justify="space-between">
                                 <label class="title-label">Yield on CEX liquidity</label>
@@ -401,11 +401,11 @@ export default {
     background-size: cover;
 }
 
-.container-row {
+.container-row-cases {
     width: 90% !important;
 }
 
-.container-row {
+.container-row-cases {
     margin-left: 5% !important;
     margin-top: 5% !important;
     margin-bottom: 15% !important;
