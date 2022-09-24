@@ -95,7 +95,7 @@
 
                     <v-col class="overflow-hidden">
                         <v-row class="mr-0" justify="end" align="center">
-                            <ChainSelector mode="dark" :callbackFunc="selectChainEts" :chains="['polygon', 'bsc', 'op']"/>
+                            <ChainSelector mode="dark" :callbackFunc="selectChainEts" :chains="['polygon', 'bsc', 'op']" :selected-by-default="'polygon'"/>
                         </v-row>
                     </v-col>
                 </v-row>
@@ -110,7 +110,7 @@
                         class="accent-chain-text">{{ chainEts }}</label>
                     </v-row>
                     <v-row class="mb-4" align="center" justify="center">
-                        <ChainSelector mode="dark" :callbackFunc="selectChainEts" :chains="['polygon', 'bsc', 'op']"/>
+                        <ChainSelector mode="dark" :callbackFunc="selectChainEts" :chains="['polygon', 'bsc', 'op']" :selected-by-default="'polygon'"/>
                     </v-row>
                 </template>
 
@@ -194,7 +194,7 @@ export default {
     },
 
     data: () => ({
-        chain: 'polygon',
+        chain: 'op',
         chainEts: 'polygon',
         etsAddress: '0x4b5e0af6AE8Ef52c304CD55f546342ca0d3050bf',
 

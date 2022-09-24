@@ -1,21 +1,21 @@
 <template>
     <div class="chain-selector-container" :class="mode === 'light' ? 'container-light' : 'container-dark'">
         <v-btn
-                v-if="chains.includes('polygon')"
-                :disabled="disabledChains.includes('polygon')"
-                outlined
-                class="chain-btn ma-2"
-                @click="clickTab('polygon')" v-bind:class="activeTabPolygon">
-            <img class="chain-img" :src="require('@/assets/img/network/polygon' + (disabledChains.includes('polygon') ? 'Disabled' : '') + '.svg')">
-        </v-btn>
-
-        <v-btn
             v-if="chains.includes('op')"
             :disabled="disabledChains.includes('op')"
             outlined
             class="chain-btn ma-2"
             @click="clickTab('op')" v-bind:class="activeTabOp">
             <img class="chain-img" :src="require('@/assets/img/network/op' + (disabledChains.includes('op') ? 'Disabled' : '') + '.svg')">
+        </v-btn>
+
+        <v-btn
+                v-if="chains.includes('polygon')"
+                :disabled="disabledChains.includes('polygon')"
+                outlined
+                class="chain-btn ma-2"
+                @click="clickTab('polygon')" v-bind:class="activeTabPolygon">
+            <img class="chain-img" :src="require('@/assets/img/network/polygon' + (disabledChains.includes('polygon') ? 'Disabled' : '') + '.svg')">
         </v-btn>
 
         <v-btn
@@ -61,6 +61,11 @@ export default {
             type: Function,
             default: function () {
             }
+        },
+
+        selectedByDefault: {
+            type: String,
+            default: () => 'op'
         },
 
         chains: {
@@ -115,9 +120,13 @@ export default {
     },
 
     data: () => ({
-        chain: 'polygon',
+        chain: 'op',
     }),
-    
+
+    created() {
+        this.chain = this.selectedByDefault;
+    },
+
     methods: {
         clickTab(chain) {
             this.chain = chain;

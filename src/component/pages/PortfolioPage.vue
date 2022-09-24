@@ -106,7 +106,7 @@ export default {
     components: {ChainSelector},
 
     data: () => ({
-        chain: 'polygon',
+        chain: 'op',
 
         isVisible: false,
     }),
