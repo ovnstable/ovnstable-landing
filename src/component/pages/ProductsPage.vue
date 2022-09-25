@@ -11,89 +11,83 @@
                     <label class="title-text mb-0">&nbsp;products</label>
                 </v-row>
 
-                <v-row class="d-flex" :class="isMobile ? 'flex-column' : 'flex-row'" no-gutters justify="center">
-                    <v-col :cols="isMobile ? 12 : (isTablet ? 12 : 4)">
-                        <v-container class="card-container mt-10">
-                            <v-row class="mt-12 mb-2 ml-5" justify="start">
-                                <label class="risk-label-low">low risk/return</label>
-                            </v-row>
-                            <v-row class="ml-5" justify="start">
-                                <label class="card-label">Yield bearing</label>
-                            </v-row>
-                            <v-row class="ml-5 mb-6" justify="start">
-                                <label class="card-label">stablecoin(s)</label>
-                            </v-row>
-                            <v-row class="ml-5 mb-6 mr-5" justify="start">
-                                <label class="desc-label">Park your stables in USD+, and watch your balance grow in your wallet overnight. No staking required</label>
-                            </v-row>
-                            <v-row class="ml-5 mb-15 mt-5" justify="start">
-                                <v-btn class="mint-btn" @click="openLink('https://app.overnight.fi/')">mint usd+ <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg"></v-btn>
-                            </v-row>
-                            <v-row class="ml-5" justify="start">
-                                <label class="apy-label">apy <img class="tooltip" src="../../assets/img/icon/tooltip.svg"></label>
-                            </v-row>
-                            <v-row class="ml-5 mt-5" justify="start">
-                                <label class="numbers-label">8-12%</label>
-                            </v-row>
-                            <img class="low-risk" src="../../assets/img/products/low-risk.svg">
-                        </v-container>
-                    </v-col>
+                <v-row class="d-flex" :class="isMobile ? 'flex-column' : 'flex-row'" justify="center">
+                    <v-container :class="isMobile ? '' : 'ma-0'" class="card-container mt-10">
+                        <v-row class="mt-12 mb-2 ml-5" justify="start">
+                            <label class="risk-label-low">low risk/return</label>
+                        </v-row>
+                        <v-row class="ml-5" justify="start">
+                            <label class="card-label">Yield bearing</label>
+                        </v-row>
+                        <v-row class="ml-5 mb-6" justify="start">
+                            <label class="card-label">stablecoin(s)</label>
+                        </v-row>
+                        <v-row class="ml-5 mb-6 mr-5" justify="start">
+                            <label class="desc-label">Park your stables in USD+, and watch your balance grow in your wallet overnight. No staking required</label>
+                        </v-row>
+                        <v-row class="ml-5 mb-15 mt-5" justify="start">
+                            <v-btn class="mint-btn" @click="openLink('https://app.overnight.fi/stats')">mint usd+ <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg"></v-btn>
+                        </v-row>
+                        <v-row class="ml-5" justify="start">
+                            <label class="apy-label">apy <img class="tooltip" src="../../assets/img/icon/tooltip.svg"></label>
+                        </v-row>
+                        <v-row class="ml-5 mt-5" justify="start">
+                            <label class="numbers-label">8-12%</label>
+                        </v-row>
+                        <img class="low-risk" src="../../assets/img/products/low-risk.svg">
+                    </v-container>
 
-                    <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
-                        <v-container class="card-container mt-10">
-                            <v-row class="mt-12 mb-2 ml-5" justify="start">
-                                <label class="risk-label-medium">medium risk/return</label>
-                            </v-row>
-                            <v-row class="ml-5" justify="start">
-                                <label class="card-label">Exchange-traded</label>
-                            </v-row>
-                            <v-row class="ml-5 mb-6" justify="start">
-                                <label class="card-label">strategies (ETS)</label>
-                            </v-row>
-                            <v-row class="ml-5 mb-6 mr-5" justify="start">
-                                <label class="desc-label">Generate yield on “USD+ - to -crypto” pools by hedging your risks and simplify process</label>
-                            </v-row>
-                            <v-row class="ml-5 mb-15 mt-5" justify="start">
-                                <v-btn class="mint-btn" @click="openLink('https://app.overnight.fi/market/')">mint ETS <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg"></v-btn>
-                                <label class="learn-more mt-1 ml-12" @click="openLink('https://www.youtube.com/watch?v=wIVAiUMLmvA')">Learn more</label>
-                                <img class="mdi-open ml-2" src="../../assets/img/mdi-open.svg" @click="openLink('https://www.youtube.com/watch?v=wIVAiUMLmvA')">
-                            </v-row>
-                            <v-row class="ml-5" justify="start">
-                                <label class="apy-label">apy <img class="tooltip" src="../../assets/img/icon/tooltip.svg"></label>
-                            </v-row>
-                            <v-row class="ml-5 mt-5" justify="start">
-                                <label class="numbers-label">10-20%</label>
-                            </v-row>
-                            <img class="low-risk" src="../../assets/img/products/medium-risk.svg">
-                        </v-container>
-                    </v-col>
+                    <v-container :class="isMobile ? '' : 'ma-0 mx-3'" class="card-container mt-10">
+                        <v-row class="mt-12 mb-2 ml-5" justify="start">
+                            <label class="risk-label-medium">medium risk/return</label>
+                        </v-row>
+                        <v-row class="ml-5" justify="start">
+                            <label class="card-label">Exchange-traded</label>
+                        </v-row>
+                        <v-row class="ml-5 mb-6" justify="start">
+                            <label class="card-label">strategies (ETS)</label>
+                        </v-row>
+                        <v-row class="ml-5 mb-6 mr-5" justify="start">
+                            <label class="desc-label">Generate yield on “USD+ - to -crypto” pools by hedging your risks and simplify process</label>
+                        </v-row>
+                        <v-row class="ml-5 mb-15 mt-5" justify="start">
+                            <v-btn class="mint-btn" @click="openLink('https://app.overnight.fi/market')">mint ETS <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg"></v-btn>
+                            <label class="learn-more mt-1 ml-12" @click="openLink('https://www.youtube.com/watch?v=wIVAiUMLmvA')">Learn more</label>
+                            <img class="mdi-open ml-2" src="../../assets/img/mdi-open.svg" @click="openLink('https://www.youtube.com/watch?v=wIVAiUMLmvA')">
+                        </v-row>
+                        <v-row class="ml-5" justify="start">
+                            <label class="apy-label">apy <img class="tooltip" src="../../assets/img/icon/tooltip.svg"></label>
+                        </v-row>
+                        <v-row class="ml-5 mt-5" justify="start">
+                            <label class="numbers-label">10-20%</label>
+                        </v-row>
+                        <img class="low-risk" src="../../assets/img/products/medium-risk.svg">
+                    </v-container>
 
-                    <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
-                        <v-container class="card-container mt-10">
-                            <v-row class="mt-12 mb-2 ml-5" justify="start">
-                                <label class="risk-label-high">high risk/return</label>
-                            </v-row>
-                            <v-row class="ml-5 mb-5" justify="start">
-                                <label class="card-label">USD+ Insurance</label>
-                            </v-row>
-                            <v-row class="ml-5 mt-5 mb-5">
-                                <label class="in-development">in development</label>
-                            </v-row>
-                            <v-row class="list-label ml-5 mt-8 mb-10 mr-5" justify="start">
-                                <ul>
-                                    <li class="list-label">Insurance (via tranching mechanism) of the investment strategies collateralizing USD+</li>
-                                    <li class="list-label">Earn yield by writing insurance for junior tranches</li>
-                                </ul>
-                            </v-row>
-                            <v-row class="ml-5 mt-16" justify="start">
-                                <label class="apy-label">apy <img class="tooltip" src="../../assets/img/icon/tooltip.svg"></label>
-                            </v-row>
-                            <v-row class="ml-5 mt-5" justify="start">
-                                <label class="numbers-label">25+%</label>
-                            </v-row>
-                            <img class="low-risk" src="../../assets/img/products/high-risk.svg">
-                        </v-container>
-                    </v-col>
+                    <v-container :class="isMobile ? '' : 'ma-0'" class="card-container mt-10">
+                        <v-row class="mt-12 mb-2 ml-5" justify="start">
+                            <label class="risk-label-high">high risk/return</label>
+                        </v-row>
+                        <v-row class="ml-5 mb-5" justify="start">
+                            <label class="card-label">USD+ Insurance</label>
+                        </v-row>
+                        <v-row class="ml-5 mt-5 mb-5">
+                            <label class="in-development">in development</label>
+                        </v-row>
+                        <v-row class="list-label ml-5 mt-8 mb-10 mr-5" justify="start">
+                            <ul>
+                                <li class="list-label">Insurance (via tranching mechanism) of the investment strategies collateralizing USD+</li>
+                                <li class="list-label">Earn yield by writing insurance for junior tranches</li>
+                            </ul>
+                        </v-row>
+                        <v-row class="ml-5 mt-16" justify="start">
+                            <label class="apy-label">apy <img class="tooltip" src="../../assets/img/icon/tooltip.svg"></label>
+                        </v-row>
+                        <v-row class="ml-5 mt-5" justify="start">
+                            <label class="numbers-label">25+%</label>
+                        </v-row>
+                        <img class="low-risk" src="../../assets/img/products/high-risk.svg">
+                    </v-container>
                 </v-row>
             </v-col>
         </v-row>
@@ -287,7 +281,7 @@ export default {
 
 .page-container {
     background: linear-gradient(122.1deg, #011845 0%, #15141D 104.83%);
-    min-height: 100vh;
+    min-height: 80vh;
 }
 
 .title-text {
@@ -323,7 +317,7 @@ export default {
 
 .card-container {
     width: 527px;
-    height: 100%;
+    height: 534px;
     background: linear-gradient(135deg, rgba(8, 43, 111, 1), rgba(21, 20, 29, 1));
     border-radius: 10px;
     z-index: 20 !important;

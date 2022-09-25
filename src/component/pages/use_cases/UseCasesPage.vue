@@ -1,15 +1,15 @@
 <template>
     <div class="page-container overflow-hidden">
-        <v-row class="container-row-cases d-flex overflow-hidden">
+        <v-row class="container-row-cases d-flex overflow-hidden justify-center">
             <v-col class="text-col" cols="12">
-                <v-row class="title-row mb-10" justify="center" v-observe-visibility="visibilityChanged">
+                <v-row class="title-row mb-10 justify-center main-label" v-observe-visibility="visibilityChanged">
                     <label class="accent-text">USD</label><label class="title-text-plus">+</label>
                     <label class="title-text mb-0">&nbsp;use cases</label>
                 </v-row>
 
-                <v-row class="d-flex flex-row" justify="center" :class="isMobile ? 'flex-column' : 'flex-row'">
+                <v-row class="d-flex justify-space-around card-container-row" :class="isMobile ? 'flex-column' : 'flex-row'">
                     <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
-                        <v-container class="card-container mt-10">
+                        <v-container class="card-container">
                             <v-row class="mt-12 mb-8 title-row ml-5" justify="start">
                                 <label class="title-label">Cash management</label>
                             </v-row>
@@ -21,7 +21,7 @@
                     </v-col>
 
                     <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
-                        <v-container class="card-container mt-10">
+                        <v-container class="card-container">
                             <v-row class="mt-12 mb-8 title-row ml-5" justify="left">
                                 <label class="title-label">Liquidity Pools in dexes</label>
                             </v-row>
@@ -33,7 +33,7 @@
                     </v-col>
 
                     <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
-                        <v-container class="card-container mt-10">
+                        <v-container class="card-container">
                             <v-row class="mt-12 mb-8 title-row ml-5" justify="left">
                                 <label class="title-label">Treasury liquidity in pools</label>
                             </v-row>
@@ -48,8 +48,8 @@
                         </v-container>
                     </v-col>
 
-                    <v-col :cols="isMobile ? 6 : (isTablet ? 6 : 6)">
-                        <v-container class="second-card-container">
+                    <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 6)">
+                        <v-container class="card-container second-row">
                             <v-row class="mt-12 mb-8 title-row ml-5" justify="space-between">
                                 <label class="title-label">Yield on collateral</label>
                                 <label class="in-development mr-10 mb-5" >In development</label>
@@ -60,14 +60,14 @@
                             </v-row>
                         </v-container>
                     </v-col>
-                    <v-col :cols="isMobile ? 6 : (isTablet ? 6 : 6)">
-                        <v-container class="second-card-container">
+                    <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 6)">
+                        <v-container class="card-container second-row last-desc">
                             <v-row class="mt-12 mb-8 title-row ml-5" justify="space-between">
                                 <label class="title-label">Yield on CEX liquidity</label>
                                 <label class="in-development mr-10 mb-5">In development</label>
                             </v-row>
 
-                            <v-row class="mb-12 desc-row" justify="start">
+                            <v-row class="mb-16 desc-row" justify="start">
                                 <label class="desc-label mx-8">Earn DeFi yield on stablecoin liquidity kept in USD+</label>
                             </v-row>
                         </v-container>
@@ -273,6 +273,15 @@ export default {
 
 /* mobile */
 @media only screen and (max-width: 1400px) {
+    .page-container {
+        width: 100%;
+        height: 140vh;
+    }
+
+    .main-label {
+        margin-bottom: 0 !important;
+    }
+
     .title-text {
         font-style: normal;
         font-weight: 300;
@@ -325,9 +334,31 @@ export default {
         font-size: 16px;
         line-height: 24px;
     }
+
+    .card-container {
+        height: 254px;
+    }
+
+    .second-row {
+        height: 100%;
+    }
+
+    .card-container-row {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0 !important;
+    }
+
+    .last-desc {
+        margin-bottom: 100px !important;
+    }
 }
 
 @media only screen and (min-width: 1400px) {
+    .page-container {
+        min-height: 100vh;
+    }
+
     .title-text {
         font-style: normal;
         font-weight: 300;
@@ -382,6 +413,7 @@ export default {
 
     .card-container {
         width: 100% !important;
+        margin-top: 20px;
     }
 
     .link {
@@ -393,22 +425,17 @@ export default {
         font-size: 20px;
         line-height: 32px;
     }
+
+    .card-container-row {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
 }
 
 .page-container {
     background-image: url("../../../assets/background/img/cases_bg_lines.svg"), radial-gradient(at 50% 100%, rgba(28, 149, 231, 0.12) 0%, rgba(28, 149, 231, 0) 74.72%);
     background-position: center;
     background-size: cover;
-}
-
-.container-row-cases {
-    width: 90% !important;
-}
-
-.container-row-cases {
-    margin-left: 5% !important;
-    margin-top: 5% !important;
-    margin-bottom: 15% !important;
 }
 
 .title-row {
@@ -473,7 +500,7 @@ export default {
     z-index: 100 !important;
     background: #FFFFFF;
     border-radius: 20px;
-    height: 85%;
+    height: 100%;
     text-align: left;
 
     box-shadow: 0 4px 5px 1px rgba(32, 81, 155, 0.12);
@@ -505,16 +532,6 @@ export default {
     font-style: normal;
     color: #1C95E7;
     cursor: pointer;
-}
-
-.second-card-container {
-    z-index: 100 !important;
-    background: #FFFFFF;
-    border-radius: 20px;
-    height: 85%;
-    text-align: left;
-
-    box-shadow: 0 4px 5px 1px rgba(32, 81, 155, 0.12);
 }
 
 .in-development {
