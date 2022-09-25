@@ -28,8 +28,9 @@
                         <v-row class="ml-5 mb-15 mt-5" justify="start">
                             <v-btn class="mint-btn" @click="openLink('https://app.overnight.fi/stats')">mint usd+ <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg"></v-btn>
                         </v-row>
-                        <v-row class="ml-5" justify="start">
-                            <label class="apy-label">apy <img class="tooltip" src="../../assets/img/icon/tooltip.svg"></label>
+                        <v-row class="ml-5" justify="start" align="center">
+                            <label class="apy-label">apy </label>
+                            <Tooltip text="Average USD+ APY includes fees taken. For more accurate figures, see our dapp."/>
                         </v-row>
                         <v-row class="ml-5 mt-5" justify="start">
                             <label class="numbers-label">8-12%</label>
@@ -56,7 +57,8 @@
                             <img class="mdi-open ml-2" src="../../assets/img/mdi-open.svg" @click="openLink('https://www.youtube.com/watch?v=wIVAiUMLmvA')">
                         </v-row>
                         <v-row class="ml-5" justify="start">
-                            <label class="apy-label">apy <img class="tooltip" src="../../assets/img/icon/tooltip.svg"></label>
+                            <label class="apy-label">apy </label>
+                            <Tooltip text="Average ETS APY includes fees taken. For more accurate figures, see our dapp."/>
                         </v-row>
                         <v-row class="ml-5 mt-5" justify="start">
                             <label class="numbers-label">10-20%</label>
@@ -81,7 +83,8 @@
                             </ul>
                         </v-row>
                         <v-row class="ml-5 mt-16" justify="start">
-                            <label class="apy-label">apy <img class="tooltip" src="../../assets/img/icon/tooltip.svg"></label>
+                            <label class="apy-label">apy </label>
+                            <Tooltip text="Expected APY. Stay tuned."/>
                         </v-row>
                         <v-row class="ml-5 mt-5" justify="start">
                             <label class="numbers-label">25+%</label>
@@ -95,10 +98,11 @@
 </template>
 
 <script>
+import Tooltip from "@/component/common/element/Tooltip";
 
 export default {
     name: "ProductsPage",
-
+    components: {Tooltip},
     data: () => ({
         isVisible: false,
     }),
