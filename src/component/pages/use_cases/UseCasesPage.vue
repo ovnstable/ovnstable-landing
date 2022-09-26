@@ -1,6 +1,6 @@
 <template>
     <div class="page-container overflow-hidden">
-        <v-row class="container-row-cases d-flex overflow-hidden justify-center mb-10">
+        <v-row class="container-row-cases d-flex overflow-hidden justify-center mb-10 ml-15 mr-15">
             <v-col class="text-col" cols="12">
                 <v-row class="title-row mb-10 justify-center main-label" v-observe-visibility="visibilityChanged">
                     <label class="accent-text">USD</label><label class="title-text-plus">+</label>
@@ -276,6 +276,11 @@ export default {
     .page-container {
         width: 100%;
         height: 100%;
+    }
+
+    .container-row-cases {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
 
     .main-label {
