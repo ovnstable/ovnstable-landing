@@ -47,16 +47,23 @@
                                     <li class="list-label mb-8">Portfolio strategy executed decentrally via smart-contracts</li>
                                     <li class="list-label">Profit paid out daily in USD+ via rebase</li>
                                 </ul>
+                                <v-row class="mx-1 ma-4">
+                                    <label class="mint-link mt-1" @click="openLink('https://app.overnight.fi/')">USD+ portfolio strategy in details</label>
+                                    <img class="mdi-open ml-1 mt-1" src="../../assets/img/mdi-open.svg" @click="openLink('https://app.overnight.fi/')">
+                                </v-row>
                             </v-expansion-panel-content>
                         </v-expansion-panel>
 
                         <v-expansion-panel class="ml-n9" @click="openPanel(2)">
                             <v-expansion-panel-header class="panel-header-row">
-                                <label class="panel-header">3. Insurance</label>
+                                <label class="panel-header">3. Insured <label class="soon">soon</label></label>
                             </v-expansion-panel-header>
                             <v-expansion-panel-content>
                                 <ul class="mb-5">
-                                    <li class="list-label">Coming soon</li>
+                                    <li class="list-label mb-8">Tranche risky assets into senior and junior tranches</li>
+                                    <li class="list-label mb-8">Exchange seniors for USD+</li>
+                                    <li class="list-label mb-8">Exchange juniors for OVN</li>
+                                    <li class="list-label mb-8">Stake OVN to receive return and participate in governance</li>
                                 </ul>
                             </v-expansion-panel-content>
                         </v-expansion-panel>
@@ -379,6 +386,14 @@ export default {
 
 .mdi-open {
     cursor: pointer;
+}
+
+.soon {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 28px;
+    color: #ADB3BD;
 }
 
 </style>
