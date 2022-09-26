@@ -1,5 +1,5 @@
 <template>
-    <div class="page-container overflow-hidden">
+    <div class="page-container-products overflow-hidden">
 
         <img class="performance-bg-img-left" :src="require('@/assets/background/img/performance_bg_lines.svg')" v-if="isVisible">
         <img class="performance-bg-img-right" :src="require('@/assets/background/img/performance_bg_lines.svg')" v-if="isVisible">
@@ -29,7 +29,7 @@
                             <v-btn class="mint-btn" @click="openLink('https://app.overnight.fi/stats')">mint usd+ <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg"></v-btn>
                         </v-row>
                         <v-row class="ml-5" justify="start" align="center">
-                            <label class="apy-label">apy </label>
+                            <label class="apy-label">apy&nbsp;</label>
                             <Tooltip text="Average USD+ APY includes fees taken. For more accurate figures, see our dapp."/>
                         </v-row>
                         <v-row class="ml-5 mt-5" justify="start">
@@ -38,7 +38,7 @@
                         <img class="low-risk" src="../../assets/img/products/low-risk.svg">
                     </v-container>
 
-                    <v-container :class="isMobile ? '' : 'ma-0 mx-3'" class="card-container mt-10">
+                    <v-container :class="isMobile ? '' : 'ma-0 mx-6'" class="card-container mt-10">
                         <v-row class="mt-12 mb-2 ml-5" justify="start">
                             <label class="risk-label-medium">medium risk/return</label>
                         </v-row>
@@ -56,8 +56,8 @@
                             <label class="learn-more mt-1 ml-12" @click="openLink('https://www.youtube.com/watch?v=wIVAiUMLmvA')">Learn more</label>
                             <img class="mdi-open ml-2" src="../../assets/img/mdi-open.svg" @click="openLink('https://www.youtube.com/watch?v=wIVAiUMLmvA')">
                         </v-row>
-                        <v-row class="ml-5" justify="start">
-                            <label class="apy-label">apy </label>
+                        <v-row class="ml-5" justify="start" align="center">
+                            <label class="apy-label">apy&nbsp;</label>
                             <Tooltip text="Average ETS APY includes fees taken. For more accurate figures, see our dapp."/>
                         </v-row>
                         <v-row class="ml-5 mt-5" justify="start">
@@ -82,8 +82,8 @@
                                 <li class="list-label">Earn yield by writing insurance for junior tranches</li>
                             </ul>
                         </v-row>
-                        <v-row class="ml-5 mt-16" justify="start">
-                            <label class="apy-label">apy </label>
+                        <v-row class="ml-5 mt-16" justify="start" align="center">
+                            <label class="apy-label">apy&nbsp;</label>
                             <Tooltip text="Expected APY. Stay tuned."/>
                         </v-row>
                         <v-row class="ml-5 mt-5" justify="start">
@@ -133,7 +133,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 /* mobile */
 @media only screen and (max-width: 1400px) {
@@ -210,6 +210,10 @@ export default {
         font-size: 16px;
         line-height: 24px;
     }
+
+    .card-container {
+        width: 400px;
+    }
 }
 
 @media only screen and (min-width: 1400px) {
@@ -281,10 +285,13 @@ export default {
         font-size: 20px;
         line-height: 32px;
     }
+
+    .card-container {
+        width: 527px;
+    }
 }
 
-.page-container {
-    background: linear-gradient(122.1deg, #011845 0%, #15141D 104.83%);
+.page-container-products {
     min-height: 80vh;
 }
 
@@ -320,7 +327,6 @@ export default {
 }
 
 .card-container {
-    width: 527px;
     height: 534px;
     background: linear-gradient(135deg, rgba(8, 43, 111, 1), rgba(21, 20, 29, 1));
     border-radius: 10px;

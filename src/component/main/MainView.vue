@@ -3,8 +3,12 @@
         <MainPage id="main_page"/>
         <HowPage id="how_page"/>
         <UseCasesPage id="use_cases_page"/>
-        <ProductsPage id="products_page" />
-        <PerformancePage id="performance_page"/>
+
+        <div class="product-performance-container">
+            <ProductsPage id="products_page" />
+            <PerformancePage id="performance_page"/>
+        </div>
+
         <PortfolioPage id="portfolio_page"/>
         <SecurityPage id="security_page"/>
         <TrustedPage id="trusted_page"/>
@@ -75,4 +79,7 @@ export default {
 @media only screen and (min-width: 1400px) {
 }
 
+.product-performance-container {
+    background: linear-gradient(122.1deg, #011845 0%, #15141D 104.83%) !important;
+}
 </style>

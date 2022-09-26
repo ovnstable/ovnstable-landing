@@ -417,7 +417,6 @@ export default {
 }
 
 .page-container {
-    background: linear-gradient(122.1deg, #011845 0%, #15141D 104.83%);
 }
 
 .title-text {

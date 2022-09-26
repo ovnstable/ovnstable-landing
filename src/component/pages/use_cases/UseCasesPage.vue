@@ -1,13 +1,13 @@
 <template>
     <div class="page-container overflow-hidden">
-        <v-row class="container-row-cases d-flex overflow-hidden justify-center">
+        <v-row class="container-row-cases d-flex overflow-hidden justify-center mb-10">
             <v-col class="text-col" cols="12">
                 <v-row class="title-row mb-10 justify-center main-label" v-observe-visibility="visibilityChanged">
                     <label class="accent-text">USD</label><label class="title-text-plus">+</label>
                     <label class="title-text mb-0">&nbsp;use cases</label>
                 </v-row>
 
-                <v-row class="d-flex justify-space-around card-container-row" :class="isMobile ? 'flex-column' : 'flex-row'">
+                <v-row class="d-flex justify-space-around card-container-row mb-5" :class="isMobile ? 'flex-column' : 'flex-row'">
                     <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
                         <v-container class="card-container">
                             <v-row class="mt-12 mb-8 title-row ml-5" justify="start">
@@ -275,7 +275,7 @@ export default {
 @media only screen and (max-width: 1400px) {
     .page-container {
         width: 100%;
-        height: 140vh;
+        height: 100%;
     }
 
     .main-label {
@@ -356,7 +356,7 @@ export default {
 
 @media only screen and (min-width: 1400px) {
     .page-container {
-        min-height: 100vh;
+        height: 100%;
     }
 
     .title-text {
