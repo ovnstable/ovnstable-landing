@@ -20,7 +20,7 @@
                     <v-expansion-panels multiple v-model="openedPanels">
                         <v-expansion-panel class="ml-n9 mt-n4 panel-bordered" @click="openPanel(0)">
                             <v-expansion-panel-header class="panel-header-row">
-                                <label class="panel-header">1. Pegged to <abbr title="BUSD on Binance Smart Chain">USDC</abbr> 1 : 1</label>
+                                <label class="panel-header">1. Pegged to USDC 1 : 1</label>
                             </v-expansion-panel-header>
                             <v-expansion-panel-content>
                                 <ul class="mb-5">
@@ -28,6 +28,11 @@
                                     <li class="list-label mb-8">'Risk-first portfolio', i.e. assets are picked primarily to avoid losses on a daily basis (3-4 sigmas away from 0), no exposure to algorithmic stables</li>
                                     <li class="list-label">USD+ can replace USDC in pools and lending protocols</li>
                                 </ul>
+                                <label class="old-tooltip mt-2">*pegged to BUSD 1:1 on BNB chain </label>
+                                <v-row class="mx-1 ma-4">
+                                    <label class="mint-link mt-1" @click="openLink('https://app.overnight.fi/market')">Mint USD+</label>
+                                    <img class="mdi-open ml-1 mt-1" src="../../assets/img/mdi-open.svg" @click="openLink('https://app.overnight.fi/market')">
+                                </v-row>
                             </v-expansion-panel-content>
                         </v-expansion-panel>
 
@@ -149,6 +154,12 @@ export default {
     },
 
     methods: {
+        openLink(url) {
+            if (url) {
+                window.open(url, '_blank').focus();
+            }
+        },
+
         openPanelImg(i) {
             this.openedPanels =[];
             this.openedPanels.push(i);
@@ -348,6 +359,26 @@ export default {
 
 .how-img, .main-col {
     z-index: 100 !important;
+}
+
+.old-tooltip {
+    font-family: "Roboto", sans-serif;
+    color: #ADB3BD;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.mint-link {
+    font-family: "Roboto", sans-serif;
+    color: #1C95E7;
+    font-size: 18px;
+    line-height: 28px;
+    cursor: pointer;
+}
+
+.mdi-open {
+    cursor: pointer;
 }
 
 </style>
