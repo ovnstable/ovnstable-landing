@@ -102,8 +102,7 @@
                                 <label class="in-development">in development</label>
                             </v-row>
                             <v-row class="list-label mx-5" justify="start">
-                                <label class="desc-label">Earn yield by writing insurance for the investment strategies
-                                    collateralizing USD+</label>
+                                <label class="desc-label">Earn yield by writing insurance for investment strategies collaterizing USD+</label>
                             </v-row>
                         </v-col>
 
