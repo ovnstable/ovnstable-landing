@@ -1,8 +1,10 @@
 <template>
     <div class="page-container-products overflow-hidden">
 
-        <img class="performance-bg-img-left" :src="require('@/assets/background/img/performance_bg_lines.svg')" v-if="isVisible">
-        <img class="performance-bg-img-right" :src="require('@/assets/background/img/performance_bg_lines.svg')" v-if="isVisible">
+        <img class="performance-bg-img-left" :src="require('@/assets/background/img/performance_bg_lines.svg')"
+             v-if="isVisible">
+        <img class="performance-bg-img-right" :src="require('@/assets/background/img/performance_bg_lines.svg')"
+             v-if="isVisible">
 
         <v-row class="d-flex flex-wrap mt-15 mb-10" :class="isMobile ? 'flex-row' : 'flex-column'" justify="center">
             <v-col cols="12">
@@ -12,83 +14,109 @@
                 </v-row>
 
                 <v-row class="d-flex" :class="isMobile ? 'flex-column' : 'flex-row'" justify="center">
-                    <v-container :class="isMobile ? '' : 'ma-0'" class="card-container mt-10">
-                        <v-row class="mt-12 mb-2 ml-5" justify="start">
-                            <label class="risk-label-low">low risk/return</label>
-                        </v-row>
-                        <v-row class="ml-5" justify="start">
-                            <label class="card-label">Yield bearing</label>
-                        </v-row>
-                        <v-row class="ml-5 mb-6" justify="start">
-                            <label class="card-label">stablecoin(s)</label>
-                        </v-row>
-                        <v-row class="ml-5 mb-6 mr-5" justify="start">
-                            <label class="desc-label">Park your stables in USD+, and watch your balance grow in your wallet overnight. No staking required</label>
-                        </v-row>
-                        <v-row class="ml-5 mb-15 mt-5" justify="start">
-                            <v-btn class="mint-btn" @click="openLink('https://app.overnight.fi/stats')">mint usd+ <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg"></v-btn>
-                        </v-row>
-                        <v-row class="ml-5" justify="start" align="center">
-                            <label class="apy-label">apy&nbsp;</label>
-                            <Tooltip text="Average USD+ APY includes fees taken. For more accurate figures, see our dapp."/>
-                        </v-row>
-                        <v-row class="ml-5 mt-5" justify="start">
-                            <label class="numbers-label">8-12%</label>
-                        </v-row>
+                    <v-container :class="isMobile ? '' : 'ma-0'" class="fill-height card-container mt-10">
+                        <v-col align-self="start" cols="12">
+                            <v-row class="mt-12 mb-2 ml-5" justify="start">
+                                <label class="risk-label-low">low risk/return</label>
+                            </v-row>
+                            <v-row class="ml-5" justify="start">
+                                <label class="card-label">Yield bearing</label>
+                            </v-row>
+                            <v-row class="ml-5 mb-5" justify="start">
+                                <label class="card-label">stablecoin(s)</label>
+                            </v-row>
+                            <v-row class="mx-5" justify="start">
+                                <label class="desc-label">Park your stables in USD+, and watch your balance grow in your
+                                    wallet overnight. No staking required</label>
+                            </v-row>
+                        </v-col>
+
+                        <v-col align-self="end" cols="12">
+                            <v-row class="ml-5 mb-8" justify="start">
+                                <v-btn class="mint-btn" @click="openLink('https://app.overnight.fi/stats?network=op')">
+                                    mint
+                                    usd+ <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg"></v-btn>
+                            </v-row>
+                            <v-row class="ml-5" justify="start" align="center">
+                                <label class="apy-label">apy&nbsp;</label>
+                                <Tooltip
+                                    text="Average USD+ APY includes fees taken. For more accurate figures, see our dapp."/>
+                            </v-row>
+                            <v-row class="ml-5 mb-5 mt-6" justify="start">
+                                <label class="numbers-label">8-12%</label>
+                            </v-row>
+                        </v-col>
+
                         <img class="low-risk" src="../../assets/img/products/low-risk.svg">
                     </v-container>
 
-                    <v-container :class="isMobile ? '' : 'ma-0 mx-6'" class="card-container mt-10">
-                        <v-row class="mt-12 mb-2 ml-5" justify="start">
-                            <label class="risk-label-medium">medium risk/return</label>
-                        </v-row>
-                        <v-row class="ml-5" justify="start">
-                            <label class="card-label">Exchange-traded</label>
-                        </v-row>
-                        <v-row class="ml-5 mb-6" justify="start">
-                            <label class="card-label">strategies (ETS)</label>
-                        </v-row>
-                        <v-row class="ml-5 mb-6 mr-5" justify="start">
-                            <label class="desc-label">Generate yield on “USD+ - to -crypto” pools by hedging your risks and simplify process</label>
-                        </v-row>
-                        <v-row class="ml-5 mb-15 mt-5" justify="start">
-                            <v-btn class="mint-btn" @click="openLink('https://app.overnight.fi/market')">mint ETS <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg"></v-btn>
-                            <label class="learn-more mt-1 ml-12" @click="openLink('https://www.youtube.com/watch?v=wIVAiUMLmvA')">Learn more</label>
-                            <img class="mdi-open ml-2" src="../../assets/img/mdi-open.svg" @click="openLink('https://www.youtube.com/watch?v=wIVAiUMLmvA')">
-                        </v-row>
-                        <v-row class="ml-5" justify="start" align="center">
-                            <label class="apy-label">apy&nbsp;</label>
-                            <Tooltip text="Average ETS APY includes fees taken. For more accurate figures, see our dapp."/>
-                        </v-row>
-                        <v-row class="ml-5 mt-5" justify="start">
-                            <label class="numbers-label">10-25%</label>
-                        </v-row>
+                    <v-container :class="isMobile ? '' : 'ma-0 mx-6'" class="fill-height card-container mt-10">
+                        <v-col align-self="start" cols="12">
+                            <v-row class="mt-12 mb-2 ml-5" justify="start">
+                                <label class="risk-label-medium">medium risk/return</label>
+                            </v-row>
+                            <v-row class="ml-5" justify="start">
+                                <label class="card-label">Exchange-traded</label>
+                            </v-row>
+                            <v-row class="ml-5 mb-5" justify="start">
+                                <label class="card-label">strategies (ETS)</label>
+                            </v-row>
+                            <v-row class="mx-5" justify="start">
+                                <label class="desc-label">Earn stable yield on hedged “crypto-to-stable” pools
+                                    (“delta-neutral” strategy)</label>
+                            </v-row>
+                        </v-col>
+
+                        <v-col align-self="end" cols="12">
+                            <v-row class="ml-5 mb-8" justify="start">
+                                <v-btn class="mint-btn" @click="openLink('https://app.overnight.fi/market')">mint ETS
+                                    <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg"></v-btn>
+                                <label class="learn-more mt-1 ml-12"
+                                       @click="openLink('https://www.youtube.com/watch?v=wIVAiUMLmvA')">Learn
+                                    more</label>
+                                <img class="mdi-open ml-2" src="../../assets/img/mdi-open.svg"
+                                     @click="openLink('https://www.youtube.com/watch?v=wIVAiUMLmvA')">
+                            </v-row>
+                            <v-row class="ml-5" justify="start" align="center">
+                                <label class="apy-label">apy&nbsp;</label>
+                                <Tooltip
+                                    text="Average ETS APY includes fees taken. For more accurate figures, see our dapp."/>
+                            </v-row>
+                            <v-row class="ml-5 mb-5 mt-6" justify="start">
+                                <label class="numbers-label">10-25%</label>
+                            </v-row>
+                        </v-col>
+
                         <img class="low-risk" src="../../assets/img/products/medium-risk.svg">
                     </v-container>
 
-                    <v-container :class="isMobile ? '' : 'ma-0'" class="card-container mt-10">
-                        <v-row class="mt-12 mb-2 ml-5" justify="start">
-                            <label class="risk-label-high">high risk/return</label>
-                        </v-row>
-                        <v-row class="ml-5 mb-5" justify="start">
-                            <label class="card-label">USD+ Insurance</label>
-                        </v-row>
-                        <v-row class="ml-5 mt-5 mb-5">
-                            <label class="in-development">in development</label>
-                        </v-row>
-                        <v-row class="list-label ml-5 mt-8 mb-10 mr-5" justify="start">
-                            <ul>
-                                <li class="list-label">Insurance (via tranching mechanism) of the investment strategies collateralizing USD+</li>
-                                <li class="list-label">Earn yield by writing insurance for junior tranches</li>
-                            </ul>
-                        </v-row>
-                        <v-row class="ml-5 mt-16" justify="start" align="center">
-                            <label class="apy-label">apy&nbsp;</label>
-                            <Tooltip text="Expected APY. Stay tuned."/>
-                        </v-row>
-                        <v-row class="ml-5 mt-5" justify="start">
-                            <label class="numbers-label">TBD</label>
-                        </v-row>
+                    <v-container :class="isMobile ? '' : 'ma-0'" class="fill-height card-container mt-10">
+                        <v-col align-self="start" cols="12">
+                            <v-row class="mt-12 mb-2 ml-5" justify="start">
+                                <label class="risk-label-high">high risk/return</label>
+                            </v-row>
+                            <v-row class="ml-5 mb-5" justify="start">
+                                <label class="card-label">USD+ Insurance</label>
+                            </v-row>
+                            <v-row class="ml-5 mt-5 mb-5">
+                                <label class="in-development">in development</label>
+                            </v-row>
+                            <v-row class="list-label mx-5" justify="start">
+                                <label class="desc-label">Earn yield by writing insurance for the investment strategies
+                                    collateralizing USD+</label>
+                            </v-row>
+                        </v-col>
+
+                        <v-col align-self="end" cols="12">
+                            <v-row class="ml-5" justify="start" align="center">
+                                <label class="apy-label">apy&nbsp;</label>
+                                <Tooltip text="Expected APY. Stay tuned."/>
+                            </v-row>
+                            <v-row class="ml-5 mb-5 mt-6" justify="start">
+                                <label class="numbers-label">TBD</label>
+                            </v-row>
+                        </v-col>
+
                         <img class="low-risk" src="../../assets/img/products/high-risk.svg">
                     </v-container>
                 </v-row>
@@ -391,6 +419,7 @@ export default {
     font-weight: 900;
     text-transform: uppercase;
     color: #FFFFFF;
+    z-index: 10 !important;
 }
 
 .tooltip {
@@ -402,6 +431,7 @@ export default {
     position: absolute;
     bottom: 0;
     right: 0;
+    z-index: 1 !important;
 }
 
 .learn-more {
