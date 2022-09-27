@@ -40,8 +40,8 @@
 
                             <v-row class="mb-12 desc-row" justify="start">
                                 <ul class="desc-label mx-8">
-                                    <li class="list-desc">Earn yield on projects’ own stablecoin liquidity kept in liquidity pools;</li>
-                                    <li class="list-desc">Сreate appreciation pressure on the project's token;</li>
+                                    <li class="list-desc">Earn yield on stablecoins you provide to DEXes paired against your project token;</li>
+                                    <li class="list-desc">Create appreciation pressure on the project's token;</li>
                                 </ul>
                                 <label class="link mx-8 mt-6" @click="openModal(showHall)">How it works</label>
                             </v-row>

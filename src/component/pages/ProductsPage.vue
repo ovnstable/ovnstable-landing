@@ -61,7 +61,7 @@
                             <Tooltip text="Average ETS APY includes fees taken. For more accurate figures, see our dapp."/>
                         </v-row>
                         <v-row class="ml-5 mt-5" justify="start">
-                            <label class="numbers-label">10-20%</label>
+                            <label class="numbers-label">10-25%</label>
                         </v-row>
                         <img class="low-risk" src="../../assets/img/products/medium-risk.svg">
                     </v-container>
@@ -87,7 +87,7 @@
                             <Tooltip text="Expected APY. Stay tuned."/>
                         </v-row>
                         <v-row class="ml-5 mt-5" justify="start">
-                            <label class="numbers-label">25+%</label>
+                            <label class="numbers-label">TBD</label>
                         </v-row>
                         <img class="low-risk" src="../../assets/img/products/high-risk.svg">
                     </v-container>
