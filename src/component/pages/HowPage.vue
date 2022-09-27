@@ -48,8 +48,8 @@
                                     <li class="list-label">Profit paid out daily in USD+ via rebase</li>
                                 </ul>
                                 <v-row class="mx-1 ma-4">
-                                    <label class="mint-link mt-1" @click="openLink('https://app.overnight.fi/collateral')">USD+ portfolio strategy in details</label>
-                                    <img class="mdi-open ml-1 mt-1" src="../../assets/img/mdi-open.svg" @click="openLink('https://app.overnight.fi/collateral')">
+                                    <label class="mint-link mt-1" @click="openLink('https://app.overnight.fi/collateral?network=op')">USD+ portfolio strategy in details</label>
+                                    <img class="mdi-open ml-1 mt-1" src="../../assets/img/mdi-open.svg" @click="openLink('https://app.overnight.fi/collateral?network=op')">
                                 </v-row>
                             </v-expansion-panel-content>
                         </v-expansion-panel>
