@@ -60,10 +60,9 @@
                             </v-expansion-panel-header>
                             <v-expansion-panel-content>
                                 <ul class="mb-5">
-                                    <li class="list-label mb-8">Tranche risky assets into senior and junior tranches</li>
-                                    <li class="list-label mb-8">Exchange seniors for USD+</li>
-                                    <li class="list-label mb-8">Exchange juniors for OVN</li>
-                                    <li class="list-label mb-8">Stake OVN to receive return and participate in governance</li>
+                                    <li class="list-label mb-8">Write (provide) insurance to risky investment strategies</li>
+                                    <li class="list-label mb-8">Recieve insurance premiums and/or OVN tokens</li>
+                                    <li class="list-label mb-8">Stake OVN to participate in governance</li>
                                 </ul>
                             </v-expansion-panel-content>
                         </v-expansion-panel>
