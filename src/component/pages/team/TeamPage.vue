@@ -95,12 +95,7 @@
                                     :img="require('@/assets/img/companies/insead.svg')"
                                     :hover-img="require('@/assets/img/companies/insead_colored.svg')"
                             />
-                    <HoverImg
-                                    class="exp-img my-2"
-                                    link="https://www.bcg.com/"
-                                    :img="require('@/assets/img/companies/bcg.svg')"
-                                    :hover-img="require('@/assets/img/companies/bcg_colored.svg')"
-                            />
+
                     <HoverImg
                                     class="exp-img my-2"
                                     link="https://www.morganstanley.com/"
@@ -108,11 +103,17 @@
                                     :hover-img="require('@/assets/img/companies/morgan_stanley_colored.svg')"
                             />
                     <HoverImg
-                                    class="exp-img my-2"
-                                    link="https://www.jpmorgan.com/global/"
-                                    :img="require('@/assets/img/companies/jp.svg')"
-                                    :hover-img="require('@/assets/img/companies/jp_morgan_colored.svg')"
-                            />
+                        class="exp-img my-2"
+                        link="https://www.jpmorgan.com/global/"
+                        :img="require('@/assets/img/companies/jp.svg')"
+                        :hover-img="require('@/assets/img/companies/jp_morgan_colored.svg')"
+                    />
+                    <HoverImg
+                        class="exp-img my-2"
+                        link="https://www.bcg.com/"
+                        :img="require('@/assets/img/companies/bcg.svg')"
+                        :hover-img="require('@/assets/img/companies/bcg_colored.svg')"
+                    />
                 </v-row>
             </v-col>
         </v-row>
