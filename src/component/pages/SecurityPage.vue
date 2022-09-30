@@ -65,6 +65,15 @@
                                     :img="require('@/assets/img/partners/coinGecko.svg')"
                                     :hover-img="require('@/assets/img/partners/coinGeckoColored.svg')"
                             />
+
+                            <v-spacer></v-spacer>
+
+                            <HoverImg
+                                class="find-us-img"
+                                link="https://debank.com/"
+                                :img="require('@/assets/img/partners/DeBank.svg')"
+                                :hover-img="require('@/assets/img/partners/DeBank.svg')"
+                            />
                         </v-row>
                     </v-col>
 
@@ -88,7 +97,7 @@
                 <v-row justify="center" v-if="isVisible">
                     <v-btn
                             text
-                            class="whitepaper-btn mt-12"
+                            class="whitepaper-btn mt-12 px-15"
                             @click="openLink('https://docs.overnight.fi/')">
                         Risk-management whitepaper
                     </v-btn>
@@ -183,17 +192,17 @@ export default {
 
 @media only screen and (max-width: 960px) {
     .find-us-img {
-        width: 30vw;
+        width: 20vw;
     }
 
     .find-us-img-audit {
-        width: 10vw;
+        width: 5vw;
     }
 }
 
 @media only screen and (min-width: 961px) {
     .find-us-img {
-        width: 18vw;
+        width: 20vw;
     }
 
     .find-us-img-audit {
@@ -245,10 +254,19 @@ export default {
         font-size: 30px;
         line-height: 36px;
     }
+
+    .find-us-img, .find-us-img-audit {
+        width: 12vw;
+    }
+
+    .find-us-img-audit {
+        width: 3vw;
+    }
 }
 
 .page-container {
     background: #F5F5F5 !important;
+    margin: 0 20px 0 20px;
 }
 
 .container-row {
@@ -311,6 +329,7 @@ export default {
     border: 1px solid #28A0F0;
     border-radius: 0;
     font-family: 'Roboto', sans-serif !important;
+    letter-spacing: normal;
     font-feature-settings: 'liga' off !important;
     color: #28A0F0 !important;
     text-transform: none !important;
