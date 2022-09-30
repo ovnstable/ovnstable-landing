@@ -505,7 +505,7 @@ export default {
     z-index: 100 !important;
     background: #FFFFFF;
     border-radius: 20px;
-    height: 100%;
+    height: 90%;
     text-align: left;
 
     box-shadow: 0 4px 5px 1px rgba(32, 81, 155, 0.12);
