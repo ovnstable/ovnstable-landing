@@ -14,7 +14,7 @@
                 <v-row justify="center" class="btn-row" v-if="isVisible">
                     <v-btn
                             text
-                            class="feature-btn"
+                            class="feature-btn px-15"
                             @click="openLink('https://overnight.canny.io/')">
                         Vote for new features
                     </v-btn>
@@ -177,6 +177,7 @@ export default {
     font-feature-settings: 'liga' off !important;
     color: #28A0F0 !important;
     text-transform: none !important;
+    letter-spacing: normal;
 }
 
 </style>
