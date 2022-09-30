@@ -85,7 +85,7 @@
 
                         <v-row>
                             <v-sheet max-width="100%">
-                                <v-slide-group>
+                                <v-slide-group show-arrows>
                                     <v-slide-item>
                                         <InvestorCard
                                                 class="mr-4"
