@@ -258,6 +258,7 @@ export default {
 
 .page-container {
     background: #FFFFFF !important;
+    height: 150vh;
 }
 
 .container-row {

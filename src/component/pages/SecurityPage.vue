@@ -72,7 +72,7 @@
                                 class="find-us-img"
                                 link="https://debank.com/"
                                 :img="require('@/assets/img/partners/DeBank.svg')"
-                                :hover-img="require('@/assets/img/partners/DeBank.svg')"
+                                :hover-img="require('@/assets/img/partners/deBank_colored.svg')"
                             />
                         </v-row>
                     </v-col>

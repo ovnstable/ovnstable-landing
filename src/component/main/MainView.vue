@@ -13,6 +13,7 @@
         <SecurityPage id="security_page"/>
         <TrustedPage id="trusted_page"/>
         <TeamPage id="team_page"/>
+        <BlogPage id="blog_page"/>
         <QuestionsPage id="questions_page"/>
 
         <Footer/>
@@ -32,10 +33,12 @@ import TrustedPage from "@/component/pages/trusted/TrustedPage";
 import TeamPage from "@/component/pages/team/TeamPage";
 import QuestionsPage from "@/component/pages/QuestionsPage";
 import Footer from "@/component/main/inc/Footer";
+import BlogPage from "@/component/pages/blog/BlogPage";
 export default {
     name: "MainView",
 
     components: {
+        BlogPage,
         ProductsPage,
         Footer,
         QuestionsPage,

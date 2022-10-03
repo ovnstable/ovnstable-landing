@@ -11,8 +11,9 @@
                     <div>
                         <label class="accent-text">USD</label><label class="title-text-plus">+</label>
                         <label class="title-text mb-0"> Is</label>
-                        <p class="title-text mb-0">USDC that pays you yield</p>
-                        <p class="title-text mb-0">daily via rebase</p>
+                        <p class="title-text mb-0">the yield bearing, fully</p>
+                        <p class="title-text mb-0">collateralized & cross-chain</p>
+                        <p class="title-text mb-0">stablecoin</p>
                     </div>
                 </v-row>
                 <v-row class="mb-10" v-if="isVisible">

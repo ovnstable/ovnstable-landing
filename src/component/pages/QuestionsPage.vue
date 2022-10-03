@@ -1,10 +1,5 @@
 <template>
     <div class="page-container overflow-hidden" :class="isMobile ? 'flex-column' : 'flex-row'">
-
-        <video autoplay playsinline muted loop class="bg-video" v-if="isVisible">
-            <source :src='require("@/assets/background/video/questions-bg.mp4")' type='video/mp4'>
-        </video>
-
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" :cols="isMobile ? 12 : 7">
                 <v-row class="title-row mb-10" justify="center" align="center" v-observe-visibility="visibilityChanged">
@@ -218,7 +213,8 @@ export default {
 }
 
 .page-container {
-    background-color: #F5F5F5 !important;
+    background-color: #FFFFFF !important;
+    height: 100vh;
 }
 
 .container-row {
@@ -281,5 +277,6 @@ export default {
 
 .card-container {
     cursor: pointer !important;
+    background: linear-gradient(300deg, rgba(28, 149, 231, 0.1), rgba(28, 149, 231, 0)) !important;
 }
 </style>
