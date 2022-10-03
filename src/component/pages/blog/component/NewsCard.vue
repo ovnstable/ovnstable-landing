@@ -37,15 +37,34 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /* mobile */
 @media only screen and (max-width: 1400px) {
+    .news-card-container {
+        width: 100% !important;
+        height: 100% !important;
+    }
 
+    .news-title {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 36px;
+    }
 }
 
 /* desktop */
 @media only screen and (min-width: 1400px) {
+    .news-title {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 36px;
+    }
 
+    .post-date {
+        font-size: 20px;
+        line-height: 32px;
+        font-style: normal;
+    }
 }
 
 .news-card-container {
@@ -78,5 +97,9 @@ export default {
 
 .post-date {
     color: #707A8B;
+    font-size: 20px;
+    line-height: 32px;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
 }
 </style>

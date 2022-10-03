@@ -1,8 +1,8 @@
 <template>
-    <div class="blog-page-container overflow-hidden">
+    <div class="blog-page-container justify-center overflow-hidden" :class="isMobile ? 'flex-column' : 'flex-row'">
         <v-row class="container-row d-flex overflow-auto">
-            <v-col class="text-col" cols="12">
-                <v-row justify="center">
+            <v-col cols="12" >
+                <v-row justify="center" v-observe-visibility="visibilityChanged">
                     <label class="title-text mb-0">Subscribe on our <label class="accent-text">updates</label></label>
                 </v-row>
 
@@ -88,6 +88,12 @@ export default {
 
             return result;
         },
+
+        visibilityChanged (isVisible, entry) {
+            if (isVisible) {
+                this.isVisible = true;
+            }
+        }
     },
 }
 </script>
@@ -119,6 +125,11 @@ export default {
         font-weight: 400 !important;
         font-size: 16px !important;
         line-height: 18px !important;
+    }
+
+    .cards {
+        width: 100vw !important;
+        height: auto !important;
     }
 }
 
@@ -184,6 +195,7 @@ export default {
     font-feature-settings: 'liga' off !important;
     color: #28A0F0 !important;
     text-transform: none !important;
+    margin-bottom: 10% !important;
 }
 
 </style>
