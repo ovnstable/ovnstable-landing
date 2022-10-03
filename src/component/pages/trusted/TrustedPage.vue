@@ -199,6 +199,11 @@ export default {
 
 /* mobile */
 @media only screen and (max-width: 1400px) {
+    .page-container {
+        margin-top: 50px;
+        width: 100%;
+        height: 100% !important;
+    }
     .title-text {
         font-style: normal;
         font-weight: 300;

@@ -2,7 +2,7 @@
     <div class="blog-page-container overflow-hidden">
         <v-row class="container-row d-flex overflow-auto">
             <v-col class="text-col" cols="12">
-                <v-row class="mb-10" justify="center">
+                <v-row justify="center">
                     <label class="title-text mb-0">Subscribe on our <label class="accent-text">updates</label></label>
                 </v-row>
 
@@ -95,6 +95,10 @@ export default {
 <style>
 /* mobile */
 @media only screen and (max-width: 1400px) {
+    .blog-page-container {
+        width: 100%;
+        height: 100% !important;
+    }
     .title-text {
         font-style: normal;
         font-weight: 300;

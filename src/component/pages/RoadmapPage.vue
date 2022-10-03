@@ -65,6 +65,7 @@ export default {
         font-weight: 300;
         font-size: 30px;
         line-height: 36px;
+        display: none;
     }
 
     .accent-text {
