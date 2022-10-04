@@ -77,7 +77,7 @@ export default {
             await fetch('https://overnight.fi/blog/wp-json/wp/v2/media?media_type=image&parent=' + id, {})
                 .then(value => value.json())
                 .then(value => {
-                    result = value[0].guid.rendered;
+                    result = value[0]['source_url'];
                 }).catch(reason => {
                     console.log('Error get data: ' + reason);
                 });
