@@ -14,7 +14,7 @@
                     <v-btn
                         text
                         class="blog-btn mt-12 px-15"
-                        @click="openLink('https://wordpress.overnight.fi/')">
+                        @click="openLink('https://overnight.fi/blog/')">
                         Go to our blog
                     </v-btn>
                 </v-row>
@@ -43,7 +43,7 @@ export default {
 
     async created() {
 
-        await fetch('https://wordpress.overnight.fi/wp-json/wp/v2/posts/?orderby=date&per_page=3', {})
+        await fetch('https://overnight.fi/blog/wp-json/wp/v2/posts/?orderby=date&per_page=3', {})
             .then(value => value.json())
             .then(async value => {
 
@@ -74,7 +74,7 @@ export default {
 
             let result = null;
 
-            await fetch('https://wordpress.overnight.fi/wp-json/wp/v2/media?media_type=image&parent=' + id, {})
+            await fetch('https://overnight.fi/blog/wp-json/wp/v2/media?media_type=image&parent=' + id, {})
                 .then(value => value.json())
                 .then(value => {
                     result = value[0].guid.rendered;

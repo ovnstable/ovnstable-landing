@@ -4,7 +4,8 @@
 
         <v-main>
             <div class="main-container">
-                <router-view></router-view>
+<!--                <router-view></router-view>-->
+                <MainView/>
             </div>
         </v-main>
     </v-app>
@@ -13,10 +14,12 @@
 <script>
 
 import Header from "@/component/main/inc/Header";
+import MainView from "@/component/main/MainView";
 export default {
     name: 'App',
 
     components: {
+        MainView,
         Header
     },
 

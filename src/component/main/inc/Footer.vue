@@ -42,7 +42,7 @@
                     <label class="col-title-item" @click="openLink('https://blog.overnight.fi/')">Medium</label>
                 </v-row>
                 <v-row>
-                    <label class="col-title-item" @click="openLink('https://wordpress.overnight.fi/')">Blog</label>
+                    <label class="col-title-item" @click="openLink('https://overnight.fi/blog/')">Blog</label>
                 </v-row>
             </v-col>
 
