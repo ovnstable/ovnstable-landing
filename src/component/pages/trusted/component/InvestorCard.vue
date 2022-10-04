@@ -24,7 +24,7 @@
                 <label class="tweet-label">{{ tweet }}</label>
             </v-row>
 
-            <v-row class="icon-row ml-7 mb-10">
+            <v-row class="icon-row ml-7 mb-15">
                 <HoverImg
                         v-if="tweetLink"
                         class="social-link"

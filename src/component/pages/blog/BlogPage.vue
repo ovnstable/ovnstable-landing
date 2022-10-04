@@ -1,20 +1,16 @@
 <template>
-    <div class="blog-page-container justify-center overflow-hidden" :class="isMobile ? 'flex-column' : 'flex-row'">
-        <v-row class="container-row d-flex overflow-auto">
-            <v-col cols="12" >
-                <v-row justify="center" v-observe-visibility="visibilityChanged">
+    <div class="blog-page-container" :class="isMobile ? 'flex-column' : 'flex-row'">
+        <v-row class="container-row d-flex" justify="center">
+            <v-col class="text-col" cols="12">
+                <v-row class="title-row mb-15" justify="center" v-observe-visibility="visibilityChanged">
                     <label class="title-text mb-0">Subscribe on our <label class="accent-text">updates</label></label>
                 </v-row>
 
                 <v-row class="d-flex" :class="isMobile ? 'flex-column' : 'flex-row'" justify="center">
-                    <v-col align-self="start" cols="3" v-for="item in blogCards" v-bind:key="blogCards.id">
-                        <v-row class="mt-12 mb-2 ml-5 cards" justify="start">
-                            <NewsCard :post-data="item"/>
-                        </v-row>
-                    </v-col>
+                    <NewsCard class="ma-3" v-for="item in blogCards" v-bind:key="blogCards.id" :post-data="item"/>
                 </v-row>
 
-                <v-row justify="center mt-10">
+                <v-row class="mt-5" justify="center">
                     <v-btn
                         text
                         class="blog-btn mt-12 px-15"
@@ -41,7 +37,7 @@ export default {
 
     computed: {
         isMobile() {
-            return window.innerWidth <= 960;
+            return window.innerWidth <= 1100;
         },
     },
 
@@ -101,10 +97,6 @@ export default {
 <style>
 /* mobile */
 @media only screen and (max-width: 1400px) {
-    .blog-page-container {
-        width: 100%;
-        height: 100% !important;
-    }
     .title-text {
         font-style: normal;
         font-weight: 300;
@@ -125,11 +117,6 @@ export default {
         font-weight: 400 !important;
         font-size: 16px !important;
         line-height: 18px !important;
-    }
-
-    .cards {
-        width: 100vw !important;
-        height: auto !important;
     }
 }
 
@@ -164,11 +151,6 @@ export default {
     background-size: cover;
     background-color: rgba(28, 149, 231, 0.1);
     padding-top: 150px;
-    height: 110vh;
-}
-
-.container-row {
-    width: 100% !important;
 }
 
 .title-text {
@@ -196,6 +178,11 @@ export default {
     color: #28A0F0 !important;
     text-transform: none !important;
     margin-bottom: 10% !important;
+}
+
+.container-row {
+    width: 90% !important;
+    margin-left: 5% !important;
 }
 
 </style>

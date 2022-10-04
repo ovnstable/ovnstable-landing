@@ -160,10 +160,6 @@ export default {
 
 /* mobile */
 @media only screen and (max-width: 1400px) {
-    .page-container {
-        width: 100%;
-        height: 100% !important;
-    }
     .title-text {
         font-style: normal;
         font-weight: 300;
@@ -223,7 +219,6 @@ export default {
 
 .page-container {
     background: #FFFFFF !important;
-    height: 150vh;
 }
 
 .container-row {

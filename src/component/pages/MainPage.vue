@@ -6,14 +6,13 @@
         </video>
 
         <v-row class="container-row d-flex overflow-hidden">
-            <v-col class="text-col" :cols="isMobile ? 12 : 6">
+            <v-col class="text-col" :cols="isMobile ? 12 : (isTablet ? 6 : 7)">
                 <v-row class="title-row mb-10" :class="isMobile ? '' : 'mt-0'" v-observe-visibility="visibilityChanged">
                     <div>
                         <label class="accent-text">USD</label><label class="title-text-plus">+</label>
                         <label class="title-text mb-0"> Is</label>
                         <p class="title-text mb-0">the yield bearing, fully</p>
-                        <p class="title-text mb-0">collateralized & cross-chain</p>
-                        <p class="title-text mb-0">stablecoin</p>
+                        <p class="title-text mb-0">collateralized & cross-chain stablecoin</p>
                     </div>
                 </v-row>
                 <v-row class="mb-10" v-if="isVisible">
@@ -26,7 +25,7 @@
                 </v-row>
             </v-col>
 
-            <v-col :cols="isMobile ? 12 : 6">
+            <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 5)">
                 <v-row :justify="isMobile ? 'center' : 'end'" class="overflow-hidden">
                     <ovn-maincards class="maincards-widget"></ovn-maincards>
                 </v-row>
@@ -50,6 +49,10 @@ export default {
     computed: {
         isMobile() {
             return window.innerWidth <= 960;
+        },
+
+        isTablet() {
+            return window.innerWidth <= 1400;
         },
     },
 

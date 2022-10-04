@@ -4,8 +4,11 @@
         <HowPage id="how_page"/>
         <UseCasesPage id="use_cases_page"/>
 
-        <div class="product-performance-container">
-            <ProductsPage id="products_page" />
+        <div class="product-container">
+            <ProductsPage id="products_page"/>
+        </div>
+
+        <div class="performance-roadmap-container">
             <PerformancePage id="performance_page"/>
         </div>
 
@@ -34,6 +37,7 @@ import TeamPage from "@/component/pages/team/TeamPage";
 import QuestionsPage from "@/component/pages/QuestionsPage";
 import Footer from "@/component/main/inc/Footer";
 import BlogPage from "@/component/pages/blog/BlogPage";
+
 export default {
     name: "MainView",
 
@@ -52,12 +56,9 @@ export default {
         MainPage
     },
 
-    data: () => ({
+    data: () => ({}),
 
-    }),
-
-    computed: {
-    },
+    computed: {},
 
     created() {
     },
@@ -65,8 +66,7 @@ export default {
     mounted() {
     },
 
-    methods: {
-    }
+    methods: {}
 }
 </script>
 
@@ -79,7 +79,11 @@ export default {
 @media only screen and (min-width: 1400px) {
 }
 
-.product-performance-container {
+.product-container {
     background: linear-gradient(122.1deg, #011845 0%, #15141D 104.83%) !important;
+}
+
+.performance-roadmap-container {
+    background: linear-gradient(171.55deg, rgba(28, 149, 231, 0.1) 5.72%, rgba(28, 149, 231, 0) 98.76%) !important;
 }
 </style>

@@ -59,6 +59,9 @@
                             <v-list-item class="menu-list-item" @click="openHook('team_page')">
                                 <v-list-item-title class="list-item-label">Team</v-list-item-title>
                             </v-list-item>
+                            <v-list-item class="menu-list-item" @click="openLink('https://wordpress.overnight.fi/')">
+                                <v-list-item-title class="list-item-label">Blog</v-list-item-title>
+                            </v-list-item>
 
                             <v-divider></v-divider>
                             <v-list-item disabled>

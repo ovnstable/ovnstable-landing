@@ -319,7 +319,7 @@ export default {
 }
 
 .page-container-products {
-    min-height: 80vh;
+    min-height: 100vh;
 }
 
 .title-text {

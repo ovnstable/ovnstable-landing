@@ -1,18 +1,23 @@
 <template>
-    <v-card class="news-card-container mt-5 overflow-hidden ma-0">
-        <div>
-            <img class="post-bg-img" :src="postData.imgLink">
-        </div>
-        <v-row class="title-container">
-            <label class="news-title pa-10">{{postData.title}}</label>
-        </v-row>
-        <v-row class="date-container pb-4">
-            <label class="post-date ml-10 py-5">{{postData.date}}</label>
-        </v-row>
-    </v-card>
+    <v-container class="news-card-container" @click="openLink(postData.link)">
+        <v-col align-self="start" cols="12" class="content-col">
+            <v-row justify="start">
+                <img class="post-bg-img" :src="postData.imgLink">
+            </v-row>
+
+            <v-row justify="start">
+                <label class="post-date mx-8 mt-5 mb-2">{{ getDate(postData.date) }}</label>
+            </v-row>
+
+            <v-row justify="start">
+                <label class="news-title mx-8 mb-8">{{ postData.title }}</label>
+            </v-row>
+        </v-col>
+    </v-container>
 </template>
 
 <script>
+
 export default {
     name: "NewsCard",
 
@@ -25,7 +30,6 @@ export default {
     },
 
     computed: {
-
     },
 
     created() {
@@ -33,27 +37,66 @@ export default {
 
     methods: {
 
+        openLink(url) {
+            window.open(url, '_blank').focus();
+        },
+
+        getDate(date) {
+            try {
+                return this.$moment.utc(date).format("DD MMMM YY");
+            } catch (e) {
+                return '';
+            }
+        },
     }
 }
 </script>
 
 <style scoped>
 /* mobile */
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 960px) {
     .news-card-container {
-        width: 100% !important;
-        height: 100% !important;
+        max-width: 80% !important;
     }
 
     .news-title {
         font-weight: 400;
-        font-size: 24px;
-        line-height: 36px;
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .post-date {
+        font-size: 12px;
+        line-height: 20px;
+        font-style: normal;
     }
 }
 
-/* desktop */
+/* tablet */
+@media only screen and (min-width: 960px) and (max-width: 1400px) {
+    .news-card-container {
+        max-width: 40% !important;
+    }
+
+    .news-title {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .post-date {
+        font-size: 12px;
+        line-height: 20px;
+        font-style: normal;
+    }
+}
+
+/* full */
 @media only screen and (min-width: 1400px) {
+    .news-card-container {
+        max-width: 30% !important;
+    }
+
     .news-title {
         font-weight: 400;
         font-size: 24px;
@@ -61,15 +104,13 @@ export default {
     }
 
     .post-date {
-        font-size: 20px;
-        line-height: 32px;
+        font-size: 14px;
+        line-height: 24px;
         font-style: normal;
     }
 }
 
 .news-card-container {
-    overflow: hidden;
-    width: 527px !important;
     background-color: #FFFFFF;
     text-align: start;
     border-radius: 3px;
@@ -79,27 +120,27 @@ export default {
 .post-bg-img {
     border-radius: 3px 3px 0 0;
     width: 100%;
-    height: 100%;
+    height: auto !important;
     object-fit: cover;
 }
 
 .news-title {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 36px;
     color: #29323E;
-}
-
-.date-container {
-    border-top: 1px solid #bbbbbb;
 }
 
 .post-date {
     color: #707A8B;
-    font-size: 20px;
-    line-height: 32px;
     font-family: "Roboto", sans-serif;
     font-style: normal;
+}
+
+.news-card-container {
+    cursor: pointer !important;
+}
+
+.content-col {
+    padding: 0 !important;
 }
 </style>
