@@ -3,7 +3,7 @@
         <v-row class="container-row d-flex" justify="center">
             <v-col class="text-col" cols="12">
                 <v-row class="title-row mb-15" justify="center" v-observe-visibility="visibilityChanged">
-                    <label class="title-text mb-0">Subscribe on our <label class="accent-text">updates</label></label>
+                    <label class="title-text mb-0">Subscribe to our <label class="accent-text">updates</label></label>
                 </v-row>
 
                 <v-row class="d-flex" :class="isMobile ? 'flex-column' : 'flex-row'" justify="center">

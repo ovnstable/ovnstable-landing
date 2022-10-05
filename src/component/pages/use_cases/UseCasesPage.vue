@@ -441,7 +441,6 @@ export default {
     background-image: url("../../../assets/background/img/cases_bg_lines.svg"), radial-gradient(at 50% 100%, rgba(28, 149, 231, 0.12) 0%, rgba(28, 149, 231, 0) 74.72%);
     background-position: center;
     background-size: cover;
-    height: 100vh;
 }
 
 .title-row {
