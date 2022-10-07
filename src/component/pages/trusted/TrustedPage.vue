@@ -86,7 +86,7 @@
                         <v-row>
                             <v-sheet max-width="100%">
                                 <v-slide-group show-arrows>
-                                    <v-slide-item>
+                                    <v-slide-item >
                                         <InvestorCard
                                                 class="mr-4"
                                                 name="Alex Pack"
@@ -201,7 +201,7 @@ export default {
 @media only screen and (max-width: 1400px) {
     .page-container {
         margin-top: 50px;
-        width: 100%;
+        width: 100% !important;
         height: 100% !important;
     }
     .title-text {
@@ -268,6 +268,7 @@ export default {
 
 .container-row {
     width: 90% !important;
+    height: 100% !important;
 }
 
 .container-row {

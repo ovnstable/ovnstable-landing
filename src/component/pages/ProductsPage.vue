@@ -109,7 +109,6 @@
                         <v-col align-self="end" cols="12">
                             <v-row class="ml-5" justify="start" align="center">
                                 <label class="apy-label">apy&nbsp;</label>
-                                <Tooltip text="Expected APY. Stay tuned."/>
                             </v-row>
                             <v-row class="ml-5 mb-5 mt-6" justify="start">
                                 <label class="numbers-label">TBD</label>

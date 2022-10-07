@@ -117,6 +117,10 @@ export default {
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12) !important;
 }
 
+.news-card-container:hover {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
 .post-bg-img {
     border-radius: 3px 3px 0 0;
     width: 100%;

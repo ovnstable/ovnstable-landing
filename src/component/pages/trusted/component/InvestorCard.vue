@@ -156,8 +156,8 @@ export default {
 
 .card-container {
     background: #F5F5F5 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.12) !important;
 }
 
 .avatar-img {

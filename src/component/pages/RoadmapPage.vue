@@ -3,7 +3,7 @@
         <v-row class="container-row">
             <v-col cols="12">
                 <v-row class="mb-15" justify="center">
-                    <img class="roadmap-arrow mb-15" :src="require('@/assets/img/roadmap_arrow.svg')">
+                    <img class="roadmap-arrow mb-lg-16" :src="require('@/assets/img/roadmap_arrow.svg')">
                 </v-row>
                 <v-row class="mb-15" justify="center" v-observe-visibility="visibilityChanged">
                     <label class="title-text mb-0">our <label class="accent-text">roadmap</label></label>

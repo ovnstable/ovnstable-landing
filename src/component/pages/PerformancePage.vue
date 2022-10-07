@@ -231,6 +231,9 @@ export default {
 }
 
 .page-container {
+    width: 100% !important;
+    height: 80vh !important;
+   /* SCALABLE HEIGHT */
 }
 
 .title-text {
