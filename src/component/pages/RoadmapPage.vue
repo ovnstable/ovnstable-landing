@@ -1,24 +1,22 @@
 <template>
-    <div class="page-container overflow-hidden">
+    <div class="page-container overflow-auto">
         <v-row class="container-row">
             <v-col cols="12">
-                <v-row class="mb-15" justify="center">
-                    <img class="roadmap-arrow mb-lg-16" :src="require('@/assets/img/roadmap_arrow.svg')">
+                <div class="arrow" :class="isMobile ? '' : 'mt-10'">
+                </div>
+                <v-row :class="isMobile ? 'ma-0' : 'mt-15'" justify="center" v-observe-visibility="visibilityChanged">
+                    <label class="title-text">our <label class="accent-text">roadmap</label></label>
                 </v-row>
-                <v-row class="mb-15" justify="center" v-observe-visibility="visibilityChanged">
-                    <label class="title-text mb-0">our <label class="accent-text">roadmap</label></label>
-                </v-row>
-
-                <v-row justify="center" class="mb-15" v-if="isVisible">
+                <v-row justify="center" class="mb-15">
                     <img class="roadmap-img mt-12" :src="require('@/assets/img/roadmap.svg')">
-                    <img class="roadmap-img-mobile mt-12" :src="require('@/assets/img/roadmap_mobile.svg')">
+                    <img class="roadmap-img-mobile" :src="require('@/assets/img/roadmap_mobile.svg')">
                 </v-row>
 
-                <v-row justify="center" class="btn-row" v-if="isVisible">
+                <v-row justify="center" class="btn-row">
                     <v-btn
-                            text
-                            class="feature-btn px-15"
-                            @click="openLink('https://overnight.canny.io/')">
+                        text
+                        class="feature-btn px-15"
+                        @click="openLink('https://overnight.canny.io/')">
                         Vote for new features
                     </v-btn>
                 </v-row>
@@ -94,8 +92,49 @@ export default {
         margin-top: 1% !important;
     }
 
-    .roadmap-arrow {
-        margin-bottom: 0 !important;
+    .arrow,
+    .arrow:before {
+        position: absolute;
+        left: 50%;
+        top: 1%;
+    }
+
+    .arrow {
+        width: 52px;
+        height: 52px;
+        top: 1%;
+        margin: -20px 0 0 -20px;
+        -webkit-transform: rotate(45deg);
+        border-left: none;
+        border-top: none;
+        border-right: 3px #1C95E7 solid;
+        border-bottom: 3px #1C95E7 solid;
+    }
+
+    .arrow:before {
+        content: '';
+        width: 25px;
+        height: 25px;
+        top: 1%;
+        left: 50%;
+        margin: 10px 0 0 -13px;
+        border-left: none;
+        border-top: none;
+        border-right: 2px #1C95E7 solid;
+        border-bottom: 2px #1C95E7 solid;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-name: arrow;
+    }
+
+    @keyframes arrow {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            transform: translate(-10px, -10px);
+        }
     }
 }
 
@@ -140,6 +179,44 @@ export default {
 
     .btn-row {
         margin-top: 10% !important;
+    }
+
+    .arrow {
+        width: 80px;
+        height: 80px;
+        top: 1%;
+        margin: -20px 0 0 -20px;
+        -webkit-transform: rotate(45deg);
+        border-left: none;
+        border-top: none;
+        border-right: 4px #1C95E7 solid;
+        border-bottom: 4px #1C95E7 solid;
+    }
+
+    .arrow:before {
+        content: '';
+        width: 50px;
+        height: 50px;
+        top: 120%;
+        left: 200%;
+        margin: 10px 0 0 -26px;
+        border-left: none;
+        border-top: none;
+        border-right: 3px #1C95E7 solid;
+        border-bottom: 3px #1C95E7 solid;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-name: arrow;
+    }
+
+    @keyframes arrow {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            transform: translate(-10px, -10px);
+        }
     }
 }
 
@@ -192,6 +269,17 @@ export default {
     color: #28A0F0 !important;
     text-transform: none !important;
     letter-spacing: normal;
+}
+
+.page-container {
+    position: relative;
+}
+
+.arrow,
+.arrow:before {
+    position: absolute;
+    left: 50%;
+    top: 1%;
 }
 
 </style>
