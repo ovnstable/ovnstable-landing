@@ -1,12 +1,12 @@
 <template>
     <div class="page-container overflow-hidden">
-        <v-row class="container-row d-flex overflow-hidden" :class="isMobile ? 'flex-column-reverse' : 'flex-row'" align="center" v-observe-visibility="visibilityChanged">
+        <v-row class="container-row d-flex overflow-hidden" :class="isMobile ? 'flex-column-reverse mt-0' : 'flex-row'" align="center" v-observe-visibility="visibilityChanged">
             <v-col class="main-col" :cols="isMobile ? 12 : 6">
                 <v-row class="title-row mb-15" v-if="!isMobile">
                     <div>
-                        <label class="title-text mb-0">How does </label>
+                        <label class="title-text mb-0">What </label>
                         <label class="accent-text">USD</label><label class="title-text-plus">+</label>
-                        <label class="title-text"> work?</label>
+                        <label class="title-text"> is?</label>
                     </div>
                 </v-row>
 
@@ -70,12 +70,12 @@
                 </v-row>
             </v-col>
 
-            <v-col class="" :cols="isMobile ? 12 : 6" v-if="isVisible">
+            <v-col  :cols="isMobile ? 12 : 6" v-if="isVisible">
                 <v-row class="title-row mb-10" v-if="isMobile">
-                    <div>
-                        <label class="title-text mb-0">How does </label>
+                    <div class="title-div">
+                        <label class="title-text mb-0">What </label>
                         <label class="accent-text">USD</label><label class="title-text-plus">+</label>
-                        <label class="title-text"> work?</label>
+                        <label class="title-text"> is?</label>
                     </div>
                 </v-row>
                 <v-row :justify="isMobile ? 'center' : 'end'" class="overflow-hidden" :class="isMobile ? 'mb-10' : ''">
@@ -235,6 +235,14 @@ export default {
 
     .how-img {
         width: 80vw !important;
+    }
+
+    .title-div {
+        display: flex;
+        width: 100%;
+        gap: 5px;
+        align-items: center;
+        justify-content: center;
     }
 }
 

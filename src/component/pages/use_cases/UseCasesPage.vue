@@ -1,13 +1,13 @@
 <template>
     <div class="page-container overflow-hidden">
-        <v-row class="container-row-cases d-flex overflow-hidden justify-center" :class="isMobile ? 'ma-0' : 'ml-15 mr-15 mb-15'">
-            <v-col class="text-col" cols="12">
-                <v-row :class="isMobile ? 'mb-0' : 'mb-10'" class="title-row justify-center main-label" v-observe-visibility="visibilityChanged">
+        <v-row class="container-row-cases d-flex overflow-hidden justify-center" :class="isMobile ? 'mb-0' : 'ml-15 mr-15 mb-15'">
+            <v-col :class="isMobile ? 'mb-0' : ''" :cols="isMobile ? 12 : 12" >
+                <v-row :class="isMobile ? 'mb-0 mt-0' : 'mb-10'" class="justify-center main-label">
                     <label class="accent-text">USD</label><label class="title-text-plus">+</label>
                     <label class="title-text">&nbsp;use cases</label>
                 </v-row>
 
-                <v-row class="d-flex justify-space-around card-container-row" :class="isMobile ? 'flex-column' : 'flex-row'">
+                <v-row class="d-flex justify-space-around card-container-row" :class="isMobile ? 'flex-column mt-0' : 'flex-row'">
                     <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 4)">
                         <v-container class="card-container">
                             <v-row :class="isMobile ? 'ma-5' : 'mt-12 mb-8 ml-5'" class="title-row" justify="start">
@@ -61,7 +61,7 @@
                         </v-container>
                     </v-col>
                     <v-col :cols="isMobile ? 12 : (isTablet ? 6 : 6)">
-                        <v-container class="card-container second-row last-desc">
+                        <v-container class="card-container second-row last-desc mb-10">
                             <v-row :class="isMobile ? 'ma-5' : 'mt-12 mb-8 ml-5'" class="title-row" justify="space-between">
                                 <label class="title-label">Yield on CEX liquidity</label>
                                 <v-spacer></v-spacer>
@@ -260,12 +260,6 @@ export default {
 
             return result;
         },
-
-        visibilityChanged (isVisible, entry) {
-            if (isVisible) {
-                this.isVisible = true;
-            }
-        }
     }
 }
 </script>
@@ -352,10 +346,6 @@ export default {
         margin-left: 0;
         margin-right: 0;
         margin-top: 0 !important;
-    }
-
-    .last-desc {
-        margin-bottom: 100px !important;
     }
 }
 

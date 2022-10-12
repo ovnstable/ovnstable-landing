@@ -6,14 +6,14 @@
         <img class="performance-bg-img-right" :src="require('@/assets/background/img/performance_bg_lines.svg')"
              v-if="isVisible">
 
-        <v-row class="d-flex mt-15 mb-10"  justify="center">
-            <v-col cols="12">
-                <v-row :class="isMobile ? 'mb-0' : 'mb-10'" justify="center" v-observe-visibility="visibilityChanged">
+        <v-row class="d-flex " :class="isMobile ? 'mt-15 mb-10' : 'mt-15 mb-10' " justify="center">
+            <v-col class="text-col" :cols="isMobile ? 12 : (isTablet ? 6 : 12)">
+                <v-row class="justify-center main-title" :class="isMobile ? 'mb-0 flex-column' : 'mb-10 flex-row'">
                     <label class="accent-text">Overnight's</label>
-                    <label class="title-text mb-0">&nbsp;products</label>
+                    <label class="title-text">&nbsp;products</label>
                 </v-row>
 
-                <v-row class="d-flex" :class="isMobile ? 'flex-column' : 'flex-row'" justify="center">
+                <v-row class="d-flex" :class="isMobile ? 'flex-column mt-0' : 'flex-row'" justify="center">
                     <v-container :class="isMobile ? '' : 'ma-0'" class="fill-height card-container mt-10">
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
                             <v-row :class="isMobile ? 'mt-3 mb-5 ml-0' : 'mt-8 mb-2 ml-5'" justify="start">
@@ -76,7 +76,7 @@
                                        @click="openLink('https://app.overnight.fi/market')">mint ETS
                                     <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg">
                                 </v-btn>
-                                <label class="learn-more" :class="isMobile ? 'ml-12 mt-1' : 'ml-15 mt-1'"
+                                <label class="learn-more" :class="isMobile ? 'ml-8 mt-1' : 'ml-15 mt-1'"
                                        @click="openLink('https://www.youtube.com/watch?v=wIVAiUMLmvA')">Learn
                                     more</label>
                                 <img :class="isMobile ? 'mt-2 ml-1' : 'mt-2 ml-1'" class="mdi-open" src="../../assets/img/mdi-open.svg"
@@ -157,12 +157,6 @@ export default {
                 window.open(url, '_blank').focus();
             }
         },
-
-        visibilityChanged(isVisible, entry) {
-            if (isVisible) {
-                this.isVisible = true;
-            }
-        }
     }
 }
 </script>
@@ -173,7 +167,7 @@ export default {
 @media only screen and (max-width: 500px) {
     .card-container {
         width: 90% !important;
-        height: 500px !important;
+        height: 480px !important;
     }
 }
 
@@ -183,6 +177,12 @@ export default {
         font-weight: 300;
         font-size: 30px;
         line-height: 36px;
+    }
+
+    .main-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0 !important;
     }
 
     .accent-text {
