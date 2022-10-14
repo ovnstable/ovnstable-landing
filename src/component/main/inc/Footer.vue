@@ -30,7 +30,7 @@
                     <label class="col-title-item" @click="openLink('https://t.me/overnight_fi')">Telegram Discussion</label>
                 </v-row>
                 <v-row class="mb-3">
-                    <label class="col-title-item" @click="openLink('https://t.me/overnight_fi_announcements')">Telegram Announcements</label>
+                    <label class="col-title-item" @click="openLink('https://www.youtube.com/channel/UCuPsmMZTOCaTNZWUXWZr12A')">YouTube</label>
                 </v-row>
                 <v-row class="mb-3">
                     <label class="col-title-item" @click="openLink('https://www.linkedin.com/company/overnightfi/')">LinkedIn</label>
