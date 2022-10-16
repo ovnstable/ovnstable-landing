@@ -112,7 +112,7 @@ export default {
                 case 'op':
                     return 'optimism'
                 case 'avax':
-                    return 'avalanche (alpha)'
+                    return 'avalanche (beta)'
                 default:
                     return s
             }

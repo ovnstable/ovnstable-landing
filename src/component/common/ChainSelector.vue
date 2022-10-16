@@ -33,7 +33,7 @@
                 outlined
                 class="chain-btn ma-2"
                 @click="clickTab('avax')" v-bind:class="activeTabAvax">
-            <v-badge icon="mdi-alpha"
+            <v-badge icon="mdi-beta"
                      bordered
                      :dark="mode !== 'light'"
                      color='#333333'
