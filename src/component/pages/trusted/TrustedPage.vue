@@ -1,14 +1,14 @@
 <template>
-    <div class="page-container overflow-hidden">
+    <div class="page-container overflow-hidden mt-0 mb-0">
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" cols="12">
-                <v-row class="mb-10" justify="start" v-observe-visibility="visibilityChanged">
+                <v-row class="" :class="isMobile ? 'justify-center mb-5' : 'justify-start mb-10'" v-observe-visibility="visibilityChanged">
                     <label class="title-text mb-0">we are <label class="accent-text">trusted</label></label>
                 </v-row>
 
-                <v-row class="d-flex justify-space-between mt-10 mb-12" :class="isMobile ? 'flex-column-reverse' : 'flex-row'" v-if="isVisible">
-                    <v-col class="mt-12">
-                        <v-row class="trusted-title-row mb-8">
+                <v-row class="d-flex justify-space-between " :class="isMobile ? 'flex-column-reverse mt-0 mb-0' : 'flex-row mt-10 mb-12'" v-if="isVisible">
+                    <v-col :class="isMobile ? 'mt-10' : 'mt-12'">
+                        <v-row class="trusted-title-row" :class="isMobile ? 'mb-0' : 'mb-5'">
                             <label class="trusted-title">Partners</label>
                         </v-row>
                         <v-row align="center" class="d-flex justify-space-around">
@@ -79,14 +79,14 @@
                         <v-row :style="{'height': isMobile ? '20px' : '100px'}">
                         </v-row>
 
-                        <v-row class="trusted-title-row mt-12 mb-8" id="investors_part">
+                        <v-row class="trusted-title-row" :class="isMobile ? 'mt-0 mb-5' : 'mt-12 mb-8'" id="investors_part">
                             <label class="trusted-title">Our valued investors</label>
                         </v-row>
 
                         <v-row>
                             <v-sheet max-width="100%">
                                 <v-slide-group show-arrows>
-                                    <v-slide-item>
+                                    <v-slide-item >
                                         <InvestorCard
                                                 class="mr-4"
                                                 name="Alex Pack"
@@ -201,7 +201,7 @@ export default {
 @media only screen and (max-width: 1400px) {
     .page-container {
         margin-top: 50px;
-        width: 100%;
+        width: 100% !important;
         height: 100% !important;
     }
     .title-text {
@@ -259,6 +259,10 @@ export default {
         font-size: 30px;
         line-height: 36px;
     }
+
+    .trusted-title-row {
+        height: 56px !important;
+    }
 }
 
 .page-container {
@@ -268,6 +272,7 @@ export default {
 
 .container-row {
     width: 90% !important;
+    height: 100% !important;
 }
 
 .container-row {

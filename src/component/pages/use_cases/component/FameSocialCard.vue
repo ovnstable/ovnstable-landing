@@ -6,9 +6,9 @@
                 <p class="learn-label">how it works</p>
             </v-col>
         </v-row>
-        <v-row justify="center">
+        <v-row justify="center" >
             <img height="60" class="social-btn mr-4" :src="require('@/assets/img/social/medium.svg')" @click="openLink('https://blog.overnight.fi/the-in-liquidity-pools-why-liquidity-pairs-with-usd-are-more-capital-efficient-f4e45298d7ff')">
-            <img height="60" class="social-btn" :src="require('@/assets/img/social/youtube.svg')" @click="openLink('https://www.youtube.com/watch?v=ocH7iUvUdos')">
+            <img height="60" class="social-btn ml-4" :src="require('@/assets/img/social/youtube.svg')" @click="openLink('https://www.youtube.com/watch?v=b3qZA-WeRVE')">
         </v-row>
     </v-container>
 </template>

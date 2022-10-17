@@ -164,6 +164,11 @@ export default {
         margin-top: 10% !important;
         margin-bottom: 10% !important;
     }
+
+    .page-container {
+        width: 100%;
+        height: 100vh !important;
+    }
 }
 
 @media only screen and (max-width: 960px) {
@@ -228,9 +233,11 @@ export default {
         margin-top: 10% !important;
         margin-bottom: 5% !important;
     }
-}
-
-.page-container {
+    .page-container {
+        width: 100% !important;
+        height: 80vh !important;
+        /* SCALABLE HEIGHT */
+    }
 }
 
 .title-text {

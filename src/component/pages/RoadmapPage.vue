@@ -1,24 +1,22 @@
 <template>
-    <div class="page-container overflow-hidden">
+    <div class="page-container overflow-hidden" v-observe-visibility="visibilityChanged" >
         <v-row class="container-row">
-            <v-col cols="12">
-                <v-row class="mb-15" justify="center">
-                    <img class="roadmap-arrow mb-15" :src="require('@/assets/img/roadmap_arrow.svg')">
+            <v-col :cols="isMobile ? 12 : 12"">
+                <div class="arrow mt-5" :class="isMobile ? '' : 'mt-10'">
+                </div>
+                <v-row :class="isMobile ? 'mt-10' : 'mt-15'" justify="center" >
+                    <label class="title-text">our <label class="accent-text">roadmap</label></label>
                 </v-row>
-                <v-row class="mb-15" justify="center" v-observe-visibility="visibilityChanged">
-                    <label class="title-text mb-0">our <label class="accent-text">roadmap</label></label>
-                </v-row>
-
-                <v-row justify="center" class="mb-15" v-if="isVisible">
-                    <img class="roadmap-img mt-12" :src="require('@/assets/img/roadmap.svg')">
-                    <img class="roadmap-img-mobile mt-12" :src="require('@/assets/img/roadmap_mobile.svg')">
+                <v-row justify="center" class="roadmap-images" :class="isMobile ? 'mb-0' : 'mb-15'">
+                    <img v-if="!isMobile" class="roadmap-img mt-12" :src="require('@/assets/img/roadmap.svg')">
+                    <img v-if="isMobile" class="roadmap-img-mobile mb-0" :src="require('@/assets/img/roadmap_mobile.svg')">
                 </v-row>
 
-                <v-row justify="center" class="btn-row" v-if="isVisible">
+                <v-row justify="center" class="btn-row" :class="isMobile ? 'mt-0' : ''" v-if="!isMobile">
                     <v-btn
-                            text
-                            class="feature-btn px-15"
-                            @click="openLink('https://overnight.canny.io/')">
+                        text
+                        class="feature-btn px-15"
+                        @click="openLink('https://overnight.canny.io/')">
                         Vote for new features
                     </v-btn>
                 </v-row>
@@ -63,6 +61,10 @@ export default {
 
 /* mobile */
 @media only screen and (max-width: 1400px) {
+    .page-container {
+        height: 100% !important;
+        margin-bottom: 0 !important;
+    }
 
     .title-text {
         font-style: normal;
@@ -81,6 +83,8 @@ export default {
 
     .roadmap-img-mobile {
         width: 80% !important;
+        height: 100% !important;
+        margin-bottom: 0 !important;
     }
 
     .feature-btn {
@@ -90,31 +94,52 @@ export default {
         font-size: 16px !important;
         line-height: 18px !important;
     }
-    .btn-row {
-        margin-top: 1% !important;
+
+    .arrow,
+    .arrow:before {
+        position: absolute;
+        left: 50%;
+        top: 1%;
     }
 
-    .roadmap-arrow {
-        margin-bottom: 0 !important;
+    .arrow {
+        width: 40px;
+        height: 40px;
+        top: 1%;
+        margin: -20px 0 0 -20px;
+        -webkit-transform: rotate(45deg);
+        border-left: none;
+        border-top: none;
+        border-right: 3px #1C95E7 solid;
+        border-bottom: 3px #1C95E7 solid;
+    }
+
+    .arrow:before {
+        content: '';
+        width: 15px;
+        height: 15px;
+        top: 1%;
+        left: 50%;
+        margin: 10px 0 0 -7px;
+        border-left: none;
+        border-top: none;
+        border-right: 2px #1C95E7 solid;
+        border-bottom: 2px #1C95E7 solid;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-name: arrow;
+    }
+
+    @keyframes arrow {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            transform: translate(-10px, -10px);
+        }
     }
 }
-
-@media only screen and (max-width: 960px) {
-    .roadmap-img {
-        display: none !important;
-    }
-}
-
-@media only screen and (min-width: 961px) {
-    .roadmap-img-mobile {
-        display: none !important;
-    }
-
-    .roadmap-img {
-        width: 100% !important;
-    }
-}
-
 @media only screen and (min-width: 1400px) {
     .title-text {
         font-style: normal;
@@ -140,6 +165,44 @@ export default {
 
     .btn-row {
         margin-top: 10% !important;
+    }
+
+    .arrow {
+        width: 80px;
+        height: 80px;
+        top: 1%;
+        margin: -20px 0 0 -20px;
+        -webkit-transform: rotate(45deg);
+        border-left: none;
+        border-top: none;
+        border-right: 4px #1C95E7 solid;
+        border-bottom: 4px #1C95E7 solid;
+    }
+
+    .arrow:before {
+        content: '';
+        width: 50px;
+        height: 50px;
+        top: 120%;
+        left: 200%;
+        margin: 10px 0 0 -25px;
+        border-left: none;
+        border-top: none;
+        border-right: 3px #1C95E7 solid;
+        border-bottom: 3px #1C95E7 solid;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-name: arrow;
+    }
+
+    @keyframes arrow {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            transform: translate(-10px, -10px);
+        }
     }
 }
 
@@ -192,6 +255,17 @@ export default {
     color: #28A0F0 !important;
     text-transform: none !important;
     letter-spacing: normal;
+}
+
+.page-container {
+    position: relative;
+}
+
+.arrow,
+.arrow:before {
+    position: absolute;
+    left: 50%;
+    top: 1%;
 }
 
 </style>

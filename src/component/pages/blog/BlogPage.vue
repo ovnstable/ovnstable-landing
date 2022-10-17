@@ -1,16 +1,17 @@
 <template>
-    <div class="blog-page-container" :class="isMobile ? 'flex-column' : 'flex-row'">
-        <v-row class="container-row d-flex" justify="center">
-            <v-col class="text-col" cols="12">
-                <v-row class="title-row mb-15" justify="center" v-observe-visibility="visibilityChanged">
-                    <label class="title-text mb-0">Subscribe to our <label class="accent-text">updates</label></label>
+    <div class="blog-page-container overflow-hidden"  v-observe-visibility="visibilityChanged">
+        <v-row class="justify-center overflow-hidden">
+            <v-col :cols="isMobile ? 12 : 12" >
+                <v-row :class="isMobile ? 'mb-0 mt-0' : 'mb-10'" class="justify-center">
+                    <label class="title-text">Subscribe to our </label>
+                    <label class="accent-text ml-2"> updates</label>
                 </v-row>
 
-                <v-row class="d-flex" :class="isMobile ? 'flex-column' : 'flex-row'" justify="center">
+                <v-row class="d-flex justify-center align-center" :class="isMobile ? 'flex-column' : 'flex-row'" justify="center">
                     <NewsCard class="ma-3" v-for="item in blogCards" v-bind:key="blogCards.id" :post-data="item"/>
                 </v-row>
 
-                <v-row class="mt-5" justify="center">
+                <v-row :class="isMobile ? 'mt-0' : 'mt-5'" justify="center">
                     <v-btn
                         text
                         class="blog-btn mt-12 px-15"
@@ -94,9 +95,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /* mobile */
 @media only screen and (max-width: 1400px) {
+    .blog-page-container {
+        padding-top: 50px;
+    }
+
     .title-text {
         font-style: normal;
         font-weight: 300;
@@ -122,6 +127,10 @@ export default {
 
 /* desktop */
 @media only screen and (min-width: 1400px) {
+    .blog-page-container {
+        padding-top: 150px;
+    }
+
     .title-text {
         font-style: normal;
         font-weight: 300;
@@ -150,7 +159,6 @@ export default {
     background-position: center;
     background-size: cover;
     background-color: rgba(28, 149, 231, 0.1);
-    padding-top: 150px;
 }
 
 .title-text {
@@ -178,11 +186,6 @@ export default {
     color: #28A0F0 !important;
     text-transform: none !important;
     margin-bottom: 10% !important;
-}
-
-.container-row {
-    width: 90% !important;
-    margin-left: 5% !important;
 }
 
 </style>

@@ -1,14 +1,14 @@
 <template>
-    <div class="page-container overflow-hidden">
+    <div class="page-container overflow-hidden" v-observe-visibility="visibilityChanged">
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" cols="12">
-                <v-row class="mb-10" justify="center" v-observe-visibility="visibilityChanged">
+                <v-row class="mb-10" justify="center" >
                     <label class="title-text mb-0"><label class="accent-text">Security</label> at its core</label>
                 </v-row>
 
                 <v-row class="d-flex justify-space-between" :class="isMobile ? 'flex-column' : 'flex-row'" v-if="isVisible">
-                    <v-col :cols="isMobile ? 12 : 3" class="mt-12">
-                        <v-row justify="center" class="mb-10 card-title-row">
+                    <v-col :cols="isMobile ? 12 : 3" :class="isMobile ? 'mt-0' : 'mt-12'">
+                        <v-row justify="center" class="card-title-row" :class="isMobile ? 'mb-5' : 'mb-15'">
                             <label class="title-label">full collateralization</label>
                         </v-row>
                         <v-row justify="center" class="mb-10">
@@ -16,8 +16,8 @@
                         </v-row>
                     </v-col>
 
-                    <v-col :cols="isMobile ? 12 : 4" class="mt-12">
-                        <v-row justify="center" class="mb-10 card-title-row">
+                    <v-col :cols="isMobile ? 12 : 4" :class="isMobile ? 'mt-0' : 'mt-15'">
+                        <v-row justify="center" class="card-title-row" :class="isMobile ? 'mb-5' : 'mb-10'">
                             <label class="title-label">Rigorous Risk-management and monitoring</label>
                         </v-row>
                         <v-row justify="center" class="mb-10">
@@ -25,19 +25,27 @@
                         </v-row>
                     </v-col>
 
-                    <v-col :cols="isMobile ? 12 : 3" class="mt-12">
-                        <v-row justify="center" class="mb-10 card-title-row">
+                    <v-col :cols="isMobile ? 12 : 3" :class="isMobile ? 'mt-0' : 'mt-15'">
+                        <v-row justify="center" :class="isMobile ? 'mb-0' : 'mb-15'" class="card-title-row">
                             <label class="title-label">Audit</label>
                         </v-row>
-                        <v-row justify="center" class="mb-10">
-                            <label class="desc-label">We are audited by <a @click="openLink('https://hacken.io/audits/#overnight')">Hacken.io</a>. Other world’s leading security firms’ audits are in plan. Security of the USD+ Protocol is our highest priority</label>
+                        <v-row justify="center" :class="isMobile ? 'mb-10' : 'mb-10'">
+                            <label class="desc-label">Audited by <a @click="openLink('https://hacken.io/audits/#overnight')">Hacken.io</a>. Other world’s leading security firms’ audits are in plans. Security of the USD+ Protocol is our highest priority</label>
+                            <div v-if="isMobile">
+                                <HoverImg
+                                    class="find-us-img-audit mt-5"
+                                    link="https://hacken.io/audits/#overnight"
+                                    :img="require('@/assets/img/partners/hacken.svg')"
+                                    :hover-img="require('@/assets/img/partners/hackenColored.svg')"
+                                />
+                            </div>
                         </v-row>
                     </v-col>
                 </v-row>
 
-                <v-row class="d-flex justify-space-between mt-10 mb-12" :class="isMobile ? 'flex-column-reverse' : 'flex-row'" v-if="isVisible">
-                    <v-col :cols="isMobile ? 12 : 8" class="mt-12">
-                        <v-row class="find-title-row mb-8">
+                <v-row class="d-flex justify-space-between" :class="isMobile ? 'flex-column-reverse mt-0 mb-0' : 'flex-row mt-10 mb-12'" v-if="isVisible">
+                    <v-col :cols="isMobile ? 12 : 8" :class="isMobile ? 'mt-5' : 'mt-12'">
+                        <v-row class="find-title-row" :class="isMobile ? 'mb-0' : 'mb-8'">
                             <label class="find-title">Find us on</label>
                         </v-row>
                         <v-row align="center">
@@ -60,10 +68,10 @@
                             <v-spacer></v-spacer>
 
                             <HoverImg
-                                    class="find-us-img"
-                                    link="https://www.coingecko.com/en/coins/usdplus"
-                                    :img="require('@/assets/img/partners/coinGecko.svg')"
-                                    :hover-img="require('@/assets/img/partners/coinGeckoColored.svg')"
+                                class="find-us-img"
+                                link="https://www.coingecko.com/en/coins/usdplus"
+                                :img="require('@/assets/img/partners/coinGecko.svg')"
+                                :hover-img="require('@/assets/img/partners/coinGeckoColored.svg')"
                             />
 
                             <v-spacer></v-spacer>
@@ -77,7 +85,7 @@
                         </v-row>
                     </v-col>
 
-                    <v-col :cols="isMobile ? 12 : 3" class="mt-12">
+                    <v-col v-if="!isMobile" :cols="isMobile ? 12 : 3" :class="isMobile ? 'mt-0' : 'mt-12'">
                         <v-row class="find-title-row mb-8">
                             <label class="find-title">Audit</label>
                         </v-row>
@@ -188,25 +196,23 @@ export default {
         font-size: 20px;
         line-height: 28px;
     }
-}
 
-@media only screen and (max-width: 960px) {
     .find-us-img {
-        width: 20vw;
+        width: 30% !important;
+        height: auto;
     }
 
     .find-us-img-audit {
-        width: 5vw;
-    }
-}
-
-@media only screen and (min-width: 961px) {
-    .find-us-img {
-        width: 20vw;
+        width: 44px;
+        height: 50px;
     }
 
-    .find-us-img-audit {
-        width: 5vw;
+    .page-container {
+        margin: 0 0 0 0;
+    }
+
+    .find-title-row {
+        height: 35px !important;
     }
 }
 
@@ -262,11 +268,18 @@ export default {
     .find-us-img-audit {
         width: 3vw;
     }
+
+    .page-container {
+        margin: 0 20px 0 20px;
+    }
+
+    .find-title-row {
+        height: 56px !important;
+    }
 }
 
 .page-container {
     background: #F5F5F5 !important;
-    margin: 0 20px 0 20px;
 }
 
 .container-row {
@@ -284,7 +297,6 @@ export default {
 }
 
 .find-title-row {
-    height: 56px !important;
     border-bottom: 1px solid #DEE1E5;
 }
 

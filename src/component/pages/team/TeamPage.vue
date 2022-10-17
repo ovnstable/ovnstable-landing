@@ -1,8 +1,8 @@
 <template>
-    <div class="page-container overflow-hidden">
+    <div class="page-container overflow-hidden mt-0 mb-0">
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" cols="12">
-                <v-row class="title-row mb-15" justify="center" v-observe-visibility="visibilityChanged">
+                <v-row class="title-row" justify="center" :class="isMobile ? 'mb-10' : 'mb-15'" v-observe-visibility="visibilityChanged">
                     <label class="title-text mb-0">our <label class="accent-text">plus</label> team</label>
                 </v-row>
 

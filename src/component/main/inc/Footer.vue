@@ -38,9 +38,6 @@
                 <v-row class="mb-3">
                     <label class="col-title-item" @click="openLink('https://github.com/ovnstable')">GitHub</label>
                 </v-row>
-                <v-row class="mb-3">
-                    <label class="col-title-item" @click="openLink('https://blog.overnight.fi/')">Medium</label>
-                </v-row>
                 <v-row>
                     <label class="col-title-item" @click="openLink('https://overnight.fi/blog/')">Blog</label>
                 </v-row>
