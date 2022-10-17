@@ -71,8 +71,6 @@ export default {
 
         async getImgLink(id) {
 
-            console.log("Img parent id: " + id)
-
             let result = null;
 
             await fetch('https://overnight.fi/blog/wp-json/wp/v2/media?media_type=image&parent=' + id, {})

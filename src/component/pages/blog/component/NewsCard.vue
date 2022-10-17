@@ -10,7 +10,7 @@
             </v-row>
 
             <v-row justify="start">
-                <label class="news-title mx-8 mb-8">{{ postData.title }}</label>
+                <label class="news-title mx-8 mb-8" v-html="postData.title"></label>
             </v-row>
         </v-col>
     </v-container>
