@@ -2,11 +2,11 @@
     <div class="page-container overflow-hidden" :class="isMobile ? 'flex-column' : 'flex-row'">
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" :cols="isMobile ? 12 : 7">
-                <v-row class="title-row mb-10" justify="center" align="center" v-observe-visibility="visibilityChanged">
+                <v-row :class="isMobile ? 'mb-5' : 'mb-10'" class="title-row" justify="center" align="center" v-observe-visibility="visibilityChanged">
                     <p class="title-text mb-0">join <label class="accent-text">plus</label> community</p>
                 </v-row>
 
-                <v-row class="mb-4" justify="center" v-if="isVisible">
+                <v-row :class="isMobile ? '' : 'mb-4'" justify="center" v-if="isVisible">
                     <v-text-field
                             class="text-input-field"
                             v-model="email"
@@ -18,7 +18,7 @@
                     </v-text-field>
                 </v-row>
 
-                <v-row class="mb-4" justify="center" v-if="isVisible">
+                <v-row :class="isMobile ? '' : 'mb-4'" justify="center" v-if="isVisible">
                     <v-text-field
                             class="text-input-field"
                             v-model="text"
@@ -29,8 +29,8 @@
                     </v-text-field>
                 </v-row>
 
-                <v-row class="email-row mb-12" justify="center" v-if="isVisible">
-                    <v-btn @click="sendEmailAction" :class="isDisabledBtn ? 'disabled-btn' : 'send-btn'" :disabled="isDisabledBtn">
+                <v-row :class="isMobile ? 'mb-1': 'mb-12'" class="email-row" justify="center" v-if="isVisible" >
+                    <v-btn class="submit-btn" @click="sendEmailAction" :class="isDisabledBtn ? 'disabled-btn' : 'send-btn'" :disabled="isDisabledBtn">
                         Send
                     </v-btn>
                 </v-row>
@@ -145,7 +145,7 @@ export default {
     }
 
     .text-input-field {
-        max-width: 90% !important;
+        max-width: 100% !important;
     }
 
     .send-btn, .disabled-btn {
@@ -156,17 +156,32 @@ export default {
         font-size: 16px !important;
         line-height: 18px !important;
     }
+
 }
 
 @media only screen and (max-width: 960px) {
     .card-container {
-        width: 18vw !important;
-        height: 18vw !important;
+        width: 40vw !important;
+        height: 40vw !important;
         background: #FFFFFF !important;
     }
 
     .social-img {
-        width: 6vw !important;
+        width: 10vw !important;
+    }
+
+    .send-btn, .disabled-btn {
+        height: 50px !important;
+        width: 100% !important;
+        font-style: normal !important;
+        font-weight: 400 !important;
+        font-size: 18px !important;
+        line-height: 20px !important;
+    }
+
+    .container-row {
+
+        margin-bottom: 12% !important;
     }
 }
 
@@ -181,8 +196,7 @@ export default {
         width: 4vw !important;
     }
 }
-
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1300px) {
     .title-text {
         font-style: normal;
         font-weight: 300;
@@ -209,6 +223,51 @@ export default {
         font-size: 18px !important;
         line-height: 20px !important;
     }
+
+    .container-row {
+        margin-left: 5% !important;
+        margin-top: 12% !important;
+        margin-bottom: 12% !important;
+    }
+    /* Large screen, non-retina */
+
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1300px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (                min-resolution: 192dpi) and (min-width: 1300px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 1300px) {
+    .title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 60px;
+        line-height: 80px;
+    }
+
+    .accent-text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 70px;
+        line-height: 80px;
+    }
+
+    .text-input-field {
+        max-width: 60% !important;
+    }
+
+    .send-btn, .disabled-btn {
+        height: 50px !important;
+        width: 250px !important;
+        font-style: normal !important;
+        font-weight: 400 !important;
+        font-size: 18px !important;
+        line-height: 20px !important;
+    }
+    /* Large screen, retina, stuff to override above media query */
+
 }
 
 @media only screen and (min-width: 1800px) {
@@ -219,7 +278,7 @@ export default {
 
 .page-container {
     background-color: #FFFFFF !important;
-    height: 100vh;
+    height: 100%;
 }
 
 .container-row {
@@ -228,7 +287,6 @@ export default {
 
 .container-row {
     margin-left: 5% !important;
-    margin-top: 12% !important;
     margin-bottom: 12% !important;
 }
 
@@ -283,5 +341,6 @@ export default {
 .card-container {
     cursor: pointer !important;
     background: linear-gradient(300deg, rgba(28, 149, 231, 0.1), rgba(28, 149, 231, 0)) !important;
+    border-radius: 12px;
 }
 </style>

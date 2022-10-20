@@ -1,12 +1,12 @@
 <template>
-    <div class="page-container overflow-hidden mt-0 mb-0">
+    <div class="page-container overflow-hidden">
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" cols="12">
                 <v-row class="" :class="isMobile ? 'justify-center mb-5' : 'justify-start mb-10'" v-observe-visibility="visibilityChanged">
                     <label class="title-text mb-0">we are <label class="accent-text">trusted</label></label>
                 </v-row>
 
-                <v-row class="d-flex justify-space-between " :class="isMobile ? 'flex-column-reverse mt-0 mb-0' : 'flex-row mt-10 mb-12'" v-if="isVisible">
+                <v-row class="d-flex justify-space-between " :class="isMobile ? 'flex-column-reverse mt-0' : 'flex-row mt-10'" v-if="isVisible">
                     <v-col :class="isMobile ? 'mt-10' : 'mt-12'">
                         <v-row class="trusted-title-row" :class="isMobile ? 'mb-0' : 'mb-5'">
                             <label class="trusted-title">Partners</label>
@@ -76,7 +76,7 @@
                             />
                         </v-row>
 
-                        <v-row :style="{'height': isMobile ? '20px' : '100px'}">
+                        <v-row :style="{'height': isMobile ? '20px' : '20px'}">
                         </v-row>
 
                         <v-row class="trusted-title-row" :class="isMobile ? 'mt-0 mb-5' : 'mt-12 mb-8'" id="investors_part">
@@ -86,7 +86,7 @@
                         <v-row>
                             <v-sheet max-width="100%">
                                 <v-slide-group show-arrows>
-                                    <v-slide-item >
+                                    <v-slide-item>
                                         <InvestorCard
                                                 class="mr-4"
                                                 name="Alex Pack"
@@ -238,7 +238,7 @@ export default {
     }
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1300px) {
     .title-text {
         font-style: normal;
         font-weight: 300;
@@ -263,11 +263,48 @@ export default {
     .trusted-title-row {
         height: 56px !important;
     }
+    /* Large screen, non-retina */
+
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1300px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (                min-resolution: 192dpi) and (min-width: 1300px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 1300px) {
+    .title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 60px;
+        line-height: 80px;
+    }
+
+    .accent-text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 70px;
+        line-height: 80px;
+    }
+
+    .trusted-title {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .trusted-title-row {
+        height: 56px !important;
+    }
+    /* Large screen, retina, stuff to override above media query */
+
 }
 
 .page-container {
     background: #FFFFFF !important;
-    height: 150vh;
+    height: 100% ;
 }
 
 .container-row {
@@ -278,7 +315,6 @@ export default {
 .container-row {
     margin-left: 5% !important;
     margin-top: 10% !important;
-    margin-bottom: 10% !important;
 }
 
 .trusted-img {

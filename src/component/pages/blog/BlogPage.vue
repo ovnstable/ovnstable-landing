@@ -2,7 +2,7 @@
     <div class="blog-page-container overflow-hidden"  v-observe-visibility="visibilityChanged">
         <v-row class="justify-center overflow-hidden">
             <v-col :cols="isMobile ? 12 : 12" >
-                <v-row :class="isMobile ? 'mb-0 mt-0' : 'mb-10'" class="justify-center">
+                <v-row :class="isMobile ? 'mb-0 mt-0 ml-5 mr-5' : 'mb-10'" class="justify-center">
                     <label class="title-text">Subscribe to our </label>
                     <label class="accent-text ml-2"> updates</label>
                 </v-row>
@@ -97,7 +97,7 @@ export default {
 /* mobile */
 @media only screen and (max-width: 1400px) {
     .blog-page-container {
-        padding-top: 50px;
+        padding-top: 40px;
     }
 
     .title-text {

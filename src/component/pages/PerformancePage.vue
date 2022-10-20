@@ -167,7 +167,7 @@ export default {
 
     .page-container {
         width: 100%;
-        height: 100vh !important;
+        height: 100% !important;
     }
 }
 
@@ -199,7 +199,7 @@ export default {
     }
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1300px) {
     .title-text {
         font-style: normal;
         font-weight: 300;
@@ -235,9 +235,60 @@ export default {
     }
     .page-container {
         width: 100% !important;
-        height: 80vh !important;
+        height: 100% !important;
         /* SCALABLE HEIGHT */
     }
+    /* Large screen, non-retina */
+
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1300px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (                min-resolution: 192dpi) and (min-width: 1300px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 1300px) {
+    .title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 60px;
+        line-height: 80px;
+    }
+
+    .accent-chain-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 32px;
+        line-height: 40px;
+        letter-spacing: 0.02em;
+    }
+
+    .accent-text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 70px;
+        line-height: 80px;
+    }
+
+    .title-text-plus {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 60px;
+        line-height: 80px;
+    }
+
+    .container-row-usd-plus {
+        margin-top: 10% !important;
+        margin-bottom: 5% !important;
+    }
+    .page-container {
+        width: 100% !important;
+        height: 100% !important;
+        /* SCALABLE HEIGHT */
+    }
+    /* Large screen, retina, stuff to override above media query */
+
 }
 
 .title-text {

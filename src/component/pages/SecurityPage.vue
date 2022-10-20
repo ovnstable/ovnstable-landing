@@ -8,7 +8,7 @@
 
                 <v-row class="d-flex justify-space-between" :class="isMobile ? 'flex-column' : 'flex-row'" v-if="isVisible">
                     <v-col :cols="isMobile ? 12 : 3" :class="isMobile ? 'mt-0' : 'mt-12'">
-                        <v-row justify="center" class="card-title-row" :class="isMobile ? 'mb-5' : 'mb-15'">
+                        <v-row justify="center" class="card-title-row" :class="isMobile ? 'mb-5' : 'mt-1 mb-10'">
                             <label class="title-label">full collateralization</label>
                         </v-row>
                         <v-row justify="center" class="mb-10">
@@ -16,7 +16,7 @@
                         </v-row>
                     </v-col>
 
-                    <v-col :cols="isMobile ? 12 : 4" :class="isMobile ? 'mt-0' : 'mt-15'">
+                    <v-col :cols="isMobile ? 12 : 3" :class="isMobile ? 'mt-0' : 'mt-15'">
                         <v-row justify="center" class="card-title-row" :class="isMobile ? 'mb-5' : 'mb-10'">
                             <label class="title-label">Rigorous Risk-management and monitoring</label>
                         </v-row>
@@ -26,7 +26,7 @@
                     </v-col>
 
                     <v-col :cols="isMobile ? 12 : 3" :class="isMobile ? 'mt-0' : 'mt-15'">
-                        <v-row justify="center" :class="isMobile ? 'mb-0' : 'mb-15'" class="card-title-row">
+                        <v-row justify="center" :class="isMobile ? 'mb-0' : 'mb-10'" class="card-title-row">
                             <label class="title-label">Audit</label>
                         </v-row>
                         <v-row justify="center" :class="isMobile ? 'mb-10' : 'mb-10'">
@@ -216,7 +216,7 @@ export default {
     }
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1300px) {
     .title-text {
         font-style: normal;
         font-weight: 300;
@@ -276,6 +276,78 @@ export default {
     .find-title-row {
         height: 56px !important;
     }
+    /* Large screen, non-retina */
+
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1300px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (                min-resolution: 192dpi) and (min-width: 1300px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 1300px) {
+    .title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 60px;
+        line-height: 80px;
+    }
+
+    .accent-text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 70px;
+        line-height: 80px;
+    }
+
+    .title-label {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0.04em;
+    }
+
+    .desc-label {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .whitepaper-btn {
+        height: 50px !important;
+        font-style: normal !important;
+        font-weight: 400 !important;
+        font-size: 18px !important;
+        line-height: 20px !important;
+    }
+
+    .find-title {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .find-us-img, .find-us-img-audit {
+        width: 12vw;
+    }
+
+    .find-us-img-audit {
+        width: 3vw;
+    }
+
+    .page-container {
+        margin: 0 20px 0 20px;
+    }
+
+    .find-title-row {
+        height: 56px !important;
+    }
+    /* Large screen, retina, stuff to override above media query */
+
 }
 
 .page-container {

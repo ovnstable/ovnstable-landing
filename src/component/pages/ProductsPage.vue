@@ -6,33 +6,33 @@
         <img class="performance-bg-img-right" :src="require('@/assets/background/img/performance_bg_lines.svg')"
              v-if="isVisible">
 
-        <v-row class="d-flex " :class="isMobile ? 'mt-15 mb-10' : 'mt-15 mb-10' " justify="center">
+        <v-row class="d-flex " :class="isMobile ? 'mt-15 mb-10' : 'mt-15 mb-15' " justify="center">
             <v-col class="text-col" :cols="isMobile ? 12 : (isTablet ? 6 : 12)">
                 <v-row class="justify-center main-title" :class="isMobile ? 'mb-0 flex-column' : 'mb-10 flex-row'">
                     <label class="accent-text">Overnight's</label>
                     <label class="title-text">&nbsp;products</label>
                 </v-row>
 
-                <v-row class="d-flex" :class="isMobile ? 'flex-column mt-0' : 'flex-row'" justify="center">
+                <v-row class="d-flex" :class="isMobile ? 'flex-column mt-0' : 'flex-row mb-15'" justify="center">
                     <v-container :class="isMobile ? '' : 'ma-0'" class="fill-height card-container mt-10">
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
-                            <v-row :class="isMobile ? 'mt-3 mb-5 ml-0' : 'mt-8 mb-2 ml-5'" justify="start">
+                            <v-row :class="isMobile ? 'mt-3 mb-5' : 'mt-8 mb-2 ml-1'" justify="start">
                                 <label class="risk-label-low">low risk/return</label>
                             </v-row>
-                            <v-row :class="isMobile ? 'ml-0' : 'ml-5'" justify="start">
+                            <v-row :class="isMobile ? '' : 'ml-1'" justify="start">
                                 <label class="card-label">Yield bearing</label>
                             </v-row>
-                            <v-row :class="isMobile ? 'ml-0 mb-7' : 'ml-5 mb-5'" justify="start">
+                            <v-row :class="isMobile ? 'mb-7' : 'ml-1 mb-5'" justify="start">
                                 <label class="card-label">stablecoin(s)</label>
                             </v-row>
-                            <v-row :class="isMobile ? 'ml-0 mt-5' : 'mx-5'" justify="start">
+                            <v-row :class="isMobile ? 'mt-5' : 'mx-1'" justify="start">
                                 <label class="desc-label">Park your stables in USD+, and watch your balance grow in your
                                     wallet overnight. No staking required</label>
                             </v-row>
                         </v-col>
 
                         <v-col align-self="start" :cols="isMobile ? 6 : 12">
-                            <v-row :class="isMobile ? 'ml-0 mt-5 mb-5' : 'ml-5 mb-8 mt-3'" justify="start">
+                            <v-row :class="isMobile ? 'mt-5 mb-5' : 'ml-1 mb-8 mt-3'" justify="start">
                                 <v-btn class="mint-btn" @click="openLink('https://app.overnight.fi/stats?network=op')">
                                     mint
                                     usd+ <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg"></v-btn>
@@ -40,12 +40,12 @@
                         </v-col>
                         <v-row :class="isMobile ? 'ml-0 mt-1' : 'ma-0'">
                             <v-col :class="isMobile ? 'mt-5' : 'mt-0'">
-                                <v-row :class="isMobile ? 'ml-0' : 'ml-5 mb-1'" justify="start" align="center">
+                                <v-row :class="isMobile ? '' : 'ml-1 mb-1'" justify="start" align="center">
                                     <label class="apy-label">apy&nbsp;</label>
                                     <Tooltip
                                         text="Average USD+ APY includes fees taken. For more accurate figures, see our dapp."/>
                                 </v-row>
-                                <v-row :class="isMobile ? 'ml-0 mb-5' : 'ml-5 mb-5'" justify="start">
+                                <v-row :class="isMobile ? ' mb-5' : 'ml-1 mb-5'" justify="start">
                                     <label class="numbers-label">8-12%</label>
                                 </v-row>
                             </v-col>
@@ -54,43 +54,43 @@
                         <img class="low-risk" src="../../assets/img/products/low-risk.svg">
                     </v-container>
 
-                    <v-container :class="isMobile ? '' : 'ma-0 mx-5'" class="fill-height card-container mt-10">
+                    <v-container :class="isMobile ? '' : 'ma-0 mx-3'" class="fill-height card-container mt-10">
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
-                            <v-row :class="isMobile ? 'mt-3 mb-5 ml-0' : 'mt-8 mb-2 ml-5'" justify="start">
+                            <v-row :class="isMobile ? 'mt-3 mb-5' : 'mt-8 mb-2 ml-1'" justify="start">
                                 <label class="risk-label-medium">medium risk/return</label>
                             </v-row>
-                            <v-row :class="isMobile ? 'ml-0' : 'ml-5'" justify="start">
+                            <v-row :class="isMobile ? '' : 'ml-1'" justify="start">
                                 <label class="card-label">Exchange-traded</label>
                             </v-row>
-                            <v-row :class="isMobile ? 'ml-0 mb-7' : 'ml-5 mb-5'" justify="start">
+                            <v-row :class="isMobile ? 'mb-7' : 'ml-1 mb-5'" justify="start">
                                 <label class="card-label">strategies (ETS)</label>
                             </v-row>
-                            <v-row :class="isMobile ? 'ml-0' : 'mx-5'" justify="start">
+                            <v-row :class="isMobile ? '' : 'mx-1'" justify="start">
                                 <label class="desc-label">Earn stable yield on hedged “crypto-to-stable” pools
                                     (“delta-neutral” strategy)</label>
                             </v-row>
                         </v-col>
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
-                            <v-row :class="isMobile ? 'ml-0 mt-10 mb-5' : 'ml-0 mb-8 mt-10'" justify="start">
-                                <v-btn class="mint-btn" :class="isMobile ? 'ml-0' : 'ml-5' "
+                            <v-row :class="isMobile ? 'mt-10 mb-5' : 'ml-0 mb-8 mt-10'" justify="start">
+                                <v-btn class="mint-btn" :class="isMobile ? 'ml-0' : 'ml-1' "
                                        @click="openLink('https://app.overnight.fi/market')">mint ETS
                                     <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg">
                                 </v-btn>
                                 <label class="learn-more" :class="isMobile ? 'ml-8 mt-1' : 'ml-15 mt-1'"
                                        @click="openLink('https://www.youtube.com/watch?v=wIVAiUMLmvA')">Learn
                                     more</label>
-                                <img :class="isMobile ? 'mt-2 ml-1' : 'mt-2 ml-1'" class="mdi-open" src="../../assets/img/mdi-open.svg"
+                                <img :class="isMobile ? 'mt-2' : 'mt-2 ml-1'" class="mdi-open" src="../../assets/img/mdi-open.svg"
                                      @click="openLink('https://www.youtube.com/watch?v=wIVAiUMLmvA')">
                             </v-row>
                         </v-col>
                         <v-row :class="isMobile ? 'ml-1 mt-5' : 'ma-0'">
                             <v-col>
-                                <v-row :class="isMobile ? 'ml-1' : 'ml-5 mb-1'" justify="start" align="center">
+                                <v-row :class="isMobile ? '' : 'ml-1 mb-1'" justify="start" align="center">
                                     <label class="apy-label">apy&nbsp;</label>
                                     <Tooltip
                                         text="Average ETS APY includes fees taken. For more accurate figures, see our dapp."/>
                                 </v-row>
-                                <v-row :class="isMobile ? 'ml-1 mb-5' : 'ml-5 mb-5'" justify="start">
+                                <v-row :class="isMobile ? 'mb-5' : 'ml-1 mb-5'" justify="start">
                                     <label class="numbers-label">10-25%</label>
                                 </v-row>
                             </v-col>
@@ -98,27 +98,27 @@
                         <img class="low-risk" src="../../assets/img/products/medium-risk.svg">
                     </v-container>
 
-                    <v-container :class="isMobile ? '' : 'ma-0'" class="fill-height card-container mt-10">
+                    <v-container :class="isMobile ? 'mb-15' : 'ma-0'" class="fill-height card-container mt-10">
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
-                            <v-row :class="isMobile ? 'mt-3 mb-5 ml-0' : 'mt-8 mb-2 ml-5'" justify="start">
+                            <v-row :class="isMobile ? 'mt-3 mb-5' : 'mt-8 mb-2 ml-1'" justify="start">
                                 <label class="risk-label-high">high risk/return</label>
                             </v-row>
-                            <v-row :class="isMobile ? 'ml-0 mb-5' : 'ml-5 mb-5'" justify="start">
+                            <v-row :class="isMobile ? 'mb-5' : 'ml-1 mb-5'" justify="start">
                                 <label class="card-label">USD+ Insurance</label>
                             </v-row>
-                            <v-row :class="isMobile ? 'ml-0 mb-10' : 'ml-5 mb-10'" justify="start">
+                            <v-row :class="isMobile ? 'mb-10' : 'ml-1 mb-10'" justify="start">
                                 <label class="in-development">in development</label>
                             </v-row>
-                            <v-row :class="isMobile ? 'ml-0 mb-5' : 'mx-5'" justify="start">
+                            <v-row :class="isMobile ? 'mb-5' : 'mx-1'" justify="start">
                                 <label class="desc-label">Earn yield by writing insurance for investment strategies collaterizing USD+</label>
                             </v-row>
                         </v-col>
 
                         <v-col align-self="end" cols="12">
-                            <v-row :class="isMobile ? 'ml-1' : 'ml-5 mb-1'" justify="start" align="center">
+                            <v-row :class="isMobile ? '' : 'ml-1 mb-1'" justify="start" align="center">
                                 <label class="apy-label">apy&nbsp;</label>
                             </v-row>
-                            <v-row :class="isMobile ? 'ml-1 mb-5' : 'ml-5 mb-5'" justify="start">
+                            <v-row :class="isMobile ? 'mb-5' : 'ml-1 mb-5'" justify="start">
                                 <label class="numbers-label">TBD</label>
                             </v-row>
                         </v-col>
@@ -147,7 +147,7 @@ export default {
         },
 
         isTablet() {
-            return window.innerWidth <= 1200;
+            return window.innerWidth <= 1299;
         },
     },
 
@@ -164,7 +164,7 @@ export default {
 <style scoped>
 
 /* mobile */
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 719px) {
     .card-container {
         width: 90% !important;
         height: 480px !important;
@@ -257,8 +257,8 @@ export default {
     }
 
     .low-risk {
-        width: 209px !important;
-        height: 209px !important;
+        width: 170px !important;
+        height: 170px !important;
     }
 
     .mdi-open {
@@ -267,7 +267,7 @@ export default {
     }
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1300px) {
     .title-text {
         font-style: normal;
         font-weight: 300;
@@ -345,6 +345,105 @@ export default {
         height: 20px;
         width: 20px;
     }
+    /* Large screen, non-retina */
+
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1300px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (                min-resolution: 192dpi) and (min-width: 1300px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 1300px) {
+    .title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 60px;
+        line-height: 80px;
+    }
+
+    .accent-text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 60px;
+        line-height: 80px;
+    }
+
+    .risk-label-low {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    .risk-label-medium {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    .risk-label-high {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    .card-label {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .desc-label {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .mint-btn {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .apy-label {
+        font-size: 28px;
+        line-height: 28px;
+    }
+
+    .numbers-label {
+        font-size: 74px;
+        line-height: 60px;
+    }
+
+    .learn-more {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .in-development {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .list-label {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .card-container {
+        width: 450px;
+    }
+
+    .mdi-open {
+        height: 20px;
+        width: 20px;
+    }
+
+    .low-risk {
+        width: 180px !important;
+        height: 180px !important;
+    }
+    /* Large screen, retina, stuff to override above media query */
+
+}
+
+@media only screen and (min-width: 1400px) {
+
 }
 
 .page-container-products {
@@ -467,6 +566,7 @@ export default {
     font-weight: 400;
     color: #1C95E7;
     cursor: pointer;
+    z-index: 1000 !important;
 }
 
 .mdi-open {

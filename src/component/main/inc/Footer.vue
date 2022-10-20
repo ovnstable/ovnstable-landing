@@ -1,6 +1,6 @@
 <template>
     <div class="page-container overflow-hidden">
-        <v-row class="container-row">
+        <v-row class="container-row justify-space-around">
             <v-col class="logo-col" :cols="isMobile ? 12 : ''">
                 <v-row class="mb-4" :justify="isMobile ? 'center' : 'start'" v-if="isVisible">
                     <img class="logo-img" height="40" :src="require('@/assets/img/logo_full.svg')">
