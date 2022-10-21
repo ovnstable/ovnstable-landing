@@ -243,15 +243,15 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     .title-text {
         font-style: normal;
         font-weight: 300;
-        font-size: 60px;
-        line-height: 80px;
+        font-size: 40px;
+        line-height: 55px;
     }
 
     .accent-text {
         font-style: normal;
         font-weight: 500;
-        font-size: 70px;
-        line-height: 80px;
+        font-size: 45px;
+        line-height: 55px;
     }
 
     .text-input-field {
@@ -259,7 +259,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     }
 
     .send-btn, .disabled-btn {
-        height: 50px !important;
+        height: 40px !important;
         width: 250px !important;
         font-style: normal !important;
         font-weight: 400 !important;

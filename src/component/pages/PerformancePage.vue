@@ -5,8 +5,8 @@
                 <v-row class="mb-15" align="center" v-if="!isMobile">
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 9" v-observe-visibility="visibilityChanged">
                         <v-row class="ml-0" justify="start" align="center">
-                            <label class="accent-text mb-0">USD</label><label class="title-text-plus">+</label>
-                            <label class="title-text">&nbsp;APY by chains</label>
+                            <label class="accent-text mb-0">Overnight's</label>
+                            <label class="title-text">&nbsp;TVL</label>
                             <label class="accent-chain-text mx-3" v-if="!isMobile">|</label><label
                             class="accent-chain-text">{{ getChainName(chain) }} </label>
                         </v-row>
@@ -21,7 +21,7 @@
 
                 <template v-else>
                     <v-row align="center" justify="center" v-observe-visibility="visibilityChanged">
-                        <label class="accent-text mb-0">USD</label><label class="title-text-plus">+</label>
+                        <label class="accent-text mb-0">USD</label>
                         <label class="title-text">&nbsp;APY by chains</label>
                     </v-row>
                     <v-row class="mb-10" align="center" justify="center" v-if="isVisible">
@@ -37,19 +37,19 @@
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6">
                         <v-row :justify="isMobile ? 'center' : 'end'">
                             <template v-if="chain === 'polygon'">
-                                <ovn-apyrate network="polygon" product="usd+"></ovn-apyrate>
+                                <ovn-apyrate class="chain-networks" network="polygon" product="usd+"></ovn-apyrate>
                             </template>
 
                             <template v-if="chain === 'avax'">
-                                <ovn-apyrate network="avax" product="usd+"></ovn-apyrate>
+                                <ovn-apyrate class="chain-networks" network="avax" product="usd+"></ovn-apyrate>
                             </template>
 
                             <template v-if="chain === 'bsc'">
-                                <ovn-apyrate network="bsc" product="usd+"></ovn-apyrate>
+                                <ovn-apyrate class="chain-networks" network="bsc" product="usd+"></ovn-apyrate>
                             </template>
 
                             <template v-if="chain === 'op'">
-                                <ovn-apyrate network="op" product="usd+"></ovn-apyrate>
+                                <ovn-apyrate class="chain-networks" network="op" product="usd+"></ovn-apyrate>
                             </template>
                         </v-row>
                     </v-col>
@@ -57,19 +57,19 @@
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 6" v-if="isVisible">
                         <v-row :justify="isMobile ? 'center' : 'start'">
                             <template v-if="chain === 'polygon'">
-                                <ovn-tvlrate network="polygon" product="usd+"></ovn-tvlrate>
+                                <ovn-tvlrate class="chain-networks" network="polygon" product="usd+"></ovn-tvlrate>
                             </template>
 
                             <template v-if="chain === 'avax'">
-                                <ovn-tvlrate network="avax" product="usd+"></ovn-tvlrate>
+                                <ovn-tvlrate class="chain-networks" network="avax" product="usd+"></ovn-tvlrate>
                             </template>
 
                             <template v-if="chain === 'bsc'">
-                                <ovn-tvlrate network="bsc" product="usd+"></ovn-tvlrate>
+                                <ovn-tvlrate class="chain-networks" network="bsc" product="usd+"></ovn-tvlrate>
                             </template>
 
                             <template v-if="chain === 'op'">
-                                <ovn-tvlrate network="op" product="usd+"></ovn-tvlrate>
+                                <ovn-tvlrate class="chain-networks" network="op" product="usd+"></ovn-tvlrate>
                             </template>
                         </v-row>
                     </v-col>
@@ -153,13 +153,6 @@ export default {
         line-height: 38px;
     }
 
-    .title-text-plus {
-        font-style: normal;
-        font-weight: 300;
-        font-size: 30px;
-        line-height: 36px;
-    }
-
     .container-row-usd-plus {
         margin-top: 10% !important;
         margin-bottom: 10% !important;
@@ -222,24 +215,17 @@ export default {
         line-height: 80px;
     }
 
-    .title-text-plus {
-        font-style: normal;
-        font-weight: 300;
-        font-size: 60px;
-        line-height: 80px;
-    }
-
     .container-row-usd-plus {
         margin-top: 10% !important;
         margin-bottom: 5% !important;
     }
+
     .page-container {
         width: 100% !important;
         height: 100% !important;
         /* SCALABLE HEIGHT */
     }
     /* Large screen, non-retina */
-
 }
 
 @media
@@ -252,40 +238,23 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     .title-text {
         font-style: normal;
         font-weight: 300;
-        font-size: 60px;
-        line-height: 80px;
+        font-size: 40px;
+        line-height: 55px;
     }
 
     .accent-chain-text {
         font-style: normal;
         font-weight: 300;
-        font-size: 32px;
-        line-height: 40px;
+        font-size: 28px;
+        line-height: 36px;
         letter-spacing: 0.02em;
     }
 
     .accent-text {
         font-style: normal;
         font-weight: 500;
-        font-size: 70px;
-        line-height: 80px;
-    }
-
-    .title-text-plus {
-        font-style: normal;
-        font-weight: 300;
-        font-size: 60px;
-        line-height: 80px;
-    }
-
-    .container-row-usd-plus {
-        margin-top: 10% !important;
-        margin-bottom: 5% !important;
-    }
-    .page-container {
-        width: 100% !important;
-        height: 100% !important;
-        /* SCALABLE HEIGHT */
+        font-size: 45px;
+        line-height: 55px;
     }
     /* Large screen, retina, stuff to override above media query */
 
@@ -314,14 +283,4 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     text-fill-color: transparent;
 }
 
-.title-text-plus {
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-
-    background: linear-gradient(91.26deg, #28A0F0 0%, rgba(6, 120, 196, 0.9917) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-}
 </style>

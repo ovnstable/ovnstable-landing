@@ -152,6 +152,40 @@ export default {
     }
 }
 
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1300px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (                min-resolution: 192dpi) and (min-width: 1300px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 1300px) {
+    .blog-page-container {
+        padding-top: 150px;
+    }
+
+    .title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 40px;
+        line-height: 55px;
+    }
+
+    .accent-text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 45px;
+        line-height: 55px;
+    }
+
+    .blog-btn {
+        height: 40px !important;
+        font-style: normal !important;
+        font-weight: 400 !important;
+        font-size: 14px !important;
+        line-height: 18px !important;
+    }
+}
+
 .blog-page-container {
     background-image: url("../../../assets/background/img/blogPage_bg.svg");
     background-position: center;

@@ -8,7 +8,7 @@
 
         <v-row class="d-flex " :class="isMobile ? 'mt-15 mb-10' : 'mt-15 mb-15' " justify="center">
             <v-col class="text-col" :cols="isMobile ? 12 : (isTablet ? 6 : 12)">
-                <v-row class="justify-center main-title" :class="isMobile ? 'mb-0 flex-column' : 'mb-10 flex-row'">
+                <v-row class="justify-center main-title" :class="isMobile ? 'mb-0 flex-column' : ' mt-15 flex-row'">
                     <label class="accent-text">Overnight's</label>
                     <label class="title-text">&nbsp;products</label>
                 </v-row>
@@ -20,14 +20,17 @@
                                 <label class="risk-label-low">low risk/return</label>
                             </v-row>
                             <v-row :class="isMobile ? '' : 'ml-1'" justify="start">
-                                <label class="card-label">Yield bearing</label>
+                                <label class="card-label">Stablecoin Money</label>
                             </v-row>
                             <v-row :class="isMobile ? 'mb-7' : 'ml-1 mb-5'" justify="start">
-                                <label class="card-label">stablecoin(s)</label>
+                                <label class="card-label">Market (USD+)</label>
                             </v-row>
                             <v-row :class="isMobile ? 'mt-5' : 'mx-1'" justify="start">
-                                <label class="desc-label">Park your stables in USD+, and watch your balance grow in your
-                                    wallet overnight. No staking required</label>
+                                <ul>
+                                    <li class="desc-label mb-5">Our Flagship Product. Highest Liquidity with lowest possible risk. A DeFi equivalent of a Money Market.</li>
+                                    <li class="desc-label mb-5">A unit of USD+ can be exchanged for USDC (BUSD on BNB chain) 1:1,  it pays yield via daily rebase.</li>
+                                    <li class="desc-label mb-5">USD+ is 100% collateralized with High-Quality Stables (USDC, BUSD, USDT, DAI) that are invested into low risk & yield-generating strategies.</li>
+                                </ul>
                             </v-row>
                         </v-col>
 
@@ -65,9 +68,12 @@
                             <v-row :class="isMobile ? 'mb-7' : 'ml-1 mb-5'" justify="start">
                                 <label class="card-label">strategies (ETS)</label>
                             </v-row>
-                            <v-row :class="isMobile ? '' : 'mx-1'" justify="start">
-                                <label class="desc-label">Earn stable yield on hedged “crypto-to-stable” pools
-                                    (“delta-neutral” strategy)</label>
+                            <v-row :class="isMobile ? '' : 'mx-1 mb-3'" justify="start">
+                                <ul>
+                                    <li class="desc-label mb-5">Delta-Neutral Strategies - DeFi's Equivalent of ETF.</li>
+                                    <li class="desc-label mb-5">A unit of ETS can be exchanged for USDC (BUSD on BNB chain) 1:1 and pays yield daily.</li>
+                                    <li class="desc-label mb-5">ETS is 100% collaterized by hedged crypto-to-stable LP positions, e.g. BUSD/wBNB.</li>
+                                </ul>
                             </v-row>
                         </v-col>
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
@@ -76,7 +82,7 @@
                                        @click="openLink('https://app.overnight.fi/market')">mint ETS
                                     <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg">
                                 </v-btn>
-                                <label class="learn-more" :class="isMobile ? 'ml-8 mt-1' : 'ml-15 mt-1'"
+                                <label class="learn-more" :class="isMobile ? 'ml-8 mt-1' : 'ml-12 mt-1'"
                                        @click="openLink('https://www.youtube.com/watch?v=wIVAiUMLmvA')">Learn
                                     more</label>
                                 <img :class="isMobile ? 'mt-2' : 'mt-2 ml-1'" class="mdi-open" src="../../assets/img/mdi-open.svg"
@@ -110,7 +116,14 @@
                                 <label class="in-development">in development</label>
                             </v-row>
                             <v-row :class="isMobile ? 'mb-5' : 'mx-1'" justify="start">
-                                <label class="desc-label">Earn yield by writing insurance for investment strategies collaterizing USD+</label>
+                                <ul>
+
+
+
+                                    <li class="desc-label mb-5">Yield by writing insurance for investment strategies collaterizing USD+. It is DeFi equivalent of Structured Products.</li>
+                                    <li class="desc-label mb-5">Insurance uses tranching to separate any medium risk asset into low risk (insured) and high risk (uninsured) tranches.</li>
+                                    <li class="desc-label mb-5">Insured tranches are then eligible to be held as collateral by USD+.</li>
+                                </ul>
                             </v-row>
                         </v-col>
 
@@ -164,14 +177,12 @@ export default {
 <style scoped>
 
 /* mobile */
-@media only screen and (max-width: 719px) {
+@media only screen and (max-width: 1400px) {
     .card-container {
         width: 90% !important;
-        height: 480px !important;
+        height: auto !important;
     }
-}
 
-@media only screen and (max-width: 1400px) {
     .title-text {
         font-style: normal;
         font-weight: 300;
@@ -247,10 +258,6 @@ export default {
         line-height: 18px;
     }
 
-    .list-label {
-        font-size: 16px;
-        line-height: 24px;
-    }
 
     .card-container {
         width: 400px;
@@ -303,8 +310,8 @@ export default {
     }
 
     .desc-label {
-        font-size: 20px;
-        line-height: 32px;
+        font-size: 18px;
+        line-height: 28px;
     }
 
     .mint-btn {
@@ -332,13 +339,9 @@ export default {
         line-height: 20px;
     }
 
-    .list-label {
-        font-size: 20px;
-        line-height: 32px;
-    }
-
     .card-container {
-        width: 527px;
+        height: auto !important;
+        width: 500px;
     }
 
     .mdi-open {
@@ -359,40 +362,40 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     .title-text {
         font-style: normal;
         font-weight: 300;
-        font-size: 60px;
-        line-height: 80px;
+        font-size: 40px;
+        line-height: 55px;
     }
 
     .accent-text {
         font-style: normal;
         font-weight: 500;
-        font-size: 60px;
-        line-height: 80px;
+        font-size: 45px;
+        line-height: 55px;
     }
 
     .risk-label-low {
-        font-size: 16px;
+        font-size: 14px;
         line-height: 16px;
     }
 
     .risk-label-medium {
-        font-size: 16px;
+        font-size: 14px;
         line-height: 16px;
     }
 
     .risk-label-high {
-        font-size: 16px;
+        font-size: 14px;
         line-height: 16px;
     }
 
     .card-label {
-        font-size: 32px;
-        line-height: 40px;
+        font-size: 24px;
+        line-height: 30px;
     }
 
     .desc-label {
-        font-size: 20px;
-        line-height: 32px;
+        font-size: 14px;
+        line-height: 24px;
     }
 
     .mint-btn {
@@ -401,53 +404,45 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     }
 
     .apy-label {
-        font-size: 28px;
-        line-height: 28px;
-    }
-
-    .numbers-label {
-        font-size: 74px;
-        line-height: 60px;
-    }
-
-    .learn-more {
         font-size: 18px;
-        line-height: 28px;
-    }
-
-    .in-development {
-        font-size: 16px;
         line-height: 20px;
     }
 
-    .list-label {
-        font-size: 20px;
-        line-height: 32px;
+    .numbers-label {
+        font-size: 64px;
+        line-height: 50px;
+    }
+
+    .learn-more {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .in-development {
+        font-size: 14px;
+        line-height: 14px;
     }
 
     .card-container {
-        width: 450px;
+        width: 400px;
+        height: auto !important;
     }
 
     .mdi-open {
-        height: 20px;
-        width: 20px;
+        height: 16px;
+        width: 16px;
     }
 
     .low-risk {
-        width: 180px !important;
-        height: 180px !important;
+        width: 160px !important;
+        height: 160px !important;
     }
     /* Large screen, retina, stuff to override above media query */
 
 }
 
-@media only screen and (min-width: 1400px) {
-
-}
-
 .page-container-products {
-    min-height: 100vh;
+    height: 100% !important;
 }
 
 .title-text {
@@ -578,13 +573,6 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     font-weight: 400;
     text-transform: uppercase;
     color: #707A8B;
-}
-
-.list-label {
-    font-family: "Roboto", sans-serif;
-    font-weight: 200;
-    text-transform: none;
-    color: #FFFFFF;
 }
 
 </style>

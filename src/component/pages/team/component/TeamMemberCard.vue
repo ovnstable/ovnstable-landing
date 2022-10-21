@@ -167,6 +167,41 @@ export default {
     }
 }
 
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1300px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (                min-resolution: 192dpi) and (min-width: 1300px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 1300px) {
+    .name-label {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 18px;
+    }
+
+    .desc-label {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+    .card-container {
+        width: 250px !important;
+        height: 250px !important;
+    }
+
+    .avatar-img {
+        height: 110px !important;
+    }
+
+    .social-link {
+        height: 20px;
+    }
+}
+
 .card-container {
     background: #F5F5F5 !important;
     border-radius: 10px !important;

@@ -2,13 +2,13 @@
     <div class="page-container overflow-hidden" v-observe-visibility="visibilityChanged" >
         <v-row class="container-row">
             <v-col :cols="isMobile ? 12 : 12"">
-                <div class="arrow mt-5" :class="isMobile ? '' : 'mt-10'">
+                <div class="arrow" :class="isMobile ? '' : 'mt-5'">
                 </div>
-                <v-row :class="isMobile ? 'mt-10' : 'mt-15'" justify="center" >
+                <v-row :class="isMobile ? 'mt-10' : ''" justify="center" >
                     <label class="title-text">our <label class="accent-text">roadmap</label></label>
                 </v-row>
-                <v-row justify="center" class="roadmap-images" :class="isMobile ? 'mb-0' : 'mb-15'">
-                    <img v-if="!isMobile" class="roadmap-img mt-12" :src="require('@/assets/img/roadmap.svg')">
+                <v-row justify="center" class="roadmap-images" :class="isMobile ? 'mb-0' : 'mb-0'">
+                    <img v-if="!isMobile" class="roadmap-img mt-15" :src="require('@/assets/img/roadmap.svg')">
                     <img v-if="isMobile" class="roadmap-img-mobile mb-0" :src="require('@/assets/img/roadmap_mobile.svg')">
                 </v-row>
 
@@ -144,14 +144,14 @@ export default {
     .title-text {
         font-style: normal;
         font-weight: 300;
-        font-size: 60px;
+        font-size: 70px;
         line-height: 80px;
     }
 
     .accent-text {
         font-style: normal;
-        font-weight: 500;
-        font-size: 70px;
+        font-weight: 300;
+        font-size: 60px;
         line-height: 80px;
     }
 
@@ -181,11 +181,11 @@ export default {
 
     .arrow:before {
         content: '';
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         top: 120%;
         left: 200%;
-        margin: 10px 0 0 -25px;
+        margin: 10px 0 0 -27px;
         border-left: none;
         border-top: none;
         border-right: 3px #1C95E7 solid;
@@ -217,24 +217,24 @@ only screen and (                min-resolution: 192dpi) and (min-width: 1300px)
 only screen and (                min-resolution: 2dppx)  and (min-width: 1300px) {
     .title-text {
         font-style: normal;
-        font-weight: 300;
-        font-size: 60px;
-        line-height: 80px;
+        font-weight: 500;
+        font-size: 45px;
+        line-height: 55px;
     }
 
     .accent-text {
         font-style: normal;
-        font-weight: 500;
-        font-size: 70px;
-        line-height: 80px;
+        font-weight: 300;
+        font-size: 40px;
+        line-height: 55px;
     }
 
     .feature-btn {
-        height: 50px !important;
+        height: 40px !important;
         font-style: normal !important;
         font-weight: 400 !important;
-        font-size: 18px !important;
-        line-height: 20px !important;
+        font-size: 14px !important;
+        line-height: 18px !important;
     }
 
     .btn-row {
@@ -242,24 +242,24 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     }
 
     .arrow {
-        width: 80px;
-        height: 80px;
+        width: 50px;
+        height: 50px;
         top: 1%;
         margin: -20px 0 0 -20px;
         -webkit-transform: rotate(45deg);
         border-left: none;
         border-top: none;
-        border-right: 4px #1C95E7 solid;
-        border-bottom: 4px #1C95E7 solid;
+        border-right: 3px #1C95E7 solid;
+        border-bottom: 3px #1C95E7 solid;
     }
 
     .arrow:before {
         content: '';
-        width: 50px;
-        height: 50px;
+        width: 25px;
+        height: 25px;
         top: 120%;
         left: 200%;
-        margin: 10px 0 0 -25px;
+        margin: 10px 0 0 -14px;
         border-left: none;
         border-top: none;
         border-right: 3px #1C95E7 solid;
@@ -282,6 +282,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     .roadmap-img {
         width: 100% !important;
         height: 100% !important;
+        transform: scale(85%);
     }
     /* Large screen, retina, stuff to override above media query */
 
@@ -313,8 +314,6 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     text-transform: uppercase;
     color: #28A0F0;
     font-weight: 500;
-    font-size: 70px;
-    line-height: 80px;
 }
 
 .accent-text {
@@ -322,8 +321,6 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     text-transform: uppercase;
     background: #000;
     font-weight: 300;
-    font-size: 60px;
-    line-height: 80px;
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

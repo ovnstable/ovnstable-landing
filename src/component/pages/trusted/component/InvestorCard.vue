@@ -1,13 +1,13 @@
 <template>
     <v-card class="card-container">
         <v-col>
-            <v-row class="mt-7 mb-4">
+            <v-row class="mt-5 mb-4">
                 <img height="28" class="avatar-img ml-10" :src="require('@/assets/img/investors/company/' + companyImg)">
             </v-row>
 
             <v-row class="mb-4">
                 <v-col cols="4">
-                    <img height="68" class="avatar-img ml-7 mr-4" :src="require('@/assets/img/investors/avatar/' + (imgLink ? imgLink : 'anonym.svg'))">
+                    <img height="68" class="avatar-img-p ml-7 mr-4" :src="require('@/assets/img/investors/avatar/' + (imgLink ? imgLink : 'anonym.svg'))">
                 </v-col>
 
                 <v-col class="mt-3">
@@ -20,7 +20,7 @@
                 </v-col>
             </v-row>
 
-            <v-row class="ml-7 mr-7">
+            <v-row class="ml-5 mr-7">
                 <label class="tweet-label">{{ tweet }}</label>
             </v-row>
 
@@ -151,6 +151,48 @@ export default {
     .card-container {
         width: 390px !important;
         height: 610px !important;
+    }
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1300px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (                min-resolution: 192dpi) and (min-width: 1300px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 1300px) {
+    .name-label {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .desc-label {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .tweet-label {
+        font-style: normal !important;
+        font-weight: 300 !important;
+        font-size: 13px !important;
+        line-height: 20px !important;
+    }
+
+    .card-container {
+        width: 320px !important;
+        height: 530px !important;
+    }
+
+    .avatar-img {
+        height: 20px;
+    }
+
+    .avatar-img-p {
+        height: 55px;
     }
 }
 

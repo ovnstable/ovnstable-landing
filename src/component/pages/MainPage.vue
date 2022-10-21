@@ -7,19 +7,20 @@
 
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" :cols="isMobile ? 12 : (isTablet ? 6 : 7)">
-                <v-row class="title-row mb-10" :class="isMobile ? '' : 'mt-0'" v-observe-visibility="visibilityChanged">
+                <v-row class="title-row mb-10" :class="isMobile ? '' : 'mt-12'" v-observe-visibility="visibilityChanged">
                     <div>
-                        <label class="accent-text">USD</label><label class="title-text-plus">+</label>
-                        <label class="title-text mb-0"> Is</label>
-                        <p class="title-text mb-0">USDC that pays you yield</p>
-                        <p class="title-text mb-0">daily via rebase</p>
+                        <label class="accent-text">OVERNIGHT</label>
+                        <label class="title-text mb-0"> - stablecoin yield,</label>
+                        <p class="title-text mb-0">for conservative defi investors,</p>
+                        <p class="title-text mb-0">paid out daily</p>
                     </div>
                 </v-row>
                 <v-row class="mb-10" v-if="isVisible">
-                    <p class="sub-title-text mb-0">USD+ stablecoin can be instantly minted and redeemed to <abbr title="BUSD on Binance Smart Chain">USDC</abbr> 1:1.</p>
-                    <p class="sub-title-text mb-0">Simply replace USDC with USD+ stablecoin and start getting passive yield where it didn’t exist before.</p>
-                    <p class="sub-title-text mb-0">Available on Optimism, Polygon and BNB Chain. Avalanche is in beta.</p>
+                    <p class="sub-title-text mb-0">Overnight Finance is an Asset Management Protocol offering Low-Risk Passive Yield Products primarily for</p>
+                    <p class="sub-title-text mb-0">conservative stablecoin investors, both individuals and protocol treasuries. The protocol aspiresto be the </p>
+                    <p class="sub-title-text mb-0"> 'Vanguard of DeFi' whose product range includes USD+ – DeFi equivalent of the money market, ETS – delta-neutral strategies, and Insurance.</p>
                 </v-row>
+
                 <v-row class="btn-row" v-if="isVisible">
                     <v-btn class="d-none d-md-flex launch-dapp-btn" @click="launchDapp">Launch DAPP</v-btn>
                 </v-row>
@@ -95,13 +96,6 @@ export default {
         line-height: 24px;
     }
 
-    .title-text-plus {
-        font-style: normal;
-        font-weight: 300;
-        font-size: 30px;
-        line-height: 36px;
-    }
-
     .launch-dapp-btn {
         height: 40px !important;
         width: 200px !important;
@@ -135,13 +129,6 @@ export default {
         line-height: 32px;
     }
 
-    .title-text-plus {
-        font-style: normal;
-        font-weight: 300;
-        font-size: 60px;
-        line-height: 80px;
-    }
-
     .launch-dapp-btn {
         height: 50px !important;
         width: 250px !important;
@@ -151,6 +138,53 @@ export default {
         font-size: 18px !important;
         line-height: 20px !important;
     }
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1300px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (                min-resolution: 192dpi) and (min-width: 1300px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 1300px) {
+    .title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 40px;
+        line-height: 55px;
+    }
+
+    .accent-text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 45px;
+        line-height: 55px;
+    }
+
+    .sub-title-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .launch-dapp-btn {
+        height: 45px !important;
+        width: 240px !important;
+
+        font-style: normal !important;
+        font-weight: 400 !important;
+        font-size: 18px !important;
+        line-height: 20px !important;
+    }
+
+    .maincards-widget {
+        z-index: 100 !important;
+        height: auto;
+        transform: scale(80%);
+    }
+    /* Large screen, retina, stuff to override above media query */
+
 }
 
 @media only screen and (min-width: 1800px) {
@@ -206,17 +240,6 @@ export default {
 .sub-title-text {
     font-family: 'Roboto', sans-serif;
     color: #FFFFFF;
-}
-
-.title-text-plus {
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-
-    background: linear-gradient(91.26deg, #28A0F0 0%, rgba(6, 120, 196, 0.9917) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
 }
 
 .launch-dapp-btn {

@@ -27,7 +27,6 @@
 
 import MainPage from "@/component/pages/MainPage";
 import HowPage from "@/component/pages/HowPage";
-import UseCasesPage from "@/component/pages/use_cases/UseCasesPage";
 import ProductsPage from "@/component/pages/ProductsPage";
 import PerformancePage from "@/component/pages/PerformancePage";
 import RoadmapPage from "@/component/pages/RoadmapPage";
@@ -51,7 +50,6 @@ export default {
         TrustedPage,
         SecurityPage,
         PerformancePage,
-        UseCasesPage,
         HowPage,
         MainPage
     },

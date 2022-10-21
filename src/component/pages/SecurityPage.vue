@@ -21,7 +21,7 @@
                             <label class="title-label">Rigorous Risk-management and monitoring</label>
                         </v-row>
                         <v-row justify="center" class="mb-10">
-                            <label class="desc-label">Finance risks and smart contract risk management. The world-class risk management team and built-in process line with the “Three lines of defense approach” mandated for blue-chip financial institutions</label>
+                            <label class="desc-label">Finance risks and smart contract risk management. World-class risk management team and built-in process line with the “Three lines of defense approach” mandated for blue-chip financial institutions</label>
                         </v-row>
                     </v-col>
 
@@ -44,8 +44,8 @@
                 </v-row>
 
                 <v-row class="d-flex justify-space-between" :class="isMobile ? 'flex-column-reverse mt-0 mb-0' : 'flex-row mt-10 mb-12'" v-if="isVisible">
-                    <v-col :cols="isMobile ? 12 : 8" :class="isMobile ? 'mt-5' : 'mt-12'">
-                        <v-row class="find-title-row" :class="isMobile ? 'mb-0' : 'mb-8'">
+                    <v-col :cols="isMobile ? 12 : 8" :class="isMobile ? 'mt-5' : ''">
+                        <v-row class="find-title-row" :class="isMobile ? 'mb-0' : 'mb-5'">
                             <label class="find-title">Find us on</label>
                         </v-row>
                         <v-row align="center">
@@ -85,7 +85,7 @@
                         </v-row>
                     </v-col>
 
-                    <v-col v-if="!isMobile" :cols="isMobile ? 12 : 3" :class="isMobile ? 'mt-0' : 'mt-12'">
+                    <v-col v-if="!isMobile" :cols="isMobile ? 12 : 3" :class="isMobile ? 'mt-0' : ''">
                         <v-row class="find-title-row mb-8">
                             <label class="find-title">Audit</label>
                         </v-row>
@@ -234,16 +234,16 @@ export default {
     .title-label {
         font-style: normal;
         font-weight: 400;
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 18px;
+        line-height: 22px;
         letter-spacing: 0.04em;
     }
 
     .desc-label {
         font-style: normal;
         font-weight: 300;
-        font-size: 20px;
-        line-height: 32px;
+        font-size: 18px;
+        line-height: 28px;
     }
 
     .whitepaper-btn {
@@ -258,7 +258,7 @@ export default {
         font-style: normal;
         font-weight: 400;
         font-size: 30px;
-        line-height: 36px;
+        line-height: 40px;
     }
 
     .find-us-img, .find-us-img-audit {
@@ -290,45 +290,45 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     .title-text {
         font-style: normal;
         font-weight: 300;
-        font-size: 60px;
-        line-height: 80px;
+        font-size: 40px;
+        line-height: 55px;
     }
 
     .accent-text {
         font-style: normal;
         font-weight: 500;
-        font-size: 70px;
-        line-height: 80px;
+        font-size: 45px;
+        line-height: 55px;
     }
 
     .title-label {
         font-style: normal;
         font-weight: 400;
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 16px;
+        line-height: 18px;
         letter-spacing: 0.04em;
     }
 
     .desc-label {
         font-style: normal;
         font-weight: 300;
-        font-size: 20px;
-        line-height: 32px;
+        font-size: 16px;
+        line-height: 24px;
     }
 
     .whitepaper-btn {
-        height: 50px !important;
+        height: 40px !important;
         font-style: normal !important;
         font-weight: 400 !important;
-        font-size: 18px !important;
+        font-size: 16px !important;
         line-height: 20px !important;
     }
 
     .find-title {
         font-style: normal;
         font-weight: 400;
-        font-size: 30px;
-        line-height: 36px;
+        font-size: 24px;
+        line-height: 32px;
     }
 
     .find-us-img, .find-us-img-audit {

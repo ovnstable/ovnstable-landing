@@ -277,26 +277,22 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     .title-text {
         font-style: normal;
         font-weight: 300;
-        font-size: 60px;
-        line-height: 80px;
+        font-size: 40px;
+        line-height: 55px;
     }
 
     .accent-text {
         font-style: normal;
         font-weight: 500;
-        font-size: 70px;
-        line-height: 80px;
+        font-size: 45px;
+        line-height: 55px;
     }
 
     .trusted-title {
         font-style: normal;
         font-weight: 400;
-        font-size: 30px;
-        line-height: 36px;
-    }
-
-    .trusted-title-row {
-        height: 56px !important;
+        font-size: 24px;
+        line-height: 30px;
     }
     /* Large screen, retina, stuff to override above media query */
 

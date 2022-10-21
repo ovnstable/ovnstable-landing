@@ -110,6 +110,30 @@ export default {
     }
 }
 
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1300px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1300px),
+only screen and (                min-resolution: 192dpi) and (min-width: 1300px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 1300px) {
+    .news-card-container {
+        max-width: 25% !important;
+    }
+
+    .news-title {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .post-date {
+        font-size: 12px;
+        line-height: 22px;
+        font-style: normal;
+    }
+}
+
 .news-card-container {
     background-color: #FFFFFF;
     text-align: start;
