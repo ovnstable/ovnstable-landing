@@ -112,14 +112,11 @@
                             <v-row :class="isMobile ? 'mb-5' : 'ml-1 mb-5'" justify="start">
                                 <label class="card-label">USD+ Insurance</label>
                             </v-row>
-                            <v-row :class="isMobile ? 'mb-10' : 'ml-1 mb-10'" justify="start">
+                            <v-row :class="isMobile ? 'mb-10' : 'ml-1 mb-5'" justify="start">
                                 <label class="in-development">in development</label>
                             </v-row>
                             <v-row :class="isMobile ? 'mb-5' : 'mx-1'" justify="start">
                                 <ul>
-
-
-
                                     <li class="desc-label mb-5">Yield by writing insurance for investment strategies collaterizing USD+. It is DeFi equivalent of Structured Products.</li>
                                     <li class="desc-label mb-5">Insurance uses tranching to separate any medium risk asset into low risk (insured) and high risk (uninsured) tranches.</li>
                                     <li class="desc-label mb-5">Insured tranches are then eligible to be held as collateral by USD+.</li>
