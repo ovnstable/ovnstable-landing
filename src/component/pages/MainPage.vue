@@ -10,9 +10,7 @@
                 <v-row class="title-row mb-10" :class="isMobile ? '' : 'mt-12'" v-observe-visibility="visibilityChanged">
                     <div>
                         <label class="accent-text">OVERNIGHT</label>
-                        <label class="title-text mb-0"> - stablecoin yield,</label>
-                        <p class="title-text mb-0">for conservative defi investors,</p>
-                        <p class="title-text mb-0">paid out daily</p>
+                        <label class="title-text mb-0"> - stablecoin yield, for conservative defi investors, paid out daily</label>
                     </div>
                 </v-row>
                 <v-row class="mb-10" v-if="isVisible">
