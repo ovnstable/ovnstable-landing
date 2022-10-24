@@ -37,7 +37,7 @@
             </v-col>
 
             <v-col class="social-col" :cols="isMobile ? 12 : 5" v-if="isVisible">
-                <v-row justify="center">
+                <v-row justify="center" class="mt-5">
                     <div>
                         <v-row class="card-container ma-2" align="center" justify="center" @click="openLink('https://twitter.com/overnight_fi')">
                             <img class="social-img" :src="require('@/assets/img/social/twitter.svg')">
@@ -180,7 +180,6 @@ export default {
     }
 
     .container-row {
-
         margin-bottom: 12% !important;
     }
 }
@@ -196,6 +195,7 @@ export default {
         width: 4vw !important;
     }
 }
+
 @media only screen and (min-width: 1300px) {
     .title-text {
         font-style: normal;
