@@ -109,7 +109,7 @@ export default {
     .title-text {
         font-style: normal;
         font-weight: 300;
-        font-size: 60px;
+        font-size: 56px;
         line-height: 80px;
     }
 
