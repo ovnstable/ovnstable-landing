@@ -10,12 +10,12 @@
                 <v-row class="title-row mb-10" :class="isMobile ? '' : 'mt-12'" v-observe-visibility="visibilityChanged">
                     <div>
                         <label class="accent-text">OVERNIGHT</label>
-                        <label class="title-text mb-0"> - stablecoin yield, for conservative defi investors, paid out daily</label>
+                        <label class="title-text mb-0"> - stablecoin yield for conservative investors, paid out daily</label>
                     </div>
                 </v-row>
                 <v-row class="mb-10" v-if="isVisible">
                     <p class="sub-title-text mb-0">Overnight Finance is an Asset Management Protocol offering Low-Risk Passive Yield Products primarily for</p>
-                    <p class="sub-title-text mb-0">conservative stablecoin investors, both individuals and protocol treasuries. The protocol aspiresto be the </p>
+                    <p class="sub-title-text mb-0">conservative stablecoin investors, both individuals and protocol treasuries. The protocol aspires to be the </p>
                     <p class="sub-title-text mb-0"> 'Vanguard of DeFi' whose product range includes USD+ – DeFi equivalent of the money market, ETS – delta-neutral strategies, and Insurance.</p>
                 </v-row>
 

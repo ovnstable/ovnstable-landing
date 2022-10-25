@@ -16,10 +16,10 @@
                 </v-row>
 
                 <v-row v-if="isVisible">
-                    <v-expansion-panels multiple v-model="openedPanels">
-                        <v-expansion-panel class="ml-n9 mt-n5 panel-bordered" @click="openPanel(0)">
+                    <v-expansion-panels class="mb-15" multiple v-model="openedPanels">
+                        <v-expansion-panel class="ml-n9 panel-bordered" @click="openPanel(0)">
                             <v-expansion-panel-header class="panel-header-row">
-                                <label class="panel-header">denominated in USDC (“1 : 1”)</label>
+                                <label class="panel-header">1. denominated in USDC (“1 : 1”)</label>
                             </v-expansion-panel-header>
                             <v-expansion-panel-content class="mt-n5">
                                 <ul class="mb-3">
@@ -405,7 +405,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
 }
 
 .panel-header-row {
-    height: 112px !important;
+    height: 70px !important;
 }
 
 .list-label {
@@ -426,6 +426,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
 .mint-link {
     font-family: "Roboto", sans-serif;
     color: #1C95E7;
+    font-weight: 400;
     font-size: 18px;
     line-height: 28px;
     cursor: pointer;

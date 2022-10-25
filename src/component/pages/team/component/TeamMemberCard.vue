@@ -3,7 +3,7 @@
         <v-col>
             <v-row class="mb-4">
                 <v-col>
-                    <img class="avatar-img ml-7 mt-7" :src="require('@/assets/img/team/' + (imgLink ? imgLink : 'anonym.svg'))">
+                    <img class="avatar-img ml-3 mt-7" :src="require('@/assets/img/team/' + (imgLink ? imgLink : 'anonym.svg'))">
                 </v-col>
 
                 <v-col class="mt-10">
@@ -46,10 +46,10 @@
                 </v-col>
             </v-row>
             <v-row>
-                <label class="name-label ml-10 mb-2">{{ name }}</label>
+                <label class="name-label ml-6 mb-2">{{ name }}</label>
             </v-row>
             <v-row>
-                <label class="desc-label ml-10 mb-2">{{ desc }}</label>
+                <label class="desc-label ml-6 mb-2">{{ desc }}</label>
             </v-row>
         </v-col>
     </v-card>
