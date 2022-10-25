@@ -15,15 +15,15 @@
                             twitter-link="https://twitter.com/maxim_ermilov"
                             telegram-link="https://t.me/wmermus" />
                     <TeamMemberCard
-                            name="Nikita O."
-                            img-link="nikita_o.png"
-                            desc="Chief Business Development Officer"
-                            linked-in-link="https://www.linkedin.com/in/nikita-ovchinnik/" />
-                    <TeamMemberCard
                             name="Yaro P."
                             img-link="yaro_p.png"
                             desc="Co-Founder & Tech Lead"
                             linked-in-link="https://www.linkedin.com/in/yarik-pavlov/" />
+                    <TeamMemberCard
+                            name="Nikita O."
+                            img-link="nikita_o.png"
+                            desc="Chief Business Development Officer"
+                            linked-in-link="https://www.linkedin.com/in/nikita-ovchinnik/" />
                     <TeamMemberCard
                             name="Maxime L."
                             img-link="maxsime_l.png"
