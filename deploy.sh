@@ -4,7 +4,7 @@
 token=$1
 url=$2
 
-dockerComposePath="/root/docker-compose.yaml"
+dockerComposePath="/home/ubuntu/docker-compose.yaml"
 tag=1
 
 rm -rf dist/
