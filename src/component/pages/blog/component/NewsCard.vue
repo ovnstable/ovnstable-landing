@@ -76,6 +76,7 @@ export default {
 @media only screen and (min-width: 960px) and (max-width: 1400px) {
     .news-card-container {
         max-width: 40% !important;
+        min-height: 500px !important;
     }
 
     .news-title {
@@ -95,6 +96,7 @@ export default {
 @media only screen and (min-width: 1400px) {
     .news-card-container {
         max-width: 30% !important;
+        min-height: 600px !important;
     }
 
     .news-title {
@@ -119,6 +121,7 @@ only screen and (                min-resolution: 192dpi) and (min-width: 1300px)
 only screen and (                min-resolution: 2dppx)  and (min-width: 1300px) {
     .news-card-container {
         max-width: 25% !important;
+        min-height: 400px !important;
     }
 
     .news-title {
