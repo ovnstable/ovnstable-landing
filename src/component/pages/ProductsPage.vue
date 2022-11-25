@@ -117,7 +117,7 @@
                             </v-row>
                             <v-row :class="isMobile ? 'mb-5' : 'mx-1'" justify="start">
                                 <ul>
-                                    <li class="desc-label mb-5">Overnight Insurance is a structured DeFi product aimed protecting users from negative rebase up to the full amount of the Insurance fund.</li>
+                                    <li class="desc-label mb-5">Overnight Insurance is a structured DeFi product aimed at protecting users from negative rebase up to the full amount of the Insurance fund.</li>
                                     <li class="desc-label mb-5">Provide liquidity in USD+ Insurance fund and collect premiums.</li>
                                 </ul>
                             </v-row>
