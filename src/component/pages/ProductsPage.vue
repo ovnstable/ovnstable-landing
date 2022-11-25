@@ -117,9 +117,8 @@
                             </v-row>
                             <v-row :class="isMobile ? 'mb-5' : 'mx-1'" justify="start">
                                 <ul>
-                                    <li class="desc-label mb-5">Yield by writing insurance for investment strategies collaterizing USD+. It is DeFi equivalent of Structured Products.</li>
-                                    <li class="desc-label mb-5">Insurance uses tranching to separate any medium risk asset into low risk (insured) and high risk (uninsured) tranches.</li>
-                                    <li class="desc-label mb-5">Insured tranches are then eligible to be held as collateral by USD+.</li>
+                                    <li class="desc-label mb-5">Overnight Insurance is a structured DeFi product aimed protecting users from negative rebase up to the full amount of the Insurance fund.</li>
+                                    <li class="desc-label mb-5">Provide liquidity in USD+ Insurance fund and collect premiums.</li>
                                 </ul>
                             </v-row>
                         </v-col>
@@ -133,7 +132,7 @@
                             </v-row>
                         </v-col>
 
-                        <img class="low-risk" src="../../assets/img/products/high-risk.svg">
+                        <img class="low-risk" src="../../assets/img/products/insurance.svg">
                     </v-container>
                 </v-row>
             </v-col>
