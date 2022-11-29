@@ -54,8 +54,7 @@
                             </v-expansion-panel-header>
                             <v-expansion-panel-content class="mt-n5">
                                 <ul class="mb-3">
-                                    <li class="list-label mb-3">Offers Tranching into Low & Risky Assets</li>
-                                    <li class="list-label mb-3">Insured tranches qualify as collateral for USD+</li>
+                                    <li class="list-label mb-3">A structured DeFi product aimed at protecting users from negative rebase up to the full amount of the Insurance fund</li>
                                 </ul>
                                 <label class="soon">SOON</label>
                             </v-expansion-panel-content>
