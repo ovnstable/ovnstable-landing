@@ -59,11 +59,6 @@
                             img-link="roman_g.png"
                             desc="Frontend Developer"
                             linked-in-link="https://www.linkedin.com/in/roman-golovlyov-2753611b3/" />
-                    <TeamMemberCard
-                            name="Abdul"
-                            img-link="abdul_r.png"
-                            desc="Community & Content Lead"
-                            discord-link="https://www.discord.com/users/763476471233773659" />
                 </v-row>
 
                 <v-row class="experienced-title-row mb-8">
