@@ -1,11 +1,6 @@
 <template>
     <div class="page-container-products overflow-hidden" :class="isMobile ? 'flex-column' : 'flex-row'">
 
-        <img class="performance-bg-img-left" :src="require('@/assets/background/img/performance_bg_lines.svg')"
-             v-if="isVisible">
-        <img class="performance-bg-img-right" :src="require('@/assets/background/img/performance_bg_lines.svg')"
-             v-if="isVisible">
-
         <v-row class="d-flex " :class="isMobile ? 'mt-15 mb-10' : 'mt-15 mb-15' " justify="center">
             <v-col class="text-col" :cols="isMobile ? 12 : (isTablet ? 6 : 12)">
                 <v-row class="justify-center main-title" :class="isMobile ? 'mb-0 flex-column' : ' mt-15 flex-row'">
@@ -16,8 +11,11 @@
                 <v-row class="d-flex" :class="isMobile ? 'flex-column mt-0' : 'flex-row mb-15'" justify="center">
                     <v-container :class="isMobile ? '' : 'ma-0'" class="fill-height card-container mt-10">
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
-                            <v-row :class="isMobile ? 'mt-3 mb-5' : 'mt-8 mb-2 ml-1'" justify="start">
-                                <label class="risk-label-low">low risk/return</label>
+                            <v-row align="center" :class="isMobile ? 'mt-3 mb-5' : 'mt-8 mb-2 ml-1'" justify="start">
+                                <div>
+                                    <v-img :src="require('@/assets/img/products/ls_return.svg')" />
+                                </div>
+                                <label class="risk-label-low ml-1">low risk/return</label>
                             </v-row>
                             <v-row :class="isMobile ? '' : 'ml-1'" justify="start">
                                 <label class="card-label">Stablecoin Money</label>
@@ -26,16 +24,14 @@
                                 <label class="card-label">Market (USD+)</label>
                             </v-row>
                             <v-row :class="isMobile ? 'mt-5' : 'mx-1'" justify="start">
-                                <ul>
-                                    <li class="desc-label mb-5">Our Flagship Product. Highest Liquidity with lowest possible risk. A DeFi equivalent of a Money Market.</li>
-                                    <li class="desc-label mb-5">A unit of USD+ can be exchanged for USDC (BUSD on BNB chain) 1:1,  it pays yield via daily rebase.</li>
-                                    <li class="desc-label mb-5">USD+ is 100% collateralized with High-Quality Stables (USDC, BUSD, USDT, DAI) that are invested into low risk & yield-generating strategies.</li>
-                                </ul>
+                                <label class="desc-label mb-5"><span class="bold-text">Highly liquid:</span> 1:1 peg to USDC, instantly mintable and redeemable in USDC</label>
+                                <label class="desc-label mb-5"><span class="bold-text">100% collateralized:</span> with delta-neutral and other stablecoin strategies based on the best protocols</label>
+                                <label class="desc-label mb-5"><span class="bold-text">Insured:</span> any daily loss to be compensated out of insurance fund (not more than 100% of the insurance fund)</label>
                             </v-row>
                         </v-col>
 
                         <v-col align-self="start" :cols="isMobile ? 6 : 12">
-                            <v-row :class="isMobile ? 'mt-5 mb-5' : 'ml-1 mb-8 mt-3'" justify="start">
+                            <v-row :class="isMobile ? '' : 'ml-1 mb-10'" justify="start">
                                 <v-btn class="mint-btn" @click="openLink('https://app.overnight.fi/stats?network=op')">
                                     mint
                                     usd+ <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg"></v-btn>
@@ -43,24 +39,33 @@
                         </v-col>
                         <v-row :class="isMobile ? 'ml-0 mt-1' : 'ma-0'">
                             <v-col :class="isMobile ? 'mt-5' : 'mt-0'">
-                                <v-row :class="isMobile ? '' : 'ml-1 mb-1'" justify="start" align="center">
+                                <v-row :class="isMobile ? '' : 'ml-1 '" justify="start" align="center">
                                     <label class="apy-label">apy&nbsp;</label>
-                                    <Tooltip
-                                        text="Average USD+ APY includes fees taken. For more accurate figures, see our dapp."/>
+                                    <div>
+                                        <Tooltip
+                                            text="Expected, not guaranteed yield ranges. For more accurate figures, see our dapp."/>
+                                    </div>
+
                                 </v-row>
                                 <v-row :class="isMobile ? ' mb-5' : 'ml-1 mb-5'" justify="start">
-                                    <label class="numbers-label">8-12%</label>
+                                    <label class="numbers-label">5-15%</label>
                                 </v-row>
                             </v-col>
                         </v-row>
 
-                        <img class="low-risk" src="../../assets/img/products/low-risk.svg">
+                        <div>
+                            <v-img class="low-risk" :src="require('@/assets/img/products/low-risk.svg')" />
+                        </div>
+
                     </v-container>
 
                     <v-container :class="isMobile ? '' : 'ma-0 mx-3'" class="fill-height card-container mt-10">
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
-                            <v-row :class="isMobile ? 'mt-3 mb-5' : 'mt-8 mb-2 ml-1'" justify="start">
-                                <label class="risk-label-medium">medium risk/return</label>
+                            <v-row align="center" :class="isMobile ? 'mt-3 mb-5' : 'mt-8 mb-2 ml-1'" justify="start">
+                                <div>
+                                    <v-img :src="require('@/assets/img/products/ms-return.svg')" />
+                                </div>
+                                <label class="risk-label-medium ml-1">medium risk/return</label>
                             </v-row>
                             <v-row :class="isMobile ? '' : 'ml-1'" justify="start">
                                 <label class="card-label">Exchange-traded</label>
@@ -68,16 +73,14 @@
                             <v-row :class="isMobile ? 'mb-7' : 'ml-1 mb-5'" justify="start">
                                 <label class="card-label">strategies (ETS)</label>
                             </v-row>
-                            <v-row :class="isMobile ? '' : 'mx-1 mb-3'" justify="start">
-                                <ul>
-                                    <li class="desc-label mb-5">Delta-Neutral Strategies - DeFi's Equivalent of ETF.</li>
-                                    <li class="desc-label mb-5">A unit of ETS can be exchanged for USDC (BUSD on BNB chain) 1:1 and pays yield daily.</li>
-                                    <li class="desc-label mb-5">ETS is 100% collaterized by hedged crypto-to-stable LP positions, e.g. BUSD/wBNB.</li>
-                                </ul>
+                            <v-row :class="isMobile ? 'mt-5' : 'mx-1'" justify="start">
+                                <label class="desc-label mb-5"><span class="bold-text">Delta-neutral:</span> crypto-to-stable LP positions with hedges against crypto price fluctuations</label>
+                                <label class="desc-label mb-5"><span class="bold-text">Real yield:</span> most ETSes based on protocols generating yield without rewards, e.g. Uni V3 and Aave</label>
+                                <label class="desc-label mb-5"><span class="bold-text">Highly liquid:</span> 1:1 peg to USDC, instantly mintable and redeemable in USDC with a fee</label>
                             </v-row>
                         </v-col>
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
-                            <v-row :class="isMobile ? 'mt-10 mb-5' : 'ml-0 mb-8 mt-10'" justify="start">
+                            <v-row :class="isMobile ? '' : 'ml-0 mb-10 mt-3'" justify="start">
                                 <v-btn class="mint-btn" :class="isMobile ? 'ml-0' : 'ml-1' "
                                        @click="openLink('https://app.overnight.fi/market')">mint ETS
                                     <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg">
@@ -91,44 +94,59 @@
                         </v-col>
                         <v-row :class="isMobile ? 'ml-1 mt-5' : 'ma-0'">
                             <v-col>
-                                <v-row :class="isMobile ? '' : 'ml-1 mb-1'" justify="start" align="center">
+                                <v-row :class="isMobile ? '' : 'ml-1 '" justify="start" align="center">
                                     <label class="apy-label">apy&nbsp;</label>
                                     <Tooltip
-                                        text="Average ETS APY includes fees taken. For more accurate figures, see our dapp."/>
+                                        :max-width="200"
+                                        text="Expected, not guaranteed yield ranges. For more accurate figures, see our dapp."/>
                                 </v-row>
                                 <v-row :class="isMobile ? 'mb-5' : 'ml-1 mb-5'" justify="start">
-                                    <label class="numbers-label">10-25%</label>
+                                    <label class="numbers-label">15-25%</label>
                                 </v-row>
                             </v-col>
                         </v-row>
-                        <img class="low-risk" src="../../assets/img/products/medium-risk.svg">
+
+                        <div>
+                            <v-img class="low-risk" :src="require('@/assets/img/products/medium-risk.svg')" />
+                        </div>
+
                     </v-container>
 
                     <v-container :class="isMobile ? 'mb-15' : 'ma-0'" class="fill-height card-container mt-10">
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
-                            <v-row :class="isMobile ? 'mt-3 mb-5' : 'mt-8 mb-2 ml-1'" justify="start">
-                                <label class="risk-label-high">high risk/return</label>
+                            <v-row align="center" :class="isMobile ? 'mt-3 mb-5' : 'mt-8 mb-10 ml-1'" justify="start">
+                                <div>
+                                    <v-img :src="require('@/assets/img/products/hs_return.svg')" />
+                                </div>
+                                <label class="risk-label-high ml-1">high risk/return</label>
                             </v-row>
-                            <v-row :class="isMobile ? 'mb-5' : 'ml-1 mb-5'" justify="start">
+                            <v-row :class="isMobile ? 'mb-5' : 'ml-1 mb-4'" justify="start">
                                 <label class="card-label">USD+ Insurance</label>
                             </v-row>
-                            <v-row :class="isMobile ? 'mb-10' : 'ml-1 mb-5'" justify="start">
-                                <label class="in-development">in development</label>
+                            <v-row :class="isMobile ? 'mt-5' : 'mx-1'" justify="start">
+                                <label class="desc-label mb-5"><span class="bold-text">Highly yielding:</span> collects (1) premiums retained from USD+ yields and (2) yield generated by insurance fund liquidity, mostly, from best ETSes</label>
+                                <label class="desc-label mb-5"><span class="bold-text">First loss:</span> exposed to ‘first loss’ from USD+, i.e. any loss on USD+ is covered first from insurance fund</label>
+                                <label class="desc-label mb-5"><span class="bold-text">Illiquid:</span> 3 days notification period to initiate redemption</label>
                             </v-row>
-                            <v-row :class="isMobile ? 'mb-5' : 'mx-1'" justify="start">
-                                <ul>
-                                    <li class="desc-label mb-5">Overnight Insurance is a structured DeFi product aimed at protecting users from negative rebase up to the full amount of the Insurance fund.</li>
-                                    <li class="desc-label mb-5">Provide liquidity in USD+ Insurance fund and collect premiums.</li>
-                                </ul>
+                        </v-col>
+
+                        <v-col align-self="start" :cols="isMobile ? 6 : 12">
+                            <v-row :class="isMobile ? 'mb-3' : 'ml-1 mb-1 mt-0'" justify="start">
+                                <v-btn class="mint-btn" @click="openLink('https://app.overnight.fi/insurance')">
+                                    mint
+                                    insurance <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg"></v-btn>
                             </v-row>
                         </v-col>
 
                         <v-col align-self="end" cols="12">
-                            <v-row :class="isMobile ? '' : 'ml-1 mb-1'" justify="start" align="center">
+                            <v-row :class="isMobile ? '' : 'ml-1 '" justify="start" align="center">
                                 <label class="apy-label">apy&nbsp;</label>
+                                <Tooltip
+                                        :max-width="100"
+                                         text="Expected, not guaranteed yield ranges. For more accurate figures, see our dapp."/>
                             </v-row>
                             <v-row :class="isMobile ? 'mb-5' : 'ml-1 mb-5'" justify="start">
-                                <label class="numbers-label">TBD</label>
+                                <label class="numbers-label">25%+</label>
                             </v-row>
                         </v-col>
 
@@ -249,14 +267,9 @@ export default {
         line-height: 24px;
     }
 
-    .in-development {
-        font-size: 14px;
-        line-height: 18px;
-    }
-
-
     .card-container {
         width: 400px;
+        padding-left: 20px;
     }
 
     .low-risk {
@@ -330,11 +343,6 @@ export default {
         line-height: 28px;
     }
 
-    .in-development {
-        font-size: 16px;
-        line-height: 20px;
-    }
-
     .card-container {
         height: auto !important;
         width: 500px;
@@ -395,28 +403,23 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     }
 
     .mint-btn {
-        font-size: 16px;
+        font-size: 14px !important;
         line-height: 20px;
     }
 
     .apy-label {
-        font-size: 18px;
+        font-size: 24px;
         line-height: 20px;
     }
 
     .numbers-label {
-        font-size: 64px;
+        font-size: 54px;
         line-height: 50px;
     }
 
     .learn-more {
         font-size: 16px;
         line-height: 22px;
-    }
-
-    .in-development {
-        font-size: 14px;
-        line-height: 14px;
     }
 
     .card-container {
@@ -444,7 +447,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
 .title-text {
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #29323E;
 }
 
 .accent-text {
@@ -457,28 +460,15 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     text-fill-color: transparent;
 }
 
-.performance-bg-img-left {
-    position: absolute;
-    mix-blend-mode: overlay;
-    z-index: 0;
-    left: 0 !important;
-}
-
-.performance-bg-img-right {
-    position: absolute;
-    mix-blend-mode: overlay;
-    transform: matrix(-1, 0, 0, 1, 0, 0);
-    z-index: 0;
-    right: 0 !important;
-}
-
 .card-container {
     height: 534px;
-    background: linear-gradient(135deg, rgba(8, 43, 111, 1), rgba(21, 20, 29, 1));
+    background: #FFFFFF;
     border-radius: 10px;
-    z-index: 20 !important;
 
     position: relative;
+    z-index: 20 !important;
+
+    box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.12) !important;
 }
 
 .risk-label-low {
@@ -504,16 +494,17 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
 
 .card-label {
     font-family: "Roboto", sans-serif;
-    font-weight: 300;
+    font-weight: 500;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #29323E;
 }
 
 .desc-label {
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     text-transform: none;
-    color: #FFFFFF;
+    color: #29323E;
+    list-style-type: none;
 }
 
 .mint-btn {
@@ -529,14 +520,14 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #29323E;
 }
 
 .numbers-label {
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #29323E;
     z-index: 10 !important;
 }
 
@@ -550,6 +541,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     bottom: 0;
     right: 0;
     z-index: 1 !important;
+    border-radius: 0 0 12px 0;
 }
 
 .learn-more {
@@ -569,6 +561,12 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     font-weight: 400;
     text-transform: uppercase;
     color: #707A8B;
+}
+
+.bold-text {
+    font-weight: 500;
+    background-color: #F1F3F6;
+    padding: 3px;
 }
 
 </style>

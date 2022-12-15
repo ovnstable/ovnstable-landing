@@ -11,8 +11,8 @@
                         <v-row justify="center" class="card-title-row" :class="isMobile ? 'mb-5' : 'mt-1 mb-10'">
                             <label class="title-label">full collateralization</label>
                         </v-row>
-                        <v-row justify="center" class="mb-10">
-                            <label class="desc-label">100%+ Collateralized with secure DeFi assets: USDC, USDT, DAI. No algorithmic stablecoins or other volatile assets</label>
+                        <v-row justify="start" class="mb-10">
+                            <label class="desc-label">100% collateralized with the best stablecoins (USDC, USDT, DAI) in proven protocols and proprietary delta-neutral strategies. No algorithmic stablecoins or other volatile assets</label>
                         </v-row>
                     </v-col>
 
@@ -21,7 +21,7 @@
                             <label class="title-label">Rigorous Risk-management and monitoring</label>
                         </v-row>
                         <v-row justify="center" class="mb-10">
-                            <label class="desc-label">Finance risks and smart contract risk management. World-class risk management team and built-in process line with the “Three lines of defense approach” mandated for blue-chip financial institutions</label>
+                            <label class="desc-label">Finance risks and smart contract risk management. World class risk management team and process built in line with “Three lines of defence approach” mandated for blue-chip financial institutions</label>
                         </v-row>
                     </v-col>
 
@@ -404,7 +404,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
 
 .desc-label {
     font-family: 'Roboto', sans-serif;
-    text-align: center;
+    text-align: left;
     font-feature-settings: 'pnum' on, 'lnum' on;
     color: #000000;
 }

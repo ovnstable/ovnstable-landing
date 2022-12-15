@@ -5,7 +5,7 @@
                 <v-row class="mb-15" align="center" v-if="!isMobile">
                     <v-col class="overflow-hidden" :cols="isMobile ? 12 : 9" v-observe-visibility="visibilityChanged">
                         <v-row class="ml-0" justify="start" align="center">
-                            <label class="accent-text mb-0">Overnight's</label>
+                            <label class="accent-text mb-0">USD+</label>
                             <label class="title-text">&nbsp;Performance</label>
                             <label class="accent-chain-text mx-3" v-if="!isMobile">|</label><label
                             class="accent-chain-text">{{ getChainName(chain) }} </label>
@@ -14,7 +14,7 @@
 
                     <v-col class="overflow-hidden" v-if="isVisible">
                         <v-row class="mr-0" justify="end" align="center">
-                            <ChainSelector mode="light" :callbackFunc="selectChain"/>
+                            <ChainSelector mode="light" :callbackFunc="selectChain" :chains="['polygon', 'bsc', 'op']"/>
                         </v-row>
                     </v-col>
                 </v-row>

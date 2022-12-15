@@ -1,12 +1,10 @@
 <template>
     <div class="fill-height">
         <MainPage id="main_page"/>
-        <HowPage id="how_page"/>
-        <UseCasesPage id="use_cases_page"/>
-
         <div class="product-container">
             <ProductsPage id="products_page"/>
         </div>
+        <HowPage id="how_page"/>
 
         <div class="performance-roadmap-container">
             <PerformancePage id="performance_page"/>
@@ -78,7 +76,7 @@ export default {
 }
 
 .product-container {
-    background: linear-gradient(122.1deg, #011845 0%, #15141D 104.83%) !important;
+    background: linear-gradient(0.72deg, rgba(28, 149, 231, 0.2) 0.74%, rgba(28, 149, 231, 0) 86.11%) !important;
 }
 
 .performance-roadmap-container {

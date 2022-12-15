@@ -2,70 +2,71 @@
     <div class="page-container overflow-hidden mt-0 mb-0">
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" cols="12">
-                <v-row class="title-row" justify="center" :class="isMobile ? 'mb-10' : 'mb-15'" v-observe-visibility="visibilityChanged">
+                <v-row class="title-row" justify="center" :class="isMobile ? 'mb-10' : 'mb-10'" v-observe-visibility="visibilityChanged">
                     <label class="title-text mb-0">our <label class="accent-text">plus</label> team</label>
                 </v-row>
 
-                <v-row justify="center" class="d-flex mb-15" v-if="isVisible">
-                    <TeamMemberCard
-                            name="Max E."
-                            img-link="max_e.png"
-                            desc="Founder & CEO"
-                            linked-in-link="https://www.linkedin.com/in/maxim-ermilov/"
-                            twitter-link="https://twitter.com/maxim_ermilov"
-                            telegram-link="https://t.me/wmermus" />
-                    <TeamMemberCard
-                            name="Yaro P."
-                            img-link="yaro_p.png"
-                            desc="Co-Founder & Tech Lead"
-                            linked-in-link="https://www.linkedin.com/in/yarik-pavlov/" />
-                    <TeamMemberCard
-                            name="Nikita O."
-                            img-link="nikita_o.png"
-                            desc="Chief Business Development Officer"
-                            linked-in-link="https://www.linkedin.com/in/nikita-ovchinnik/" />
-                    <TeamMemberCard
-                            name="Maxime L."
-                            img-link="maxsime_l.png"
-                            desc="Product Lead"
-                            linked-in-link="https://www.linkedin.com/in/maxim-lafe/" />
-                    <TeamMemberCard
-                            name="Andrew S."
-                            img-link="andrew_s.png"
-                            desc="Marketing Lead"
-                            linked-in-link="http://linkedin.com/in/andrewskripkin/" />
-                    <TeamMemberCard
-                            name="Naran M."
-                            img-link="naran_m.png"
-                            desc="Blockchain Engineer"
-                            linked-in-link="https://www.linkedin.com/in/naran-mucherinov/" />
-                    <TeamMemberCard
-                            name="Nikita S."
-                            img-link="nick_s.png"
-                            desc="Blockchain Engineer"
-                            linked-in-link="https://www.linkedin.com/in/nikita-slezkin-859123215/" />
-                    <TeamMemberCard
-                            name="Uliana T."
-                            img-link="uliana_t.png"
-                            desc="Designer"
-                            linked-in-link="https://www.linkedin.com/in/ulyana-tuzhilina/" />
-                    <TeamMemberCard
-                            name="Alex S."
-                            img-link="alex_s.png"
-                            desc="Frontend Lead"
-                            linked-in-link="https://www.linkedin.com/in/alexander-sharuev-b000b9164/" />
-                    <TeamMemberCard
-                            name="Roman G."
-                            img-link="roman_g.png"
-                            desc="Frontend Developer"
-                            linked-in-link="https://www.linkedin.com/in/roman-golovlyov-2753611b3/" />
-                    <TeamMemberCard
-                            name="Abdul"
-                            img-link="abdul_r.png"
-                            desc="Community & Content Lead"
-                            discord-link="https://www.discord.com/users/763476471233773659" />
+                <v-row justify="center" align="center" class="mb-15" v-if="isVisible">
+                    <v-col cols="12">
+                        <v-row justify="center">
+                            <TeamMemberCard
+                                name="Max E."
+                                img-link="max_e.png"
+                                desc="Founder & CEO"
+                                linked-in-link="https://www.linkedin.com/in/maxim-ermilov/"
+                                twitter-link="https://twitter.com/maxim_ermilov"
+                                telegram-link="https://t.me/wmermus" />
+                            <TeamMemberCard
+                                name="Yaro P."
+                                img-link="yaro_p.png"
+                                desc="Co-Founder & Tech Lead"
+                                linked-in-link="https://www.linkedin.com/in/yarik-pavlov/" />
+                            <TeamMemberCard
+                                name="Nikita O."
+                                img-link="nikita_o.png"
+                                desc="Chief Business Development Officer"
+                                linked-in-link="https://www.linkedin.com/in/nikita-ovchinnik/" />
+                        </v-row>
+                    </v-col>
+                    <v-col cols="12">
+                        <v-row justify="center">
+                            <TeamMemberCard
+                                name="Naran M."
+                                img-link="naran_m.png"
+                                desc="Blockchain Engineer"
+                                linked-in-link="https://www.linkedin.com/in/naran-mucherinov/" />
+                            <TeamMemberCard
+                                name="Nikita S."
+                                img-link="nick_s.png"
+                                desc="Blockchain Engineer"
+                                linked-in-link="https://www.linkedin.com/in/nikita-slezkin-859123215/" />
+                            <TeamMemberCard
+                                name="Uliana T."
+                                img-link="uliana_t.png"
+                                desc="Designer"
+                                linked-in-link="https://www.linkedin.com/in/ulyana-tuzhilina/" />
+                        </v-row>
+                    </v-col>
+                    <v-col cols="12">
+                        <v-row justify="center">
+                            <TeamMemberCard
+                                name="Alex S."
+                                img-link="alex_s.png"
+                                desc="Frontend Lead"
+                                linked-in-link="https://www.linkedin.com/in/alexander-sharuev-b000b9164/" />
+                            <TeamMemberCard
+                                name="Roman G."
+                                img-link="roman_g.png"
+                                desc="Frontend Developer"
+                                linked-in-link="https://www.linkedin.com/in/roman-golovlyov-2753611b3/" />
+                            <TeamMemberCard
+                                name="Abdul"
+                                img-link="abdul_r.png"
+                                desc="Community & Content Lead"
+                                discord-link="https://www.discord.com/users/763476471233773659" />
+                        </v-row>
+                    </v-col>
                 </v-row>
-
                 <v-row class="experienced-title-row mb-8">
                     <label class="experienced-title">Team background</label>
                 </v-row>

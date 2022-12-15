@@ -14,9 +14,21 @@
                         <v-row align="center" class="d-flex justify-space-around">
                             <HoverImg
                                     class="trusted-img my-2"
-                                    link="https://www.bnbchain.world/en/bsc-mvb-program"
-                                    :img="require('@/assets/img/partners/bnbchain.svg')"
-                                    :hover-img="require('@/assets/img/partners/bnbchainColored.svg')"
+                                    link="https://www.optimism.io/"
+                                    :img="require('@/assets/img/partners/optimism.svg')"
+                                    :hover-img="require('@/assets/img/partners/optimismColored.svg')"
+                            />
+                            <HoverImg
+                                class="trusted-img my-2"
+                                link="https://uniswap.org/"
+                                :img="require('@/assets/img/partners/uniswap.svg')"
+                                :hover-img="require('@/assets/img/partners/uniswapColored.svg')"
+                            />
+                            <HoverImg
+                                class="trusted-img my-2"
+                                link="https://app.velodrome.finance/"
+                                :img="require('@/assets/img/partners/velodrome.svg')"
+                                :hover-img="require('@/assets/img/partners/velodromeColored.svg')"
                             />
                             <HoverImg
                                     class="trusted-img my-2"
@@ -24,55 +36,57 @@
                                     :img="require('@/assets/img/partners/polygon.svg')"
                                     :hover-img="require('@/assets/img/partners/polygonColored.svg')"
                             />
+                        </v-row>
+                        <v-row align="center" class="d-flex justify-space-around">
                             <HoverImg
-                                    class="trusted-img my-2"
-                                    link="https://xcelerator.berkeley.edu/"
-                                    :img="require('@/assets/img/partners/xelerator.svg')"
-                                    :hover-img="require('@/assets/img/partners/xeleratorColored.svg')"
+                                class="trusted-img my-2"
+                                link="https://quickswap.exchange/"
+                                :img="require('@/assets/img/partners/quickswap.svg')"
+                                :hover-img="require('@/assets/img/partners/quickswapColored.svg')"
                             />
                             <HoverImg
-                                    class="trusted-img my-2"
-                                    link="https://www.arrakis.finance/"
-                                    :img="require('@/assets/img/partners/arrakis.svg')"
-                                    :hover-img="require('@/assets/img/partners/arrakisColored.svg')"
+                                class="trusted-img my-2"
+                                link="https://balancer.fi/"
+                                :img="require('@/assets/img/partners/balancer.svg')"
+                                :hover-img="require('@/assets/img/partners/balancerColored.svg')"
                             />
                             <HoverImg
-                                    class="trusted-img my-2"
-                                    link="https://dystopia.exchange/"
-                                    :img="require('@/assets/img/partners/dystopia.svg')"
-                                    :hover-img="require('@/assets/img/partners/dystopiaColored.svg')"
+                                class="trusted-img my-2"
+                                link="https://beets.fi/"
+                                :img="require('@/assets/img/partners/beethoven.svg')"
+                                :hover-img="require('@/assets/img/partners/beethovenColored.svg')"
+                            />
+                            <HoverImg
+                                class="trusted-img my-2"
+                                link="https://www.sushi.com/"
+                                :img="require('@/assets/img/partners/sushi.svg')"
+                                :hover-img="require('@/assets/img/partners/sushiColored.svg')"
                             />
                         </v-row>
                         <v-row align="center" class="d-flex justify-space-around mb-12">
                             <HoverImg
-                                    class="trusted-img my-2"
-                                    link="https://quickswap.exchange/"
-                                    :img="require('@/assets/img/partners/quickswap.svg')"
-                                    :hover-img="require('@/assets/img/partners/quickswapColored.svg')"
+                                class="trusted-img my-2"
+                                link="https://sphere.finance/"
+                                :img="require('@/assets/img/partners/sphere.svg')"
+                                :hover-img="require('@/assets/img/partners/sphereColored.svg')"
                             />
                             <HoverImg
-                                    class="trusted-img my-2"
-                                    link="https://tetu.io/"
-                                    :img="require('@/assets/img/partners/tetu.svg')"
-                                    :hover-img="require('@/assets/img/partners/tetuColored.svg')"
+                                class="trusted-img my-2"
+                                link="https://xcelerator.berkeley.edu/"
+                                :img="require('@/assets/img/partners/xelerator.svg')"
+                                :hover-img="require('@/assets/img/partners/xeleratorColored.svg')"
                             />
                             <HoverImg
-                                    class="trusted-img my-2"
-                                    link="https://rubic.exchange/"
-                                    :img="require('@/assets/img/partners/rubic.svg')"
-                                    :hover-img="require('@/assets/img/partners/rubicColored.svg')"
+                                class="trusted-img my-2"
+                                link="https://tetu.io/"
+                                :img="require('@/assets/img/partners/tetu.svg')"
+                                :hover-img="require('@/assets/img/partners/tetuColored.svg')"
                             />
                             <HoverImg
-                                    class="trusted-img my-2"
-                                    link="https://sphere.finance/"
-                                    :img="require('@/assets/img/partners/sphere.svg')"
-                                    :hover-img="require('@/assets/img/partners/sphereColored.svg')"
-                            />
-                            <HoverImg
-                                    class="trusted-img my-2"
-                                    link="https://www.gelato.network/"
-                                    :img="require('@/assets/img/partners/gelato.svg')"
-                                    :hover-img="require('@/assets/img/partners/gelatoColored.svg')"
+                                class="trusted-img my-2"
+                                link="https://www.arrakis.finance/"
+                                :img="require('@/assets/img/partners/arrakis.svg')"
+                                :hover-img="require('@/assets/img/partners/arrakisColored.svg')"
                             />
                         </v-row>
 
