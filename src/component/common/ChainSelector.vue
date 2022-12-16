@@ -70,7 +70,7 @@ export default {
 
         chains: {
             type: Array,
-            default: () => ['polygon', 'avax', 'bsc', 'op']
+            default: () => ['polygon', 'bsc', 'op']
         },
 
         disabledChains: {

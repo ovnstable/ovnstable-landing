@@ -7,16 +7,15 @@
 
         <v-row class="container-row d-flex overflow-hidden">
             <v-col class="text-col" :cols="isMobile ? 12 : (isTablet ? 6 : 7)">
-                <v-row class="title-row mb-10" :class="isMobile ? '' : 'mt-12'" v-observe-visibility="visibilityChanged">
+                <v-row class="title-row mb-10" :class="isMobile ? '' : 'mt-15'" v-observe-visibility="visibilityChanged">
                     <div>
                         <label class="accent-text">OVERNIGHT</label>
-                        <label class="title-text mb-0"> - stablecoin yield for conservative investors, paid out daily</label>
+                        <label class="title-text mb-0"> – Delta-neutral REAL Yield for conservative STABLECOIN investors</label>
                     </div>
                 </v-row>
                 <v-row class="mb-10" v-if="isVisible">
-                    <p class="sub-title-text mb-0">Overnight Finance is an Asset Management Protocol offering Low-Risk Passive Yield Products primarily for</p>
-                    <p class="sub-title-text mb-0">conservative stablecoin investors, both individuals and protocol treasuries. The protocol aspires to be the </p>
-                    <p class="sub-title-text mb-0"> 'Vanguard of DeFi' whose product range includes USD+ – DeFi equivalent of the money market, ETS – delta-neutral strategies, and Insurance.</p>
+                    <p class="sub-title-text mb-0">Overnight Finance is an asset management protocol offering passive yield products based on delta-neutral strategies, primarily for conservative stablecoin investors. </p>
+                    <p class="sub-title-text mb-0"></p>
                 </v-row>
 
                 <v-row class="btn-row" v-if="isVisible">
@@ -193,6 +192,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
 
 .page-container {
     background-color: rgba(2, 24, 68, 0.9) !important;
+    height: 100% !important;
 }
 
 .container-row {
@@ -206,7 +206,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
 .container-row {
     margin-left: 5% !important;
     margin-top: 15% !important;
-    margin-bottom: 5% !important;
+    margin-bottom: 10% !important;
 }
 
 .bg-video {
