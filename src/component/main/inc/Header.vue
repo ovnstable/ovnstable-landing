@@ -47,11 +47,17 @@
                         </template>
 
                         <v-list>
-                            <v-list-item class="menu-list-item" @click="openHook('main_page')">
-                                <v-list-item-title class="list-item-label">About</v-list-item-title>
+                            <v-list-item class="menu-list-item" @click="openHook('products_page')">
+                                <v-list-item-title class="list-item-label">Products</v-list-item-title>
                             </v-list-item>
                             <v-list-item class="menu-list-item" @click="openHook('performance_page')">
                                 <v-list-item-title class="list-item-label">Performance</v-list-item-title>
+                            </v-list-item>
+                            <v-list-item class="menu-list-item" @click="openHook('roadmap_page')">
+                                <v-list-item-title class="list-item-label">Roadmap</v-list-item-title>
+                            </v-list-item>
+                            <v-list-item class="menu-list-item" @click="openHook('security_page')">
+                                <v-list-item-title class="list-item-label">Security</v-list-item-title>
                             </v-list-item>
                             <v-list-item class="menu-list-item" @click="openHook('team_page')">
                                 <v-list-item-title class="list-item-label">Team</v-list-item-title>
@@ -72,7 +78,7 @@
                                 <v-list-item-title class="list-item-label">Discord</v-list-item-title>
                             </v-list-item>
                             <v-list-item class="menu-list-item" @click="openLink('https://t.me/overnight_fi')" v-if="isMobile">
-                                <v-list-item-title class="list-item-label">Telegram discussion </v-list-item-title>
+                                <v-list-item-title class="list-item-label">Telegram</v-list-item-title>
                             </v-list-item>
                             <v-list-item class="menu-list-item" @click="openLink('https://www.linkedin.com/company/overnightfi/')">
                                 <v-list-item-title class="list-item-label">LinkedIn</v-list-item-title>

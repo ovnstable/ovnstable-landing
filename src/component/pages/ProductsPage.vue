@@ -9,7 +9,7 @@
                 </v-row>
 
                 <v-row class="d-flex" :class="isMobile ? 'flex-column mt-0' : 'flex-row mb-15'" justify="center">
-                    <v-container :class="isMobile ? '' : 'ma-0'" class="fill-height card-container mt-10">
+                    <v-container :class="isMobile ? '' : 'ma-0'" class="fill-height card-container mt-10" @click="openLink('https://app.overnight.fi/stats')">
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
                             <v-row align="center" :class="isMobile ? 'mt-3 mb-5' : 'mt-8 mb-2 ml-1'" justify="start">
                                 <div>
@@ -17,12 +17,19 @@
                                 </div>
                                 <label class="risk-label-low ml-1">low risk/return</label>
                             </v-row>
-                            <v-row :class="isMobile ? '' : 'ml-1'" justify="start">
-                                <label class="card-label">Stablecoin Money</label>
-                            </v-row>
-                            <v-row :class="isMobile ? 'mb-7' : 'ml-1 mb-5'" justify="start">
-                                <label class="card-label">Market (USD+)</label>
-                            </v-row>
+                            <template v-if="isTablet">
+                                <v-row :class="isMobile ? 'mb-5' : 'ml-1 mb-5'" justify="start">
+                                    <label class="card-label">Stablecoin Money Market (USD+)</label>
+                                </v-row>
+                            </template>
+                            <template v-else>
+                                <v-row :class="isMobile ? '' : 'ml-1'" justify="start">
+                                    <label class="card-label">Stablecoin Money</label>
+                                </v-row>
+                                <v-row :class="isMobile ? 'mb-7' : 'ml-1 mb-5'" justify="start">
+                                    <label class="card-label">Market (USD+)</label>
+                                </v-row>
+                            </template>
                             <v-row :class="isMobile ? 'mt-5' : 'mx-1'" justify="start">
                                 <label class="desc-label mb-5"><span class="bold-text">Highly liquid:</span> 1:1 peg to USDC, instantly mintable and redeemable in USDC</label>
                                 <label class="desc-label mb-5"><span class="bold-text">100% collateralized:</span> with delta-neutral and other stablecoin strategies based on the best protocols</label>
@@ -59,7 +66,7 @@
 
                     </v-container>
 
-                    <v-container :class="isMobile ? '' : 'ma-0 mx-3'" class="fill-height card-container mt-10">
+                    <v-container :class="isMobile ? '' : 'ma-0 mx-3'" class="fill-height card-container mt-10" @click="openLink('https://app.overnight.fi/market')">
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
                             <v-row align="center" :class="isMobile ? 'mt-3 mb-5' : 'mt-8 mb-2 ml-1'" justify="start">
                                 <div>
@@ -80,7 +87,7 @@
                             </v-row>
                         </v-col>
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
-                            <v-row :class="isMobile ? '' : 'ml-0 mb-10 mt-3'" justify="start">
+                            <v-row :class="isMobile ? '' : 'ml-0 mb-10 mt-3'" justify="start" align="center">
                                 <v-btn class="mint-btn" :class="isMobile ? 'ml-0' : 'ml-1' "
                                        @click="openLink('https://app.overnight.fi/market')">mint ETS
                                     <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg">
@@ -88,7 +95,7 @@
                                 <label class="learn-more" :class="isMobile ? 'ml-8 mt-1' : 'ml-12 mt-1'"
                                        @click="openLink('https://www.youtube.com/watch?v=wIVAiUMLmvA')">Learn
                                     more</label>
-                                <img :class="isMobile ? 'mt-2' : 'mt-2 ml-1'" class="mdi-open" src="../../assets/img/mdi-open.svg"
+                                <img :class="isMobile ? 'mt-1 ml-1' : 'mt-1 ml-1'" class="mdi-open" src="../../assets/img/youtube-outlined.svg"
                                      @click="openLink('https://www.youtube.com/watch?v=wIVAiUMLmvA')">
                             </v-row>
                         </v-col>
@@ -112,7 +119,7 @@
 
                     </v-container>
 
-                    <v-container :class="isMobile ? 'mb-15' : 'ma-0'" class="fill-height card-container mt-10">
+                    <v-container :class="isMobile ? 'mb-15' : 'ma-0'" class="fill-height card-container mt-10" @click="openLink('https://app.overnight.fi/insurance')">
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
                             <v-row align="center" :class="isMobile ? 'mt-3 mb-5' : 'mt-8 mb-10 ml-1'" justify="start">
                                 <div>
@@ -142,7 +149,6 @@
                             <v-row :class="isMobile ? '' : 'ml-1 '" justify="start" align="center">
                                 <label class="apy-label">apy&nbsp;</label>
                                 <Tooltip
-                                        :max-width="100"
                                          text="Expected, not guaranteed yield ranges. For more accurate figures, see our dapp."/>
                             </v-row>
                             <v-row :class="isMobile ? 'mb-5' : 'ml-1 mb-5'" justify="start">
@@ -278,8 +284,8 @@ export default {
     }
 
     .mdi-open {
-        height: 17px;
-        width: 17px;
+        height: 22px;
+        width: 22px;
     }
 }
 
@@ -349,8 +355,8 @@ export default {
     }
 
     .mdi-open {
-        height: 20px;
-        width: 20px;
+        height: 32px;
+        width: 32px;
     }
     /* Large screen, non-retina */
 
@@ -428,8 +434,8 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     }
 
     .mdi-open {
-        height: 16px;
-        width: 16px;
+        height: 22px;
+        width: 22px;
     }
 
     .low-risk {
@@ -437,6 +443,12 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
         height: 160px !important;
     }
     /* Large screen, retina, stuff to override above media query */
+
+}
+
+.main-title {
+    position: relative;
+    z-index: 1000;
 
 }
 
@@ -469,6 +481,11 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     z-index: 20 !important;
 
     box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.12) !important;
+    cursor: pointer;
+}
+
+.card-container:hover {
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12) !important;
 }
 
 .risk-label-low {
@@ -476,6 +493,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     font-weight: 500;
     text-transform: uppercase;
     color: #22ABAC;
+    cursor: pointer;
 }
 
 .risk-label-medium {
@@ -483,6 +501,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     font-weight: 500;
     text-transform: uppercase;
     color: #FE7F2D;
+    cursor: pointer;
 }
 
 .risk-label-high {
@@ -490,6 +509,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     font-weight: 500;
     text-transform: uppercase;
     color: #CF3F92;
+    cursor: pointer;
 }
 
 .card-label {
@@ -497,6 +517,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     font-weight: 500;
     text-transform: uppercase;
     color: #29323E;
+    cursor: pointer;
 }
 
 .desc-label {
@@ -505,6 +526,8 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     text-transform: none;
     color: #29323E;
     list-style-type: none;
+    display: inline-block;
+    cursor: pointer;
 }
 
 .mint-btn {
