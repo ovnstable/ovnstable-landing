@@ -242,13 +242,13 @@ export default {
 
 @media only screen and (max-width: 960px) {
     .trusted-img {
-        width: 30vw;
+        width: 35vw;
     }
 }
 
 @media only screen and (min-width: 961px) {
     .trusted-img {
-        width: 15vw;
+        width: 20vw;
     }
 }
 

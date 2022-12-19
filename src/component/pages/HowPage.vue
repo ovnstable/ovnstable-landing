@@ -70,7 +70,7 @@
                                     <li class="list-label mb-3">Insurance serves to protect USD+ (not the ETSes) by absorbing the first loss in case of negative rebase</li>
                                     <li class="list-label mb-3">Insurance protection up to the full amount of the insurance fund</li>
                                     <li class="list-label mb-3">Users are encouraged to consider 3rd party insurance to protect from losses exceeding the insurance fund, e.g.
-                                        <label class="mint-link underlined" @click="openLink(`https://app.insuredao.fi/optimism`)">InsureDAO.</label></li>
+                                        <label class="mint-link underlined" @click="openLink(`https://app.insuredao.fi/optimism/covers/0x353dd745e5f25e4ac44c4601cbb8ca3e267bb646`)">InsureDAO.</label></li>
                                 </ul>
                             </v-expansion-panel-content>
                         </v-expansion-panel>
@@ -88,9 +88,9 @@
                 <v-row :justify="isMobile ? 'center' : 'end'" class="overflow-hidden" :class="isMobile ? 'mb-10' : ''">
                     <svg class="how-img" viewBox="0 0 728 650" fill="none" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <circle cx="212.105" cy="212.105" r="211.605" :stroke="openedPanels[0] === 0 ? '#28A0F0' : 'rgba(28, 149, 231, 0.4)'" @click="openPanelImg(0)" fill="transparent"/>
-                        <circle cx="515.724" cy="212.105" r="211.605" :stroke="openedPanels[0] === 1 ? '#28A0F0' : 'rgba(28, 149, 231, 0.4)'" @click="openPanelImg(1)" fill="transparent"/>
-                        <circle cx="363.487" cy="437.895" r="211.605" :stroke="openedPanels[0] === 2 ? '#28A0F0' : 'rgba(28, 149, 231, 0.4)'" @click="openPanelImg(2)" fill="transparent"/>
+                        <circle cx="212.105" cy="212.105" r="211.605" stroke-width="3" :stroke="openedPanels[0] === 0 ? '#28A0F0' : 'rgba(28, 149, 231, 0.4)'" @click="openPanelImg(0)" fill="transparent"/>
+                        <circle cx="515.724" cy="212.105" r="211.605" stroke-width="3" :stroke="openedPanels[0] === 1 ? '#28A0F0' : 'rgba(28, 149, 231, 0.4)'" @click="openPanelImg(1)" fill="transparent"/>
+                        <circle cx="363.487" cy="437.895" r="211.605" stroke-width="3" :stroke="openedPanels[0] === 2 ? '#28A0F0' : 'rgba(28, 149, 231, 0.4)'" @click="openPanelImg(2)" fill="transparent"/>
                         <rect x="277.96" y="206.25" width="171.053" height="171.053" fill="url(#pattern0)"/>
                         <circle cx="539.862" cy="177.585" r="31.1581" @click="openPanelImg(1)" :fill="openedPanels[0] === 1 ? '#FE7F2D' : 'rgba(28, 149, 231, 0.4)'"/>
                         <circle cx="539.862" cy="177.585" r="31.1581" @click="openPanelImg(1)" :stroke="openedPanels[0] === 1 ? '#FE7F2D' : 'rgba(28, 149, 231, 0.4)'"/>
