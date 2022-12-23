@@ -48,7 +48,7 @@
                             <v-col :class="isMobile ? 'mt-5' : 'mt-0'">
                                 <v-row :class="isMobile ? '' : 'ml-1 '" justify="start" align="center">
                                     <label class="apy-label">apy&nbsp;</label>
-                                    <div>
+                                    <div @click.stop>
                                         <Tooltip
                                             text="Expected, not guaranteed yield ranges. For more accurate figures, see our dapp."/>
                                     </div>
@@ -81,7 +81,7 @@
                                 <label class="card-label">strategies (ETS)</label>
                             </v-row>
                             <v-row :class="isMobile ? 'mt-5' : 'mx-1'" justify="start">
-                                <label class="desc-label mb-5"><span class="bold-text">Delta-neutral:</span> crypto-to-stable LP positions with hedges against crypto price fluctuations</label>
+                                <label class="desc-label mb-5"><span class="bold-text">Delta-neutral:</span> crypto-to-stable LP positions with hedge against crypto price fluctuations</label>
                                 <label class="desc-label mb-5"><span class="bold-text">Real yield:</span> most ETSes based on protocols generating yield without rewards, e.g. Uni V3 and Aave</label>
                                 <label class="desc-label mb-5"><span class="bold-text">Highly liquid:</span> 1:1 peg to USDC, instantly mintable and redeemable in USDC with a fee</label>
                             </v-row>
@@ -92,7 +92,7 @@
                                        @click="openLink('https://app.overnight.fi/market')">mint ETS
                                     <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg">
                                 </v-btn>
-                                <label class="learn-more" :class="isMobile ? 'ml-8 mt-1' : 'ml-12 mt-1'"
+                                <label class="learn-more" :class="isMobile ? 'ml-2 mt-1' : 'ml-12 mt-1'"
                                        @click="openLink('https://www.youtube.com/watch?v=wIVAiUMLmvA')">Learn
                                     more</label>
                                 <img :class="isMobile ? 'mt-1 ml-1' : 'mt-1 ml-1'" class="mdi-open" src="../../assets/img/youtube-outlined.svg"
@@ -103,9 +103,11 @@
                             <v-col>
                                 <v-row :class="isMobile ? '' : 'ml-1 '" justify="start" align="center">
                                     <label class="apy-label">apy&nbsp;</label>
-                                    <Tooltip
-                                        :max-width="200"
-                                        text="Expected, not guaranteed yield ranges. For more accurate figures, see our dapp."/>
+                                    <div @click.stop>
+                                        <Tooltip
+                                            :max-width="200"
+                                            text="Expected, not guaranteed yield ranges. For more accurate figures, see our dapp."/>
+                                    </div>
                                 </v-row>
                                 <v-row :class="isMobile ? 'mb-5' : 'ml-1 mb-5'" justify="start">
                                     <label class="numbers-label">15-25%</label>
@@ -148,8 +150,10 @@
                         <v-col align-self="end" cols="12">
                             <v-row :class="isMobile ? '' : 'ml-1 '" justify="start" align="center">
                                 <label class="apy-label">apy&nbsp;</label>
-                                <Tooltip
-                                         text="Expected, not guaranteed yield ranges. For more accurate figures, see our dapp."/>
+                                <div @click.stop>
+                                    <Tooltip
+                                        text="Expected, not guaranteed yield ranges. For more accurate figures, see our dapp."/>
+                                </div>
                             </v-row>
                             <v-row :class="isMobile ? 'mb-5' : 'ml-1 mb-5'" justify="start">
                                 <label class="numbers-label">25%+</label>

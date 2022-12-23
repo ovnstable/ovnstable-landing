@@ -1,7 +1,7 @@
 <template>
     <div class="page-container overflow-hidden" v-observe-visibility="visibilityChanged" >
         <v-row class="container-row">
-            <v-col :cols="isMobile ? 12 : 12"">
+            <v-col :cols="isMobile ? 12 : 12">
                 <div class="arrow" :class="isMobile ? '' : 'mt-5'">
                 </div>
                 <v-row :class="isMobile ? 'mt-10' : ''" justify="center" >
@@ -204,6 +204,12 @@ export default {
             transform: translate(-10px, -10px);
         }
     }
+
+    .roadmap-img {
+        width: 100% !important;
+        height: 100% !important;
+        transform: scale(80%);
+    }
     /* Large screen, non-retina */
 
 }
@@ -279,16 +285,23 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
         }
     }
 
+
     .roadmap-img {
         width: 100% !important;
         height: 100% !important;
-        transform: scale(85%);
+        transform: scale(80%);
     }
     /* Large screen, retina, stuff to override above media query */
 
 }
 @media only screen and (min-width: 1400px) {
 
+}
+
+.roadmap-img {
+    width: 100% !important;
+    height: 100% !important;
+    transform: scale(85%);
 }
 
 .page-container {

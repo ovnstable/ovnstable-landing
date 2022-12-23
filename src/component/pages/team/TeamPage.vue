@@ -50,10 +50,10 @@
                     <v-col cols="12">
                         <v-row justify="center">
                             <TeamMemberCard
-                                name="Alex S."
-                                img-link="alex_s.png"
+                                name="Dmitry T."
+                                img-link="dmitry_t.png"
                                 desc="Frontend Lead"
-                                linked-in-link="https://www.linkedin.com/in/alexander-sharuev-b000b9164/" />
+                                linked-in-link="https://www.linkedin.com/in/dmitry-timoshchuk-082365110/" />
                             <TeamMemberCard
                                 name="Roman G."
                                 img-link="roman_g.png"
