@@ -50,7 +50,7 @@ export default {
         },
 
         isTablet() {
-            return window.innerWidth <= 1400;
+            return window.innerWidth <= 1440;
         },
     },
 
