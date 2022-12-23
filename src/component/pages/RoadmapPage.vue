@@ -5,7 +5,7 @@
                 <div class="arrow" :class="isMobile ? '' : 'mt-5'">
                 </div>
                 <v-row :class="isMobile ? 'mt-10' : ''" justify="center" >
-                    <label class="title-text">our <label class="accent-text">roadmap</label></label>
+                    <label v-if="!isMobile" class="title-text">our <label class="accent-text">roadmap</label></label>
                 </v-row>
                 <v-row justify="center" class="roadmap-images" :class="isMobile ? 'mb-0' : 'mb-0'">
                     <img v-if="!isMobile" class="roadmap-img mt-15" :src="require('@/assets/img/roadmap.svg')">
@@ -69,15 +69,20 @@ export default {
     .title-text {
         font-style: normal;
         font-weight: 300;
-        font-size: 30px;
+        font-size: 34px;
         line-height: 36px;
-        display: none;
+    }
+
+    .roadmap-img {
+        width: 100% !important;
+        height: 100% !important;
+        transform: scale(80%);
     }
 
     .accent-text {
         font-style: normal;
         font-weight: 500;
-        font-size: 34px;
+        font-size: 30px;
         line-height: 38px;
     }
 
