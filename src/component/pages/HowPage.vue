@@ -98,7 +98,7 @@
 
                         <v-expansion-panel class="ml-n9 panel-bordered" @click="openPanel(2)">
                             <v-expansion-panel-header class="panel-header-row">
-                                <label class="panel-header mb-5">3. Insured</label>
+                                <label class="panel-header mb-5">3. Insured <span class="beta-text">BETA</span></label>
                             </v-expansion-panel-header>
                             <v-expansion-panel-content class="mt-n5">
                                 <ul class="mb-3">
@@ -533,6 +533,12 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
 
 .darken-color {
     font-family: 'Roboto', sans-serif;
+    color: #707A8B;
+}
+
+.beta-text {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
     color: #707A8B;
 }
 </style>
