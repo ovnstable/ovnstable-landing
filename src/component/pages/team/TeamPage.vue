@@ -43,7 +43,7 @@
                             <TeamMemberCard
                                 name="Uliana T."
                                 img-link="uliana_t.png"
-                                desc="Designer"
+                                desc="Design and Marketing Lead"
                                 linked-in-link="https://www.linkedin.com/in/ulyana-tuzhilina/" />
                         </v-row>
                     </v-col>

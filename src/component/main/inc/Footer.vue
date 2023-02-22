@@ -14,34 +14,59 @@
             </v-col>
 
             <v-spacer></v-spacer>
-
-            <v-col class="community-col" :cols="isMobile ? 6 : ''" v-if="isVisible">
+            <v-col class="community-col" :cols="isMobile ? 6 : '6'" v-if="isVisible">
                 <v-row class="mb-5">
                     <label class="col-title">Community</label>
                 </v-row>
 
-                <v-row class="mb-3">
-                    <label class="col-title-item" @click="openLink('https://twitter.com/overnight_fi')">Twitter</label>
-                </v-row>
-                <v-row class="mb-3">
-                    <label class="col-title-item" @click="openLink('https://discord.com/invite/overnight-fi')">Discord</label>
-                </v-row>
-                <v-row class="mb-3">
-                    <label class="col-title-item" @click="openLink('https://t.me/overnight_fi')">Telegram Discussion</label>
-                </v-row>
-                <v-row class="mb-3">
-                    <label class="col-title-item" @click="openLink('https://www.youtube.com/channel/UCuPsmMZTOCaTNZWUXWZr12A')">YouTube</label>
-                </v-row>
-                <v-row class="mb-3">
-                    <label class="col-title-item" @click="openLink('https://www.linkedin.com/company/overnightfi/')">LinkedIn</label>
-                </v-row>
-                <v-row class="mb-3">
-                    <label class="col-title-item" @click="openLink('https://github.com/ovnstable')">GitHub</label>
-                </v-row>
-                <v-row>
-                    <label class="col-title-item" @click="openLink('https://overnight.fi/blog/')">Blog</label>
+                <v-row class="flex-row align-start">
+                    <v-col>
+                        <v-row class="mb-3">
+                            <label class="col-title-item" @click="openLink('https://twitter.com/overnight_fi')">Twitter</label>
+                        </v-row>
+                        <v-row class="mb-3">
+                            <label class="col-title-item" @click="openLink('https://discord.com/invite/overnight-fi')">Discord</label>
+                        </v-row>
+                        <v-row class="mb-3">
+                            <label class="col-title-item" @click="openLink('https://www.linkedin.com/company/overnightfi/')">LinkedIn</label>
+                        </v-row>
+                    </v-col>
+                    <v-col>
+                        <v-row class="mb-3">
+                            <label class="col-title-item" @click="openLink('https://t.me/overnight_fi')">Telegram Discussion</label>
+                        </v-row>
+                        <v-row>
+                            <label class="col-title-item" @click="openLink('https://www.youtube.com/channel/UCuPsmMZTOCaTNZWUXWZr12A')">YouTube</label>
+                        </v-row>
+                    </v-col>
+                    <v-col >
+
+                        <v-row class="mb-3">
+                            <label class="col-title-item" @click="openLink('https://github.com/ovnstable')">GitHub</label>
+                        </v-row>
+                        <v-row>
+                            <label class="col-title-item" @click="openLink('https://overnight.fi/blog/')">Blog</label>
+                        </v-row>
+                    </v-col>
                 </v-row>
             </v-col>
+            <v-col>
+                <v-row class="mb-5">
+                    <label class="col-title">Support</label>
+                </v-row>
+
+                <v-row class="mb-3">
+                    <label class="col-title-item" @click="openLink('https://docs.overnight.fi/advanced/terms-of-service')">Terms of Service</label>
+                </v-row>
+                <v-row class="mb-3">
+                    <label class="col-title-item" @click="openLink('https://docs.overnight.fi/advanced/privacy-policy')">Privacy Policy</label>
+                </v-row>
+                <v-row class="mb-3">
+                    <label class="col-title-item" @click="openLink('https://discord.com/channels/933003627444969552/967813123149033542/967813482684760135')">Help center in Discord</label>
+                </v-row>
+            </v-col>
+
+            <v-spacer></v-spacer>
 
             <v-col class="dev-col" :cols="isMobile ? 6 : ''" v-if="isVisible">
                 <v-row class="mb-5">

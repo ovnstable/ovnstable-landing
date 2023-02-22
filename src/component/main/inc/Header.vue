@@ -129,7 +129,7 @@ export default {
         },
 
         launchDapp() {
-            window.open(`https://app.overnight.fi/stats`, '_blank').focus();
+            window.open(`https://app.overnight.fi/featured?tabName=featured`, '_blank').focus();
         },
 
         openLink(url) {
