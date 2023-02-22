@@ -43,11 +43,6 @@
                             <img class="social-img" :src="require('@/assets/img/social/twitter.svg')">
                         </v-row>
                     </div>
-                    <div>
-                        <v-row class="card-container ma-2" align="center" justify="center" @click="openLink('https://t.me/overnight_fi')">
-                            <img class="social-img" :src="require('@/assets/img/social/tg.svg')">
-                        </v-row>
-                    </div>
                 </v-row>
 
                 <v-row justify="center">

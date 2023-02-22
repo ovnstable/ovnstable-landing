@@ -21,12 +21,6 @@
                          :style="'--opacity: ' + headerOpacity">
                 </div>
 
-                <div class="mr-8 sub-text-focus-in-1s" v-if="!isMobile">
-                    <img class="social-btn"
-                         @click="openLink('https://t.me/overnight_fi')"
-                         :src="require('@/assets/img/social/tg_btn.svg')"
-                         :style="'--opacity: ' + headerOpacity">
-                </div>
 
                 <div :class="isMobile ? '' : 'mr-8'">
                     <v-btn class="dapp-btn sub-text-focus-in-1s" @click="launchDapp">DAPP</v-btn>
@@ -76,9 +70,6 @@
                             </v-list-item>
                             <v-list-item class="menu-list-item" @click="openLink('https://discord.com/invite/overnight-fi')" v-if="isMobile">
                                 <v-list-item-title class="list-item-label">Discord</v-list-item-title>
-                            </v-list-item>
-                            <v-list-item class="menu-list-item" @click="openLink('https://t.me/overnight_fi')" v-if="isMobile">
-                                <v-list-item-title class="list-item-label">Telegram</v-list-item-title>
                             </v-list-item>
                             <v-list-item class="menu-list-item" @click="openLink('https://www.linkedin.com/company/overnightfi/')">
                                 <v-list-item-title class="list-item-label">LinkedIn</v-list-item-title>
