@@ -57,11 +57,7 @@ export default {
                     };
                     blogPost.imgLink = await this.getImgLink(blogPost.id);
 
-                    if (blogPost.id === 719) {
-                        this.blogCards.push(blogPost);
-                    } if (blogPost.id === 561) {
-                        this.blogCards.push(blogPost);
-                    } if (blogPost.id === 618) {
+                    if (blogPost.id === 719 || blogPost.id === 561 || blogPost.id === 618) {
                         this.blogCards.push(blogPost);
                     }
                 }
