@@ -44,7 +44,7 @@ export default {
 
     async created() {
 
-        await fetch('https://overnight.fi/blog/wp-json/wp/v2/posts/?orderby=date&per_page=3', {})
+        await fetch('https://overnight.fi/blog/wp-json/wp/v2/posts/?per_page=35', {})
             .then(value => value.json())
             .then(async value => {
 
@@ -57,7 +57,13 @@ export default {
                     };
                     blogPost.imgLink = await this.getImgLink(blogPost.id);
 
-                    this.blogCards.push(blogPost);
+                    if (blogPost.id === 719) {
+                        this.blogCards.push(blogPost);
+                    } if (blogPost.id === 561) {
+                        this.blogCards.push(blogPost);
+                    } if (blogPost.id === 618) {
+                        this.blogCards.push(blogPost);
+                    }
                 }
             }).catch(reason => {
                 console.log('Error get data: ' + reason);

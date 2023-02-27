@@ -20,7 +20,12 @@
                          :src="require('@/assets/img/social/discord_btn.svg')"
                          :style="'--opacity: ' + headerOpacity">
                 </div>
-
+                <div class="mr-8 sub-text-focus-in-1s" v-if="!isMobile">
+                    <img class="social-btn"
+                         @click="openLink('https://t.me/overnight_fi')"
+                         :src="require('@/assets/img/social/tg_btn.svg')"
+                         :style="'--opacity: ' + headerOpacity">
+                </div>
 
                 <div :class="isMobile ? '' : 'mr-8'">
                     <v-btn class="dapp-btn sub-text-focus-in-1s" @click="launchDapp">DAPP</v-btn>
