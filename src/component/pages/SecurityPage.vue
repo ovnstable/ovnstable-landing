@@ -30,7 +30,7 @@
                             <label class="title-label">Audit</label>
                         </v-row>
                         <v-row justify="center" :class="isMobile ? 'mb-10' : 'mb-10'">
-                            <label class="desc-label">Our protocols, USD+ and ETS, have been <a @click="openLink('https://docs.overnight.fi/advanced/audits')">audited</a> by the world's leading blockchain security firms, Ackee Blockchain in 2023 and =Hacken.io in 2022, respectively. Ensuring the security of our protocols is our highest priority.</label>
+                            <label class="desc-label">Our protocols, USD+ and ETS, have been <a @click="openLink('https://docs.overnight.fi/advanced/audits')">audited</a> by the world's leading blockchain security firms, Ackee Blockchain in 2023 and Hacken.io in 2022, respectively. Ensuring the security of our protocols is our highest priority.</label>
                             <div v-if="isMobile">
                                 <HoverImg
                                     class="find-us-img-audit mt-5 mr-5"
