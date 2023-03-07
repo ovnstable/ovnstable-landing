@@ -30,13 +30,19 @@
                             <label class="title-label">Audit</label>
                         </v-row>
                         <v-row justify="center" :class="isMobile ? 'mb-10' : 'mb-10'">
-                            <label class="desc-label">Audited by <a @click="openLink('https://hacken.io/audits/#overnight')">Hacken.io</a>. Other world’s leading security firms’ audits are in plans. Security of the USD+ Protocol is our highest priority</label>
+                            <label class="desc-label">Our protocols, USD+ and ETS, have been audited by the world's leading blockchain security firms, <a @click="openLink('https://ackeeblockchain.com/')">Ackee Blockchain</a> in 2023 and <a @click="openLink('https://hacken.io/audits/#overnight')">Hacken.io</a> in 2022, respectively. Ensuring the security of our protocols is our highest priority.</label>
                             <div v-if="isMobile">
                                 <HoverImg
-                                    class="find-us-img-audit mt-5"
+                                    class="find-us-img-audit mt-5 mr-5"
                                     link="https://hacken.io/audits/#overnight"
                                     :img="require('@/assets/img/partners/hacken.svg')"
                                     :hover-img="require('@/assets/img/partners/hackenColored.svg')"
+                                />
+                                <HoverImg
+                                    class="find-us-img-ackee"
+                                    link="https://ackeeblockchain.com/"
+                                    :img="require('@/assets/img/partners/ackee.svg')"
+                                    :hover-img="require('@/assets/img/partners/ackeeColored.svg')"
                                 />
                             </div>
                         </v-row>
@@ -89,15 +95,25 @@
                         <v-row class="find-title-row mb-8">
                             <label class="find-title">Audit</label>
                         </v-row>
-                        <v-row align="center">
+                        <v-row align="center mr-5">
                             <v-spacer></v-spacer>
                             <HoverImg
+                                class="find-us-img-ackee"
+                                link="https://ackeeblockchain.com/"
+                                :img="require('@/assets/img/partners/ackee.svg')"
+                                :hover-img="require('@/assets/img/partners/ackeeColored.svg')"
+                            />
+                            <v-spacer></v-spacer>
+                            <v-row align="center">
+                                <v-spacer></v-spacer>
+                                <HoverImg
                                     class="find-us-img-audit"
                                     link="https://hacken.io/audits/#overnight"
                                     :img="require('@/assets/img/partners/hacken.svg')"
                                     :hover-img="require('@/assets/img/partners/hackenColored.svg')"
-                            />
-                            <v-spacer></v-spacer>
+                                />
+                                <v-spacer></v-spacer>
+                            </v-row>
                         </v-row>
                     </v-col>
                 </v-row>
@@ -205,6 +221,13 @@ export default {
     .find-us-img-audit {
         width: 44px;
         height: 50px;
+        margin-top: 20px;
+    }
+
+    .find-us-img-ackee {
+        min-width: 20px;
+        height: 35px;
+        margin-left: 30px;
     }
 
     .page-container {
@@ -261,7 +284,7 @@ export default {
         line-height: 40px;
     }
 
-    .find-us-img, .find-us-img-audit {
+    .find-us-img, .find-us-img-audit, .find-us-img-ackee {
         width: 12vw;
     }
 
@@ -331,7 +354,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
         line-height: 32px;
     }
 
-    .find-us-img, .find-us-img-audit {
+    .find-us-img, .find-us-img-audit, .find-us-img-ackee {
         width: 12vw;
     }
 
@@ -364,7 +387,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     margin-bottom: 10% !important;
 }
 
-.find-us-img, .find-us-img-audit {
+.find-us-img, .find-us-img-audit, .find-us-img-ackee {
     cursor: pointer;
 }
 
