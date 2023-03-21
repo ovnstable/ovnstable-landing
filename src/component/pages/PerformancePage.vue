@@ -82,12 +82,16 @@
 <script>
 
 import ChainSelector from "@/component/common/ChainSelector";
+import ApyRate from "@/component/apyrate/ApyRate.vue";
+import TvlRate from "@/component/tvlrate/TvlRate.vue";
 
 export default {
     name: "PerformancePage",
 
     components: {
-        ChainSelector
+        ChainSelector,
+        'ovn-apyrate': ApyRate,
+        'ovn-tvlrate': TvlRate,
     },
 
     data: () => ({

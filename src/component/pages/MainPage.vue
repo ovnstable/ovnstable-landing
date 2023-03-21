@@ -34,10 +34,13 @@
 
 <script>
 
+import MainCards from "@/component/maincards/MainCards.vue"
+
 export default {
     name: "MainPage",
 
     components: {
+      'ovn-maincards': MainCards
     },
 
     data: () => ({
