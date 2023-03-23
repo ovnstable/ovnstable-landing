@@ -14,7 +14,7 @@
 
                     <v-col class="overflow-hidden" v-if="isVisible">
                         <v-row class="mr-0" justify="end" align="center">
-                            <ChainSelector mode="light" :callbackFunc="selectChain" :chains="['polygon', 'bsc', 'op']"/>
+                            <ChainSelector mode="light" :callbackFunc="selectChain" :chains="['polygon', 'bsc', 'op', 'arbitrum']"/>
                         </v-row>
                     </v-col>
                 </v-row>
@@ -40,8 +40,8 @@
                                 <ovn-apyrate class="chain-networks" network="polygon" product="usd+"></ovn-apyrate>
                             </template>
 
-                            <template v-if="chain === 'avax'">
-                                <ovn-apyrate class="chain-networks" network="avax" product="usd+"></ovn-apyrate>
+                            <template v-if="chain === 'arbitrum'">
+                                <ovn-apyrate class="chain-networks" network="arbitrum" product="usd+"></ovn-apyrate>
                             </template>
 
                             <template v-if="chain === 'bsc'">
@@ -60,8 +60,8 @@
                                 <ovn-tvlrate class="chain-networks" network="polygon" product="usd+"></ovn-tvlrate>
                             </template>
 
-                            <template v-if="chain === 'avax'">
-                                <ovn-tvlrate class="chain-networks" network="avax" product="usd+"></ovn-tvlrate>
+                            <template v-if="chain === 'arbitrum'">
+                                <ovn-tvlrate class="chain-networks" network="arbitrum" product="usd+"></ovn-tvlrate>
                             </template>
 
                             <template v-if="chain === 'bsc'">
@@ -115,8 +115,6 @@ export default {
             switch (s) {
                 case 'op':
                     return 'optimism'
-                case 'avax':
-                    return 'avalanche (beta)'
                 default:
                     return s
             }

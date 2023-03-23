@@ -135,8 +135,8 @@ export default {
         chainColor() {
             if (this.network === null || this.network === 'polygon') {
                 return '#7B3FE4';
-            } else if (this.network === 'avax') {
-                return '#E84142';
+            } else if (this.network === 'arbitrum') {
+                return '#29A0F0';
             } else if (this.network === 'bsc') {
                 return '#F0B90B';
             } else if (this.network === 'op') {
@@ -209,8 +209,6 @@ export default {
             switch (s) {
                 case 'op':
                     return 'optimism'
-                case 'avax':
-                    return 'avalanche (beta)'
                 default:
                     return s
             }

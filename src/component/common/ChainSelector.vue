@@ -28,19 +28,12 @@
         </v-btn>
 
         <v-btn
-                v-if="chains.includes('avax')"
-                :disabled="disabledChains.includes('avax')"
+                v-if="chains.includes('arbitrum')"
+                :disabled="disabledChains.includes('arbitrum')"
                 outlined
                 class="chain-btn ma-2"
-                @click="clickTab('avax')" v-bind:class="activeTabAvax">
-            <v-badge icon="mdi-beta"
-                     bordered
-                     :dark="mode !== 'light'"
-                     color='#333333'
-                     offset-x="10"
-                     offset-y="10">
-                <img class="chain-img" :src="require('@/assets/img/network/avax' + (disabledChains.includes('avax') ? 'Disabled' : '') + '.svg')">
-            </v-badge>
+                @click="clickTab('arbitrum')" v-bind:class="activeTabArbitrum">
+            <img class="chain-img" :src="require('@/assets/img/network/arbitrum' + (disabledChains.includes('arbitrum') ? 'Disabled' : '') + '.svg')">
         </v-btn>
     </div>
 </template>
@@ -70,7 +63,7 @@ export default {
 
         chains: {
             type: Array,
-            default: () => ['polygon', 'bsc', 'op']
+            default: () => ['polygon', 'bsc', 'op', 'arbitrum']
         },
 
         disabledChains: {
@@ -102,11 +95,11 @@ export default {
             }
         },
 
-        activeTabAvax: function () {
+        activeTabArbitrum: function () {
             return {
-                'tab-button': (this.chain === 'avax' && this.mode === 'light'),
-                'tab-button-dark': (this.chain === 'avax' && this.mode === 'dark'),
-                'tab-button-in-active': this.chain !== 'avax',
+                'tab-button': (this.chain === 'arbitrum' && this.mode === 'light'),
+                'tab-button-dark': (this.chain === 'arbitrum' && this.mode === 'dark'),
+                'tab-button-in-active': this.chain !== 'arbitrum',
             }
         },
 
