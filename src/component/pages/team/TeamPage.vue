@@ -59,6 +59,11 @@
                                 img-link="roman_g.png"
                                 desc="Frontend Developer"
                                 linked-in-link="https://www.linkedin.com/in/roman-golovlyov-2753611b3/" />
+                            <TeamMemberCard
+                                name="Anastasiya N."
+                                img-link="anastasiya_n.png"
+                                desc="QA Specialist"
+                                linked-in-link="https://www.linkedin.com/in/anikityuk/" />
                         </v-row>
                     </v-col>
                 </v-row>
