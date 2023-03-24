@@ -10,12 +10,12 @@
         </v-btn>
 
         <v-btn
-                v-if="chains.includes('polygon')"
-                :disabled="disabledChains.includes('polygon')"
-                outlined
-                class="chain-btn ma-2"
-                @click="clickTab('polygon')" v-bind:class="activeTabPolygon">
-            <img class="chain-img" :src="require('@/assets/img/network/polygon' + (disabledChains.includes('polygon') ? 'Disabled' : '') + '.svg')">
+            v-if="chains.includes('arbitrum')"
+            :disabled="disabledChains.includes('arbitrum')"
+            outlined
+            class="chain-btn ma-2"
+            @click="clickTab('arbitrum')" v-bind:class="activeTabArbitrum">
+            <img class="chain-img" :src="require('@/assets/img/network/arbitrum' + (disabledChains.includes('arbitrum') ? 'Disabled' : '') + '.svg')">
         </v-btn>
 
         <v-btn
@@ -28,13 +28,14 @@
         </v-btn>
 
         <v-btn
-                v-if="chains.includes('arbitrum')"
-                :disabled="disabledChains.includes('arbitrum')"
-                outlined
-                class="chain-btn ma-2"
-                @click="clickTab('arbitrum')" v-bind:class="activeTabArbitrum">
-            <img class="chain-img" :src="require('@/assets/img/network/arbitrum' + (disabledChains.includes('arbitrum') ? 'Disabled' : '') + '.svg')">
+            v-if="chains.includes('polygon')"
+            :disabled="disabledChains.includes('polygon')"
+            outlined
+            class="chain-btn ma-2"
+            @click="clickTab('polygon')" v-bind:class="activeTabPolygon">
+            <img class="chain-img" :src="require('@/assets/img/network/polygon' + (disabledChains.includes('polygon') ? 'Disabled' : '') + '.svg')">
         </v-btn>
+
     </div>
 </template>
 
