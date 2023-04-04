@@ -11,6 +11,12 @@
                 <v-row class="mb-6" :justify="isMobile ? 'center' : 'start'" v-if="isVisible">
                     <p class="footer-logo-sub-text">2022 © All Rights Reserved</p>
                 </v-row>
+
+                <v-row class="mt-6 mb-6" :justify="isMobile ? 'center' : 'start'" v-if="isVisible">
+                    <p class="footer-logo-sub-text">
+                        <a class="footer-logo-sub-text" href="mailto:ovnstable@gmail.com">ovnstable@gmail.com</a>
+                    </p>
+                </v-row>
             </v-col>
 
             <v-spacer></v-spacer>
