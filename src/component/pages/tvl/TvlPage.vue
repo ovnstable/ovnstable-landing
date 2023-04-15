@@ -15,6 +15,7 @@
 
 <script>
 import anychart from 'anychart'
+import {tokenColors} from './helpers/tokenColors'
 
 export default {
   name: "TvlPage",
@@ -34,8 +35,7 @@ export default {
   },
 
   mounted() {
-    var data = {
-      title: 'Global Smartphone Shipments (In Millions) in 2019',
+    const data = {
       header: ['Name', 'USDT+', 'DAI+', 'USD+', 'ETS'],
       rows: [
         ['OP', 800, 1800, 2000, 1000],
@@ -48,13 +48,18 @@ export default {
 
     const chart = anychart.mosaic();
 
+    const palette = anychart.palettes.distinctColors();
+    palette.items(
+        [tokenColors.USDT, tokenColors.DAI, tokenColors.USD, tokenColors.ETS]
+    );
+
+    chart.palette(palette);
+
     chart.data(data);
 
     chart.legend(true);
 
     chart.tooltip().format('{%seriesName}: ${%Value}M');
-
-    chart.tooltip().displayMode("union");
 
     const title = chart.tooltip().title();
     title.fontFamily("Calibri");
@@ -63,9 +68,6 @@ export default {
     title.fontSize(18);
 
     chart.labels().format('${%Value}M');
-
-    chart.xAxis().title('Smartphone Shipments by Brands');
-    chart.yAxis().title('Smartphone Shipments by Quarters %');
 
     chart.container('chart');
 
