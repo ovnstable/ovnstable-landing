@@ -1,8 +1,8 @@
-import {mekkaResponseApiMock} from "@/component/pages/tvl/helpers/mekkaResponseApiMock";
+import {mekkaResponseApiMock} from "@/component/pages/tvl/lib/mekkaResponseApiMock";
 import {mosaic, palettes} from "anychart";
-import {tokenColors} from "@/component/pages/tvl/helpers/tokenColors";
+import {tokenColors} from "@/component/pages/tvl/lib/tokenColors";
 import utils from "@/plugins/utils";
-import {chainImages} from "@/component/pages/tvl/helpers/chainImages";
+import {chainImages} from "@/component/pages/tvl/lib/chainImages";
 
 export const initChartSettings = () => {
     const data = {
@@ -26,10 +26,6 @@ export const initChartSettings = () => {
     chart.palette(palette);
 
     chart.data(data);
-
-    // chart.legend(true);
-
-    chart.tooltip().format('{%seriesName}: ${%Value}M');
 
     chart.labels()
         .format((ctx) => '$' + utils.formatMoneyComma(ctx.value, 0))

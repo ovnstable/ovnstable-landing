@@ -8,8 +8,8 @@
         <v-row justify="center">
           <div class="chart-wrap">
             <div class="chart-title">
-              <p class="chart-title__text">Total value locked</p>
-              <p class="chart-title__value">{{formattedTotalValue}}</p>
+              <p class="chart-title__text ml-3">Total value locked</p>
+              <p class="chart-title__value mr-4">{{formattedTotalValue}}</p>
             </div>
             <div id="chart" class="chart"></div>
           </div>
@@ -63,19 +63,8 @@ export default {
 <style scoped lang="scss">
   .title-text {
     font-style: normal;
-    font-weight: 300;
     font-size: 70px;
     line-height: 80px;
-  }
-
-  .accent-text {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 60px;
-    line-height: 80px;
-  }
-
-  .title-text {
     font-family: 'Cormorant', sans-serif;
     text-transform: uppercase;
     color: #28A0F0;
@@ -84,9 +73,12 @@ export default {
 
   .accent-text {
     font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-    background: #000;
+    font-style: normal;
     font-weight: 300;
+    font-size: 60px;
+    line-height: 80px;
+    background-color: #000;
+    text-transform: uppercase;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -118,7 +110,6 @@ export default {
     align-items: center;
 
     &__text {
-      font-family: 'Roboto';
       font-style: normal;
       font-weight: 400;
       font-size: 24px;
@@ -126,7 +117,6 @@ export default {
     }
 
     &__value {
-      font-family: 'Roboto';
       font-style: normal;
       font-weight: 400;
       font-size: 40px;
@@ -136,6 +126,7 @@ export default {
 </style>
 
 <style>
+/* Скрыть логотип и его текст на графике */
 .anychart-credits-text, .anychart-credits-logo {
   display: none;
 }
