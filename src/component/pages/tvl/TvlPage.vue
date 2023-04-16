@@ -5,15 +5,14 @@
         <v-row :class="isMobile ? 'mt-10' : 'mb-5'" justify="center" >
           <label v-if="!isMobile" class="title-text">overnight’s <label class="accent-text">TVL</label></label>
         </v-row>
-        <v-row justify="center">
-          <div class="chart-wrap">
-            <div class="chart-title">
-              <p class="chart-title__text ml-3">Total value locked</p>
-              <p class="chart-title__value mr-4">{{formattedTotalValue}}</p>
-            </div>
-            <div id="chart" class="chart"></div>
+
+        <div class="chart-wrap">
+          <div class="chart-title">
+            <span class="chart-title__text">Total value locked</span>
+            <span class="chart-title__value">{{formattedTotalValue}}</span>
           </div>
-        </v-row>
+          <div id="chart" class="chart"></div>
+        </div>
       </v-col>
     </v-row>
   </div>
@@ -43,7 +42,10 @@ export default {
   },
 
   mounted() {
-    const chart = initChartSettings()
+    const chart = initChartSettings({
+      hasTooltip: this.isMobile,
+      hasBlockLabel: !this.isMobile,
+    })
 
     chart.container('chart');
 
@@ -83,9 +85,20 @@ export default {
     -webkit-text-fill-color: transparent;
   }
 
+  .chart-wrap {
+    padding: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 4px rgba(32, 81, 155, 0.12);
+    border-radius: 12px;
+    aspect-ratio: 2.65/1;
+    display: flex;
+    flex-direction: column;
+  }
+
   .chart {
-    height: 400px;
-    width: 1200px;
+    width: 100%;
+    flex-grow: 1;
+    flex-direction: column;
   }
 
   .tvl-page {
@@ -93,21 +106,15 @@ export default {
   }
 
   .container-row {
-    margin-top: 8% !important;
-    margin-bottom: 3% !important;
-  }
-
-  .chart-wrap {
-    padding: 20px;
-    background-color: #FFFFFF;
-    box-shadow: 0 4px 4px rgba(32, 81, 155, 0.12);
-    border-radius: 12px;
+    margin: 8% auto 3% auto;
+    width: 87%;
   }
 
   .chart-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 15px;
 
     &__text {
       font-style: normal;
@@ -121,6 +128,47 @@ export default {
       font-weight: 400;
       font-size: 40px;
       line-height: 48px;
+    }
+  }
+
+  @media (max-width: 1400px) {
+    .chart-wrap {
+      aspect-ratio: 1.8/1;
+    }
+
+    .title-text {
+      font-size: 34px;
+    }
+
+    .accent-text {
+      font-size: 30px;
+    }
+
+    .chart-title {
+      &__text {
+        font-size: 20px;
+      }
+
+      &__value {
+        font-size: 30px;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .chart-wrap {
+      aspect-ratio: unset;
+      width: 100%;
+      height: 400px;
+      padding: 5px;
+    }
+
+    .chart-title {
+      flex-direction: column;
+    }
+
+    .container-row {
+      width: 100%;
     }
   }
 </style>
