@@ -31,6 +31,7 @@ export const initChartSettings = (
     chart.palette(palette);
 
     chart.data(data);
+    chart.interactivity().selectionMode(false);
 
     chart.pointsPadding(blocksPadding);
 
@@ -57,8 +58,8 @@ export const initChartSettings = (
             .fontFamily('Roboto')
             .fontSize(14)
             .title().fontColor('#29323E').fontFamily('Roboto')
-
-
+    } else {
+        chart.tooltip().enabled(false).selectable(false);
     }
 
     return chart
