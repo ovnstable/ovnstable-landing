@@ -42,7 +42,7 @@ export const initChartSettings = (
 
     if (hasBlockLabel) {
         chart.labels()
-            .format((ctx) => '$' + utils.formatMoneyComma(ctx.value, 0))
+            .format((ctx) => `$${utils.formatMoneyComma(ctx.value, 0)} ${ctx.seriesName}`)
             .fontColor('#FFFFFF')
             .fontFamily('Roboto')
             .fontWeight('500')
