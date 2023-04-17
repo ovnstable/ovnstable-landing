@@ -44,6 +44,7 @@ export default {
     const chart = initChartSettings({
       hasTooltip: this.isMobile,
       hasBlockLabel: !this.isMobile,
+      legendPosition: this.isMobile ? 'center' : 'top',
     })
 
     chart.container('chart');

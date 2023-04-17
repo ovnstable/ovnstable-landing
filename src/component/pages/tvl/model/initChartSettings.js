@@ -9,6 +9,7 @@ export const initChartSettings = (
         blocksPadding = 2,
         hasBlockLabel = true,
         hasTooltip = false,
+        legendPosition = 'top',
     }) => {
     const data = {
         header: ['Name', ...Object.keys(mekkaResponseApiMock[0].values)],
@@ -29,6 +30,7 @@ export const initChartSettings = (
     ]);
 
     chart.palette(palette);
+    chart.legend().enabled(true).align(legendPosition);
 
     chart.data(data);
     chart.interactivity().selectionMode(false);
@@ -36,12 +38,12 @@ export const initChartSettings = (
     chart.pointsPadding(blocksPadding);
 
     chart.xAxis().labels().fontColor('#29323E');
-    chart.yAxis().labels().fontColor('#29323E');
+    chart.yAxis().labels().enabled(false)
 
     if (hasBlockLabel) {
         chart.labels()
             .format((ctx) => '$' + utils.formatMoneyComma(ctx.value, 0))
-            .fontColor('#29323E')
+            .fontColor('#FFFFFF')
             .fontFamily('Roboto')
             .fontWeight('500')
     } else {

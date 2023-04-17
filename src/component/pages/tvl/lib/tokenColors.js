@@ -1,6 +1,6 @@
 export const tokenColors = {
-    USDT: '#25a27a',
-    DAI: '#f9ad19',
-    USD: '#56654f',
-    ETS: '#01b5e3'
+    USDT: '#26A17B',
+    DAI: '#FAB425',
+    USD: '#01255A',
+    ETS: '#1C95E7'
 }
