@@ -44,8 +44,8 @@ export const initChartSettings = (
         chart.labels()
             .format((ctx) => `$${utils.formatMoneyComma(ctx.value, 0)} ${ctx.seriesName}`)
             .fontColor('#FFFFFF')
+            .fontSize(14)
             .fontFamily('Roboto')
-            .fontWeight('500')
     } else {
         chart.labels().enabled(false)
     }
