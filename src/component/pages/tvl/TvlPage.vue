@@ -1,11 +1,10 @@
 <template>
   <div class="tvl-page page-container overflow-hidden" v-observe-visibility="visibilityChanged" >
     <v-row class="container-row">
-      <v-col :cols="isMobile ? 12 : 12">
+      <v-col :cols="12">
         <v-row :class="isMobile ? 'mt-10' : 'mb-5'" justify="center" >
-          <label v-if="!isMobile" class="title-text">overnight’s <label class="accent-text">TVL</label></label>
+          <label class="title-text">overnight’s <label class="accent-text">TVL</label></label>
         </v-row>
-
         <div class="chart-wrap">
           <div class="chart-title">
             <span class="chart-title__text">Total value locked</span>
@@ -169,6 +168,7 @@ export default {
 
     .container-row {
       width: 100%;
+      margin-top: 0;
     }
   }
 </style>
