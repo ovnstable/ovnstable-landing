@@ -20,12 +20,12 @@ export default {
         },
 
         img: {
-            type: Object,
+            type: String,
             default: null,
         },
 
         hoverImg: {
-            type: Object,
+            type: String,
             default: null,
         },
     },

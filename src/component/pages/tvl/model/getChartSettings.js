@@ -2,9 +2,8 @@ import {mekkaResponseApiMock} from "@/component/pages/tvl/lib/mekkaResponseApiMo
 import {mosaic, palettes} from "anychart";
 import {tokenColors} from "@/component/pages/tvl/lib/tokenColors";
 import utils from "@/plugins/utils";
-import {chainImages} from "@/component/pages/tvl/lib/chainImages";
 
-export const initChartSettings = (
+export const getChartSettings = (
     {
         blocksPadding = 2,
         hasBlockLabel = true,
@@ -46,6 +45,7 @@ export const initChartSettings = (
             .fontColor('#FFFFFF')
             .fontSize(14)
             .fontFamily('Roboto')
+           
     } else {
         chart.labels().enabled(false)
     }

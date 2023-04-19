@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import {initChartSettings} from "@/component/pages/tvl/model/initChartSettings";
+import {getChartSettings} from "@/component/pages/tvl/model/getChartSettings";
 
 export default {
   name: "TvlPage",
@@ -41,10 +41,11 @@ export default {
   },
 
   mounted() {
-    const chart = initChartSettings({
+    const chart = getChartSettings({
       hasTooltip: this.isMobile,
       hasBlockLabel: !this.isMobile,
       legendPosition: this.isMobile ? 'center' : 'top',
+      blocksPadding: this.isMobile ? 1 : 2,
     })
 
     chart.container('chart');
@@ -129,6 +130,11 @@ export default {
       font-size: 40px;
       line-height: 48px;
     }
+  }
+
+  .chain-images-wrap {
+    display: flex;
+    justify-content: space-around;
   }
 
   @media (max-width: 1400px) {
