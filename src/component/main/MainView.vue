@@ -10,6 +10,7 @@
             <PerformancePage id="performance_page"/>
         </div>
 
+        <TvlPage id="tvl_page"/>
         <RoadmapPage id="roadmap_page"/>
         <SecurityPage id="security_page"/>
         <TrustedPage id="trusted_page"/>
@@ -34,11 +35,13 @@ import TeamPage from "@/component/pages/team/TeamPage";
 import QuestionsPage from "@/component/pages/QuestionsPage";
 import Footer from "@/component/main/inc/Footer";
 import BlogPage from "@/component/pages/blog/BlogPage";
+import TvlPage from "@/component/pages/tvl/TvlPage.vue";
 
 export default {
     name: "MainView",
 
     components: {
+        TvlPage,
         BlogPage,
         ProductsPage,
         Footer,
