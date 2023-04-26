@@ -171,8 +171,8 @@ export default {
   }
 
   .shield-img-mobile {
-    right: 29px;
-    top: 89px;
+    right: 10px;
+    top: 64px;
   }
 
   .shield-img {
@@ -240,8 +240,8 @@ export default {
   }
 
   .shield-img {
-    right: 41px;
-    top: 101px;
+    right: 39px;
+    top: 66px;
   }
 
   .shield-img-mobile {
