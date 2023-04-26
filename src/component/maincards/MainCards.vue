@@ -219,12 +219,12 @@ export default {
         tvl = tvlData;
       }
 
-      return tvl ? ('$ ' + this.$utils.formatMoneyComma(tvl, 2)) : '-'
+      return tvl ? ('$ ' + this.$utils.formatMoneyComma(tvl, 0)) : '-'
     },
 
     async getInsuranceFund() {
       let insuranceFund = await this.getInsuranceTotalData(process.env.VUE_APP_WIDGET_API_URL_POLYGON);
-      return insuranceFund ? ('$ ' + this.$utils.formatMoneyComma(insuranceFund, 2)) : '—'
+      return insuranceFund ? ('$ ' + this.$utils.formatMoneyComma(insuranceFund, 0)) : '—'
     },
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="main-card-container">
     <div class="shield-img">
-      <svg width="161" height="152" viewBox="0 0 161 152" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="111" height="102" viewBox="0 0 161 152" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M80.2298 146C80.2298 146 6 131.218 6 28.3155C30.7433 26.7175 54.9859 24.4916 80.2298 6C105.474 24.4346 129.716 26.7175 154.46 28.3155C154.531 131.218 80.2298 146 80.2298 146Z" stroke="url(#paint0_linear_7150_115531)" stroke-width="12" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
         <defs>
           <linearGradient id="paint0_linear_7150_115531" x1="-15.752" y1="13.56" x2="156.292" y2="96.394" gradientUnits="userSpaceOnUse">
@@ -13,7 +13,7 @@
     </div>
 
     <div class="shield-img-mobile">
-      <svg width="119" height="112" viewBox="0 0 119 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="85" height="78" viewBox="0 0 119 112" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M59.0213 106C59.0213 106 6 95.4415 6 21.9397C23.6738 20.7982 40.9899 19.2083 59.0213 6C77.0526 19.1675 94.3688 20.7982 112.043 21.9397C112.094 95.4415 59.0213 106 59.0213 106Z" stroke="url(#paint0_linear_7199_115626)" stroke-width="12" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
         <defs>
           <linearGradient id="paint0_linear_7199_115626" x1="-9.53717" y1="11.4" x2="113.351" y2="70.5671" gradientUnits="userSpaceOnUse">
@@ -41,21 +41,23 @@
 
       <div @click="openUsdLink()" class="tvl-container">
         <div class="value-label tvl-value">
-          {{ chainsStatistic.tvl.value }}
+          <label>
+            {{ chainsStatistic.tvl.value }}
+          </label>
         </div>
 
         <div class="text-label tvl-label">
           {{ chainsStatistic.tvl.label }}
         </div>
       </div>
-      <div @click="openBestChainLinkInsurance()" class="insurance-container">
+<!--      <div @click="openBestChainLinkInsurance()" class="insurance-container">
         <div class="value-label insurance-value">
           {{ chainsStatistic.insuranceFund.value }}
         </div>
         <div class="text-label insurance-labe">
           {{ chainsStatistic.insuranceFund.label }}
         </div>
-      </div>
+      </div>-->
     </div>
   </div>
 </template>
@@ -110,7 +112,7 @@ export default {
 @media only screen and (max-width: 1400px) {
   .main-card-container {
     width: 344px;
-    height: 236px;
+    height: 170px;
   }
 
   .info-label-container {
@@ -169,8 +171,8 @@ export default {
   }
 
   .shield-img-mobile {
-    right: 13px;
-    top: 111px;
+    right: 29px;
+    top: 89px;
   }
 
   .shield-img {
@@ -182,7 +184,7 @@ export default {
 @media only screen and (min-width: 1400px) {
   .main-card-container {
     width: 527px !important;
-    height: 277px;
+    height: 220px;
   }
 
   .info-label-container {
@@ -198,7 +200,7 @@ export default {
   }
 
   .info-container {
-    padding-top: 46px;
+    padding-top: 64px;
     padding-bottom: 41px;
     padding-left: 41px;
   }
@@ -238,8 +240,8 @@ export default {
   }
 
   .shield-img {
-    right: 38px;
-    top: 95px;
+    right: 41px;
+    top: 101px;
   }
 
   .shield-img-mobile {
@@ -301,7 +303,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 25vh;
-  z-index: 10;
+  height: 19vh;
 }
 </style>

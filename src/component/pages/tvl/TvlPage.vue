@@ -1,20 +1,23 @@
 <template>
-  <div class="tvl-page page-container overflow-hidden" v-observe-visibility="visibilityChanged" >
-    <v-row class="container-row">
-      <v-col :cols="12">
-        <v-row :class="isMobile ? 'mt-10' : 'mb-5'" justify="center" >
-          <label class="title-text">overnight’s <label class="accent-text">TVL</label></label>
-        </v-row>
-        <div class="chart-wrap">
-          <div class="chart-title">
-            <span class="chart-title__text">Total value locked</span>
-            <span class="chart-title__value">{{formattedTotalValue}}</span>
+  <div>
+    <div v-if="mekkaData" class="tvl-page page-container overflow-hidden" v-observe-visibility="visibilityChanged" >
+      <v-row class="container-row">
+        <v-col :cols="12">
+          <v-row :class="isMobile ? 'mt-10' : 'mb-5'" justify="center" >
+            <label class="title-text">overnight’s <label class="accent-text">TVL</label></label>
+          </v-row>
+          <div class="chart-wrap">
+            <div class="chart-title">
+              <span class="chart-title__text">Total value locked</span>
+              <span class="chart-title__value">{{totalValue}}</span>
+            </div>
+            <div id="chart" class="chart"></div>
           </div>
-          <div id="chart" class="chart"></div>
-        </div>
-      </v-col>
-    </v-row>
+        </v-col>
+      </v-row>
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -28,32 +31,100 @@ export default {
   },
 
   data: () => ({
-    totalValue: 28340060.87
+    totalValue: null,
+    mekkaData: null
   }),
 
   computed: {
     isMobile() {
       return window.innerWidth <= 960;
     },
-    formattedTotalValue() {
-      return this.$utils.formatMoneyComma(this.totalValue, 2)
+  },
+
+  async mounted() {
+    this.mekkaData = await this.loadProductTvlData();
+    let tvlData = await this.getTvl();
+    this.totalValue = tvlData.formattedTvl;
+    if (this.mekkaData) {
+      console.log('Mekka:', this.mekkaData);
+      setTimeout(() => {
+        this.initChart(this.mekkaData, parseInt(tvlData.tvl));
+      }, 20)
     }
   },
 
-  mounted() {
-    const chart = getChartSettings({
-      hasTooltip: this.isMobile,
-      hasBlockLabel: !this.isMobile,
-      legendPosition: this.isMobile ? 'center' : 'top',
-      blocksPadding: this.isMobile ? 1 : 2,
-    })
-
-    chart.container('chart');
-
-    chart.draw();
-  },
-
   methods: {
+    async loadProductTvlData() {
+      let fetchOptions = {
+        headers: {
+          "Access-Control-Allow-Origin": process.env.VUE_APP_WIDGET_ROOT_API_URL
+        }
+      };
+
+
+      return await fetch(process.env.VUE_APP_WIDGET_ROOT_API_URL + '/root/tvl/product/total', fetchOptions)
+          .then(value => value.json())
+          .then(value => {
+            if (value && !value.error) {
+              return value;
+            } else {
+              return null;
+            }
+          }).catch(reason => {
+            console.log('Error get data: ' + reason);
+            return null;
+          });
+    },
+
+    async getTvl() {
+      let tvl = 0.0;
+      let tvlData = await this.getTvLData();
+      if (tvlData) {
+        tvl = tvlData;
+      }
+
+      return {
+        formattedTvl: tvl ? ('$ ' + this.$utils.formatMoneyComma(tvl, 0)) : '-',
+        tvl: tvl
+      }
+    },
+
+    async getTvLData() {
+      let fetchOptions = {
+        headers: {
+          "Access-Control-Allow-Origin": process.env.VUE_APP_WIDGET_ROOT_API_URL
+        }
+      };
+
+      return fetch(process.env.VUE_APP_WIDGET_ROOT_API_URL + '/root/tvl/total', fetchOptions)
+          .then(value => value.json())
+          .then(value => {
+            if (value) {
+              return value;
+            } else {
+              return null;
+            }
+          }).catch(reason => {
+            console.log('Error get data: ' + reason);
+            return null;
+          });
+    },
+
+    initChart(mekkaData, maxTvl) {
+      const chart = getChartSettings(
+          {
+            mekkaData: mekkaData,
+            maxTvl: maxTvl,
+            hasTooltip: this.isMobile,
+            hasBlockLabel: !this.isMobile,
+            legendPosition: this.isMobile ? 'center' : 'top',
+            blocksPadding: this.isMobile ? 1 : 2,
+          })
+
+      chart.container('chart');
+
+      chart.draw();
+    },
     visibilityChanged (isVisible, entry) {
       if (isVisible) {
         this.isVisible = true;

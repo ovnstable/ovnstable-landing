@@ -6,10 +6,6 @@
         </div>
         <HowPage id="how_page"/>
 
-        <div class="performance-roadmap-container">
-            <PerformancePage id="performance_page"/>
-        </div>
-
         <TvlPage id="tvl_page"/>
         <RoadmapPage id="roadmap_page"/>
         <SecurityPage id="security_page"/>
