@@ -15,6 +15,16 @@
           </div>
         </v-col>
       </v-row>
+
+      <v-row justify="center" class="btn-row" :class="isMobile ? 'mt-0' : ''" >
+        <v-btn
+            text
+            class="feature-btn px-15"
+            @click="openLink('https://defillama.com/protocol/overnight-finance')">
+            See us on DefiLlama
+          <img class="mdi-open ml-1" src="../../../assets/img/mdi-open.svg" height="19" @click="openLink(`https://defillama.com/protocol/overnight-finance`)">
+        </v-btn>
+      </v-row>
     </div>
   </div>
 
@@ -84,8 +94,14 @@ export default {
       }
 
       return {
-        formattedTvl: tvl ? ('$ ' + this.$utils.formatMoneyComma(tvl, 0)) : '-',
+        formattedTvl: tvl ? ('$ ' + this.$utils.formatMoneyComma(tvl, 2)) : '-',
         tvl: tvl
+      }
+    },
+
+    openLink(url) {
+      if (url) {
+        window.open(url, '_blank').focus();
       }
     },
 
@@ -137,7 +153,7 @@ export default {
 <style scoped lang="scss">
   .title-text {
     font-style: normal;
-    font-size: 70px;
+    font-size: 45px;
     line-height: 80px;
     font-family: 'Cormorant', sans-serif;
     text-transform: uppercase;
@@ -149,7 +165,7 @@ export default {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 300;
-    font-size: 60px;
+    font-size: 40px;
     line-height: 80px;
     background-color: #000;
     text-transform: uppercase;
@@ -249,11 +265,37 @@ export default {
       margin-top: 0;
     }
   }
+
+  .feature-btn {
+    height: 40px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 18px !important;
+  }
+
+  .btn-row {
+    margin-top: 5% !important;
+    padding-bottom: 20px;
+  }
+
+  .feature-btn {
+    border: 1px solid #28A0F0;
+    border-radius: 0;
+    font-family: 'Roboto', sans-serif !important;
+    font-feature-settings: 'liga' off !important;
+    color: #28A0F0 !important;
+    text-transform: none !important;
+    letter-spacing: normal;
+  }
+
 </style>
 
 <style>
+
 /* Скрыть логотип и его текст на графике */
 .anychart-credits-text, .anychart-credits-logo {
   display: none;
 }
 </style>
+

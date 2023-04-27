@@ -219,7 +219,7 @@ export default {
         tvl = tvlData;
       }
 
-      return tvl ? ('$ ' + this.$utils.formatMoneyComma(tvl, 0)) : '-'
+      return tvl ? ('$ ' + this.$utils.formatMoneyComma(tvl, 2)) : '-'
     },
 
     async getInsuranceFund() {

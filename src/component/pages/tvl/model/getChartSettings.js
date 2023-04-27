@@ -48,6 +48,7 @@ export const getChartSettings = (
     chart.palette(palette);
     chart.legend().enabled(true).align(legendPosition);
 
+
     chart.data(data);
     chart.interactivity().selectionMode(false);
 
@@ -82,6 +83,38 @@ export const getChartSettings = (
             .fontSize(10)
             .fontFamily('Roboto')
     }
+
+    chart.listen("pointClick", function(e) {
+        console.log(e.iterator)
+
+        // for info
+        // console.log(e.iterator.Ra.Br)
+        // const row = e.iterator.getIndex();
+        // let chainName = mekkaData[row].chainName;
+
+        let type = e.iterator.Ra.Br;
+        if (type === 'USD+') {
+            window.open('https://app.overnight.fi/collateral',"_blank");
+            return;
+        }
+
+        if (type === 'USDT+') {
+            window.open('https://app.overnight.fi/collateral/usdt',"_blank");
+            return;
+        }
+
+        if (type === 'DAI+') {
+            window.open('https://app.overnight.fi/collateral/dai',"_blank");
+            return;
+        }
+
+        if (type === 'ETS') {
+            window.open('https://app.overnight.fi/market',"_blank");
+            return;
+        }
+
+        console.error("Type chart not found for open link")
+    });
 
     chart.tooltip()
         .separator(false)
