@@ -275,7 +275,7 @@ export default {
   }
 
   .btn-row {
-    margin-top: 5% !important;
+    margin-top: 2% !important;
     padding-bottom: 20px;
   }
 
