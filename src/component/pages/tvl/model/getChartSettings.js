@@ -39,8 +39,8 @@ export const getChartSettings = (
     const palette = palettes.distinctColors();
 
     palette.items([
-        tokenColors.USDT,
         tokenColors.ETS,
+        tokenColors.USDT,
         tokenColors.DAI,
         tokenColors.USD
     ]);
