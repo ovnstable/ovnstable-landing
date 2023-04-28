@@ -64,7 +64,17 @@ export const getChartSettings = (
                     return ''
                 }
 
-                return `$${utils.formatNumberToMln(ctx.value)} ${ctx.seriesName}`
+                if (ctx.seriesName === 'USD+') {
+                    if (utils.formatNumberToPercent(parseInt(ctx.value), maxTvl) < 2) {
+                        return ''
+                    }
+
+                    if (utils.formatNumberToPercent(parseInt(ctx.value), maxTvl) < 5) {
+                        return `$${utils.formatNumberToMln(ctx.value)}m`
+                    }
+                }
+
+                return `$${utils.formatNumberToMln(ctx.value)}m ${ctx.seriesName}`
             })
             .fontColor('#FFFFFF')
             .fontSize(14)
@@ -77,7 +87,7 @@ export const getChartSettings = (
                     return ''
                 }
 
-                return `$${utils.formatNumberToMln(ctx.value)}`
+                return `$${utils.formatNumberToMln(ctx.value)}m`
             })
             .fontColor('#FFFFFF')
             .fontSize(10)
@@ -118,7 +128,7 @@ export const getChartSettings = (
 
     chart.tooltip()
         .separator(false)
-        .format((ctx) => '$' + utils.formatNumberToMln(ctx.value) + '' + (maxTvl ? ' ~' + utils.formatNumberToPercent(parseInt(ctx.value), maxTvl) : ''))
+        .format((ctx) => '$' + utils.formatNumberToMln(ctx.value) + 'm' + (maxTvl ? ' ~' + utils.formatNumberToPercent(parseInt(ctx.value), maxTvl)  + '%' : ''))
         .titleFormat('{%seriesName} on {%x}')
         .background('#ffffff')
         .fontColor('#29323E')

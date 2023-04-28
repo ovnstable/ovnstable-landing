@@ -53,13 +53,13 @@ export default {
 
     formatNumberToMln(num) {
         // if (num >= 500000) {
-            return (num / 1000000).toFixed(2) + 'm';
+            return (num / 1000000).toFixed(2);
         // }
         // return num.toLocaleString();
     },
 
     formatNumberToPercent(value, maxValue) {
-        return (value / maxValue * 100).toFixed(2) + '%';
+        return (value / maxValue * 100).toFixed(2);
     },
 
     formatMoney(number = 0, count = 6) {
