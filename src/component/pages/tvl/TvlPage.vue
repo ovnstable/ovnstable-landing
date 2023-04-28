@@ -42,7 +42,12 @@ export default {
 
   data: () => ({
     totalValue: null,
-    mekkaData: null
+    mekkaData: null,
+    clientCalculateFoundsSchema: { // network_calculateValue: 'sub/add_value'
+      'optimism_dai+': 'USD+',
+      'arbitrum_dai+': 'USD+',
+      'bsc_usdt+': 'USD+',
+    }
   }),
 
   computed: {
@@ -53,6 +58,8 @@ export default {
 
   async mounted() {
     this.mekkaData = await this.loadProductTvlData();
+    this.mekkaData = await this.getWithFilledClientFoundsValue(this.mekkaData);
+
     let tvlData = await this.getTvl();
     this.totalValue = tvlData.formattedTvl;
     if (this.mekkaData) {
@@ -76,6 +83,77 @@ export default {
           .then(value => value.json())
           .then(value => {
             if (value && !value.error) {
+              return value;
+            } else {
+              return null;
+            }
+          }).catch(reason => {
+            console.log('Error get data: ' + reason);
+            return null;
+          });
+    },
+
+    async getWithFilledClientFoundsValue(mekkaData) {
+
+      for (let i = 0; i < mekkaData.length; i++) {
+        let mekkaItem = mekkaData[i];
+        for (let j = 0; j < mekkaItem.values.length; j++) {
+          let value = mekkaItem.values[j];
+
+          let key = mekkaItem.chainName.toLowerCase() + '_' + value.name.toLowerCase();
+          let subAddValue = this.clientCalculateFoundsSchema[key]
+          if (!subAddValue) {
+            continue;
+          }
+
+          console.log(mekkaItem.chainName.toLowerCase(), value.name.toLowerCase())
+          let tokenCollaterals = await this.getCollateral(mekkaItem.chainName.toLowerCase(), value.name.toLowerCase());
+          let foundValue = this.getFoundValueByTokenName(tokenCollaterals, subAddValue);
+          console.log(key + ': ', foundValue);
+          value.value = value.value + foundValue;
+          this.subFoundFromMekkaValue(mekkaItem.values, subAddValue, foundValue);
+        }
+      }
+
+      return mekkaData;
+    },
+
+    subFoundFromMekkaValue(networkValues, subToken, subValue) {
+      for (let i = 0; i < networkValues.length; i++) {
+        let value = networkValues[i];
+        console.log("SUB TOKEN:", networkValues, subToken,  subValue)
+        if (value.name ===  subToken) {
+          value.value = value.value - subValue
+          return
+        }
+
+      }
+    },
+
+    getFoundValueByTokenName(collateralList, tokenName) {
+      for (let i = 0; i < collateralList.length; i++) {
+        let collateralInfo = collateralList[i];
+        if (collateralInfo.id && collateralInfo.id.tokenName === tokenName) {
+          return collateralInfo.netAssetValue;
+        }
+      }
+
+      return 0;
+    },
+
+    async getCollateral(networkName, tokenName) {
+      // example: https://api.overnight.fi/optimism/dai+/dapp/collateral/total
+
+      let fetchOptions = {
+        headers: {
+          "Access-Control-Allow-Origin": process.env.VUE_APP_WIDGET_ROOT_API_URL
+        }
+      };
+
+      return fetch(process.env.VUE_APP_WIDGET_ROOT_API_URL + `/${networkName}/${tokenName}/dapp/collateral/total`, fetchOptions)
+          .then(value => value.json())
+          .then(value => {
+            if (value) {
               return value;
             } else {
               return null;
