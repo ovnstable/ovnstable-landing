@@ -92,13 +92,37 @@ export default {
             return null;
           });
     },
+    async getArbitrumValueFundsFromCollateralAndStrategies() {
+      let collateral = await this.getCollateral('arbitrum', 'usd+');
+      console.log("collateral : ", collateral)
+      let collateralSum = collateral.reduce((acc, curr) => acc + curr.netAssetValue, 0);
+      console.log("collateralSum sum: ", collateralSum)
 
+      let strategies = await this.getStrategies('arbitrum', 'usd+');
+      console.log("Strategies : ", strategies)
+      let strategiesSum = strategies.reduce((acc, curr) => acc + curr.netAssetValue, 0);
+      console.log("Strategies sum: ", strategiesSum)
+
+      let sum = strategiesSum - collateralSum;
+      if (sum <= 0) {
+        return 0;
+      }
+      return sum;
+    },
     async getWithFilledClientFoundsValue(mekkaData) {
 
       for (let i = 0; i < mekkaData.length; i++) {
         let mekkaItem = mekkaData[i];
+
         for (let j = 0; j < mekkaItem.values.length; j++) {
           let value = mekkaItem.values[j];
+
+          if (mekkaItem.chainName === 'Arbitrum'  && value.name === 'ETS') {
+            let valueFunds = await this.getArbitrumValueFundsFromCollateralAndStrategies();
+            console.log("+Value valueFunds: ", valueFunds)
+            value.value = valueFunds;
+            continue
+          }
 
           let key = mekkaItem.chainName.toLowerCase() + '_' + value.name.toLowerCase();
           let subAddValue = this.clientCalculateFoundsSchema[key]
@@ -151,6 +175,28 @@ export default {
       };
 
       return fetch(process.env.VUE_APP_WIDGET_ROOT_API_URL + `/${networkName}/${tokenName}/dapp/collateral/total`, fetchOptions)
+          .then(value => value.json())
+          .then(value => {
+            if (value) {
+              return value;
+            } else {
+              return null;
+            }
+          }).catch(reason => {
+            console.log('Error get data: ' + reason);
+            return null;
+          });
+    },
+    async getStrategies(networkName, tokenName) {
+      // example: https://api.overnight.fi/arbitrum/usd+/dapp/strategies
+
+      let fetchOptions = {
+        headers: {
+          "Access-Control-Allow-Origin": process.env.VUE_APP_WIDGET_ROOT_API_URL
+        }
+      };
+
+      return fetch(process.env.VUE_APP_WIDGET_ROOT_API_URL + `/${networkName}/${tokenName}/dapp/strategies`, fetchOptions)
           .then(value => value.json())
           .then(value => {
             if (value) {
