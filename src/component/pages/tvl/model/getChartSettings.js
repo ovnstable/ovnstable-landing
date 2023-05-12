@@ -9,7 +9,9 @@ export const getChartSettings = (
         blocksPadding = 2,
         hasBlockLabel = true,
         hasTooltip = true,
-        legendPosition = 'top',
+        legendPosition = 'bottom',
+        legendAlignment = 'left',
+        legendMarginTop = 10,
     }) => {
 
     let names = []
@@ -46,8 +48,9 @@ export const getChartSettings = (
     ]);
 
     chart.palette(palette);
-    chart.legend().enabled(true).align(legendPosition);
-
+    chart.legend().enabled(true).position(legendPosition);
+    chart.legend().enabled(true).align(legendAlignment);
+    chart.legend().enabled(true).margin(legendMarginTop);
 
     chart.data(data);
     chart.interactivity().selectionMode(false);
