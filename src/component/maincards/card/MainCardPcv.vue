@@ -39,7 +39,7 @@
         </label>
       </div>
 
-      <div @click="openUsdLink()" class="tvl-container">
+      <div @click="openHook('tvl_page')" class="tvl-container">
         <div class="value-label tvl-value">
           <label>
             {{ chainsStatistic.tvl.value }}
@@ -96,8 +96,9 @@ export default {
   },
 
   methods: {
-    openUsdLink() {
-      window.open('https://app.overnight.fi/stats?network=op', '_blank').focus();
+    openHook(name) {
+      let el = document.getElementById(name);
+      el.scrollIntoView();
     },
     openBestChainLinkInsurance() {
       window.open(`https://app.overnight.fi/insurance/polygon`, '_blank').focus();

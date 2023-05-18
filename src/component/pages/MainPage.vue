@@ -59,7 +59,7 @@ export default {
 
     methods: {
         launchDapp() {
-            window.open(`https://app.overnight.fi/featured?tabName=featured`, '_blank').focus();
+            window.open(`https://app.overnight.fi/swap?tabName=swap-odos`, '_blank').focus();
         },
 
         visibilityChanged (isVisible, entry) {

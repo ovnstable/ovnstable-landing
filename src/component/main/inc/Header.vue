@@ -49,8 +49,8 @@
                             <v-list-item class="menu-list-item" @click="openHook('products_page')">
                                 <v-list-item-title class="list-item-label">Products</v-list-item-title>
                             </v-list-item>
-                            <v-list-item class="menu-list-item" @click="openHook('performance_page')">
-                                <v-list-item-title class="list-item-label">Performance</v-list-item-title>
+                            <v-list-item class="menu-list-item" @click="openHook('tvl_page')">
+                                <v-list-item-title class="list-item-label">Overnight's TVL</v-list-item-title>
                             </v-list-item>
                             <v-list-item class="menu-list-item" @click="openHook('roadmap_page')">
                                 <v-list-item-title class="list-item-label">Roadmap</v-list-item-title>
@@ -125,7 +125,7 @@ export default {
         },
 
         launchDapp() {
-            window.open(`https://app.overnight.fi/featured?tabName=featured`, '_blank').focus();
+            window.open(`https://app.overnight.fi/swap?tabName=swap-odos`, '_blank').focus();
         },
 
         openLink(url) {

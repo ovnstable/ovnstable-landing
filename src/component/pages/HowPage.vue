@@ -24,8 +24,8 @@
                                     <li class="list-label mb-3">Profit (positive rebase) once collateral value grows above 100%, loss (negative rebase) in case collateral value below 100%</li>
                                     <li class="list-label">Profit payouts via daily rebase, transparent balance & P/L</li>
                                 </ul>
-                                <label class="mint-link d-flex mt-5" @click="openLink(`https://app.overnight.fi/`)">Mint USD+
-                                    <img class="mdi-open ml-1" src="../../assets/img/mdi-open.svg" @click="openLink(`https://app.overnight.fi/`)"></label>
+                                <label class="mint-link d-flex mt-5" @click="openLink(`https://app.overnight.fi/collateral`)">Mint USD+
+                                    <img class="mdi-open ml-1" src="../../assets/img/mdi-open.svg" @click="openLink(`https://app.overnight.fi/collateral`)"></label>
                             </v-expansion-panel-content>
                         </v-expansion-panel>
 
@@ -58,8 +58,6 @@
                                             <li class="list-label mb-3">High quality protocols, enabling Overnight generates real yield (sustainable yield without rewards) like Aave and Uni V3, prioritized</li>
                                             <li class="list-label mb-3">Yield is not guaranteed, varies daily depending on collateral performance, can be negative</li>
                                         </ul>
-                                        <label class="mint-link d-flex mt-5" @click="openLink(`https://app.overnight.fi/collateral`)">USD+ portfolio strategy in details
-                                            <img class="mdi-open ml-1" src="../../assets/img/mdi-open.svg" @click="openLink(`https://app.overnight.fi/collateral`)"></label>
                                     </v-expansion-panel-content>
                             </v-expansion-panel>
                         </template>
