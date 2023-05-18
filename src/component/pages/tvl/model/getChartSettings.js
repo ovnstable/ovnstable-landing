@@ -102,22 +102,43 @@ export const getChartSettings = (
 
         // for info
         // console.log(e.iterator.Ra.Br)
-        // const row = e.iterator.getIndex();
-        // let chainName = mekkaData[row].chainName;
+        const row = e.iterator.getIndex();
+        let chainName = mekkaData[row].chainName;
 
         let type = e.iterator.Ra.Br;
-        if (type === 'USD+') {
-            window.open('https://app.overnight.fi/collateral',"_blank");
+        if (type === 'USD+' && chainName === 'Optimism') {
+            window.open('https://app.overnight.fi/collateral?tabName=optimism',"_blank");
+            return;
+        } if (type === 'USD+' && chainName === 'Arbitrum') {
+            window.open('https://app.overnight.fi/collateral?tabName=arbitrum', "_blank");
+            return;
+        } if (type === 'USD+' && chainName === 'BSC') {
+            window.open('https://app.overnight.fi/collateral?tabName=bsc', "_blank");
+            return;
+        } if (type === 'USD+' && chainName === 'zkSync') {
+            window.open('https://app.overnight.fi/collateral?tabName=zksync', "_blank");
+            return;
+        } if (type === 'USD+' && chainName === 'Polygon') {
+            window.open('https://app.overnight.fi/collateral?tabName=polygon', "_blank");
             return;
         }
 
         if (type === 'USDT+') {
             window.open('https://app.overnight.fi/collateral/usdt',"_blank");
             return;
+        } if (type === 'USDT+' && chainName === 'BSC') {
+            window.open('https://app.overnight.fi/collateral?tabName=bsc', "_blank");
+            return;
         }
 
         if (type === 'DAI+') {
             window.open('https://app.overnight.fi/collateral/dai',"_blank");
+            return;
+        } if (type === 'DAI+' && chainName === 'Optimism') {
+            window.open('https://app.overnight.fi/collateral?tabName=optimism', "_blank");
+            return;
+        } if (type === 'DAI+' && chainName === 'Arbitrum') {
+            window.open('https://app.overnight.fi/collateral?tabName=arbitrum', "_blank");
             return;
         }
 
