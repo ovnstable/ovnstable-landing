@@ -87,7 +87,7 @@ export default {
 
   async mounted() {
     this.mekkaData = await this.loadProductTvlData();
-    this.mekkaData = await this.getWithFilledClientFoundsValue(this.mekkaData);
+    // this.mekkaData = await this.getWithFilledClientFoundsValue(this.mekkaData);
     this.getTotalNetworkValue(this.mekkaData);
 
     let tvlData = await this.getTvl();
