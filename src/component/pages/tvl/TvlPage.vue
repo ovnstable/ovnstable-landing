@@ -11,7 +11,7 @@
                     <span class="chart-title__text">Total value locked</span>
                     <span class="chart-title__value">{{totalValue}}</span>
                 </div>
-                <div class="chart-chain-blocks">
+<!--                <div class="chart-chain-blocks">
                     <div class="chart-block block-op">
                         <img class="mr-2" :src="require('@/assets/img/network/optimism.svg')">
                         <label class="chain-text">{{ '$' + $utils.formatNumberToMln(this.totalOptimismValue) + 'M' }}</label>
@@ -32,7 +32,7 @@
                         <img class="mr-2" :src="require('@/assets/img/network/pol.svg')">
                         <label class="chain-text">{{ '$' + $utils.formatNumberToMln(this.totalPolygonValue) + 'M' }}</label>
                     </div>
-                </div>
+                </div>-->
                 <div id="chart" class="chart"></div>
             </div>
 
