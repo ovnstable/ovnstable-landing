@@ -11,7 +11,7 @@
                     <span class="chart-title__text">Total value locked</span>
                     <span class="chart-title__value">{{totalValue}}</span>
                 </div>
-                <div class="chart-chain-blocks">
+<!--                <div class="chart-chain-blocks">
                     <div class="chart-block block-op">
                         <img class="mr-2" :src="require('@/assets/img/network/optimism.svg')">
                         <label class="chain-text">{{ '$' + $utils.formatNumberToMln(this.totalOptimismValue) + 'M' }}</label>
@@ -32,7 +32,7 @@
                         <img class="mr-2" :src="require('@/assets/img/network/pol.svg')">
                         <label class="chain-text">{{ '$' + $utils.formatNumberToMln(this.totalPolygonValue) + 'M' }}</label>
                     </div>
-                </div>
+                </div>-->
                 <div id="chart" class="chart"></div>
             </div>
 
@@ -77,6 +77,19 @@ export default {
       totalBscValue: null,
       totalZksyncValue: null,
       totalPolygonValue: null,
+      chainOrderMap: {
+        'Optimism': 1,
+        'Arbitrum': 2,
+        'BSC': 3,
+        'Polygon': 4,
+        'zkSync': 5,
+      },
+      chainOrderProductsMap: {
+        'ETS': 1,
+        'USDT+': 2,
+        'DAI+': 3,
+        'USD+': 4,
+      }
   }),
 
   computed: {
@@ -87,7 +100,8 @@ export default {
 
   async mounted() {
     this.mekkaData = await this.loadProductTvlData();
-    this.mekkaData = await this.getWithFilledClientFoundsValue(this.mekkaData);
+    this.mekkaData = this.getOrderedMekkaData(this.mekkaData);
+    console.log("Mekka Data:", this.mekkaData);
     this.getTotalNetworkValue(this.mekkaData);
 
     let tvlData = await this.getTvl();
@@ -121,6 +135,63 @@ export default {
             console.log('Error get data: ' + reason);
             return null;
           });
+    },
+    getOrderedMekkaData(mekkaData) {
+        let orderedMekkaData = [];
+        for (let i = 0; i < mekkaData.length; i++) {
+            let cahinInfo = mekkaData[i];
+            let newPosition = this.chainOrderMap[cahinInfo.chainName];
+            if (newPosition) {
+                orderedMekkaData[newPosition - 1] = this.getOrderedAndFilledProductValues(cahinInfo);
+                console.log('Ordered and filled orderedMekkaData[newPosition - 1]', orderedMekkaData[newPosition - 1]);
+                continue;
+            }
+
+            console.error("Mekka data not found order position for chain: ", cahinInfo);
+        }
+
+        return orderedMekkaData;
+    },
+    getOrderedAndFilledProductValues(chainInfo) {
+        let orderedProducts = [];
+        chainInfo = this.getFilledNullableProductValues(chainInfo);
+        console.log('Filled chainInfo: ', chainInfo);
+        for (let i = 0; i < chainInfo.values.length; i++) {
+            let product = chainInfo.values[i];
+            let newPosition = this.chainOrderProductsMap[product.name];
+            if (newPosition) {
+                orderedProducts[newPosition - 1] = product;
+                continue;
+            }
+
+            console.error("Mekka product data not found order position for chain: ", product);
+        }
+
+        chainInfo.values = orderedProducts;
+        return chainInfo;
+    },
+    getFilledNullableProductValues(chainInfo) {
+        let productsWithoutValues = []
+        let productAvailableList = Object.keys(this.chainOrderProductsMap);
+        for (let i = 0; i < productAvailableList.length; i++) {
+            let productName = productAvailableList[i];
+            if (this.isProductExistInChainProducts(productName, chainInfo)) {
+                // product exist
+                continue;
+            }
+
+            productsWithoutValues.push({
+                name: productName,
+                value: 0
+            })
+        }
+
+        chainInfo.values = [...chainInfo.values, ...productsWithoutValues];
+
+        return chainInfo;
+    },
+    isProductExistInChainProducts(productName, chainInfo) {
+        return chainInfo.values.some(obj => obj.name.toLowerCase() === productName.toLowerCase());
     },
     async getArbitrumValueFundsFromCollateralAndStrategies() {
       let collateral = await this.getCollateral('arbitrum', 'usd+');
