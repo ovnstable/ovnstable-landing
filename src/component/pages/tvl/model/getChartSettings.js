@@ -123,22 +123,16 @@ export const getChartSettings = (
             return;
         }
 
-        if (type === 'USDT+') {
-            window.open('https://app.overnight.fi/collateral/usdt',"_blank");
-            return;
-        } if (type === 'USDT+' && chainName === 'BSC') {
-            window.open('https://app.overnight.fi/collateral?tabName=bsc', "_blank");
+        if (type === 'USDT+' && chainName === 'BSC') {
+            window.open('https://app.overnight.fi/collateral/usdt?tabName=bsc',"_blank");
             return;
         }
 
-        if (type === 'DAI+') {
-            window.open('https://app.overnight.fi/collateral/dai',"_blank");
-            return;
-        } if (type === 'DAI+' && chainName === 'Optimism') {
-            window.open('https://app.overnight.fi/collateral?tabName=optimism', "_blank");
+        if (type === 'DAI+' && chainName === 'Optimism') {
+            window.open('https://app.overnight.fi/collateral/dai?tabName=optimism',"_blank");
             return;
         } if (type === 'DAI+' && chainName === 'Arbitrum') {
-            window.open('https://app.overnight.fi/collateral?tabName=arbitrum', "_blank");
+            window.open('https://app.overnight.fi/collateral/dai?tabName=arbitrum', "_blank");
             return;
         }
 
