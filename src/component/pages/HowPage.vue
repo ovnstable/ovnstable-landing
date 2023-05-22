@@ -25,7 +25,8 @@
                                     <li class="list-label">Profit payouts via daily rebase, transparent balance & P/L</li>
                                 </ul>
                                 <label class="mint-link d-flex mt-5" @click="openLink(`https://app.overnight.fi/collateral`)">Mint USD+
-                                    <img class="mdi-open ml-1" src="../../assets/img/mdi-open.svg" @click="openLink(`https://app.overnight.fi/collateral`)"></label>
+                                    <img class="mdi-open ml-1" src="../../assets/img/mdi-open.svg" @click="openLink(`https://app.overnight.fi/collateral`)" alt="open"/>
+                                </label>
                             </v-expansion-panel-content>
                         </v-expansion-panel>
 
@@ -40,7 +41,7 @@
                                             <li class="list-label mb-3">Collateral consists of  yield-generating strategies, with most yield coming from delta-neutral ETSes:
                                                 <v-col class="d-flex align-center justify-center mt-3 mb-3">
                                                     <v-row class="left-border pl-2 d-flex flex-column align-start justify-center" >
-                                                        <label class="list-label" v-if="">Delta-neutral strategies</label>
+                                                        <label class="list-label">Delta-neutral strategies</label>
                                                         <label class="mint-link underlined" @click="openLink(`https://app.overnight.fi/market`)">"ETS"</label>
                                                     </v-row>
                                                     <v-spacer></v-spacer>
@@ -71,7 +72,7 @@
                                     <ul class="mb-3">
                                         <li class="list-label mb-3">Collateral consists of  yield-generating strategies, with most yield coming from delta-neutral ETSes:
                                             <v-row class="left-border pl-2 d-flex flex-column align-start justify-center mt-3 mb-1" >
-                                                <label class="list-label" v-if="">Delta-neutral strategies</label>
+                                                <label class="list-label">Delta-neutral strategies</label>
                                                 <label class="mint-link underlined" @click="openLink(`https://app.overnight.fi/market`)">"ETS"</label>
                                             </v-row>
                                             <v-spacer></v-spacer>
