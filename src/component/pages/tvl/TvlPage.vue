@@ -11,7 +11,7 @@
                     <span class="chart-title__text">Total value locked</span>
                     <span class="chart-title__value">{{totalValue}}</span>
                 </div>
-<!--                <div class="chart-chain-blocks">
+                <div class="chart-chain-blocks">
                     <div class="chart-block block-op">
                         <img class="mr-2" :src="require('@/assets/img/network/optimism.svg')">
                         <label class="chain-text">{{ '$' + $utils.formatNumberToMln(this.totalOptimismValue) + 'M' }}</label>
@@ -32,7 +32,7 @@
                         <img class="mr-2" :src="require('@/assets/img/network/pol.svg')">
                         <label class="chain-text">{{ '$' + $utils.formatNumberToMln(this.totalPolygonValue) + 'M' }}</label>
                     </div>
-                </div>-->
+                </div>
                 <div id="chart" class="chart"></div>
             </div>
 
@@ -55,7 +55,6 @@
 
 <script>
 import {getChartSettings} from "@/component/pages/tvl/model/getChartSettings";
-import utils from "@/plugins/utils";
 
 export default {
   name: "TvlPage",
@@ -100,6 +99,7 @@ export default {
 
   async mounted() {
     this.mekkaData = await this.loadProductTvlData();
+    this.mekkaData = await this.getWithFilledClientFoundsValue(this.mekkaData);
     this.mekkaData = this.getOrderedMekkaData(this.mekkaData);
     console.log("Mekka Data:", this.mekkaData);
     this.getTotalNetworkValue(this.mekkaData);
@@ -218,7 +218,15 @@ export default {
         for (let j = 0; j < mekkaItem.values.length; j++) {
           let value = mekkaItem.values[j];
 
-          if (mekkaItem.chainName === 'Arbitrum'  && value.name === 'ETS') {
+            //TODO TVL hack - agreed by Max
+            if (mekkaItem.chainName === 'Arbitrum'  && value.name === 'USD+') {
+                // let valueFunds = await this.getArbitrumValueFundsFromCollateralAndStrategies();
+                console.log("+Value old value: ", mekkaData,  value, value.value)
+                value.value = value.value*1 + 1800000;
+                console.log("+Value new value: ", mekkaData, value, value.value)
+            }
+
+          /*if (mekkaItem.chainName === 'Arbitrum'  && value.name === 'ETS') {
             let valueFunds = await this.getArbitrumValueFundsFromCollateralAndStrategies();
             console.log("+Value valueFunds: ", valueFunds)
             value.value = valueFunds;
@@ -236,7 +244,7 @@ export default {
           let foundValue = this.getFoundValueByTokenName(tokenCollaterals, subAddValue);
           console.log(key + ': ', foundValue);
           value.value = value.value + foundValue;
-          this.subFoundFromMekkaValue(mekkaItem.values, subAddValue, foundValue);
+          this.subFoundFromMekkaValue(mekkaItem.values, subAddValue, foundValue);*/
         }
       }
 

@@ -106,33 +106,18 @@ export const getChartSettings = (
         let chainName = mekkaData[row].chainName;
 
         let type = e.iterator.Ra.Br;
-        if (type === 'USD+' && chainName === 'Optimism') {
-            window.open('https://app.overnight.fi/collateral?tabName=optimism',"_blank");
-            return;
-        } if (type === 'USD+' && chainName === 'Arbitrum') {
-            window.open('https://app.overnight.fi/collateral?tabName=arbitrum', "_blank");
-            return;
-        } if (type === 'USD+' && chainName === 'BSC') {
-            window.open('https://app.overnight.fi/collateral?tabName=bsc', "_blank");
-            return;
-        } if (type === 'USD+' && chainName === 'zkSync') {
-            window.open('https://app.overnight.fi/collateral?tabName=zksync', "_blank");
-            return;
-        } if (type === 'USD+' && chainName === 'Polygon') {
-            window.open('https://app.overnight.fi/collateral?tabName=polygon', "_blank");
+        if (type === 'USD+') {
+            window.open('https://app.overnight.fi/collateral?tabName=' + chainName.toLowerCase(),"_blank");
             return;
         }
 
-        if (type === 'USDT+' && chainName === 'BSC') {
-            window.open('https://app.overnight.fi/collateral/usdt?tabName=bsc',"_blank");
+        if (type === 'USDT+') {
+            window.open('https://app.overnight.fi/collateral/usdt?tabName=' + chainName.toLowerCase(),"_blank");
             return;
         }
 
-        if (type === 'DAI+' && chainName === 'Optimism') {
-            window.open('https://app.overnight.fi/collateral/dai?tabName=optimism',"_blank");
-            return;
-        } if (type === 'DAI+' && chainName === 'Arbitrum') {
-            window.open('https://app.overnight.fi/collateral/dai?tabName=arbitrum', "_blank");
+        if (type === 'DAI+') {
+            window.open('https://app.overnight.fi/collateral/dai?tabName=' + chainName.toLowerCase(),"_blank");
             return;
         }
 
@@ -141,7 +126,7 @@ export const getChartSettings = (
             return;
         }
 
-        console.error("Type chart not found for open link")
+        console.error("Type chart not found for open link, type:", type);
     });
 
     chart.tooltip()
