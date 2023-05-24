@@ -9,7 +9,7 @@
                 </v-row>
 
                 <v-row class="d-flex" :class="isMobile ? 'flex-column mt-0' : 'flex-row mb-15'" justify="center">
-                    <v-container :class="isMobile ? '' : 'ma-0'" class="fill-height card-container mt-10" @click="openLink('https://app.overnight.fi/stats')">
+                    <v-container :class="isMobile ? '' : 'ma-0'" class="fill-height card-container mt-10" @click="openLinkToDapp('https://app.overnight.fi/stats')">
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
                             <v-row align="center" :class="isMobile ? 'mt-3 mb-5' : 'mt-8 mb-2 ml-1'" justify="start">
                                 <div>
@@ -39,7 +39,7 @@
 
                         <v-col align-self="start" :cols="isMobile ? 6 : 12">
                             <v-row :class="isMobile ? '' : 'ml-1 mb-10'" justify="start">
-                                <v-btn class="mint-btn" @click="openLink('https://app.overnight.fi/stats?network=op')">
+                                <v-btn class="mint-btn" @click="openLinkToDapp('https://app.overnight.fi/stats?network=op')">
                                     mint
                                     usd+ <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg"></v-btn>
                             </v-row>
@@ -66,7 +66,7 @@
 
                     </v-container>
 
-                    <v-container :class="isMobile ? '' : 'ma-0 mx-3'" class="fill-height card-container mt-10" @click="openLink('https://app.overnight.fi/market')">
+                    <v-container :class="isMobile ? '' : 'ma-0 mx-3'" class="fill-height card-container mt-10">
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
                             <v-row align="center" :class="isMobile ? 'mt-3 mb-5' : 'mt-8 mb-2 ml-1'" justify="start">
                                 <div>
@@ -89,7 +89,7 @@
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
                             <v-row :class="isMobile ? '' : 'ml-0 mb-10 mt-3'" justify="start" align="center">
                                 <v-btn class="mint-btn" :class="isMobile ? 'ml-0' : 'ml-1' "
-                                       @click="openLink('https://app.overnight.fi/market')">mint ETS
+                                       @click="openLinkToDapp('https://app.overnight.fi/market')">mint ETS
                                     <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg">
                                 </v-btn>
                                 <label class="learn-more" :class="isMobile ? 'ml-2 mt-1' : 'ml-12 mt-1'"
@@ -121,7 +121,7 @@
 
                     </v-container>
 
-                    <v-container :class="isMobile ? 'mb-15' : 'ma-0'" class="fill-height card-container mt-10" @click="openLink('https://app.overnight.fi/insurance')">
+                    <v-container :class="isMobile ? 'mb-15' : 'ma-0'" class="fill-height card-container mt-10" @click="openLinkToDapp('https://app.overnight.fi/insurance')">
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
                             <v-row align="center" :class="isMobile ? 'mt-3 mb-5' : 'mt-8 mb-10 ml-1'" justify="start">
                                 <div>
@@ -146,7 +146,7 @@
 
                         <v-col align-self="start" :cols="isMobile ? 6 : 12">
                             <v-row :class="isMobile ? 'mb-3' : 'ml-1 mb-1 mt-0'" justify="start">
-                                <v-btn class="mint-btn" @click="openLink('https://app.overnight.fi/insurance')">
+                                <v-btn class="mint-btn" @click="openLinkToDapp('https://app.overnight.fi/insurance')">
                                     mint
                                     insurance <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg"></v-btn>
                             </v-row>
@@ -197,6 +197,11 @@ export default {
         openLink(url) {
             if (url) {
                 window.open(url, '_blank').focus();
+            }
+        },
+        openLinkToDapp(url) {
+            if (url) {
+                window.open(url, '_self').focus();
             }
         },
     }
