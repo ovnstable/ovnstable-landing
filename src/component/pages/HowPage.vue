@@ -24,7 +24,7 @@
                                     <li class="list-label mb-3">Profit (positive rebase) once collateral value grows above 100%, loss (negative rebase) in case collateral value below 100%</li>
                                     <li class="list-label">Profit payouts via daily rebase, transparent balance & P/L</li>
                                 </ul>
-                                <label class="mint-link d-flex mt-5" @click="openLinkToDapp(`https://app.overnight.fi/collateral`)">Mint USD+
+                                <label class="mint-link d-flex mt-5" @click="openLinkToDapp(`https://app.overnight.fi/swap`)">Mint USD+
                                     <img class="mdi-open ml-1" src="../../assets/img/mdi-open.svg" @click="openLinkToDapp(`https://app.overnight.fi/collateral`)"></label>
                             </v-expansion-panel-content>
                         </v-expansion-panel>
