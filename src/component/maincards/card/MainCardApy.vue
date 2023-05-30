@@ -162,9 +162,9 @@ export default {
 
         openBestChainLink() {
           if (this.networkUsdPlus.includes('_dai')) {
-            this.openLink('https://app.overnight.fi/stats/dai?network=' + this.networkUsdPlus);
+            this.openLink('https://app.overnight.fi/stats/dai?tabName=' + this.networkUsdPlus);
           } else {
-            this.openLink('https://app.overnight.fi/stats?network=' + this.networkUsdPlus);
+            this.openLink('https://app.overnight.fi/stats?tabName=' + this.networkUsdPlus);
           }
         },
 

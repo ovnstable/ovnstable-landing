@@ -20,12 +20,10 @@
                             </v-expansion-panel-header>
                             <v-expansion-panel-content class="mt-n5">
                                 <ul class="mb-3">
-                                    <li class="list-label mb-3">100% collaterized with assets immediately convertible into USDC</li>
+                                    <li class="list-label mb-3"><span class="mint-link collateralized" @click="openLinkToDapp(`https://app.overnight.fi/swap`)">100% collaterized</span> with assets immediately convertible into USDC</li>
                                     <li class="list-label mb-3">Profit (positive rebase) once collateral value grows above 100%, loss (negative rebase) in case collateral value below 100%</li>
                                     <li class="list-label">Profit payouts via daily rebase, transparent balance & P/L</li>
                                 </ul>
-                                <label class="mint-link d-flex mt-5" @click="openLinkToDapp(`https://app.overnight.fi/swap`)">Mint USD+
-                                    <img class="mdi-open ml-1" src="../../assets/img/mdi-open.svg" @click="openLinkToDapp(`https://app.overnight.fi/collateral`)"></label>
                             </v-expansion-panel-content>
                         </v-expansion-panel>
 
@@ -283,6 +281,11 @@ export default {
         line-height: 24px;
     }
 
+    .collateralized {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
     .how-img {
         width: 80vw !important;
     }
@@ -351,6 +354,11 @@ export default {
         line-height: 40px !important;
     }
 
+    .collateralized {
+        font-size: 20px !important;
+        line-height: 40px !important;
+    }
+
     .darken-color {
         font-style: normal !important;
         font-weight: 300 !important;
@@ -407,6 +415,12 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
         font-size: 14px !important;
         line-height: 28px !important;
     }
+
+    .collateralized {
+        font-size: 14px !important;
+        line-height: 28px !important;
+    }
+
 
     .darken-color {
         font-style: normal !important;
