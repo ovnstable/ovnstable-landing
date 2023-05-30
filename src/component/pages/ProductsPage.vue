@@ -9,7 +9,7 @@
                 </v-row>
 
                 <v-row class="d-flex" :class="isMobile ? 'flex-column mt-0' : 'flex-row mb-15'" justify="center">
-                    <v-container :class="isMobile ? '' : 'ma-0'" class="fill-height card-container mt-10" @click="openLinkToDapp('https://app.overnight.fi/stats')">
+                    <v-container :class="isMobile ? '' : 'ma-0'" class="fill-height card-container mt-10" @click="openLinkToDapp('https://app.overnight.fi/swap?tabName=swap-odos')">
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
                             <v-row align="center" :class="isMobile ? 'mt-3 mb-5' : 'mt-8 mb-2 ml-1'" justify="start">
                                 <div>
@@ -39,7 +39,7 @@
 
                         <v-col align-self="start" :cols="isMobile ? 6 : 12">
                             <v-row :class="isMobile ? '' : 'ml-1 mb-10'" justify="start">
-                                <v-btn class="mint-btn" @click="openLinkToDapp('https://app.overnight.fi/stats?network=op')">
+                                <v-btn class="mint-btn" @click="openLinkToDapp('https://app.overnight.fi/swap?tabName=swap-odos')">
                                     mint
                                     usd+ <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg"></v-btn>
                             </v-row>
