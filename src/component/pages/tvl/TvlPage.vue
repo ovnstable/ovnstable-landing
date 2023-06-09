@@ -550,10 +550,28 @@ export default {
   }
 
   @media (max-width: 767px) {
+      .chart-chain-blocks {
+          display: flex;
+          flex-direction: row;
+          justify-content: start;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 10px;
+      }
+
+      .chart-block {
+          height: 30px;
+          width: 130px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+
     .chart-container {
       aspect-ratio: unset;
       width: 100%;
-      height: 400px;
+      height: 600px;
       padding: 5px;
     }
 

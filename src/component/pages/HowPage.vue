@@ -20,7 +20,7 @@
                             </v-expansion-panel-header>
                             <v-expansion-panel-content class="mt-n5">
                                 <ul class="mb-3">
-                                    <li class="list-label mt-3"><span class="mint-link collateralized underlined" @click="openLinkToDapp(`https://app.overnight.fi/swap`)">100% collaterized</span> with assets immediately convertible into USDC</li>
+                                    <li class="list-label mt-3"><span class="mint-link collateralized underlined" @click="openLinkToDapp(`https://app.overnight.fi/collateral?tabName=optimism`)">100% collaterized</span> with assets immediately convertible into USDC</li>
                                     <li class="list-label mt-3">Profit (positive rebase) once collateral value grows above 100%, loss (negative rebase) in case collateral value below 100%</li>
                                     <li class="list-label">Profit payouts via daily rebase, transparent balance & P/L</li>
                                 </ul>
