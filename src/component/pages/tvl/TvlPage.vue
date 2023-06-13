@@ -556,7 +556,7 @@ export default {
           justify-content: start;
           align-items: center;
           flex-wrap: wrap;
-          gap: 10px;
+          gap: 5px;
       }
 
       .chart-block {

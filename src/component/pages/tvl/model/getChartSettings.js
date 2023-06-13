@@ -107,22 +107,22 @@ export const getChartSettings = (
 
         let type = e.iterator.Ra.Br;
         if (type === 'USD+') {
-            window.open('https://app.overnight.fi/collateral?tabName=' + chainName.toLowerCase(),"_blank");
+            window.open('https://app.overnight.fi/collateral?tabName=' + chainName.toLowerCase(),"_self");
             return;
         }
 
         if (type === 'USDT+') {
-            window.open('https://app.overnight.fi/collateral/usdt?tabName=' + chainName.toLowerCase(),"_blank");
+            window.open('https://app.overnight.fi/collateral/usdt?tabName=' + chainName.toLowerCase(),"_self");
             return;
         }
 
         if (type === 'DAI+') {
-            window.open('https://app.overnight.fi/collateral/dai?tabName=' + chainName.toLowerCase(),"_blank");
+            window.open('https://app.overnight.fi/collateral/dai?tabName=' + chainName.toLowerCase(),"_self");
             return;
         }
 
         if (type === 'ETS') {
-            window.open('https://app.overnight.fi/market',"_blank");
+            window.open('https://app.overnight.fi/market',"_self");
             return;
         }
 
