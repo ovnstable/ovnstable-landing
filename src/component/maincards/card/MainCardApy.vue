@@ -64,17 +64,17 @@
           </div>
         </v-col>
         <v-divider class="apy-divider" dark vertical></v-divider>
-        <v-col class="value-col" @click="openBestChainLinkEts()">
+        <v-col class="value-col" @click="openBestChainLinkPool()">
           <label class="value-label">
-            {{ valueEts }}
+              {{ valuePool }}
           </label>
           <br/><br/>
           <label class="text-label">
-            <abbr title="Exchange-traded strategy">ETS</abbr> APY
+            <abbr title="Exchange-traded strategy">Pool</abbr> APR
           </label>
           <div class="network-img-container">
             <img class="network-img"
-                 :src="require('../../../assets/networks/' + networkEts +'.png')">
+                 :src="require('../../../assets/networks/' + networkPool +'.png')">
           </div>
         </v-col>
       </v-row>
@@ -107,27 +107,18 @@ export default {
             default: null,
         },
 
-        valueEts: {
+        valuePool: {
             type: String,
             default: null,
         },
 
-        valueInsurance: {
+
+        poolName: {
             type: String,
             default: null,
         },
 
-        etsName: {
-            type: String,
-            default: null,
-        },
-
-        networkEts: {
-            type: String,
-            default: null,
-        },
-
-        networkInsurance: {
+        networkPool: {
             type: String,
             default: null,
         },
@@ -168,12 +159,8 @@ export default {
           }
         },
 
-        openBestChainLinkEts() {
-            this.openLink(`https://app.overnight.fi/market?tabName=ets`);
-        },
-
-        openBestChainLinkInsurance() {
-            this.openLink(`https://app.overnight.fi/insurance/${this.networkInsurance}`);
+        openBestChainLinkPool() {
+            this.openLink(`https://app.overnight.fi/featured?tabName=${this.networkPool}`);
         },
     }
 }
