@@ -70,7 +70,7 @@
           </label>
           <br/><br/>
           <label class="text-label">
-            <abbr title="Exchange-traded strategy">Pool</abbr> APR
+            <abbr title="Exchange-traded strategy">Top Pool</abbr> APR
           </label>
           <div class="network-img-container">
             <img class="network-img"
