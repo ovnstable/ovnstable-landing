@@ -72,9 +72,11 @@
           <label class="text-label">
             <abbr title="Exchange-traded strategy">Top Pool</abbr> APR
           </label>
-          <div class="network-img-container">
-            <img class="network-img"
-                 :src="require('../../../assets/networks/' + networkPool +'.png')" :alt="networkPool">
+          <div v-if="networkPool === 'zksync' || networkPool === 'zk'" class="network-img-container">
+            <img class="network-img" :src="require('../../../assets/networks/' + networkPool +'.svg')" :alt="networkPool">
+          </div>
+          <div v-else class="network-img-container">
+            <img class="network-img" :src="require('../../../assets/networks/' + networkPool +'.png')" :alt="networkPool">
           </div>
         </v-col>
       </v-row>
