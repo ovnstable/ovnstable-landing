@@ -74,7 +74,7 @@
           </label>
           <div class="network-img-container">
             <img class="network-img"
-                 :src="require('../../../assets/networks/' + networkPool +'.png')">
+                 :src="require('../../../assets/networks/' + networkPool +'.png')" :alt="networkPool">
           </div>
         </v-col>
       </v-row>
