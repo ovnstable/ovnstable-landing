@@ -125,7 +125,7 @@ export default {
         },
 
         launchDapp() {
-            window.open(`https://app.overnight.fi/swap?tabName=swap-odos`, '_self').focus();
+            window.open(`https://app.overnight.fi/featured`, '_self').focus();
         },
 
         openLink(url) {
