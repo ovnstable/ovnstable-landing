@@ -154,7 +154,7 @@ export default {
 
     methods: {
         openLink(url) {
-            window.open(url).focus();
+            window.open(url, '_self').focus();
         },
 
         openBestChainLink() {
