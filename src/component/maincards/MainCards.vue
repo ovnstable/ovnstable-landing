@@ -9,13 +9,14 @@
       <v-col>
 
         <MainCardApy
-            :label-usd-plus="bestChain && bestChain.includes('_dai') ? 'DAI+ APY' : (bestChain.includes('_usdt') ? 'USDT+ APY' : 'USD+ APY')"
+            :label-usd-plus="bestChain && bestProductType.includes('dai_') ? 'DAI+ APY' : (bestProductType.includes('usdt_') ? 'USDT+ APY' : 'USD+ APY')"
             :value-usd-plus="apyWeek"
             :network-usd-plus="bestChain"
             :is-loading="isApyLoading"
             :value-pool="aprPool"
             :pool-name="bestPoolName"
             :network-pool="bestChainPool"
+            :best-product-type="bestProductType"
             info="BEST % ACROSS ALL CHAINS"
         />
       </v-col>
@@ -50,6 +51,7 @@ export default {
     aprPool: null,
     bestPoolName: null,
     bestChain: null,
+    bestProductType: null,
     bestChainPool: null,
   }),
 
@@ -159,6 +161,7 @@ export default {
         if (item.productType.includes('_PLUS') && (!this.apyWeek || item.value > this.apyWeek)) {
           this.apyWeek = item.value + '';
           this.bestChain = item.chain.toLowerCase();
+          this.bestProductType = item.productType.toLowerCase();
         }
       }
 

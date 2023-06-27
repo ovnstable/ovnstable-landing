@@ -124,6 +124,10 @@ export default {
             type: String,
             default: null,
         },
+        bestProductType: {
+            type: String,
+            default: null,
+        },
 
         info: {
             type: String,
@@ -154,11 +158,16 @@ export default {
         },
 
         openBestChainLink() {
-          if (this.networkUsdPlus.includes('_dai')) {
+          if (this.bestProductType.includes('dai_')) {
             this.openLink('https://app.overnight.fi/stats/dai?tabName=' + this.networkUsdPlus + "&chart=month");
-          } else {
-            this.openLink('https://app.overnight.fi/stats?tabName=' + this.networkUsdPlus + "&chart=month");
+            return
           }
+
+            if (this.bestProductType.includes('usdt_')) {
+                this.openLink('https://app.overnight.fi/stats/dai?tabName=' + this.networkUsdPlus + "&chart=month");
+            }
+
+          this.openLink('https://app.overnight.fi/stats?tabName=' + this.networkUsdPlus + "&chart=month");
         },
 
         openBestChainLinkPool() {
