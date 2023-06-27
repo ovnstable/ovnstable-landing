@@ -9,7 +9,7 @@
       <v-col>
 
         <MainCardApy
-            :label-usd-plus="bestChain && bestChain.includes('_dai') ? 'DAI+ APY' : 'USD+ APY'"
+            :label-usd-plus="bestChain && bestChain.includes('_dai') ? 'DAI+ APY' : (bestChain.includes('_usdt') ? 'USDT+ APY' : 'USD+ APY')"
             :value-usd-plus="apyWeek"
             :network-usd-plus="bestChain"
             :is-loading="isApyLoading"
@@ -162,7 +162,7 @@ export default {
         }
       }
 
-      this.apyWeek = this.apyWeek ? (this.$utils.formatMoney(this.apyWeek, 0) + '%') : '—';
+      this.apyWeek = this.apyWeek ? (this.$utils.formatMoney(this.apyWeek, 1) + '%') : '—';
       this.isApyLoading = false;
 
       this.isPoolsLoading = true
@@ -171,7 +171,7 @@ export default {
       let topPool = sortedPools && sortedPools.length ? sortedPools[0] : null;
       console.log("Top pool: ", topPool);
       if (topPool) {
-          this.aprPool = topPool.apr ? (this.$utils.formatMoney(topPool.apr, 0) + '%') : '—';
+          this.aprPool = topPool.apr ? (this.$utils.formatMoney(topPool.apr, 1) + '%') : '—';
           this.bestPoolName = topPool.name;
           this.bestChainPool = topPool.chainName.toLowerCase();
       }

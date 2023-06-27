@@ -150,14 +150,14 @@ export default {
 
     methods: {
         openLink(url) {
-            window.open(url, '_blank').focus();
+            window.open(url).focus();
         },
 
         openBestChainLink() {
           if (this.networkUsdPlus.includes('_dai')) {
-            this.openLink('https://app.overnight.fi/stats/dai?tabName=' + this.networkUsdPlus);
+            this.openLink('https://app.overnight.fi/stats/dai?tabName=' + this.networkUsdPlus + "&chart=month");
           } else {
-            this.openLink('https://app.overnight.fi/stats?tabName=' + this.networkUsdPlus);
+            this.openLink('https://app.overnight.fi/stats?tabName=' + this.networkUsdPlus + "&chart=month");
           }
         },
 
