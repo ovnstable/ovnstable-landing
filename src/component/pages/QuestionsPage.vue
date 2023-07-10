@@ -1,68 +1,33 @@
 <template>
     <div class="page-container overflow-hidden" :class="isMobile ? 'flex-column' : 'flex-row'">
-        <v-row class="container-row d-flex overflow-hidden">
-            <v-col class="text-col" :cols="isMobile ? 12 : 7">
-                <v-row :class="isMobile ? 'mb-5' : 'mb-10'" class="title-row" justify="center" align="center" v-observe-visibility="visibilityChanged">
-                    <p class="title-text mb-0">join <label class="accent-text">plus</label> community</p>
-                </v-row>
+        <v-row class="container-row overflow-hidden d-flex flex-column">
+            <v-row :class="isMobile ? 'mb-5 mt-10' : 'mb-10'" class="title-row" justify="center" align="center" v-observe-visibility="visibilityChanged">
+                <p class="title-text mb-0">join <label class="accent-text">plus</label> community</p>
+            </v-row>
 
-                <v-row :class="isMobile ? '' : 'mb-4'" justify="center" v-if="isVisible">
-                    <v-text-field
-                            class="text-input-field"
-                            v-model="email"
-                            :rules="[(val) => (val ? validateEmail(val) : true)]"
-                            background-color="white"
-                            flat
-                            placeholder="Write your Email here"
-                            outlined>
-                    </v-text-field>
-                </v-row>
+            <v-row :class="isMobile ? 'd-flex flex-wrap' : 'd-flex flex-row justify-center'">
+                <div :class="isMobile ? '' : 'mr-15'">
+                    <v-row class="card-container ma-2" align="center" justify="center" @click="openLink('https://twitter.com/overnight_fi')">
+                        <img class="social-img" :src="require('@/assets/img/social/twitter.svg')">
+                    </v-row>
+                </div>
+                <div :class="isMobile ? '' : 'mr-15'">
+                    <v-row class="card-container ma-2" align="center" justify="center" @click="openLink('https://t.me/overnight_fi')">
+                        <img class="social-img" :src="require('@/assets/img/social/tg.svg')">
+                    </v-row>
+                </div>
 
-                <v-row :class="isMobile ? '' : 'mb-4'" justify="center" v-if="isVisible">
-                    <v-text-field
-                            class="text-input-field"
-                            v-model="text"
-                            background-color="white"
-                            flat
-                            placeholder="Write your question here"
-                            outlined>
-                    </v-text-field>
-                </v-row>
-
-                <v-row :class="isMobile ? 'mb-1': 'mb-12'" class="email-row" justify="center" v-if="isVisible" >
-                    <v-btn class="submit-btn" @click="sendEmailAction" :class="isDisabledBtn ? 'disabled-btn' : 'send-btn'" :disabled="isDisabledBtn">
-                        Send
-                    </v-btn>
-                </v-row>
-            </v-col>
-
-            <v-col class="social-col" :cols="isMobile ? 12 : 5" v-if="isVisible">
-                <v-row justify="center" class="mt-5">
-                    <div>
-                        <v-row class="card-container ma-2" align="center" justify="center" @click="openLink('https://twitter.com/overnight_fi')">
-                            <img class="social-img" :src="require('@/assets/img/social/twitter.svg')">
-                        </v-row>
-                    </div>
-                    <div>
-                        <v-row class="card-container ma-2" align="center" justify="center" @click="openLink('https://t.me/overnight_fi')">
-                            <img class="social-img" :src="require('@/assets/img/social/tg.svg')">
-                        </v-row>
-                    </div>
-                </v-row>
-
-                <v-row justify="center">
-                    <div>
-                        <v-row class="card-container ma-2" align="center" justify="center" @click="openLink('https://discord.com/invite/overnight-fi')">
-                            <img class="social-img" :src="require('@/assets/img/social/discord.svg')">
-                        </v-row>
-                    </div>
-                    <div>
-                        <v-row class="card-container ma-2" align="center" justify="center" @click="openLink('https://github.com/ovnstable')">
-                            <img class="social-img" :src="require('@/assets/img/social/github.svg')">
-                        </v-row>
-                    </div>
-                </v-row>
-            </v-col>
+                <div :class="isMobile ? '' : 'mr-15'">
+                    <v-row class="card-container ma-2" align="center" justify="center" @click="openLink('https://discord.com/invite/overnight-fi')">
+                        <img class="social-img" :src="require('@/assets/img/social/discord.svg')">
+                    </v-row>
+                </div>
+                <div :class="isMobile ? '' : 'mr-15'">
+                    <v-row class="card-container ma-2" align="center" justify="center" @click="openLink('https://github.com/ovnstable')">
+                        <img class="social-img" :src="require('@/assets/img/social/github.svg')">
+                    </v-row>
+                </div>
+            </v-row>
         </v-row>
     </div>
 </template>

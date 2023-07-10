@@ -11,15 +11,6 @@
                     <img v-if="!isMobile" class="roadmap-img mt-15" :src="require('@/assets/img/roadmap.svg')">
                     <img v-if="isMobile" class="roadmap-img-mobile mb-0" :src="require('@/assets/img/roadmap_mobile.svg')">
                 </v-row>
-
-                <v-row justify="center" class="btn-row" :class="isMobile ? 'mt-0' : ''" v-if="!isMobile">
-                    <v-btn
-                        text
-                        class="feature-btn px-15"
-                        @click="openLink('https://overnight.canny.io/')">
-                        Vote for new features
-                    </v-btn>
-                </v-row>
             </v-col>
         </v-row>
     </div>

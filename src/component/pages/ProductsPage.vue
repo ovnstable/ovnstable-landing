@@ -40,7 +40,7 @@
                         <v-col align-self="start" :cols="isMobile ? 6 : 12">
                             <v-row :class="isMobile ? '' : 'ml-1 mb-10'" justify="start">
                                 <v-btn class="mint-btn" @click="openLinkToDapp('https://app.overnight.fi/swap?tabName=swap-odos')">
-                                    mint
+                                    swap
                                     usd+ <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg"></v-btn>
                             </v-row>
                         </v-col>
@@ -52,7 +52,6 @@
                                         <Tooltip
                                             text="Expected, not guaranteed yield ranges. For more accurate figures, see our dapp."/>
                                     </div>
-
                                 </v-row>
                                 <v-row :class="isMobile ? ' mb-5' : 'ml-1 mb-5'" justify="start">
                                     <label class="numbers-label">5-15%</label>
@@ -66,7 +65,7 @@
 
                     </v-container>
 
-                    <v-container :class="isMobile ? '' : 'ma-0 mx-3'" class="fill-height card-container mt-10">
+                    <v-container :class="isMobile ? '' : 'ma-0 mx-3'" class="fill-height card-container mt-10" @click="openLinkToDapp('https://app.overnight.fi/ets_about')">
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
                             <v-row align="center" :class="isMobile ? 'mt-3 mb-5' : 'mt-8 mb-2 ml-1'" justify="start">
                                 <div>
@@ -88,15 +87,10 @@
                         </v-col>
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
                             <v-row :class="isMobile ? '' : 'ml-0 mb-10 mt-3'" justify="start" align="center">
-                                <v-btn class="mint-btn" :class="isMobile ? 'ml-0' : 'ml-1' "
-                                       @click="openLinkToDapp('https://app.overnight.fi/market')">mint ETS
-                                    <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg">
-                                </v-btn>
-                                <label class="learn-more" :class="isMobile ? 'ml-2 mt-1' : 'ml-12 mt-1'"
-                                       @click="openLink('https://www.youtube.com/watch?v=wIVAiUMLmvA')">Learn
-                                    more</label>
-                                <img :class="isMobile ? 'mt-1 ml-1' : 'mt-1 ml-1'" class="mdi-open" src="../../assets/img/youtube-outlined.svg"
-                                     @click="openLink('https://www.youtube.com/watch?v=wIVAiUMLmvA')">
+                                <label class="clickable mx-1 mr-0" @click="openLinkToDapp('https://app.overnight.fi/ets_about')">
+                                    About ETS
+                                </label>
+                                <img @click="openLinkToDapp('https://app.overnight.fi/ets_about')" class="arrow ml-3" src="../../assets/img/mdi-open.svg">
                             </v-row>
                         </v-col>
                         <v-row :class="isMobile ? 'ml-1 mt-5' : 'ma-0'">
@@ -123,19 +117,17 @@
 
                     <v-container :class="isMobile ? 'mb-15' : 'ma-0'" class="fill-height card-container mt-10" @click="openLinkToDapp('https://app.overnight.fi/insurance')">
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
-                            <v-row align="center" :class="isMobile ? 'mt-3 mb-5' : 'mt-8 mb-10 ml-1'" justify="start">
+                            <v-row align="center" :class="isMobile ? 'mt-3 mb-5' : 'mt-8 mb-0 ml-1'" justify="start">
                                 <div>
                                     <v-img :src="require('@/assets/img/products/hs_return.svg')" />
                                 </div>
                                 <label class="risk-label-high ml-1">high risk/return</label>
                             </v-row>
-                            <v-row :class="isMobile ? 'mb-5' : 'ml-1 mb-4'" justify="start">
+                            <v-row :class="isMobile ? 'mb-1' : 'ml-1 mb-3'" justify="start">
                                 <label class="card-label">USD+ Insurance</label>
-                                <div>
-                                    <svg width="30" height="20" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M2.67045 17.7159V24H0V5.36364C0 3.71591 0.488636 2.42045 1.45455 1.45455C2.40909 0.488636 3.73864 0 5.375 0C6.95455 0 8.17045 0.386364 9.07955 1.13636C9.97727 1.90909 10.4205 2.97727 10.4205 4.32955C10.4205 5.26136 10.125 6.13636 9.53409 6.94318C8.94318 7.75 8.18182 8.30682 7.23864 8.61364V8.65909C8.65909 8.88636 9.76136 9.39773 10.5114 10.2273C11.2614 11.0341 11.6364 12.0682 11.6364 13.3409C11.6364 14.8409 11.1136 16.0682 10.0795 17.0114C9.03409 17.9545 7.67045 18.4205 5.96591 18.4205C4.76136 18.4205 3.65909 18.1818 2.67045 17.7159ZM4.36364 9.94318V7.76136C5.35227 7.63636 6.15909 7.27273 6.80682 6.65909C7.44318 6.03409 7.76136 5.34091 7.76136 4.54545C7.76136 2.97727 6.95455 2.18182 5.36364 2.18182C4.5 2.18182 3.82955 2.45455 3.36364 3.01136C2.89773 3.56818 2.67045 4.34091 2.67045 5.35227V15.3409C3.70454 15.9432 4.71591 16.2386 5.69318 16.2386C6.64773 16.2386 7.39773 15.9886 7.93182 15.5C8.46591 15 8.72727 14.2955 8.72727 13.3977C8.72727 11.3636 7.27273 10.2273 4.36364 9.94318Z" fill="#29323E"/>
-                                    </svg>
-                                </div>
+                            </v-row>
+                            <v-row :class="isMobile ? 'mt-1 mb-3' : 'mb-5 ml-1'" >
+                                <label class="in-development ">In development</label>
                             </v-row>
                             <v-row :class="isMobile ? 'mt-5' : 'mx-1'" justify="start">
                                 <label class="desc-label mb-5"><span class="bold-text">Highly yielding:</span> collects (1) premiums retained from USD+ yields and (2) yield generated by insurance fund liquidity, mostly, from best ETSes</label>
@@ -146,9 +138,12 @@
 
                         <v-col align-self="start" :cols="isMobile ? 6 : 12">
                             <v-row :class="isMobile ? 'mb-3' : 'ml-1 mb-1 mt-0'" justify="start">
-                                <v-btn class="mint-btn" @click="openLinkToDapp('https://app.overnight.fi/insurance')">
-                                    mint
-                                    insurance <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg"></v-btn>
+                                <v-row :class="isMobile ? 'ml-0 mt-0 mb-0' : 'ml-0 mb-10 mt-3'" justify="start" align="center">
+                                    <label class="clickable mx-1 mr-0" @click="openLinkToDapp('https://app.overnight.fi/insurance')">
+                                        About Insurance
+                                    </label>
+                                    <img @click="openLinkToDapp('https://app.overnight.fi/insurance')" class="arrow ml-3" src="../../assets/img/mdi-open.svg">
+                                </v-row>
                             </v-row>
                         </v-col>
 
@@ -282,11 +277,6 @@ export default {
         height: 17px;
     }
 
-    .learn-more {
-        font-size: 16px;
-        line-height: 24px;
-    }
-
     .card-container {
         width: 400px;
         padding-left: 20px;
@@ -300,6 +290,11 @@ export default {
     .mdi-open {
         height: 22px;
         width: 22px;
+    }
+
+    .clickable {
+        font-size: 16px;
+        line-height: 28px;
     }
 }
 
@@ -373,6 +368,11 @@ export default {
         width: 32px;
     }
     /* Large screen, non-retina */
+
+    .clickable {
+        font-size: 18px;
+        line-height: 28px;
+    }
 
 }
 
@@ -457,6 +457,11 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
         height: 160px !important;
     }
     /* Large screen, retina, stuff to override above media query */
+
+    .clickable {
+        font-size: 16px;
+        line-height: 28px;
+    }
 
 }
 
@@ -597,13 +602,21 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     text-transform: uppercase;
-    color: #707A8B;
+    color: rgba(173, 179, 189, 1);
+    cursor: pointer;
 }
 
 .bold-text {
     font-weight: 500;
     background-color: #F1F3F6;
     padding: 3px;
+}
+
+.clickable {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: rgba(28, 149, 231, 1);
+    cursor: pointer;
 }
 
 </style>

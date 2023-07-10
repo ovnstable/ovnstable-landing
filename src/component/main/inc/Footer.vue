@@ -29,7 +29,7 @@
                         </v-row>
                     </v-col>
                     <v-col>
-                        <v-row>
+                        <v-row class="mb-3">
                             <label class="col-title-item" @click="openLink('https://www.youtube.com/channel/UCuPsmMZTOCaTNZWUXWZr12A')">YouTube</label>
                         </v-row>
                         <v-row class="mb-3">

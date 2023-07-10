@@ -5,7 +5,7 @@
         class="tooltip-container"
         transition="none"
         right
-        :close-delay="link ? 4000 : 100"
+        :close-delay="link ? 4000 : 1000"
     >
         <template v-slot:activator="{ on, attrs }">
             <div class="info-icon"
