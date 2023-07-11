@@ -50,7 +50,7 @@
                                     <label class="apy-label">apy&nbsp;</label>
                                     <div @click.stop>
                                         <Tooltip
-                                            text="Expected, not guaranteed yield ranges. For more accurate figures, see our dapp."/>
+                                            text="Expected, not guaranteed yield ranges."/>
                                     </div>
                                 </v-row>
                                 <v-row :class="isMobile ? ' mb-5' : 'ml-1 mb-5'" justify="start">
@@ -100,7 +100,7 @@
                                     <div @click.stop>
                                         <Tooltip
                                             :max-width="200"
-                                            text="Expected, not guaranteed yield ranges. For more accurate figures, see our dapp."/>
+                                            text="Expected, not guaranteed yield ranges."/>
                                     </div>
                                 </v-row>
                                 <v-row :class="isMobile ? 'mb-5' : 'ml-1 mb-5'" justify="start">
@@ -152,7 +152,7 @@
                                 <label class="apy-label">apy&nbsp;</label>
                                 <div @click.stop>
                                     <Tooltip
-                                        text="Expected, not guaranteed yield ranges. For more accurate figures, see our dapp."/>
+                                        text="Expected, not guaranteed yield ranges."/>
                                 </div>
                             </v-row>
                             <v-row :class="isMobile ? 'mb-5' : 'ml-1 mb-5'" justify="start">
