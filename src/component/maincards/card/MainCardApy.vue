@@ -40,8 +40,7 @@
             </label>
         </v-row>
 
-
-      <div v-if="isLoading" class="loader-container">
+      <div v-if="isLoading || isPoolsLoading" class="loader-container">
         <v-progress-circular
             width="2"
             size="24"
@@ -59,7 +58,7 @@
             {{ labelUsdPlus }}
           </label>
           <div class="network-img-container">
-            <img class="network-img"
+            <img v-if="networkUsdPlus" class="network-img"
                  :src="require('../../../assets/networks/' + networkUsdPlus +'.png')">
           </div>
         </v-col>
@@ -73,10 +72,10 @@
             <abbr>Top Pool</abbr> APR
           </label>
           <div v-if="networkPool === 'zksync' || networkPool === 'zk'" class="network-img-container">
-            <img class="network-img" :src="require('../../../assets/networks/' + networkPool +'.svg')" :alt="networkPool">
+            <img v-if="networkPool" class="network-img" :src="require('../../../assets/networks/' + networkPool +'.svg')" :alt="networkPool">
           </div>
           <div v-else class="network-img-container">
-            <img class="network-img" :src="require('../../../assets/networks/' + networkPool +'.png')" :alt="networkPool">
+            <img v-if="networkPool" class="network-img" :src="require('../../../assets/networks/' + networkPool +'.png')" :alt="networkPool">
           </div>
         </v-col>
       </v-row>
@@ -135,6 +134,10 @@ export default {
         },
 
       isLoading: {
+          type: Boolean,
+          default: true,
+      },
+      isPoolsLoading: {
           type: Boolean,
           default: true,
       }

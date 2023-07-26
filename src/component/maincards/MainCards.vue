@@ -9,10 +9,11 @@
       <v-col>
 
         <MainCardApy
-            :label-usd-plus="bestChain && bestProductType.includes('dai_') ? 'DAI+ APY' : (bestProductType.includes('usdt_') ? 'USDT+ APY' : 'USD+ APY')"
+            :label-usd-plus="bestChain && bestProductType && bestProductType.includes('dai_') ? 'DAI+ APY' : (bestProductType && bestProductType.includes('usdt_') ? 'USDT+ APY' : 'USD+ APY')"
             :value-usd-plus="apyWeek"
             :network-usd-plus="bestChain"
             :is-loading="isApyLoading"
+            :is-pools-loading="isPoolsLoading"
             :value-pool="aprPool"
             :pool-name="bestPoolName"
             :network-pool="bestChainPool"
@@ -148,6 +149,8 @@ export default {
     async getMainCardsData() {
 
       this.isApyLoading = true;
+      this.isPoolsLoading = true
+
       let apys = await this.getProductApyData(process.env.VUE_APP_WIDGET_ROOT_API_URL + '/root/widget');
       apys.sort(function(a, b) {
         return b.value - a.value;
@@ -168,18 +171,18 @@ export default {
       this.apyWeek = this.apyWeek ? (this.$utils.formatMoney(this.apyWeek, 1) + '%') : '—';
       this.isApyLoading = false;
 
-      this.isPoolsLoading = true
       this.bestChainPool = null;
       let sortedPools = await this.loadPools();
       let topPool = sortedPools && sortedPools.length ? sortedPools[0] : null;
       console.log("Top pool: ", topPool);
+
       if (topPool) {
           this.aprPool = topPool.apr ? (this.$utils.formatMoney(topPool.apr, 1) + '%') : '—';
           this.bestPoolName = topPool.name;
           this.bestChainPool = topPool.chainName.toLowerCase();
       }
-
-      this.isPoolsLoading = false
+        console.log("Top pool loaded");
+        this.isPoolsLoading = false
 
       // chains statistic
       this.isLoading = true;
