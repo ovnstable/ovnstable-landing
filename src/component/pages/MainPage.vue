@@ -59,7 +59,7 @@ export default {
 
     methods: {
         launchDapp() {
-            window.open(`https://app.overnight.fi/featured`, '_self').focus();
+            window.open(`https://app.overnight.fi/swap`, '_self').focus();
         },
 
         visibilityChanged (isVisible, entry) {
