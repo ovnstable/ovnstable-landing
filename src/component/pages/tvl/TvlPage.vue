@@ -32,6 +32,10 @@
                         <img class="mr-2" :src="require('@/assets/img/network/pol.svg')">
                         <label class="chain-text">{{ '$' + $utils.formatNumberToMln(this.totalPolygonValue) + 'M' }}</label>
                     </div>
+                    <div class="chart-block block-base">
+                        <img class="mr-2" :src="require('@/assets/img/network/base.svg')" style="height: 22px!important; width: 22px!important">
+                        <label class="chain-text">{{ '$' + $utils.formatNumberToMln(this.totalBaseValue) + 'M' }}</label>
+                    </div>
                 </div>
                 <div id="chart" class="chart"></div>
             </div>
@@ -76,12 +80,14 @@ export default {
       totalBscValue: null,
       totalZksyncValue: null,
       totalPolygonValue: null,
+      totalBaseValue: null,
       chainOrderMap: {
         'Optimism': 1,
         'Arbitrum': 2,
         'BSC': 3,
         'Polygon': 4,
         'zkSync': 5,
+        'Base': 6,
       },
       chainOrderProductsMap: {
         'ETS': 1,
@@ -306,6 +312,13 @@ export default {
                       this.totalPolygonValue = sumPoly;
                   }
                   console.log('Polygon TVL: ', this.totalPolygonValue);
+              }
+              if (mekkaItem.chainName === 'Base') {
+                  for (let p = 0; p < mekkaItem.values.length; p++) {
+                      sumPoly += mekkaItem.values[p].value;
+                      this.totalBaseValue = sumPoly;
+                  }
+                  console.log('Base TVL: ', this.totalBaseValue);
               }
           }
       },
