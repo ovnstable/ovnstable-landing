@@ -209,6 +209,7 @@ export default {
               { appApiUrl: 'https://op.overnight.fi/api' },
               { appApiUrl: 'https://arbitrum.overnight.fi/api' },
               { appApiUrl: 'https://zksync.overnight.fi/api' },
+              { appApiUrl: 'https://base.overnight.fi/api' },
           ];
 
           for (let networkConfig of networkConfigList) {
