@@ -27,6 +27,9 @@
                         <v-row class="mb-3">
                             <label class="col-title-item" @click="openLink('https://discord.com/invite/overnight-fi')">Discord</label>
                         </v-row>
+                        <v-row class="mb-3">
+                            <label class="col-title-item" @click="openLink('https://zealy.io/c/overnight-fi/questboard')">Zealy</label>
+                        </v-row>
                     </v-col>
                     <v-col>
                         <v-row class="mb-3">

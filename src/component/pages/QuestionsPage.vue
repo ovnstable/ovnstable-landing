@@ -12,8 +12,8 @@
                     </v-row>
                 </div>
                 <div :class="isMobile ? '' : 'mr-15'">
-                    <v-row class="card-container ma-2" align="center" justify="center" @click="openLink('https://t.me/overnight_fi')">
-                        <img class="social-img" :src="require('@/assets/img/social/tg.svg')">
+                    <v-row class="card-container ma-2" align="center" justify="center" @click="openLink('https://zealy.io/c/overnight-fi/questboard')">
+                        <img class="social-img" :src="require('@/assets/img/social/zealy.svg')">
                     </v-row>
                 </div>
 

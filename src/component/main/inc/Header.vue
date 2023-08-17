@@ -21,9 +21,9 @@
                          :style="'--opacity: ' + headerOpacity">
                 </div>
                 <div class="mr-8 sub-text-focus-in-1s" v-if="!isMobile">
-                    <img class="social-btn"
-                         @click="openLink('https://t.me/overnight_fi')"
-                         :src="require('@/assets/img/social/tg_btn.svg')"
+                    <img class="social-btn zealy"
+                         @click="openLink('https://zealy.io/c/overnight-fi/questboard')"
+                         :src="require('@/assets/img/social/zealy_btn.svg')"
                          :style="'--opacity: ' + headerOpacity">
                 </div>
 
@@ -81,6 +81,9 @@
                             </v-list-item>
                             <v-list-item class="menu-list-item" @click="openLink('https://github.com/ovnstable')">
                                 <v-list-item-title class="list-item-label">GitHub</v-list-item-title>
+                            </v-list-item>
+                            <v-list-item class="menu-list-item" @click="openLink('https://zealy.io/c/overnight-fi/questboard')">
+                                <v-list-item-title class="list-item-label">Zealy</v-list-item-title>
                             </v-list-item>
                         </v-list>
                     </v-menu>
@@ -298,5 +301,10 @@ export default {
 
 .social-btn:hover {
     cursor: pointer;
+}
+
+.zealy {
+    margin-left: 10px;
+    height: 26px !important;
 }
 </style>
