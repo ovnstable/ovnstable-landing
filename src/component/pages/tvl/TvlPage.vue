@@ -36,6 +36,10 @@
                         <img class="mr-2" :src="require('@/assets/img/network/base.svg')" style="height: 22px!important; width: 22px!important">
                         <label class="chain-text">{{ '$' + $utils.formatNumberToMln(this.totalBaseValue) + 'M' }}</label>
                     </div>
+                    <div class="chart-block block-linea">
+                        <img class="mr-2" :src="require('@/assets/img/network/linea.svg')" style="height: 22px!important; width: 22px!important">
+                        <label class="chain-text">{{ '$' + $utils.formatNumberToMln(this.totalLineaValue) + 'M' }}</label>
+                    </div>
                 </div>
                 <div id="chart" class="chart"></div>
             </div>
@@ -74,6 +78,7 @@ export default {
       'optimism_dai+': 'USD+',
       'arbitrum_dai+': 'USD+',
       'bsc_usdt+': 'USD+',
+      'linea_usdt+': 'USD+',
     },
       totalOptimismValue: null,
       totalArbitrumValue: null,
@@ -81,6 +86,7 @@ export default {
       totalZksyncValue: null,
       totalPolygonValue: null,
       totalBaseValue: null,
+      totalLineaValue: null,
       chainOrderMap: {
         'Optimism': 1,
         'Arbitrum': 2,
@@ -88,6 +94,7 @@ export default {
         'Polygon': 4,
         'zkSync': 5,
         'Base': 6,
+        'Linea': 7,
       },
       chainOrderProductsMap: {
         'ETS': 1,
@@ -314,11 +321,19 @@ export default {
                   console.log('Polygon TVL: ', this.totalPolygonValue);
               }
               if (mekkaItem.chainName === 'Base') {
-                  for (let p = 0; p < mekkaItem.values.length; p++) {
-                      sumPoly += mekkaItem.values[p].value;
+                  for (let h = 0; h < mekkaItem.values.length; h++) {
+                      sumPoly += mekkaItem.values[h].value;
                       this.totalBaseValue = sumPoly;
                   }
                   console.log('Base TVL: ', this.totalBaseValue);
+              }
+
+              if (mekkaItem.chainName === 'Linea') {
+                  for (let l = 0; l < mekkaItem.values.length; l++) {
+                      sumPoly += mekkaItem.values[l].value;
+                      this.totalLineaValue = sumPoly;
+                  }
+                  console.log('Linea TVL: ', this.totalLineaValue);
               }
           }
       },
