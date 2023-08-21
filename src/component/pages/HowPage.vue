@@ -94,7 +94,7 @@
 
                         <v-expansion-panel class="ml-n9 panel-bordered" @click="openPanel(2)">
                             <v-expansion-panel-header class="panel-header-row">
-                                <label class="panel-header mb-5">3. Insured <span class="beta-text">BETA</span></label>
+                                <label class="panel-header mb-5">3. Insurance <span class="beta-text ml-2">in development</span></label>
                             </v-expansion-panel-header>
                             <v-expansion-panel-content class="mt-n5">
                                 <ul class="mb-3">
