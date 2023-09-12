@@ -28,6 +28,10 @@
                 </div>
 
                 <div :class="isMobile ? '' : 'mr-8'">
+                    <v-btn class="presale-btn sub-text-focus-in-1s" @click="launchPresale">PRESALE</v-btn>
+                </div>
+
+                <div :class="isMobile ? '' : 'mr-8'">
                     <v-btn class="dapp-btn sub-text-focus-in-1s" @click="launchDapp">DAPP</v-btn>
                 </div>
 
@@ -127,6 +131,10 @@ export default {
             this.scrollPosition = window.scrollY;
         },
 
+        launchPresale() {
+            window.open(`https://app.overnight.fi/presale`, '_self').focus();
+        },
+
         launchDapp() {
             window.open(`https://app.overnight.fi/swap`, '_self').focus();
         },
@@ -155,8 +163,16 @@ export default {
         height: 22px !important ;
     }
 
-    .dapp-btn {
+    .presale-btn {
         height: 40px !important;
+        font-style: normal !important;
+        font-weight: 400 !important;
+        font-size: 16px !important;
+        line-height: 18px !important;
+    }
+
+    .dapp-btn {
+        height: 38px !important;
         font-style: normal !important;
         font-weight: 400 !important;
         font-size: 16px !important;
@@ -192,9 +208,18 @@ export default {
         height: 34px !important ;
     }
 
-    .dapp-btn {
+    .presale-btn {
         width: 200px !important;
         height: 48px !important;
+        font-style: normal !important;
+        font-weight: 400 !important;
+        font-size: 18px !important;
+        line-height: 20px !important;
+    }
+
+    .dapp-btn {
+        width: 180px !important;
+        height: 44px !important;
         font-style: normal !important;
         font-weight: 400 !important;
         font-size: 18px !important;
@@ -257,6 +282,15 @@ export default {
 
 .logo-img {
     vertical-align: sub !important;
+}
+
+.presale-btn {
+    border-radius: 2px !important;
+    background: linear-gradient(91.26deg, #28A0F0 0%, rgba(6, 120, 196, 0.9917) 100%);
+    box-shadow: none !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-feature-settings: 'liga' off !important;
+    color: #FFFFFF !important;
 }
 
 .dapp-btn {
