@@ -2,9 +2,9 @@
     <div class="main-header-container header-background overflow-hidden flex-row" :style="'--opacity: ' + headerOpacity">
         <v-row class="header-row fill-height">
             <v-col cols="12" class="d-flex overflow-hidden justify-space-between align-center">
-                <div class="mr-auto sub-text-focus-in-1s" :class="isMobile ? 'mr-4' : ''" @click="openHook('main_page')">
+                <div class="mr-auto sub-text-focus-in-1s logo-container" @click="openHook('main_page')">
                     <img class="logo-img" :src="require('@/assets/img/logo.svg')">
-                    <img class="logo-img-text ml-2" :style="'--opacity: ' + headerOpacity" :src="require('@/assets/img/logo-text.svg')">
+                    <img class="logo-img-text" v-if="!isMobile" :style="'--opacity: ' + headerOpacity" :src="require('@/assets/img/logo-text.svg')">
                 </div>
 
                 <div class="mr-2 sub-text-focus-in-1s" v-if="!isMobile">
@@ -27,11 +27,11 @@
                          :style="'--opacity: ' + headerOpacity">
                 </div>
 
-                <div :class="isMobile ? '' : 'mr-8'">
+                <div :class="isMobile ? 'mr-2' : 'mr-5'">
                     <v-btn class="presale-btn sub-text-focus-in-1s" @click="launchPresale">PRESALE</v-btn>
                 </div>
 
-                <div :class="isMobile ? '' : 'mr-8'">
+                <div :class="isMobile ? 'mr-1' : 'mr-3'">
                     <v-btn class="dapp-btn sub-text-focus-in-1s" @click="launchDapp">DAPP</v-btn>
                 </div>
 
@@ -157,6 +157,7 @@ export default {
 @media only screen and (max-width: 1400px) {
     .logo-img {
         height: 28px !important ;
+        margin-right: 10px !important;
     }
 
     .logo-img-text {
@@ -165,16 +166,12 @@ export default {
 
     .presale-btn {
         height: 40px !important;
-        font-style: normal !important;
-        font-weight: 400 !important;
         font-size: 16px !important;
         line-height: 18px !important;
     }
 
     .dapp-btn {
         height: 38px !important;
-        font-style: normal !important;
-        font-weight: 400 !important;
         font-size: 16px !important;
         line-height: 18px !important;
     }
@@ -184,24 +181,45 @@ export default {
     }
 
     .list-item-label {
-        font-style: normal;
-        font-weight: 400;
         font-size: 14px;
         line-height: 16px;
     }
 
     .menu-community-label {
-        font-style: normal;
-        font-weight: 400;
         font-size: 14px;
         line-height: 18px;
         letter-spacing: 0.02em;
     }
 }
 
+@media only screen and (max-width: 960px) {
+    .logo-img {
+        height: 28px !important ;
+        margin-right: 5px !important;
+    }
+
+    .logo-img-text {
+        height: 18px !important ;
+        margin-right: 10px !important;
+    }
+
+    .presale-btn {
+        height: 40px !important;
+        font-size: 14px !important;
+        line-height: 18px !important;
+    }
+
+    .dapp-btn {
+        height: 38px !important;
+        font-size: 14px !important;
+        line-height: 18px !important;
+    }
+}
+
 @media only screen and (min-width: 1400px) {
     .logo-img {
         height: 40px !important ;
+        margin-right: 10px !important;
     }
 
     .logo-img-text {
@@ -211,8 +229,6 @@ export default {
     .presale-btn {
         width: 200px !important;
         height: 48px !important;
-        font-style: normal !important;
-        font-weight: 400 !important;
         font-size: 18px !important;
         line-height: 20px !important;
     }
@@ -220,8 +236,6 @@ export default {
     .dapp-btn {
         width: 180px !important;
         height: 44px !important;
-        font-style: normal !important;
-        font-weight: 400 !important;
         font-size: 18px !important;
         line-height: 20px !important;
     }
@@ -231,15 +245,11 @@ export default {
     }
 
     .list-item-label {
-        font-style: normal;
-        font-weight: 400;
         font-size: 18px;
         line-height: 20px;
     }
 
     .menu-community-label {
-        font-style: normal;
-        font-weight: 400;
         font-size: 18px;
         line-height: 20px;
         letter-spacing: 0.04em;
@@ -272,6 +282,11 @@ export default {
     margin-bottom: 0 !important;
 }
 
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
 .logo-img, .logo-img-text, .menu-list-item {
     cursor: pointer;
 }
@@ -291,6 +306,8 @@ export default {
     font-family: 'Roboto', sans-serif !important;
     font-feature-settings: 'liga' off !important;
     color: #FFFFFF !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
 }
 
 .dapp-btn {
@@ -300,12 +317,16 @@ export default {
     font-family: 'Roboto', sans-serif !important;
     font-feature-settings: 'liga' off !important;
     color: #FFFFFF !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
 }
 
 .list-item-label {
     font-family: 'Roboto', sans-serif;
     font-feature-settings: 'pnum' on, 'lnum' on;
     color: #333333;
+    font-style: normal;
+    font-weight: 400;
 }
 
 .menu-btn {
@@ -326,6 +347,8 @@ export default {
     text-transform: uppercase;
     font-feature-settings: 'pnum' on, 'lnum' on;
     color: #707A8B;
+    font-style: normal;
+    font-weight: 400;
 }
 
 .social-btn {
