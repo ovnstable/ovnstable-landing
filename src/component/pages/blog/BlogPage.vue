@@ -55,9 +55,10 @@ export default {
                         title: post.title.rendered,
                         link: post.link
                     };
+
                     blogPost.imgLink = await this.getImgLink(blogPost.id);
 
-                    if (blogPost.id === 719 || blogPost.id === 561 || blogPost.id === 618) {
+                    if (blogPost.id === 792 || blogPost.id === 783 || blogPost.id === 776) {
                         this.blogCards.push(blogPost);
                     }
                 }
@@ -78,7 +79,11 @@ export default {
             await fetch('https://overnight.fi/blog/wp-json/wp/v2/media?media_type=image&parent=' + id, {})
                 .then(value => value.json())
                 .then(value => {
+                    console.log("VALUE URL:", value)
                     result = value[0]['source_url'];
+                    if (id === 783) {
+                        result = value[2]['source_url'];
+                    }
                 }).catch(reason => {
                     console.log('Error get data: ' + reason);
                 });
