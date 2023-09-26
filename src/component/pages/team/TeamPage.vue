@@ -60,10 +60,19 @@
                                 desc="Frontend Developer"
                                 linked-in-link="https://www.linkedin.com/in/roman-golovlyov-2753611b3/" />
                             <TeamMemberCard
-                                name="Anastasiya N."
-                                img-link="anastasiya_n.png"
+                                name="Vasiliy P."
+                                img-link="vasiliy_p.png"
                                 desc="QA Specialist"
-                                linked-in-link="https://www.linkedin.com/in/anikityuk/" />
+                                linked-in-link="https://www.linkedin.com/in/vasiliy-pokrovskiy-2955a7229/" />
+                        </v-row>
+                    </v-col>
+                    <v-col cols="12">
+                        <v-row justify="center">
+                            <TeamMemberCard
+                                name="Slava M."
+                                img-link="slava_m.png"
+                                desc="Content Creator"
+                                linked-in-link="https://www.linkedin.com/in/yaroslav-matzanchuk-64b260236/" />
                         </v-row>
                     </v-col>
                 </v-row>
