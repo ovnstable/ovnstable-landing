@@ -173,7 +173,7 @@ export default {
 
       this.bestChainPool = null;
       let sortedPools = await this.loadPools();
-      let topPool = sortedPools && sortedPools.length ? sortedPools[0] : null;
+      let topPool = this.getPromotedTopPool(sortedPools);
       console.log("Top pool: ", topPool);
 
       if (topPool) {
@@ -239,7 +239,7 @@ export default {
                   })
           }
 
-          let topPools = pools.filter(pool => pool.tvl >= 500000);
+          let topPools = pools.filter(pool => pool.tvl >= 400000);
           topPools = topPools.sort((a, b) => {
               if (a.feature && !b.feature) {
                   return -1; // a comes first when a is featured and b is not
@@ -252,11 +252,41 @@ export default {
               }
           });
 
-          let secondPools = pools.filter(pool => pool.tvl < 500000);
+          let secondPools = pools.filter(pool => pool.tvl < 400000);
           secondPools = secondPools.sort((a, b) => b.tvl - a.tvl);
 
           return [...topPools, ...secondPools];
       },
+      getPromotedTopPool(sortedPools) {
+          let topPool = null;
+
+          let ovnVolatilePools = sortedPools ? sortedPools.filter(pool => pool.name.toLowerCase().includes('ovn')) : [];
+          let noneOvnPools = sortedPools ? sortedPools.filter(pool => !pool.name.toLowerCase().includes('ovn')) : [];
+
+          // if ovn exist get top ovn pool by 25% randomly else get top pool
+          let randomPoolType = this.getRandomPoolType();
+
+          if (ovnVolatilePools && ovnVolatilePools.length &&  randomPoolType === 'VOLATILE') {
+              console.log("Top pool volatile: ", ovnVolatilePools);
+              return ovnVolatilePools[0];
+          }
+
+
+          topPool = noneOvnPools && noneOvnPools.length ? noneOvnPools[0] : null;
+          console.log("Top pool stable: ", topPool, noneOvnPools);
+          return topPool
+      },
+
+      getRandomPoolType() {
+          let foo = Math.random() * 100;
+          console.log("Top pool random: ", foo);
+          if (foo < 75) { // 0-74
+              return 'STABLE'
+          }
+
+          // 75-99
+          return 'VOLATILE'
+      }
 
   }
 }
