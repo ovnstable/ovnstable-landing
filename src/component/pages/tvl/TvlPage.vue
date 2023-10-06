@@ -231,11 +231,10 @@ export default {
         for (let j = 0; j < mekkaItem.values.length; j++) {
           let value = mekkaItem.values[j];
 
-            //TODO TVL hack - agreed by Max
             if (mekkaItem.chainName === 'Arbitrum'  && value.name === 'USD+') {
                 // let valueFunds = await this.getArbitrumValueFundsFromCollateralAndStrategies();
                 console.log("+Value old value: ", mekkaData,  value, value.value)
-                value.value = value.value*1 + 1800000;
+                value.value = value.value*1;
                 console.log("+Value new value: ", mekkaData, value, value.value)
             }
 
