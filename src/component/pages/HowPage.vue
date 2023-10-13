@@ -20,10 +20,12 @@
                             </v-expansion-panel-header>
                             <v-expansion-panel-content class="mt-n5">
                                 <ul class="mb-3">
-                                    <li class="list-label mt-3"><span class="mint-link collateralized underlined" @click="openLinkToDapp(`https://app.overnight.fi/collateral?tabName=optimism`)">100% collaterized</span> with assets immediately convertible into USDC</li>
+                                    <li class="list-label mt-3">100% collaterized with assets immediately convertible into USDC</li>
                                     <li class="list-label mt-3">Profit (positive rebase) once collateral value grows above 100%, loss (negative rebase) in case collateral value below 100%</li>
                                     <li class="list-label">Profit payouts via daily rebase, transparent balance & P/L</li>
                                 </ul>
+                                <label class="mint-link d-flex mt-5" @click="openLinkToDapp(`https://app.overnight.fi/swap`)">Mint USD+
+                                    <img class="mdi-open ml-1" src="../../assets/img/mdi-open.svg" @click="openLinkToDapp(`https://app.overnight.fi/swap`)"></label>
                             </v-expansion-panel-content>
                         </v-expansion-panel>
 
@@ -56,6 +58,8 @@
                                             <li class="list-label mb-3">High quality protocols, enabling Overnight generates real yield (sustainable yield without rewards) like Aave and Uni V3, prioritized</li>
                                             <li class="list-label mb-3">Yield is not guaranteed, varies daily depending on collateral performance, can be negative</li>
                                         </ul>
+                                        <label class="mint-link d-flex mt-5" @click="openLinkToDapp(`https://app.overnight.fi/collateral`)">USD+ portfolio strategy in details
+                                            <img class="mdi-open ml-1" src="../../assets/img/mdi-open.svg" @click="openLinkToDapp(`https://app.overnight.fi/collateral`)"></label>
                                     </v-expansion-panel-content>
                             </v-expansion-panel>
                         </template>
@@ -94,13 +98,13 @@
 
                         <v-expansion-panel class="ml-n9 panel-bordered" @click="openPanel(2)">
                             <v-expansion-panel-header class="panel-header-row">
-                                <label class="panel-header mb-5">3. Insurance <span class="beta-text ml-2">in development</span></label>
+                                <label class="panel-header mb-5">3. Insured</label>
                             </v-expansion-panel-header>
                             <v-expansion-panel-content class="mt-n5">
                                 <ul class="mb-3">
-                                    <li class="list-label mb-3">Insurance serves to protect USD+ (not the ETSes) by absorbing the first loss in case of negative rebase</li>
-                                    <li class="list-label mb-3">Insurance protection up to the full amount of the insurance fund</li>
-                                    <li class="list-label mb-3">Users are encouraged to consider 3rd party insurance to protect from losses exceeding the insurance fund, e.g.
+                                    <li class="list-label mb-3">Insurance serves to protect our rebase tokens (USD+, DAI+, USDT+, not the ETSes) by absorbing the first loss in case of negative rebase</li>
+                                    <li class="list-label mb-3">Insurance protection up to the full amount of the insurance vault</li>
+                                    <li class="list-label mb-3">Users are encouraged to consider 3rd party insurance to protect from losses exceeding the insurance vault, e.g.
                                         <label class="mint-link underlined" @click="openLink(`https://app.insuredao.fi/optimism/covers/0x353dd745e5f25e4ac44c4601cbb8ca3e267bb646`)">InsureDAO.</label></li>
                                 </ul>
                             </v-expansion-panel-content>

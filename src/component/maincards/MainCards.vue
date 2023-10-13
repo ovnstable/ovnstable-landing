@@ -9,7 +9,11 @@
       <v-col>
 
         <MainCardApy
-            :label-usd-plus="bestChain && bestProductType && bestProductType.includes('dai_') ? 'DAI+ APY' : (bestProductType && bestProductType.includes('usdt_') ? 'USDT+ APY' : 'USD+ APY')"
+            :label-usd-plus="
+                bestChain &&
+                bestProductType && bestProductType.includes('dai_') ? 'DAI+ APY' :
+                (bestProductType && bestProductType.includes('usdt_') ? 'USDT+ APY' :
+                (bestProductType && bestProductType.includes('eth_') ? 'ETH+ APY' : 'USD+ APY'))"
             :value-usd-plus="apyWeek"
             :network-usd-plus="bestChain"
             :is-loading="isApyLoading"

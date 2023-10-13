@@ -97,10 +97,10 @@ export default {
         'Linea': 7,
       },
       chainOrderProductsMap: {
-        'ETS': 1,
-        'USDT+': 2,
-        'DAI+': 3,
-        'USD+': 4,
+        'USD+': 1,
+        'DAI+': 2,
+        'USDT+': 3,
+        'ETH+': 4,
       }
   }),
 
@@ -152,15 +152,15 @@ export default {
     getOrderedMekkaData(mekkaData) {
         let orderedMekkaData = [];
         for (let i = 0; i < mekkaData.length; i++) {
-            let cahinInfo = mekkaData[i];
-            let newPosition = this.chainOrderMap[cahinInfo.chainName];
+            let chainInfo = mekkaData[i];
+            let newPosition = this.chainOrderMap[chainInfo.chainName];
             if (newPosition) {
-                orderedMekkaData[newPosition - 1] = this.getOrderedAndFilledProductValues(cahinInfo);
+                orderedMekkaData[newPosition - 1] = this.getOrderedAndFilledProductValues(chainInfo);
                 console.log('Ordered and filled orderedMekkaData[newPosition - 1]', orderedMekkaData[newPosition - 1]);
                 continue;
             }
 
-            console.error("Mekka data not found order position for chain: ", cahinInfo);
+            console.error("Mekka data not found order position for chain: ", chainInfo);
         }
 
         return orderedMekkaData;

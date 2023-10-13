@@ -33,7 +33,7 @@
                             <v-row :class="isMobile ? 'mt-5' : 'mx-1'" justify="start">
                                 <label class="desc-label mb-5"><span class="bold-text">Highly liquid:</span> 1:1 peg to USDC, instantly mintable and redeemable in USDC</label>
                                 <label class="desc-label mb-5"><span class="bold-text">100% collateralized:</span> with delta-neutral and other stablecoin strategies based on the best protocols</label>
-                                <label class="desc-label mb-5"><span class="bold-text">Insured:</span> any daily loss to be compensated out of insurance fund (not more than 100% of the insurance fund)</label>
+                                <label class="desc-label mb-5"><span class="bold-text">Insured:</span> any daily loss to be compensated out of insurance (not more than 100% of the insurance fund)</label>
                             </v-row>
                         </v-col>
 
@@ -54,43 +54,42 @@
                                     </div>
                                 </v-row>
                                 <v-row :class="isMobile ? ' mb-5' : 'ml-1 mb-5'" justify="start">
-                                    <label class="numbers-label">5-15%</label>
+                                    <label class="numbers-label">5-12%</label>
                                 </v-row>
                             </v-col>
                         </v-row>
 
                         <div>
-                            <v-img class="low-risk" :src="require('@/assets/img/products/low-risk.svg')" />
+                            <v-img class="low-risk" :src="require('@/assets/img/products/usd_plus.svg')" />
                         </div>
 
                     </v-container>
 
-                    <v-container :class="isMobile ? '' : 'ma-0 mx-3'" class="fill-height card-container mt-10" @click="openLinkToDapp('https://app.overnight.fi/ets_about')">
+                    <v-container :class="isMobile ? '' : 'ma-0 mx-3'" class="fill-height card-container mt-10" @click="openLinkToDapp('https://app.overnight.fi/swap?tabName=swap-odos')">
                         <v-col align-self="start" :cols="isMobile ? 10 : 12">
                             <v-row align="center" :class="isMobile ? 'mt-3 mb-5' : 'mt-8 mb-2 ml-1'" justify="start">
                                 <div>
-                                    <v-img :src="require('@/assets/img/products/ms-return.svg')" />
+                                    <v-img :src="require('@/assets/img/products/ls_return.svg')" />
                                 </div>
-                                <label class="risk-label-medium ml-1">medium risk/return</label>
+                                <label class="risk-label-low ml-1">low risk/return</label>
                             </v-row>
                             <v-row :class="isMobile ? '' : 'ml-1'" justify="start">
-                                <label class="card-label">Exchange-traded</label>
+                                <label class="card-label">Eth money market</label>
                             </v-row>
                             <v-row :class="isMobile ? 'mb-7' : 'ml-1 mb-5'" justify="start">
-                                <label class="card-label">strategies (ETS)</label>
+                                <label class="card-label">(ETH+)</label>
                             </v-row>
                             <v-row :class="isMobile ? 'mt-5' : 'mx-1'" justify="start">
-                                <label class="desc-label mb-5"><span class="bold-text">Delta-neutral:</span> crypto-to-stable LP positions with hedge against crypto price fluctuations</label>
-                                <label class="desc-label mb-5"><span class="bold-text">Real yield:</span> most ETSes based on protocols generating yield without rewards, e.g. Uni V3 and Aave</label>
-                                <label class="desc-label mb-5"><span class="bold-text">Highly liquid:</span> 1:1 peg to USDC, instantly mintable and redeemable in USDC with a fee</label>
+                                <label class="desc-label mb-5"><span class="bold-text">Highly liquid:</span> 1:1 peg to ETH, instantly mintable and redeemable in ETH</label>
+                                <label class="desc-label mb-5"><span class="bold-text">100% collateralized:</span> with delta-neutral and other  strategies based on the best protocols</label>
+                                <label class="desc-label mb-5"><span class="bold-text">Insured:</span> any daily loss to be compensated out of insurance (not more than 100% of the insurance vault)</label>
                             </v-row>
                         </v-col>
-                        <v-col align-self="start" :cols="isMobile ? 10 : 12">
-                            <v-row :class="isMobile ? '' : 'ml-0 mb-10 mt-3'" justify="start" align="center">
-                                <label class="clickable mx-1 mr-0" @click="openLinkToDapp('https://app.overnight.fi/ets_about')">
-                                    About ETS
-                                </label>
-                                <img @click="openLinkToDapp('https://app.overnight.fi/ets_about')" class="arrow ml-3" src="../../assets/img/mdi-open.svg">
+                        <v-col align-self="start" :cols="isMobile ? 6 : 12">
+                            <v-row :class="isMobile ? '' : 'ml-1 mb-10'" justify="start">
+                                <v-btn class="mint-btn" @click="openLinkToDapp('https://app.overnight.fi/swap?tabName=swap-odos')">
+                                    swap
+                                    eth+ <img class="arrow ml-3" src="../../assets/img/icon/arrow.svg"></v-btn>
                             </v-row>
                         </v-col>
                         <v-row :class="isMobile ? 'ml-1 mt-5' : 'ma-0'">
@@ -104,13 +103,13 @@
                                     </div>
                                 </v-row>
                                 <v-row :class="isMobile ? 'mb-5' : 'ml-1 mb-5'" justify="start">
-                                    <label class="numbers-label">15-25%</label>
+                                    <label class="numbers-label">5-12%</label>
                                 </v-row>
                             </v-col>
                         </v-row>
 
                         <div>
-                            <v-img class="low-risk" :src="require('@/assets/img/products/medium-risk.svg')" />
+                            <v-img class="low-risk" :src="require('@/assets/img/products/eth_plus.svg')" />
                         </div>
 
                     </v-container>
@@ -123,27 +122,24 @@
                                 </div>
                                 <label class="risk-label-high ml-1">high risk/return</label>
                             </v-row>
-                            <v-row :class="isMobile ? 'mb-1' : 'ml-1 mb-3'" justify="start">
-                                <label class="card-label">USD+ Insurance</label>
+                            <v-row :class="isMobile ? 'mb-1' : 'ml-1 mb-8'" justify="start">
+                                <label class="card-label">Insurance</label>
                             </v-row>
                             <v-row :class="isMobile ? 'mt-1 mb-3' : 'mb-5 ml-1'" >
-                                <label class="in-development ">In development</label>
+                                <label class="in-development "></label>
                             </v-row>
                             <v-row :class="isMobile ? 'mt-5' : 'mx-1'" justify="start">
-                                <label class="desc-label mb-5"><span class="bold-text">Highly yielding:</span> collects (1) premiums retained from USD+ yields and (2) yield generated by insurance fund liquidity, mostly, from best ETSes</label>
-                                <label class="desc-label mb-5"><span class="bold-text">First loss:</span> exposed to ‘first loss’ from USD+, i.e. any loss on USD+ is covered first from insurance fund</label>
+                                <label class="desc-label mb-5"><span class="bold-text">Highly yielding:</span> collects (1) premiums retained from our rebase tokens yields and (2) yield generated by insurance vault liquidity</label>
+                                <label class="desc-label mb-5"><span class="bold-text">First loss:</span> exposed to ‘first loss’ from our rebase tokens, i.e. any loss on USD+ is covered first from insurance vault</label>
                                 <label class="desc-label mb-5"><span class="bold-text">Illiquid:</span> 3 days notification period to initiate redemption</label>
                             </v-row>
                         </v-col>
 
                         <v-col align-self="start" :cols="isMobile ? 6 : 12">
-                            <v-row :class="isMobile ? 'mb-3' : 'ml-1 mb-1 mt-0'" justify="start">
-                                <v-row :class="isMobile ? 'ml-0 mt-0 mb-0' : 'ml-0 mb-10 mt-3'" justify="start" align="center">
-                                    <label class="clickable mx-1 mr-0" @click="openLinkToDapp('https://app.overnight.fi/insurance')">
-                                        About Insurance
-                                    </label>
-                                    <img @click="openLinkToDapp('https://app.overnight.fi/insurance')" class="arrow ml-3" src="../../assets/img/mdi-open.svg">
-                                </v-row>
+                            <v-row :class="isMobile ? '' : 'ml-1 mb-10'" justify="start">
+                                <v-btn class="mint-btn" @click="openLinkToDapp('https://app.overnight.fi/insurance')">
+                                    mint
+                                    insurance<img class="arrow ml-3" src="../../assets/img/icon/arrow.svg"></v-btn>
                             </v-row>
                         </v-col>
 

@@ -41,7 +41,7 @@ export const getChartSettings = (
     const palette = palettes.distinctColors();
 
     palette.items([
-        tokenColors.ETS,
+        tokenColors.ETH,
         tokenColors.USDT,
         tokenColors.DAI,
         tokenColors.USD
@@ -121,8 +121,8 @@ export const getChartSettings = (
             return;
         }
 
-        if (type === 'ETS') {
-            window.open('https://app.overnight.fi/market',"_self");
+        if (type === 'ETH+') {
+            window.open('https://app.overnight.fi/collateral/eth?tabName=' + chainName.toLowerCase(),"_self");
             return;
         }
 

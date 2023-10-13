@@ -5,7 +5,7 @@ export const mekkaResponseApiMock = [
             'USDT+': 0,
             'DAI+': 3000000,
             'USD+': 10000000,
-            'ETS+': 2000000,
+            'ETH+': 2000000,
         },
     },
     {
@@ -14,7 +14,7 @@ export const mekkaResponseApiMock = [
             'USDT+': 0,
             'DAI+': 2000000,
             'USD+': 8000000,
-            'ETS+': 2000000,
+            'ETH+': 2000000,
         },
     },
     {
@@ -23,7 +23,7 @@ export const mekkaResponseApiMock = [
             'USDT+': 300000,
             'DAI+': 0,
             'USD+': 3000000,
-            'ETS+': 2000000,
+            'ETH+': 2000000,
         },
     },
     {
@@ -32,7 +32,7 @@ export const mekkaResponseApiMock = [
             'USDT+': 0,
             'DAI+': 0,
             'USD+': 2000000,
-            'ETS+': 2000000,
+            'ETH+': 2000000,
         },
     },
     {
@@ -41,7 +41,7 @@ export const mekkaResponseApiMock = [
             'USDT+': 0,
             'DAI+': 0,
             'USD+': 400000,
-            'ETS+': 2000000,
+            'ETH+': 2000000,
         },
     },
 ]

@@ -167,7 +167,11 @@ export default {
           }
 
             if (this.bestProductType.includes('usdt_')) {
-                this.openLink('https://app.overnight.fi/stats/dai?tabName=' + this.networkUsdPlus + "&chart=month");
+                this.openLink('https://app.overnight.fi/stats/usdt?tabName=' + this.networkUsdPlus + "&chart=month");
+            }
+
+            if (this.bestProductType.includes('eth_')) {
+                this.openLink('https://app.overnight.fi/stats/eth?tabName=' + this.networkUsdPlus + "&chart=month");
             }
 
           this.openLink('https://app.overnight.fi/stats?tabName=' + this.networkUsdPlus + "&chart=month");

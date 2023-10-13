@@ -43,11 +43,11 @@ export default {
     },
 
     async created() {
-
-        await fetch('https://overnight.fi/blog/wp-json/wp/v2/posts/?per_page=35', {})
+        await fetch('https://overnight.fi/blog/wp-json/wp/v2/posts/?per_page=3', {})
             .then(value => value.json())
             .then(async value => {
-
+                value.sort((a, b) => new Date(a.date) - new Date(b.date));
+                console.log("Blogposts fetching:", value)
                 for (const post of value) {
                     let blogPost = {
                         id: post.id,
@@ -55,15 +55,11 @@ export default {
                         title: post.title.rendered,
                         link: post.link
                     };
-
                     blogPost.imgLink = await this.getImgLink(blogPost.id);
-
-                    if (blogPost.id === 792 || blogPost.id === 783 || blogPost.id === 776) {
-                        this.blogCards.push(blogPost);
-                    }
+                    this.blogCards.push(blogPost);
                 }
             }).catch(reason => {
-                console.log('Error get data: ' + reason);
+                console.log('Error get data: ', reason);
             });
     },
 
@@ -79,11 +75,29 @@ export default {
             await fetch('https://overnight.fi/blog/wp-json/wp/v2/media?media_type=image&parent=' + id, {})
                 .then(value => value.json())
                 .then(value => {
-                    console.log("VALUE URL:", value)
-                    result = value[0]['source_url'];
                     if (id === 783) {
-                        result = value[2]['source_url'];
+                        result = value[3]['source_url'];
+                    } else if (id === 805) {
+                        id = 806;
+                        result = this.getImgForPost(id);
+                    } else {
+                        result = value[0]['source_url'];
                     }
+
+                }).catch(reason => {
+                    console.log('Error get data: ' + reason);
+                });
+
+            return result;
+        },
+
+        async getImgForPost(id) {
+            let result = null;
+
+            await fetch('https://overnight.fi/blog/wp-json/wp/v2/media/' + id, {})
+                .then(value => value.json())
+                .then(value => {
+                    result = value.source_url;
                 }).catch(reason => {
                     console.log('Error get data: ' + reason);
                 });
