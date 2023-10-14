@@ -59,7 +59,7 @@
                                                 High quality protocols, enabling Overnight generates real yield (sustainable yield without rewards) like Aave and Uni V3, prioritized
                                             </li>
                                             <li class="list-label mb-3">
-                                                Yield is not guaranteed, varies daily depending on collateral performance, can be negative
+                                                Yield is not guaranteed, varies daily depending on collateral performance, can be negative.
                                             </li>
                                         </ul>
                                         <label class="mint-link d-flex mt-5" @click="openLinkToDapp(`https://app.overnight.fi/collateral`)">USD+ portfolio strategy in details
